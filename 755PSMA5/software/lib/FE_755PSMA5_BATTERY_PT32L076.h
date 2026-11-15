@@ -15,7 +15,8 @@
  *
  *
  * Description : 
- * 	
+ *   RAM: 16bytes
+ *   Name: FE_BATTERY_TypeDef Battery
  *
  * History :
  * 	2025-1-4: 初版发布
@@ -27,7 +28,13 @@
 #include "stdint.h"
 
 /*
- * @details: 回调函数
+ * @brief 回调函数
+ *
+ * @param [in] param: 
+ *    b0: ready
+ *    b4: low battery
+ *
+ * @details: 
  */
 typedef void (*FE_BATTERY_CALLBACK)(uint32_t param);
 
@@ -71,13 +78,9 @@ uint32_t fe_set_battery_callback(FE_BATTERY_CALLBACK cb);
 uint32_t fe_start_up_battery_process(uint32_t mode);
 
 /*
- * @brief 查询SMOKE状态
+ * @brief 查询Battery状态
  *
- * @param [in] state: 
- *    b0: ready
- *    b1: debugging
- *    b2: sampling
- *    b4: low battery
+ * @param [in]:
  *
  * @return:
  *    =0:空闲

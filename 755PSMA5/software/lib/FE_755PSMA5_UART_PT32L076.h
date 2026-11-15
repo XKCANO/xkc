@@ -15,10 +15,13 @@
  *   Tang
  *
  * Description : 
- * 	串口打印输出公共接口函数库
+ * 	 串口打印输出公共接口函数库
+ *   RAM: 100bytes
+ *   Name: FE_UART_TypeDef uart
+ *         FE_SCI_TypeDef Sci
  *
  * History :
- * 	2024-4-11: 初版发布
+ * 	 2024-4-11: 初版发布
  *
  */
 
@@ -27,13 +30,14 @@
 
 #include "stdint.h"
 
-#define SETUP_SAMPLING_FLAG 0x41
-#define CLEAR_SAMPLING_FLAG 0x42
-#define OPEN_BUZZER         0x43
-#define ENTER_DEEP_SLEEP    0x44
-
 /*
- * @details: 回调函数
+ * @brief 回调函数
+ *
+ * @param [in] param: 
+ *   OPEN_BUZZER: 0x43
+ *   ENTER_DEEP_SLEEP: 0x44
+ *
+ * @details: 
  */
 typedef void (*FE_UART_CALLBACK)(uint32_t p, uint32_t l);
 
@@ -126,8 +130,7 @@ uint32_t fe_get_uart_state(void);
  *   !=0:failure
  *
  * @details
- *   OPEN_BUZZER: 0x43
- *   ENTER_DEEP_SLEEP: 0x44
+ *
  */
 uint32_t fe_set_uart_callback(FE_UART_CALLBACK cb);
 

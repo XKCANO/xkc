@@ -1,5 +1,12 @@
 #include "755PSMA5_Windows_PT32L076.h"
 
+
+#define   OPEN_BUZZER   0x43
+#define   ENTER_SLEEP   0x44
+
+#define   LED_END_STEP  20
+
+
 Alarm_typedef led;
 Alarm_typedef buzzer;
 Alarm_typedef update;
@@ -52,12 +59,29 @@ void battery_callback(uint32_t state)
  */
 void uart_callback(uint32_t p, uint32_t l)
 {
-	if( p == OPEN_BUZZER)
+	if(p == OPEN_BUZZER)
 	{
-		set_timer1();
-		buzzer.step = 5;
-		buzzer.mode = _exe;
+    if(buzzer.mode == _idle)
+    {
+      led.counter = 0;
+      led.step = 0;
+      led.mode = _exe;
+			buzzer.counter = 0;
+		  buzzer.step = 5;
+		  buzzer.mode = _exe;
+    }
 	}
+	
+	if(p == ENTER_SLEEP)
+  {
+    close_wdog();
+    
+    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+	
+	  __NOP();
+	  __WFI();
+	  __NOP();
+  }
 }
 
 /*
@@ -81,29 +105,44 @@ void check_short_test(void)
 */
 void open_buzzer(void)
 {
-	timer5.mr0 = MIN_TIMER_US;
+	system_data.masking &= ~(TIMER1_CLOSE_FLAG_MSK + TIMER1_UPDATE_FLAG_MSK);
 	
-	TIM1->BKICR &= ~TIM_BKICR_SWE;
-	TIM1->BDTR &= ~(TIM_BDTR_BKSC + TIM_BDTR_BKE + TIM_BDTR_BKP);
-	TIM1->SR |= TIM_SR_BIF;
-	
-	if(system_data.masking & LOW_SOUND_FLAG_MSK)
+	//16M / (15 + 1) = 1M
+	TIM1->PSC = 15;
+	TIM1->CR1 = TIM_CR1_DIR;//TIM_CR1_CMS
+	TIM1->CR2 |= TIM_CR2_ARI;//TIM_CR2_OC4I
+		
+  if(system_data.masking & LOW_SOUND_FLAG_MSK)
 	{
-		TIM1->ARR = timer5.mr0 * 2;
-		TIM1->OCR[3] = timer5.mr0;
-		TIM1->OCMR |= TIM_OCMR_OC4E;
+		timer5.mr0 = LOW_TIMER_US;
+
+		TIM1->ARR = timer5.mr0;
+		TIM1->OCR[3] = timer5.mr0 >> 1;
+		TIM1->OCMR = TIM_OCMR_OC4E + 0x00001000;
 	}
 	else
 	{
+		timer5.mr0 = MIN_TIMER_US;
+    
 		TIM1->ARR = timer5.mr0;
-		TIM1->OCR[3] = timer5.mr0 / 2;
-		TIM1->OCMR |= TIM_OCMR_OC4E + TIM_OCMR_OC4NE;
+		TIM1->OCR[3] = timer5.mr0 >> 1;
+		TIM1->OCMR = TIM_OCMR_OC4E + TIM_OCMR_OC4NE + 0x00001000;
 	}
+
+	TIM1->CR1 |= TIM_CR1_UG;
+	
+	//死区时间 50us
+	TIM1->BDTR = 800;
+	
+	TIM1->SR |= 0xFF;
+	TIM1->CR1 |= TIM_CR1_EN;
+	NVIC_EnableIRQ(TIM1_IRQn);
+	
+	//PA11 PA12
+  AFIOA->AFS[1] = (0x05 << 12) + (0x05 << 16);
 	
   update.step = 0;
 	update.mode = _exe;
-
-	TIM1->CR1 |= TIM_CR1_EN;
 }
 
 /**
@@ -116,8 +155,29 @@ void close_buzzer(void)
 	update.step = 0;
 	update.mode = _idle;
 	
-	TIM1->BKICR |= TIM_BKICR_SWE;
-	TIM1->BDTR |= TIM_BDTR_BKE + TIM_BDTR_BKP + TIM_BDTR_BKSC;
+	system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
+}
+
+/**
+* @brief 移除报警指示
+* @param None
+* @retval None
+*/
+void remove_alarm(void)
+{
+	set_connect(0);
+	
+	close_timer1();
+	
+	HRED_LED_OFF;
+	
+	led.step = LED_END_STEP;
+	
+	buzzer.mode = 
+	update.mode = _idle;
+	
+	system_data.masking &= ~LOW_SOUND_FLAG_MSK;
+	system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 }
 
 /*
@@ -129,7 +189,6 @@ void alarm_cfg(uint8_t mode)
 	{
 		//测试报警，声光T3时刻，有渐响
 		case TEST_MODE:
-			set_timer1();
 			led.counter = 0;
 			led.step = 0;
 			led.mode = _exe;
@@ -142,36 +201,29 @@ void alarm_cfg(uint8_t mode)
 		
     //火灾报警，声光T3时刻，无渐响
 		case FIRE_MODE:
-			set_timer1();
-		  led.counter = 0;
+			led.counter = 0;
 			led.step = 0;
 			led.mode = _exe;
 		  buzzer.counter = 0;
 			buzzer.step = 5;
 			buzzer.mode = _exe;
-		  system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 			break;
 		
 		//互联报警，蜂鸣器 T3时序
 		case EXTERNAL_MODE:
-			set_timer1();
-		  HRED_LED_OFF;
-		  led.step = 0;
-			led.mode = _idle;
+			HRED_LED_OFF;
+      led.mode = _idle;
 		  buzzer.counter = 0;
 			buzzer.step = 5;
 			buzzer.mode = _exe;
-		  system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 			break;
 		
 		//互联错误 红灯中亮度 0.2s亮 0.8s灭
 		case EXT_ERROR_MODE:
-			close_buzzer();
-		  close_timer1();
-			buzzer.step = 0;
-			buzzer.mode = _idle;
 			led.step = 14;
 			led.mode = _exe;
+		  buzzer.mode = _idle;
+		  system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 			break;
 		
 		//低亮度闪一次 -> 2ms
@@ -180,10 +232,8 @@ void alarm_cfg(uint8_t mode)
 			LED_TIMER = 110;
 			led.step = 11;
 			led.mode = _exe;
-		  close_buzzer();
-		  close_timer1();
-			buzzer.step = 0;
-			buzzer.mode = _idle;
+		  buzzer.mode = _idle;
+		  system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 			break;
 		
 		//低亮度闪两次
@@ -191,10 +241,8 @@ void alarm_cfg(uint8_t mode)
 			led.offset = 2;
 			led.step = 8;
 			led.mode = _exe;
-		  close_buzzer();
-		  close_timer1();
-			buzzer.step = 0;
-			buzzer.mode = _idle;
+		  buzzer.mode = _idle;
+		  system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 			break;
 		
 		//中亮度闪一次 -> 10ms
@@ -203,26 +251,12 @@ void alarm_cfg(uint8_t mode)
 			LED_TIMER = 110;
 			led.step = 11;
 			led.mode = _exe;
-		  close_buzzer();
-		  close_timer1();
-			buzzer.step = 0;
-			buzzer.mode = _idle;
+		  buzzer.mode = _idle;
+		  system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 			break;
-		
-		//哔叫一声
-		case ONE_SOUND_MODE:
-			set_timer1();
-		  HRED_LED_OFF;
-		  led.step = 0;
-			led.mode = _idle;
-			BUZZER_TIMER = 110;
-			buzzer.step = 12;
-			buzzer.mode = _exe;
-			break;
-			
+
 		//中等亮度闪一下，叫一声
 		case LOW_BAT_MODE:
-			set_timer1();
 			LED_TIMER = 110;
 			BUZZER_TIMER = 110;
 			led.offset = 10;
@@ -234,7 +268,6 @@ void alarm_cfg(uint8_t mode)
 			
     //中亮度闪两次、哔叫两声
 		case SENSOR_FAULT_MODE:
-			set_timer1();
 			led.offset = 10;
 			led.step = 8;
 			led.mode = _exe;
@@ -243,12 +276,10 @@ void alarm_cfg(uint8_t mode)
 			break;
 		
 		case HUSH_MODE:
-			close_buzzer();
-		  close_timer1();
-			buzzer.step = 0;
-			buzzer.mode = _idle;
 			led.step = 4;
-		  led.mode = _exe; 
+		  led.mode = _exe;
+      buzzer.mode = _idle;
+		  system_data.masking |= TIMER1_CLOSE_FLAG_MSK;
 			break;
 	}
 }
@@ -270,7 +301,7 @@ void set_connect(unsigned char flag)
 		  IOUT_OFF;
 	    IO_PIN_L;
 		  IO_PIN_IN;
-		  system_data.masking &= ~(KY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK);
+		  system_data.masking &= ~(KEY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK);
 			break;
 		
 		case 1:
@@ -281,43 +312,23 @@ void set_connect(unsigned char flag)
 		case 2:
 			IO_PIN_OUT;
 	    IO_PIN_H;
-		  system_data.masking |= KY5_OUTPUT_FLAG_MSK;
+		  system_data.masking |= KEY5_OUTPUT_FLAG_MSK;
 			break;
 		
 		case 3:
 			IO_PIN_OUT;
 		  IOUT_ON;
 	    IO_PIN_H;
-		  system_data.masking |= KY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK;
+		  system_data.masking |= KEY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK;
 			break;
 	}
 }
 
-
-void remove_alarm(void)
-{
-	HRED_LED_OFF;
-	led.offset = 0;
-	led.counter = 0;
-	led.step = 0;
-	led.mode = _idle;
-	
-	close_timer1();
-	
-	buzzer.offset = 0;
-	buzzer.counter = 0;
-	buzzer.step = 0;
-	buzzer.mode = _idle;
-	
-	update.step = 0;
-	update.mode = _idle;
-	
-	set_connect(0);
-	
-	system_data.masking &= ~LOW_SOUND_FLAG_MSK;
-}
-
-
+/**
+* @brief 设置led的状态
+* @param null
+* @retval null
+*/
 void led_lighten(void)
 {
 	switch(led.step)
@@ -330,10 +341,6 @@ void led_lighten(void)
 		case 1:
 			if(LED_TIMER > 499)
 			{
-				if(led.counter > 1)
-				{
-					check_short_test();
-				}
 				HRED_LED_OFF;
 				led.step++;
 			}
@@ -406,7 +413,6 @@ void led_lighten(void)
 			}
 			break;
 			
-    //互联错误
 		case 14:
 			HRED_LED_ON;
 			LED_TIMER = 0;
@@ -425,15 +431,25 @@ void led_lighten(void)
 				led.step -= 2;
 			}
 			break;
+	
+		case LED_END_STEP:
+			led.step = 0;
+		  led.counter = 0;
+		  led.offset = 0;
+		  led.mode = _idle;
+			break;
 	}
 }
 
-
+/**
+* @brief 设置声音的状态
+* @param null
+* @retval null
+*/
 void buzzer_sound(void)
 {
 	switch(buzzer.step)
 	{
-		//T3时刻，低声音
 		case 0:
 			open_buzzer();
 			BUZZER_TIMER = 0;
@@ -443,6 +459,10 @@ void buzzer_sound(void)
 			if(BUZZER_TIMER > 499)
 			{
 				close_buzzer();
+				if(led.counter > 1)
+				{
+					check_short_test();
+				}
 				buzzer.step++;
 			}
 			break;
@@ -477,7 +497,6 @@ void buzzer_sound(void)
 			}
 			break;
 			
-	  //T3时序，大声音
 		case 5:
 			open_buzzer();
 			BUZZER_TIMER = 0;
@@ -509,8 +528,6 @@ void buzzer_sound(void)
 			}
 			break;
 
-			
-		//哔叫两声 每次10ms
 		case 9:
 			open_buzzer();
 			BUZZER_TIMER = 0;
@@ -524,7 +541,6 @@ void buzzer_sound(void)
 			}
       break;
 			
-		//哔叫两声 每次10ms 间隔100ms
 		case 12:
 			if(BUZZER_TIMER > 109)
 			{
@@ -537,7 +553,6 @@ void buzzer_sound(void)
 			if(BUZZER_TIMER > 119)
 			{
 				close_buzzer();
-				close_timer1();
         buzzer.step = 0;
 				buzzer.mode = _idle;
 			}
@@ -557,10 +572,14 @@ void update_timer1(void)
 		  update.step++;
 			break;
 		case 1:
-			if(TIMER1_TIMER > 99)
+			if(TIMER1_TIMER > 49)
 			{
 				TIMER1_TIMER = 0;
-				system_data.masking |= TIMER1_UPDATE_FLAG_MSK;
+				if((system_data.masking & LOW_SOUND_FLAG_MSK) == 0)
+			  {
+				  timer5.mr0 += 1;
+					system_data.masking |= TIMER1_UPDATE_FLAG_MSK;
+				}
 				update.step--;
 			}
 			break;

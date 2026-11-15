@@ -8,6 +8,9 @@
 #include "FE_755PSMA5_SMOKE_PT32L076.h"
 
 /* --------------------------------------------------------------------------- */
+#define KEYBOARD_SCANNING_TIME_1 5
+#define KEYBOARD_SCANNING_TIME_2 50
+/* --------------------------------------------------------------------------- */
 typedef struct
 {
 	unsigned char value;
@@ -19,7 +22,6 @@ typedef struct
 
 }MULTIPLE_KEY_Tytedef;
 extern MULTIPLE_KEY_Tytedef key2;
-extern MULTIPLE_KEY_Tytedef key3;
 
 typedef struct
 {
@@ -30,6 +32,7 @@ typedef struct
 	
 }SIMPLE_KEY_Tytedef;
 
+extern SIMPLE_KEY_Tytedef key3;
 extern SIMPLE_KEY_Tytedef key4;
 extern SIMPLE_KEY_Tytedef key5;
 

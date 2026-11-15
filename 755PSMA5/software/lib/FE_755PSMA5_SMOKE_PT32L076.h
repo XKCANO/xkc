@@ -15,7 +15,8 @@
  * 
  *
  * Description : 
- *   公共函数库
+ *   RAM: 1604bytes
+ *   Name: FE_SMOKE_TypeDef Smoke
  *
  * History :
  * 	 2024-12-31: 初版发布
@@ -27,7 +28,17 @@
 #include "stdint.h"
 
 /*
- * @details: 回调函数
+ * @brief 回调函数
+ *
+ * @param [in] param: 
+ *    b0: initializing
+ *    b1: debugging
+ *    b2: acting
+ *    b3: alarming
+ *    b6: chamber trouble
+ *    b7: chamber dust
+ *
+ * @details:
  */
 typedef void (*FE_SMOKE_CALLBACK)(uint32_t param);
 
@@ -126,13 +137,7 @@ uint32_t fe_set_backup_power_source(void);
 /*
  * @brief 查询SMOKE状态
  *
- * @param [in] state: 
- *    b0: initializing
- *    b1: debugging
- *    b2: acting
- *    b3: alarming
- *    b6: chamber trouble
- *    b7: chamber dust
+ * @param [in]:
  *
  * @return:
  *    =0:空闲

@@ -16,6 +16,7 @@
 #include "FE_755PSMA5_UART_PT32L076.h"
 #include "FE_755PSMA5_BATTERY_PT32L076.h"
 
+
 SYSTEM_DATA_typedef system_data;
 
 
@@ -39,27 +40,24 @@ int main(void)
 	
   fe_smoke_read_eeprom_data();
 	
-	settimer5();
-	
-	fe_set_system_tick_timer();
-	
-	key2.value = _exe;
-	key3.value = _exe;
-	key4.value = _exe;
-	key5.value = _exe;
-	timer5.mr0 = MIN_TIMER_US;
+	key2.value = 
+	key3.value = 
+	key4.value = 1;
 	
 	system_data.masking |= SYSTEM_INITIALIZE_FLAG_MSK;
+	
+	fe_set_system_tick_timer();
+	settimer5();
 	
 	while(1)
 	{
 /************************************************************************
-  * @brief System  Initalize Function
+  * @brief System  Initalize
 	* 
 *************************************************************************/		
 		if(system_data.masking & SYSTEM_INITIALIZE_FLAG_MSK)
 		{
-			if(SYSINIT_TIMER == 990)
+			if(GENERAL_TIMER == 990)
 			{
 				RED_LED_ON;
 				fe_set_smoke_callback(smoke_callback);
@@ -67,47 +65,53 @@ int main(void)
 				fe_set_uart_callback(uart_callback);
 			}
 			
-			if(SYSINIT_TIMER == 1000)
+			if(GENERAL_TIMER == 1000)
 			{
 				RED_LED_OFF;
 
-				if(TEST_KEY == 0)
+				if((TEST_KEY == 0) && (EXT_KEY == 0))
 				{
-					if(EXT_KEY == 0)
-					{
-						system_data.masking |= DEBUG_FLAG_MSK;
-						fe_start_up_smoke_process(2);
-						fe_start_up_battery_process(1);
-					}
+          fe_start_up_smoke_process(2);
+          fe_start_up_battery_process(1);
+          system_data.masking |= DEBUG_FLAG_MSK;
+          system_data.masking &= ~SYSTEM_INITIALIZE_FLAG_MSK;
 				}
 				else
 				{
 					IO_PIN_IN;
 					fe_start_up_smoke_process(1);
 					fe_start_up_battery_process(0);
+          system_data.masking &= ~SYSTEM_INITIALIZE_FLAG_MSK;
 				}
-				
-				system_data.masking &= ~SYSTEM_INITIALIZE_FLAG_MSK;
 			}
 		}
 		
 /************************************************************************
-  * @brief Key Function
+  * @brief standby
 	* 
 *************************************************************************/			
-		if(AC_TIMER > 4)
+		if(KEY_TIMER >= KEYBOARD_SCANNING_TIME_1)
 		{
-			AC_TIMER = 0;
-			scankey2_process_run();
+			KEY_TIMER = 0;
+			
+			if((system_data.masking & KEY2_OUT_FLAG_MSK) == 0)
+			{
+			  scankey2_process_run();
+			}
+			
 			scankey4_process_run();
-			scankey5_process_run();
 		}
 		
-		if(KEY3_TIMER > 49)
+		if(KEY3_TIMER >= KEYBOARD_SCANNING_TIME_2)
 		{
 			KEY3_TIMER = 0;
 			
 			scankey3_process_run();
+			
+			if((system_data.masking & KEY5_OUTPUT_FLAG_MSK) == 0)
+			{
+			  scankey5_process_run();
+			}
 			
 			if(key3.value & 0x10)
 			{
@@ -130,19 +134,6 @@ int main(void)
 			}
 		}
 
-		if(system_data.state & HUSH_FLAG_MSK)
-		{
-			if(HUSH_TIMER >= 600000)
-			{
-				system_data.signal &= ~DEVICE_HUSH_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-		}
-		
-/************************************************************************
-  * @brief Alarm Function
-	* 
-*************************************************************************/			
 		if(led.mode & _exe)
 		{
 			led_lighten();
@@ -157,20 +148,7 @@ int main(void)
 				update_timer1();
 			}
 		}
-		
-/************************************************************************
- * @brief Message Check Function
- *
-*************************************************************************/	
-	  if(system_data.masking & MESSAGE_FLAG_MSK)
-	  {
-			messageproc();
-	  }
-		
-/************************************************************************
-  * @brief  lib Function
-	* 
-*************************************************************************/		
+
 		if(SMOKE_TIMER >= 8000)
 		{
 			SMOKE_TIMER = 0;
@@ -183,16 +161,36 @@ int main(void)
 			fe_start_up_battery_process(0);
 		}
 		
+		if(system_data.state & HUSH_FLAG_MSK)
+		{
+			if(ALARM_TIMER >= 600000)
+			{
+				system_data.signal &= ~DEVICE_HUSH_FLAG_MSK;
+				system_data.masking |= MESSAGE_FLAG_MSK;
+			}
+		}
+		
+		if(system_data.masking & MESSAGE_FLAG_MSK)
+	  {
+			message_proc();
+	  }
+		
+/************************************************************************
+  * @brief  lib
+	* 
+*************************************************************************/		
 	  fe_smoke_process_run();
 		fe_battery_process_run();
 		fe_uart_process_run();
 		fe_eeprom_process_run();
-		
+
 /************************************************************************
-  * @brief DeepSleep Function
+  * @brief deepsleep
 	* 
 *************************************************************************/		
-    if((system_data.masking & DEVICE_PENDING_MODE) == 0)
+    if((system_data.masking & 
+			 (SYSTEM_INITIALIZE_FLAG_MSK + AC_CHECK_FLAG_MSK + RIN_CHECK_FLAG_MSK + EXT_CHECK_FLAG_MSK +
+		    DEBUG_FLAG_MSK + MESSAGE_FLAG_MSK)) == 0)
 		{
 			if(fe_get_uart_state() == 0)
 			{
@@ -200,10 +198,10 @@ int main(void)
 				{
 					if(fe_get_smoke_state() == 0)
 					{
-						if(DEEPSLEEP == _idle)
+						if(led.mode == _idle && buzzer.mode == _idle &&
+							 key2.value == 0x1 && key3.value == 0x1 && key5.value == 0)
 						{
 							goto_deepsleep();
-							message_execution();
 						}
 					}
 				}
@@ -211,14 +209,13 @@ int main(void)
 	  }
 
 /************************************************************************
-  * @brief  Check Timer3 Function
-	* 定时器检查时钟 1ms 1拍 
+  * @brief  timer
+	* 1ms
 *************************************************************************/	
     feed_iwdg();
 		feed_swdg();
 		checktimer5();
 		fe_check_system_tick_timer();
-		
 	}
 }
 

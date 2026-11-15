@@ -157,8 +157,12 @@ void sys_gpio_init(void)
 	GPIOB->ODS |= 0x0200;
 	//上拉失能
 	GPIOB->PUC |= 0xFFFF;
+	
 	//下拉失能
 	GPIOB->PDC |= 0xFFFF;
+  //下拉使能
+  GPIOB->PDS |= 0x0008;  //IO_PIN
+	
 	//施密特触发使能
 	GPIOB->CSS |= 0xFFFF;
 	//中断失能
@@ -267,7 +271,7 @@ void sys_gpio_init(void)
   * @param  None
   * @retval None
   *********************************************************************/
-void mem_data_add(unsigned int* d, unsigned short num, unsigned short l)
+void mem_data_add(unsigned int* d, unsigned short num, unsigned char l)
 {
 	for (unsigned short i = 0; i < l; i++) 
 	{
@@ -283,7 +287,7 @@ void mem_data_add(unsigned int* d, unsigned short num, unsigned short l)
 void goto_deepsleep(void)
 {
 	close_swdg();	
-  closetimer5();
+	TIM5->CR1 &= ~TIM_CR1_EN;
 	fe_kill_system_tick_timer();
 
 	//KY1 -> PB4 输出0
@@ -291,27 +295,34 @@ void goto_deepsleep(void)
 	GPIOB->PUC |= LOCAL_PIN;
 	GPIOB->BRR |= LOCAL_PIN;
 	
-	if(key4.value)
+	if(key4.value != 0)
 	{
 	  //KY4 -> PA10
-	  EXTIA->ITDS |= AC_PIN;
+		EXTIA->ITDS |= AC_PIN;
 	  EXTIA->IES |= AC_PIN;
 	}
 
   //KY3 -> PA7
 	EXTIA->ITDS |= TEST_PIN;
-	EXTIA->IF |= 0xFFFF;
 	EXTIA->IES |= TEST_PIN;
+	EXTIA->IF |= 0xFFFF;
 	
 	//IO_PIN -> PB3
 	//KY2 -> PB5
 	EXTIB->ITDS |= IO_PIN + EXT_PIN;
-	EXTIB->IF |= 0xFFFF;
 	EXTIB->IES |= IO_PIN + EXT_PIN;
+	EXTIB->IF |= 0xFFFF;
 	
 	if(system_data.state & ALARM_MEMORY_FLAG_MSK)
 	{
-		TIM4->ARR = 2021;
+		if(system_data.state & SNOOZE_MEMORY_FLAG_MSK)
+		{
+			TIM4->ARR = 8084;
+		}
+		else
+		{
+			TIM4->ARR = 2021;
+		}
 	}
 	else
 	{
@@ -323,6 +334,7 @@ void goto_deepsleep(void)
 	TIM4->SR |= TIM_SR_ARF;
 	TIM4->CR2 = TIM_CR2_ARI;
 	TIM4->CR1 |= TIM_CR1_EN;
+	__NOP();
 	while((TIM4->CR1 & TIM_CR1_EN) == 0){__NOP();}
 	
 	NVIC_EnableIRQ(EXTIA_IRQn);
@@ -330,11 +342,11 @@ void goto_deepsleep(void)
 	NVIC_EnableIRQ(TIM4_IRQn);
 
 	SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
-	
+
 	__NOP();
 	__WFI();
 	__NOP();
-	
+
 	SCB->SCR &= ~SCB_SCR_SLEEPDEEP_Msk;
 
   NVIC_DisableIRQ(TIM4_IRQn);
@@ -342,35 +354,44 @@ void goto_deepsleep(void)
 	NVIC_DisableIRQ(EXTIB_IRQn);
 	
 	TIM4->CR1 &= ~TIM_CR1_EN;
+	while((TIM4->CR1 & TIM_CR1_EN) == TIM_CR1_EN){__NOP();}
 	
 	//KY3 -> PA7
 	//KY4 -> PA10
 	EXTIA->IEC |= TEST_PIN + AC_PIN;
-	EXTIA->ITDC |= TEST_PIN + AC_PIN;
 
 	//IO_PIN -> PB3
 	//KY2 -> PB5
 	EXTIB->IEC |= IO_PIN + EXT_PIN;
-	EXTIB->ITDC |= IO_PIN + EXT_PIN;
 
 	//KY1 -> PB4 输入上拉
 	GPIOB->OEC |= LOCAL_PIN;
 	GPIOB->PUS |= LOCAL_PIN;
 	
 	fe_set_system_tick_timer();
-	settimer5();
+	TIM5->CR1 |= TIM_CR1_EN; //settimer5();
 	open_swdg();
-	
+
 	if(system_data.masking & SYSTEM_INTERRUPT_FLAG_MSK)
 	{
 	  if(system_data.state & ALARM_MEMORY_FLAG_MSK)
 		{
-			mem_data_add(&timer5.t[4],2000,9);
+			if(system_data.state & SNOOZE_MEMORY_FLAG_MSK)
+		  {
+				mem_data_add(&timer5.t[8],8000,8);
+			}
+			else
+			{
+				mem_data_add(&timer5.t[8],2000,8);
+			}
 		}
 		else
 		{
-			mem_data_add(&timer5.t[4],8000,9);
+			mem_data_add(&timer5.t[8],8000,8);
 		}
+		
+		message_execution();
+		
 	  system_data.masking &= ~SYSTEM_INTERRUPT_FLAG_MSK;
 	}
 }
