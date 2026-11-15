@@ -1,0 +1,17 @@
+--cpu Cortex-M0
+".\objects\startup_pt32x031.o"
+".\objects\main.o"
+".\objects\755lha_system_pt32l031.o"
+".\objects\755lha_timer_pt32l031.o"
+".\objects\755lha_windows_pt32l031.o"
+".\objects\755lha_keyboard_pt32l031.o"
+".\objects\755lha_heat_pt32l031.o"
+".\objects\755lha_batterylow_pt32l031.o"
+".\objects\755lha_rf_pt32l031.o"
+".\objects\755lha_release_pt32l031.o"
+".\objects\755lha_message_pt32l031.o"
+".\objects\adc_pt32l031.o"
+".\Lib\FE_755LHA_RevB_PT32L031_20251202.lib"
+--ro-base 0x00000000 --entry 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\755HA5L v05.map" -o ".\Objects\755HA5L v05.axf"

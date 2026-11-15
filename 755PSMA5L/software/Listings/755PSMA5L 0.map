@@ -1,0 +1,1478 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    startup_pt32x076.o(RESET) refers to startup_pt32x076.o(STACK) for __initial_sp
+    startup_pt32x076.o(RESET) refers to fe_755psma5l_adc_pt32l076.o(i.DMA_Handler) for DMA_Handler
+    startup_pt32x076.o(RESET) refers to 755psma5l_keyboard_pt32l076.o(.text) for EXTIA_Handler
+    startup_pt32x076.o(RESET) refers to fe_755psma5l_adc_pt32l076.o(i.ADC_Handler) for ADC_Handler
+    startup_pt32x076.o(RESET) refers to 755psma5l_timer_pt32l076.o(.text) for TIM1_Handler
+    startup_pt32x076.o(RESET) refers to fe_smoke_timer_pt32l076.o(i.TIM3_Handler) for TIM3_Handler
+    startup_pt32x076.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(.text) refers to 755psma5l_system_pt32l076.o(.text) for clear_sram
+    main.o(.text) refers to 755psma5l_timer_pt32l076.o(.text) for open_iwdg
+    main.o(.text) refers to fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) for fe_smoke_read_eeprom_data
+    main.o(.text) refers to fe_smoke_timer_pt32l076.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    main.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_set_smoke_callback) for fe_set_smoke_callback
+    main.o(.text) refers to fe_755psma5l_battery_pt32l076.o(i.fe_set_battery_callback) for fe_set_battery_callback
+    main.o(.text) refers to fe_755psma5l_uart_pt32l076.o(i.fe_set_uart_callback) for fe_set_uart_callback
+    main.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_process) for fe_start_up_smoke_process
+    main.o(.text) refers to fe_755psma5l_battery_pt32l076.o(i.fe_start_up_battery_process) for fe_start_up_battery_process
+    main.o(.text) refers to 755psma5l_keyboard_pt32l076.o(.text) for scankey2_process_run
+    main.o(.text) refers to 755psma5l_windows_pt32l076.o(.text) for led_lighten
+    main.o(.text) refers to 755psma5l_message_pt32l076.o(.text) for message_proc
+    main.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) for fe_smoke_process_run
+    main.o(.text) refers to fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) for fe_battery_process_run
+    main.o(.text) refers to fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) for fe_uart_process_run
+    main.o(.text) refers to fe_smoke_eeprom_pt32l076.o(i.fe_eeprom_process_run) for fe_eeprom_process_run
+    main.o(.text) refers to fe_755psma5l_uart_pt32l076.o(i.fe_get_uart_state) for fe_get_uart_state
+    main.o(.text) refers to fe_755psma5l_battery_pt32l076.o(i.fe_get_battery_state) for fe_get_battery_state
+    main.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_get_smoke_state) for fe_get_smoke_state
+    main.o(.text) refers to fe_smoke_timer_pt32l076.o(i.fe_check_system_tick_timer) for fe_check_system_tick_timer
+    main.o(.text) refers to 755psma5l_keyboard_pt32l076.o(.data) for key5
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for timer5
+    main.o(.text) refers to 755psma5l_windows_pt32l076.o(.data) for led
+    755psma5l_system_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.text) for close_swdg
+    755psma5l_system_pt32l076.o(.text) refers to fe_smoke_timer_pt32l076.o(i.fe_kill_system_tick_timer) for fe_kill_system_tick_timer
+    755psma5l_system_pt32l076.o(.text) refers to fe_smoke_timer_pt32l076.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    755psma5l_system_pt32l076.o(.text) refers to 755psma5l_message_pt32l076.o(.text) for message_execution
+    755psma5l_system_pt32l076.o(.text) refers to 755psma5l_keyboard_pt32l076.o(.data) for key4
+    755psma5l_system_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5l_system_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for timer5
+    755psma5l_timer_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5l_timer_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for .bss
+    755psma5l_keyboard_pt32l076.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_set_backup_power_source) for fe_set_backup_power_source
+    755psma5l_keyboard_pt32l076.o(.text) refers to fe_755psma5l_smoke_pt32l076.o(i.fe_set_main_power_source) for fe_set_main_power_source
+    755psma5l_keyboard_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5l_keyboard_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for timer5
+    755psma5l_keyboard_pt32l076.o(.text) refers to 755psma5l_keyboard_pt32l076.o(.data) for .data
+    755psma5l_windows_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.text) for set_timer1
+    755psma5l_windows_pt32l076.o(.text) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755psma5l_windows_pt32l076.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755psma5l_windows_pt32l076.o(.text) refers to 755psma5l_windows_pt32l076.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    755psma5l_windows_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5l_windows_pt32l076.o(.text) refers to 755psma5l_windows_pt32l076.o(.data) for .data
+    755psma5l_windows_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for timer5
+    755psma5l_windows_pt32l076.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755psma5l_message_pt32l076.o(.text) refers to 755psma5l_windows_pt32l076.o(.text) for remove_alarm
+    755psma5l_message_pt32l076.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755psma5l_message_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5l_message_pt32l076.o(.text) refers to 755psma5l_timer_pt32l076.o(.bss) for timer5
+    fe_755psma5l_battery_pt32l076.o(i.CalculateActualVoltage) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_battery_pt32l076.o(i.CalculateActualVoltage) refers to fe_755psma5l_battery_pt32l076.o(.bss) for .bss
+    fe_755psma5l_battery_pt32l076.o(i.CalculateBatteryPowerRatio) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_battery_pt32l076.o(i.CalculateBatteryPowerRatio) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_smoke_timer_pt32l076.o(i.SetTimer3) for SetTimer3
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.OpenADC) for OpenADC
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN8_SCM) for SetADC_IN8_SCM
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN26_SCM) for SetADC_IN26_SCM
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_math.o(i.fe_byte_data_move_to_left) for fe_byte_data_move_to_left
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_battery_pt32l076.o(i.CalculateActualVoltage) for CalculateActualVoltage
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_battery_pt32l076.o(.bss) for .bss
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_smoke_timer_pt32l076.o(.bss) for Timer
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_755psma5l_adc_pt32l076.o(.data) for adc
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_semaphore.o(.data) for System
+    fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_battery_pt32l076.o(i.fe_get_battery_state) refers to fe_755psma5l_battery_pt32l076.o(.bss) for .bss
+    fe_755psma5l_battery_pt32l076.o(i.fe_set_battery_callback) refers to fe_755psma5l_battery_pt32l076.o(.bss) for .bss
+    fe_755psma5l_battery_pt32l076.o(i.fe_start_up_battery_process) refers to fe_755psma5l_battery_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateAbsorbanceIndex) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateAbsorbanceIndex) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data) refers to fe_math.o(i.fe_correcting_ad_data) for fe_correcting_ad_data
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurveAB) for GetCurveAB
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingDataForTemperature) for GetC30CompensatingDataForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data) refers to fe_math.o(i.fe_correcting_ad_data) for fe_correcting_ad_data
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurveAB) for GetCurveAB
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingDataForTemperature) for GetC90CompensatingDataForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.Calculate_Temperature) refers to fe_math.o(i.fe_calculate_external_8b_temperature) for fe_calculate_external_8b_temperature
+    fe_755psma5l_smoke_pt32l076.o(i.Calculate_Temperature) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberDust) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberDust) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberFault) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberFault) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsDangerousState) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsDangerousState) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) for CalculateTargetDensity
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) for CalculateTargetDensity
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_math.o(i.fe_get_average) for fe_get_average
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_755psma5l_smoke_pt32l076.o(i.restore_original_data) for restore_original_data
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_math.o(i.fe_data_move_to_left) for fe_data_move_to_left
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_math.o(i.fe_get_increment) for fe_get_increment
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange) refers to fe_math.o(i.fe_char_real_comparision) for fe_char_real_comparision
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange) refers to fe_math.o(i.fe_char_real_subtractive) for fe_char_real_subtractive
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureDrop) refers to fe_math.o(i.fe_char_real_comparision) for fe_char_real_comparision
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureDrop) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureRise) refers to fe_math.o(i.fe_char_real_comparision) for fe_char_real_comparision
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureRise) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) for CalculateTargetDensity
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting) refers to fe_755psma5l_smoke_pt32l076.o(i.check_is_linear_curve) for check_is_linear_curve
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) for CalculateTargetDensity
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity) for CalculateTargetDensity
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter) for GetCurveParameter
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(i.get_curve_1_parameter) for get_curve_1_parameter
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter) for GetCurveParameter
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(i.get_curve_2_parameter) for get_curve_2_parameter
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter) for GetCurveParameter
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingDataForTemperature) for GetC30CompensatingDataForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingDataForTemperature) for GetC90CompensatingDataForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fe_math.o(i.fe_float_data_move_to_left) for fe_float_data_move_to_left
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.FireAlarm) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfFloat) refers to fmul.o(.text) for __aeabi_fmul
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfFloat) refers to fadd.o(.text) for __aeabi_fadd
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfFloat) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) refers to fmul.o(.text) for __aeabi_fmul
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) refers to fadd.o(.text) for __aeabi_fadd
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingCoefficientForTemperature) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingDataForTemperature) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingCoefficientForTemperature) for GetC30CompensatingCoefficientForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingCoefficientForTemperature) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingDataForTemperature) refers to fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingCoefficientForTemperature) for GetC90CompensatingCoefficientForTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) refers to fe_math.o(i.fe_char_real_comparision) for fe_char_real_comparision
+    fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) refers to fe_math.o(i.fe_char_real_subtractive) for fe_char_real_subtractive
+    fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) refers to fe_755psma5l_smoke_pt32l076.o(i.get_new_curve_average_data) for get_new_curve_average_data
+    fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetCurve2AmplitudeParameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetCurve2Smooth) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetCurveAB) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) refers to fadd.o(.text) for __aeabi_fadd
+    fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) refers to cfrcmple.o(.text) for __aeabi_cfrcmple
+    fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) refers to cfcmple.o(.text) for __aeabi_cfcmple
+    fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetSmoothOfMaxPointOfLeft) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetSmoothOfMaxPointOfRight) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetTemperatureCurveParameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.GetVarianceValue) refers to fadd.o(.text) for __aeabi_fadd
+    fe_755psma5l_smoke_pt32l076.o(i.GetVarianceValue) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_755psma5l_smoke_pt32l076.o(i.GetVarianceValue) refers to fmul.o(.text) for __aeabi_fmul
+    fe_755psma5l_smoke_pt32l076.o(i.IsResetReferenceTemperature) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureRise) for CheckIsTemperatureRise
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureDrop) for CheckIsTemperatureDrop
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_math.o(i.fe_char_real_comparision) for fe_char_real_comparision
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.UpdateTemperatureParameter) for UpdateTemperatureParameter
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange) for CheckIsTemperatureChange
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.IsResetReferenceTemperature) for IsResetReferenceTemperature
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve) for GetCompensatingDataForCurve
+    fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.UpdateTemperatureParameter) refers to fe_755psma5l_smoke_pt32l076.o(i.GetTemperatureCurveParameter) for GetTemperatureCurveParameter
+    fe_755psma5l_smoke_pt32l076.o(i.UpdateTemperatureParameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.check_is_linear_curve) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_get_smoke_state) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_set_backup_power_source) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_set_main_power_source) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_set_smoke_callback) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_timer_pt32l076.o(i.SetTimer3) for SetTimer3
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.OpenADC) for OpenADC
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.OpenDMA) for OpenDMA
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_timer_pt32l076.o(i.SetTimer2_ET) for SetTimer2_ET
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_SCM_ET) for SetADC_IN4_SCM_ET
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_timer_pt32l076.o(i.KillTimer2_ET) for KillTimer2_ET
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_CCM) for SetADC_IN4_CCM
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_math.o(i.fe_get_maximum) for fe_get_maximum
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN2_SCM) for SetADC_IN2_SCM
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(i.SetADC_IN26_SCM) for SetADC_IN26_SCM
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_math.o(i.fe_byte_data_move_to_left) for fe_byte_data_move_to_left
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.Calculate_Temperature) for Calculate_Temperature
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc) for RunTemperatureProc
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.get_average_in_main_power_source) for get_average_in_main_power_source
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.get_average_in_backup_power_source) for get_average_in_backup_power_source
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.Current1LevelReduced) for Current1LevelReduced
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CurrentLevelIncreased) for CurrentLevelIncreased
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_timer_pt32l076.o(.bss) for Timer
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_semaphore.o(.data) for System
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_adc_pt32l076.o(.data) for adc
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data) for CalculateCurve1Data
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_math.o(i.fe_data_move_to_left) for fe_data_move_to_left
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.GetUnsignedShortData) for GetUnsignedShortData
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.Current2LevelReduced) for Current2LevelReduced
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data) for CalculateCurve2Data
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort) for Get16FilterOfUnsignedShort
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberFault) for CheckIsChamberFault
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberDust) for CheckIsChamberDust
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsDangerousState) for CheckIsDangerousState
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.get_original_data_for_curve) for get_original_data_for_curve
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir) for CorrectingDataForAngle90InCleanAir
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir) for CorrectingDataForAngle30InCleanAir
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir) for CorrectingOriginalDataInCleanAir
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1) for DataProcessingMethod_1
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.GetCurve2AmplitudeParameter) for GetCurve2AmplitudeParameter
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting) for CheckIsTesting
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.FireAlarm) for FireAlarm
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter) for GetParticleParameter
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2) for CheckIsTesting2
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire) for CheckIsWoodFire
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire) for CheckIsLiquidFire
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire) for CheckIsFire
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState) for CheckIsSafeState
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key) for fe_check_security_key
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_smoke_eeprom_pt32l076.o(i.fe_check_key) for fe_check_key
+    fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run) refers to fe_755psma5l_uart_pt32l076.o(.data) for uart
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_boost) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_boost) refers to fe_smoke_timer_pt32l076.o(.bss) for Timer
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_boost) refers to fe_semaphore.o(.data) for System
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_process) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_process) refers to fe_755psma5l_uart_pt32l076.o(.data) for uart
+    fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_sampling) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.fe_stop_smoke_sampling) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.get_average_in_backup_power_source) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.get_average_in_backup_power_source) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.get_average_in_main_power_source) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.get_average_in_main_power_source) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.get_curve_1_parameter) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.get_curve_1_parameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.get_curve_2_parameter) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.get_curve_2_parameter) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.get_new_curve_average_data) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_smoke_pt32l076.o(i.get_original_data_for_curve) refers to idiv.o(.text) for __aeabi_idivmod
+    fe_755psma5l_smoke_pt32l076.o(i.get_original_data_for_curve) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_smoke_pt32l076.o(i.restore_original_data) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc) refers to fe_smoke_timer_pt32l076.o(.bss) for Timer
+    fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.RunSciTransmittingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755psma5l_uart_pt32l076.o(i.RunSciTransmittingProc) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(i.OpenUART) for OpenUART
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(i.CloseUART) for CloseUART
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(i.get_out_data) for get_out_data
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) for explain_token_packet
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_smoke_eeprom_pt32l076.o(i.fe_generating_box) for fe_generating_box
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) for fe_generating_cipher
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_smoke_eeprom_pt32l076.o(.bss) for Rom
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for Smoke
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_755psma5l_battery_pt32l076.o(.bss) for Battery
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_smoke_eeprom_pt32l076.o(.data) for Eeprom
+    fe_755psma5l_uart_pt32l076.o(i.explain_token_packet) refers to fe_smoke_timer_pt32l076.o(.bss) for Timer
+    fe_755psma5l_uart_pt32l076.o(i.fe_get_uart_state) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.fe_set_uart_callback) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_open) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) refers to fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc) for RunSciReceivingProc
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) refers to fe_755psma5l_uart_pt32l076.o(i.RunSciTransmittingProc) for RunSciTransmittingProc
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) refers to fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask) for RunUartServerTask
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run) refers to fe_755psma5l_uart_pt32l076.o(.data) for .data
+    fe_755psma5l_uart_pt32l076.o(i.get_out_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755psma5l_uart_pt32l076.o(i.get_out_data) refers to fe_755psma5l_uart_pt32l076.o(.bss) for .bss
+    fe_755psma5l_uart_pt32l076.o(i.get_out_data) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for Smoke
+    fe_755psma5l_uart_pt32l076.o(i.get_out_data) refers to fe_755psma5l_battery_pt32l076.o(.bss) for Battery
+    fe_semaphore.o(i.fe_clear_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_get_semaphore_state) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_set_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) refers to fe_smoke_eeprom_pt32l076.o(i.open_flash) for open_flash
+    fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) refers to fe_smoke_eeprom_pt32l076.o(i.write_flash_page) for write_flash_page
+    fe_smoke_eeprom_pt32l076.o(i.KeyExpansions) refers to fe_smoke_eeprom_pt32l076.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_smoke_eeprom_pt32l076.o(i.PlainExpansions) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.copy_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_code) refers to fe_io.o(i.mem_byte_clear) for mem_byte_clear
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_code) refers to fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) refers to fe_smoke_eeprom_pt32l076.o(i.open_flash) for open_flash
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) refers to fe_smoke_timer_pt32l076.o(i.KillWatchdog) for KillWatchdog
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) refers to fe_io.o(i.malloc_ram) for malloc_ram
+    fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) refers to fe_smoke_eeprom_pt32l076.o(i.erase_all_flash_page) for erase_all_flash_page
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_key) refers to fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) for erase_flash_memory
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_key) refers to fe_smoke_eeprom_pt32l076.o(i.PlainExpansions) for PlainExpansions
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_key) refers to fe_smoke_eeprom_pt32l076.o(i.KeyExpansions) for KeyExpansions
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_key) refers to fe_smoke_eeprom_pt32l076.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_key) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key) refers to fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory) for erase_flash_memory
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.fe_eeprom_process_run) refers to fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) for fe_write_eeprom_data
+    fe_smoke_eeprom_pt32l076.o(i.fe_eeprom_process_run) refers to fe_smoke_eeprom_pt32l076.o(.data) for .data
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_box) refers to fe_smoke_eeprom_pt32l076.o(i.write_flash_code) for write_flash_code
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_box) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_box) refers to fe_smoke_eeprom_pt32l076.o(i.erase_flash_code) for erase_flash_code
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_box) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) refers to fe_smoke_eeprom_pt32l076.o(i.PlainExpansions) for PlainExpansions
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) refers to fe_smoke_eeprom_pt32l076.o(i.KeyExpansions) for KeyExpansions
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) refers to fe_smoke_eeprom_pt32l076.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) refers to fe_smoke_eeprom_pt32l076.o(i.erase_flash_code) for erase_flash_code
+    fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.fe_get_eeprom_state) refers to fe_smoke_eeprom_pt32l076.o(.data) for .data
+    fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(i.copy_eeprom_data) for copy_eeprom_data
+    fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(i.reset_default_data) for reset_default_data
+    fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(.data) for .data
+    fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(.data) for .data
+    fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) refers to fe_semaphore.o(.data) for System
+    fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.reset_default_data) refers to fe_smoke_eeprom_pt32l076.o(.constdata) for .constdata
+    fe_smoke_eeprom_pt32l076.o(i.reset_default_data) refers to fe_smoke_eeprom_pt32l076.o(.bss) for .bss
+    fe_smoke_eeprom_pt32l076.o(i.write_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_smoke_eeprom_pt32l076.o(i.write_flash_code) refers to fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_smoke_timer_pt32l076.o(i.TIM3_Handler) refers to fe_smoke_timer_pt32l076.o(.bss) for .bss
+    fe_smoke_timer_pt32l076.o(i.TIM3_Handler) refers to fe_755psma5l_battery_pt32l076.o(.bss) for Battery
+    fe_smoke_timer_pt32l076.o(i.TIM3_Handler) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for Smoke
+    fe_smoke_timer_pt32l076.o(i.TIM3_Handler) refers to fe_semaphore.o(.data) for System
+    fe_smoke_timer_pt32l076.o(i.fe_check_system_tick_timer) refers to fe_smoke_timer_pt32l076.o(.bss) for .bss
+    fe_755psma5l_adc_pt32l076.o(i.ADC_Handler) refers to fe_755psma5l_adc_pt32l076.o(.data) for .data
+    fe_755psma5l_adc_pt32l076.o(i.DMA_Handler) refers to fe_755psma5l_adc_pt32l076.o(.data) for .data
+    fe_755psma5l_adc_pt32l076.o(i.DMA_Handler) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for Smoke
+    fe_755psma5l_adc_pt32l076.o(i.OpenDMA) refers to fe_755psma5l_smoke_pt32l076.o(.bss) for Smoke
+    fe_math.o(i.fe_calculate_crc) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to dadd.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fadd.o(.text) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to dadd.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fadd.o(.text) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_correcting_ad_data) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_data_whitening_pn7) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_get_average) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_curve_average) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_filter) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_get_filter) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_math.o(i.fe_get_filter) refers to fmul.o(.text) for __aeabi_fmul
+    fe_math.o(i.fe_get_filter) refers to fadd.o(.text) for __aeabi_fadd
+    fe_math.o(i.fe_get_filter2) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_get_filter2) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_math.o(i.fe_get_filter2) refers to fmul.o(.text) for __aeabi_fmul
+    fe_math.o(i.fe_get_filter2) refers to fadd.o(.text) for __aeabi_fadd
+    log.o(i.__softfp_log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__softfp_log) refers to log.o(i.log) for log
+    log.o(i.log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log.o(i.log) refers to errno.o(i.__set_errno) for __set_errno
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    log.o(i.log) refers to dscalb.o(.text) for __ARM_scalbn
+    log.o(i.log) refers to dadd.o(.text) for __aeabi_dsub
+    log.o(i.log) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log.o(i.log) refers to dflti.o(.text) for __aeabi_i2d
+    log.o(i.log) refers to dmul.o(.text) for __aeabi_dmul
+    log.o(i.log) refers to ddiv.o(.text) for __aeabi_ddiv
+    log.o(i.log) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log.o(i.log) refers to qnan.o(.constdata) for __mathlib_zero
+    log.o(i.log) refers to log.o(.constdata) for .constdata
+    log.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers to log_x.o(i.__log$lsc) for __log$lsc
+    log_x.o(i.__log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.__log$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log_x.o(i.__log$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    log_x.o(i.__log$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    log_x.o(i.__log$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    log_x.o(i.__log$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log_x.o(i.__log$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log_x.o(i.__log$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log_x.o(i.__log$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    log_x.o(i.__log$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log_x.o(i.__log$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    log_x.o(i.__log$lsc) refers to log_x.o(.constdata) for .constdata
+    log_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    fscalb.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    cfcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    cfrcmple.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_pt32x076.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_pt32x076.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_pt32x076.o(HEAP), (0 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing 755psma5l_system_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5l_system_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5l_timer_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5l_timer_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5l_keyboard_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5l_keyboard_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5l_windows_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5l_windows_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5l_message_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5l_message_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_755psma5l_battery_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_755psma5l_battery_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_755psma5l_battery_pt32l076.o(i.CalculateBatteryPowerRatio), (44 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.CalculateAbsorbanceIndex), (52 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfFloat), (32 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.Get8FilterOfUnsignedShort), (24 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.GetCurve2Smooth), (248 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.GetSmoothOfMaxPointOfLeft), (108 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.GetSmoothOfMaxPointOfRight), (92 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.GetVarianceValue), (78 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_boost), (68 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_sampling), (28 bytes).
+    Removing fe_755psma5l_smoke_pt32l076.o(i.fe_stop_smoke_sampling), (24 bytes).
+    Removing fe_755psma5l_uart_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_755psma5l_uart_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_755psma5l_uart_pt32l076.o(i.fe_uart_open), (36 bytes).
+    Removing fe_smoke_eeprom_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_smoke_eeprom_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_smoke_eeprom_pt32l076.o(i.fe_get_eeprom_state), (28 bytes).
+    Removing fe_smoke_timer_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_smoke_timer_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_755psma5l_adc_pt32l076.o(.rev16_text), (4 bytes).
+    Removing fe_755psma5l_adc_pt32l076.o(.revsh_text), (4 bytes).
+    Removing fe_io.o(.rev16_text), (4 bytes).
+    Removing fe_io.o(.revsh_text), (4 bytes).
+    Removing fe_io.o(i.mem_word_clear), (20 bytes).
+    Removing fe_math.o(i.fe_calculate_crc16), (68 bytes).
+    Removing fe_math.o(i.fe_calculate_external_16b_temperature), (144 bytes).
+    Removing fe_math.o(i.fe_comparision), (68 bytes).
+    Removing fe_math.o(i.fe_data_move_to_right), (20 bytes).
+    Removing fe_math.o(i.fe_data_whitening_pn7), (28 bytes).
+    Removing fe_math.o(i.fe_float_data_move_to_right), (20 bytes).
+    Removing fe_math.o(i.fe_get_curve_amplitude), (60 bytes).
+    Removing fe_math.o(i.fe_get_curve_average), (192 bytes).
+    Removing fe_math.o(i.fe_get_filter), (48 bytes).
+    Removing fe_math.o(i.fe_get_filter2), (48 bytes).
+    Removing fe_math.o(i.fe_get_minimum), (32 bytes).
+    Removing fe_math.o(i.fe_invert_data), (40 bytes).
+    Removing fe_math.o(i.fe_subtractive), (16 bytes).
+    Removing fe_math.o(.constdata), (32 bytes).
+
+55 unused section(s) (total 1802 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      212  startup_pt32x076.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log_x.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
+    User\755PSMA5L_Keyboard_PT32L076.c       0x00000000   Number         0  755psma5l_keyboard_pt32l076.o ABSOLUTE
+    User\755PSMA5L_Message_PT32L076.c        0x00000000   Number         0  755psma5l_message_pt32l076.o ABSOLUTE
+    User\755PSMA5L_System_PT32L076.c         0x00000000   Number         0  755psma5l_system_pt32l076.o ABSOLUTE
+    User\755PSMA5L_Timer_PT32L076.c          0x00000000   Number         0  755psma5l_timer_pt32l076.o ABSOLUTE
+    User\755PSMA5L_Windows_PT32L076.c        0x00000000   Number         0  755psma5l_windows_pt32l076.o ABSOLUTE
+    User\FE_755PSMA5L_ADC_PT32L076.c         0x00000000   Number         0  fe_755psma5l_adc_pt32l076.o ABSOLUTE
+    User\FE_755PSMA5L_BATTERY_PT32L076.c     0x00000000   Number         0  fe_755psma5l_battery_pt32l076.o ABSOLUTE
+    User\FE_755PSMA5L_SMOKE_PT32L076.c       0x00000000   Number         0  fe_755psma5l_smoke_pt32l076.o ABSOLUTE
+    User\FE_755PSMA5L_UART_PT32L076.c        0x00000000   Number         0  fe_755psma5l_uart_pt32l076.o ABSOLUTE
+    User\FE_IO.c                             0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\FE_SMOKE_EEPROM_PT32L076.c          0x00000000   Number         0  fe_smoke_eeprom_pt32l076.o ABSOLUTE
+    User\FE_SMOKE_TIMER_PT32L076.c           0x00000000   Number         0  fe_smoke_timer_pt32l076.o ABSOLUTE
+    User\FE_math.c                           0x00000000   Number         0  fe_math.o ABSOLUTE
+    User\FE_semaphore.c                      0x00000000   Number         0  fe_semaphore.o ABSOLUTE
+    User\\755PSMA5L_Keyboard_PT32L076.c      0x00000000   Number         0  755psma5l_keyboard_pt32l076.o ABSOLUTE
+    User\\755PSMA5L_Message_PT32L076.c       0x00000000   Number         0  755psma5l_message_pt32l076.o ABSOLUTE
+    User\\755PSMA5L_System_PT32L076.c        0x00000000   Number         0  755psma5l_system_pt32l076.o ABSOLUTE
+    User\\755PSMA5L_Timer_PT32L076.c         0x00000000   Number         0  755psma5l_timer_pt32l076.o ABSOLUTE
+    User\\755PSMA5L_Windows_PT32L076.c       0x00000000   Number         0  755psma5l_windows_pt32l076.o ABSOLUTE
+    User\\FE_755PSMA5L_ADC_PT32L076.c        0x00000000   Number         0  fe_755psma5l_adc_pt32l076.o ABSOLUTE
+    User\\FE_755PSMA5L_BATTERY_PT32L076.c    0x00000000   Number         0  fe_755psma5l_battery_pt32l076.o ABSOLUTE
+    User\\FE_755PSMA5L_SMOKE_PT32L076.c      0x00000000   Number         0  fe_755psma5l_smoke_pt32l076.o ABSOLUTE
+    User\\FE_755PSMA5L_UART_PT32L076.c       0x00000000   Number         0  fe_755psma5l_uart_pt32l076.o ABSOLUTE
+    User\\FE_IO.c                            0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\\FE_SMOKE_EEPROM_PT32L076.c         0x00000000   Number         0  fe_smoke_eeprom_pt32l076.o ABSOLUTE
+    User\\FE_SMOKE_TIMER_PT32L076.c          0x00000000   Number         0  fe_smoke_timer_pt32l076.o ABSOLUTE
+    User\\main.c                             0x00000000   Number         0  main.o ABSOLUTE
+    User\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    User\startup_PT32x076.s                  0x00000000   Number         0  startup_pt32x076.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
+    cfcmple.s                                0x00000000   Number         0  cfcmple.o ABSOLUTE
+    cfrcmple.s                               0x00000000   Number         0  cfrcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000d4   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000d4   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d8   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000dc   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000dc   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000dc   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000E                 0x000000e4   Section        4  entry12b.o(.ARM.Collect$$$$0000000E)
+    .ARM.Collect$$$$0000000F                 0x000000e8   Section        0  entry10a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00000011                 0x000000e8   Section        0  entry11a.o(.ARM.Collect$$$$00000011)
+    .ARM.Collect$$$$00002712                 0x000000e8   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000e8   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000ec   Section        0  main.o(.text)
+    .text                                    0x0000030c   Section        0  755psma5l_system_pt32l076.o(.text)
+    __NVIC_EnableIRQ                         0x00000683   Thumb Code    18  755psma5l_system_pt32l076.o(.text)
+    __NVIC_DisableIRQ                        0x00000695   Thumb Code    28  755psma5l_system_pt32l076.o(.text)
+    .text                                    0x00000714   Section        0  755psma5l_timer_pt32l076.o(.text)
+    .text                                    0x00000958   Section        0  755psma5l_keyboard_pt32l076.o(.text)
+    .text                                    0x00000c5c   Section        0  755psma5l_windows_pt32l076.o(.text)
+    .text                                    0x000012d8   Section        0  755psma5l_message_pt32l076.o(.text)
+    .text                                    0x00001890   Section        0  uidiv.o(.text)
+    .text                                    0x000018bc   Section        0  idiv.o(.text)
+    .text                                    0x000018e4   Section        0  fadd.o(.text)
+    .text                                    0x00001996   Section        0  fmul.o(.text)
+    .text                                    0x00001a10   Section        0  fdiv.o(.text)
+    .text                                    0x00001a8c   Section        0  fscalb.o(.text)
+    .text                                    0x00001aa4   Section        0  dadd.o(.text)
+    .text                                    0x00001c0c   Section        0  ddiv.o(.text)
+    .text                                    0x00001cfc   Section        0  ffltui.o(.text)
+    .text                                    0x00001d0a   Section        0  ffixui.o(.text)
+    .text                                    0x00001d32   Section        0  f2d.o(.text)
+    .text                                    0x00001d5a   Section        0  d2f.o(.text)
+    .text                                    0x00001d94   Section       20  cfcmple.o(.text)
+    .text                                    0x00001da8   Section       20  cfrcmple.o(.text)
+    .text                                    0x00001dbc   Section        0  llshl.o(.text)
+    .text                                    0x00001ddc   Section        0  llsshr.o(.text)
+    .text                                    0x00001e02   Section        0  fepilogue.o(.text)
+    .text                                    0x00001e02   Section        0  iusefp.o(.text)
+    .text                                    0x00001e84   Section        0  depilogue.o(.text)
+    .text                                    0x00001f44   Section        0  dmul.o(.text)
+    .text                                    0x00002014   Section        0  dscalb.o(.text)
+    .text                                    0x00002040   Section        0  dflti.o(.text)
+    .text                                    0x00002068   Section       40  cdcmple.o(.text)
+    .text                                    0x00002090   Section       36  init.o(.text)
+    .text                                    0x000020b4   Section        0  llushr.o(.text)
+    i.ADC_Handler                            0x000020d8   Section        0  fe_755psma5l_adc_pt32l076.o(i.ADC_Handler)
+    i.CalculateActualVoltage                 0x0000211c   Section        0  fe_755psma5l_battery_pt32l076.o(i.CalculateActualVoltage)
+    i.CalculateCurve1Data                    0x00002134   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data)
+    i.CalculateCurve2Data                    0x0000219c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data)
+    i.CalculateTargetDensity                 0x00002204   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity)
+    i.Calculate_Temperature                  0x00002224   Section        0  fe_755psma5l_smoke_pt32l076.o(i.Calculate_Temperature)
+    i.CheckIsChamberDust                     0x00002240   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberDust)
+    i.CheckIsChamberFault                    0x000022cc   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberFault)
+    i.CheckIsDangerousState                  0x00002348   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsDangerousState)
+    i.CheckIsFire                            0x00002398   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire)
+    i.CheckIsLiquidFire                      0x000023e4   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire)
+    i.CheckIsSafeState                       0x00002454   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState)
+    i.CheckIsTemperatureChange               0x00002580   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange)
+    i.CheckIsTemperatureDrop                 0x000025e4   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureDrop)
+    i.CheckIsTemperatureRise                 0x00002674   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureRise)
+    i.CheckIsTesting                         0x00002704   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting)
+    i.CheckIsTesting2                        0x00002778   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2)
+    i.CheckIsWoodFire                        0x000027bc   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire)
+    i.CloseUART                              0x00002810   Section        0  fe_755psma5l_uart_pt32l076.o(i.CloseUART)
+    i.CorrectingDataForAngle30InCleanAir     0x0000283c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir)
+    i.CorrectingDataForAngle90InCleanAir     0x00002964   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir)
+    i.CorrectingOriginalDataInCleanAir       0x00002a80   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir)
+    i.Current1LevelReduced                   0x00002b58   Section        0  fe_755psma5l_smoke_pt32l076.o(i.Current1LevelReduced)
+    i.Current2LevelReduced                   0x00002b64   Section        0  fe_755psma5l_smoke_pt32l076.o(i.Current2LevelReduced)
+    i.CurrentLevelIncreased                  0x00002b6c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.CurrentLevelIncreased)
+    i.DMA_Handler                            0x00002b84   Section        0  fe_755psma5l_adc_pt32l076.o(i.DMA_Handler)
+    i.DataProcessingMethod_1                 0x00002c4c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1)
+    i.EEPROM_write_data                      0x00002cc4   Section        0  fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data)
+    i.FireAlarm                              0x00002d74   Section        0  fe_755psma5l_smoke_pt32l076.o(i.FireAlarm)
+    i.Get16FilterOfUnsignedShort             0x00002db8   Section        0  fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort)
+    i.GetC30CompensatingCoefficientForTemperature 0x00002de8   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingCoefficientForTemperature)
+    i.GetC30CompensatingDataForTemperature   0x00002e4c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingDataForTemperature)
+    i.GetC90CompensatingCoefficientForTemperature 0x00002e68   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingCoefficientForTemperature)
+    i.GetC90CompensatingDataForTemperature   0x00002ecc   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingDataForTemperature)
+    i.GetCodeFromBox                         0x00002ee8   Section        0  fe_smoke_eeprom_pt32l076.o(i.GetCodeFromBox)
+    i.GetCompensatingDataForCurve            0x00002ef4   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve)
+    i.GetCurve2AmplitudeParameter            0x00002f64   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetCurve2AmplitudeParameter)
+    i.GetCurveAB                             0x00002fe8   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetCurveAB)
+    i.GetCurveParameter                      0x0000301c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter)
+    i.GetParticleParameter                   0x000030a4   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter)
+    i.GetTemperatureCurveParameter           0x00003114   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetTemperatureCurveParameter)
+    i.GetUnsignedShortData                   0x000031b8   Section        0  fe_755psma5l_smoke_pt32l076.o(i.GetUnsignedShortData)
+    i.IsResetReferenceTemperature            0x000031cc   Section        0  fe_755psma5l_smoke_pt32l076.o(i.IsResetReferenceTemperature)
+    i.KeyExpansions                          0x000031f8   Section        0  fe_smoke_eeprom_pt32l076.o(i.KeyExpansions)
+    i.KillTimer2_ET                          0x00003250   Section        0  fe_smoke_timer_pt32l076.o(i.KillTimer2_ET)
+    i.KillWatchdog                           0x00003268   Section        0  fe_smoke_timer_pt32l076.o(i.KillWatchdog)
+    i.OpenADC                                0x000032a0   Section        0  fe_755psma5l_adc_pt32l076.o(i.OpenADC)
+    i.OpenDMA                                0x000032b0   Section        0  fe_755psma5l_adc_pt32l076.o(i.OpenDMA)
+    i.OpenUART                               0x000032dc   Section        0  fe_755psma5l_uart_pt32l076.o(i.OpenUART)
+    i.PlainExpansions                        0x00003314   Section        0  fe_smoke_eeprom_pt32l076.o(i.PlainExpansions)
+    i.RunSciReceivingProc                    0x00003330   Section        0  fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc)
+    i.RunSciTransmittingProc                 0x000033fc   Section        0  fe_755psma5l_uart_pt32l076.o(i.RunSciTransmittingProc)
+    i.RunTemperatureProc                     0x00003498   Section        0  fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc)
+    i.RunUartServerTask                      0x000035a4   Section        0  fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask)
+    i.SetADC_IN26_SCM                        0x00003660   Section        0  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN26_SCM)
+    i.SetADC_IN2_SCM                         0x0000369c   Section        0  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN2_SCM)
+    i.SetADC_IN4_CCM                         0x000036d8   Section        0  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_CCM)
+    i.SetADC_IN4_SCM_ET                      0x00003744   Section        0  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_SCM_ET)
+    i.SetADC_IN8_SCM                         0x0000377c   Section        0  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN8_SCM)
+    i.SetTimer2_ET                           0x000037b8   Section        0  fe_smoke_timer_pt32l076.o(i.SetTimer2_ET)
+    i.SetTimer3                              0x000037e4   Section        0  fe_smoke_timer_pt32l076.o(i.SetTimer3)
+    i.TIM3_Handler                           0x00003818   Section        0  fe_smoke_timer_pt32l076.o(i.TIM3_Handler)
+    i.UpdateTemperatureParameter             0x000038a0   Section        0  fe_755psma5l_smoke_pt32l076.o(i.UpdateTemperatureParameter)
+    i.__ARM_clz                              0x000038c0   Section        0  depilogue.o(i.__ARM_clz)
+    i.__ARM_common_switch8                   0x000038ee   Section        0  755psma5l_windows_pt32l076.o(i.__ARM_common_switch8)
+    i.__kernel_poly                          0x00003908   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_divzero                  0x000039b4   Section        0  dunder.o(i.__mathlib_dbl_divzero)
+    i.__mathlib_dbl_infnan                   0x000039c8   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x000039d2   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__scatterload_copy                     0x000039e2   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000039f0   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000039f2   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x00003a00   Section        0  errno.o(i.__set_errno)
+    i.check_is_linear_curve                  0x00003a0c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.check_is_linear_curve)
+    i.copy_eeprom_data                       0x00003a44   Section        0  fe_smoke_eeprom_pt32l076.o(i.copy_eeprom_data)
+    i.erase_all_flash_page                   0x00003a58   Section        0  fe_smoke_eeprom_pt32l076.o(i.erase_all_flash_page)
+    i.erase_flash_code                       0x00003a98   Section        0  fe_smoke_eeprom_pt32l076.o(i.erase_flash_code)
+    i.erase_flash_memory                     0x00003b0c   Section        0  fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory)
+    i.explain_token_packet                   0x00003b2c   Section        0  fe_755psma5l_uart_pt32l076.o(i.explain_token_packet)
+    i.fe_battery_process_run                 0x00003ca4   Section        0  fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run)
+    i.fe_byte_data_move_to_left              0x00003e34   Section        0  fe_math.o(i.fe_byte_data_move_to_left)
+    i.fe_calculate_crc                       0x00003e48   Section        0  fe_math.o(i.fe_calculate_crc)
+    i.fe_calculate_external_8b_temperature   0x00003e94   Section        0  fe_math.o(i.fe_calculate_external_8b_temperature)
+    i.fe_char_real_comparision               0x00003f2c   Section        0  fe_math.o(i.fe_char_real_comparision)
+    i.fe_char_real_subtractive               0x00003f5c   Section        0  fe_math.o(i.fe_char_real_subtractive)
+    i.fe_check_key                           0x00003f6c   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_check_key)
+    i.fe_check_security_key                  0x00003fdc   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key)
+    i.fe_check_system_tick_timer             0x00004060   Section        0  fe_smoke_timer_pt32l076.o(i.fe_check_system_tick_timer)
+    i.fe_clear_semaphore                     0x00004084   Section        0  fe_semaphore.o(i.fe_clear_semaphore)
+    i.fe_correcting_ad_data                  0x000040a0   Section        0  fe_math.o(i.fe_correcting_ad_data)
+    i.fe_data_move_to_left                   0x000040b0   Section        0  fe_math.o(i.fe_data_move_to_left)
+    i.fe_eeprom_process_run                  0x000040cc   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_eeprom_process_run)
+    i.fe_float_data_move_to_left             0x000040e0   Section        0  fe_math.o(i.fe_float_data_move_to_left)
+    i.fe_generating_box                      0x000040fc   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_generating_box)
+    i.fe_generating_cipher                   0x00004150   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher)
+    i.fe_get_average                         0x000041a0   Section        0  fe_math.o(i.fe_get_average)
+    i.fe_get_battery_state                   0x000041bc   Section        0  fe_755psma5l_battery_pt32l076.o(i.fe_get_battery_state)
+    i.fe_get_increment                       0x000041d8   Section        0  fe_math.o(i.fe_get_increment)
+    i.fe_get_maximum                         0x00004200   Section        0  fe_math.o(i.fe_get_maximum)
+    i.fe_get_semaphore_state                 0x0000421c   Section        0  fe_semaphore.o(i.fe_get_semaphore_state)
+    i.fe_get_smoke_state                     0x00004228   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_get_smoke_state)
+    i.fe_get_uart_state                      0x00004248   Section        0  fe_755psma5l_uart_pt32l076.o(i.fe_get_uart_state)
+    i.fe_kill_system_tick_timer              0x0000425c   Section        0  fe_smoke_timer_pt32l076.o(i.fe_kill_system_tick_timer)
+    i.fe_set_backup_power_source             0x0000426c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_set_backup_power_source)
+    i.fe_set_battery_callback                0x00004284   Section        0  fe_755psma5l_battery_pt32l076.o(i.fe_set_battery_callback)
+    i.fe_set_main_power_source               0x00004298   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_set_main_power_source)
+    i.fe_set_semaphore                       0x000042ac   Section        0  fe_semaphore.o(i.fe_set_semaphore)
+    i.fe_set_smoke_callback                  0x000042c8   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_set_smoke_callback)
+    i.fe_set_system_tick_timer               0x000042dc   Section        0  fe_smoke_timer_pt32l076.o(i.fe_set_system_tick_timer)
+    i.fe_set_uart_callback                   0x000042f0   Section        0  fe_755psma5l_uart_pt32l076.o(i.fe_set_uart_callback)
+    i.fe_smoke_process_run                   0x00004304   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run)
+    i.fe_smoke_read_eeprom_data              0x00004b88   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data)
+    i.fe_start_up_battery_process            0x00004c60   Section        0  fe_755psma5l_battery_pt32l076.o(i.fe_start_up_battery_process)
+    i.fe_start_up_smoke_process              0x00004c88   Section        0  fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_process)
+    i.fe_uart_process_run                    0x00004d0c   Section        0  fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run)
+    i.fe_write_eeprom_data                   0x00004d3c   Section        0  fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data)
+    i.get_average_in_backup_power_source     0x00004df0   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_average_in_backup_power_source)
+    i.get_average_in_main_power_source       0x00004e20   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_average_in_main_power_source)
+    i.get_curve_1_parameter                  0x00004e50   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_curve_1_parameter)
+    i.get_curve_2_parameter                  0x00004e98   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_curve_2_parameter)
+    i.get_new_curve_average_data             0x00004ee0   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_new_curve_average_data)
+    i.get_original_data_for_curve            0x00004f44   Section        0  fe_755psma5l_smoke_pt32l076.o(i.get_original_data_for_curve)
+    i.get_out_data                           0x00004fa4   Section        0  fe_755psma5l_uart_pt32l076.o(i.get_out_data)
+    i.log                                    0x00005028   Section        0  log.o(i.log)
+    i.malloc_ram                             0x0000537c   Section        0  fe_io.o(i.malloc_ram)
+    i.mem_byte_clear                         0x0000539e   Section        0  fe_io.o(i.mem_byte_clear)
+    i.mem_data_copy                          0x000053ac   Section        0  fe_io.o(i.mem_data_copy)
+    i.mem_word_copy                          0x000053be   Section        0  fe_io.o(i.mem_word_copy)
+    i.open_flash                             0x000053d2   Section        0  fe_smoke_eeprom_pt32l076.o(i.open_flash)
+    i.reset_default_data                     0x000053f0   Section        0  fe_smoke_eeprom_pt32l076.o(i.reset_default_data)
+    i.restore_original_data                  0x0000540c   Section        0  fe_755psma5l_smoke_pt32l076.o(i.restore_original_data)
+    i.write_flash_code                       0x00005498   Section        0  fe_smoke_eeprom_pt32l076.o(i.write_flash_code)
+    i.write_flash_page                       0x000054c0   Section        0  fe_smoke_eeprom_pt32l076.o(i.write_flash_page)
+    .constdata                               0x00005520   Section      200  fe_smoke_eeprom_pt32l076.o(.constdata)
+    .constdata                               0x000055e8   Section       82  fe_math.o(.constdata)
+    .constdata                               0x00005640   Section       56  log.o(.constdata)
+    Lg2                                      0x00005640   Data          24  log.o(.constdata)
+    Lg                                       0x00005658   Data          32  log.o(.constdata)
+    .constdata                               0x00005678   Section        8  qnan.o(.constdata)
+    .data                                    0x20000000   Section       20  755psma5l_keyboard_pt32l076.o(.data)
+    .data                                    0x20000014   Section       12  755psma5l_windows_pt32l076.o(.data)
+    .data                                    0x20000020   Section        8  fe_755psma5l_uart_pt32l076.o(.data)
+    .data                                    0x20000028   Section        4  fe_semaphore.o(.data)
+    .data                                    0x2000002c   Section        4  fe_smoke_eeprom_pt32l076.o(.data)
+    .data                                    0x20000030   Section        8  fe_755psma5l_adc_pt32l076.o(.data)
+    .data                                    0x20000038   Section        4  errno.o(.data)
+    _errno                                   0x20000038   Data           4  errno.o(.data)
+    .bss                                     0x2000003c   Section       16  main.o(.bss)
+    .bss                                     0x2000004c   Section       72  755psma5l_timer_pt32l076.o(.bss)
+    .bss                                     0x20000094   Section       16  fe_755psma5l_battery_pt32l076.o(.bss)
+    .bss                                     0x200000a4   Section     1620  fe_755psma5l_smoke_pt32l076.o(.bss)
+    .bss                                     0x200006f8   Section       92  fe_755psma5l_uart_pt32l076.o(.bss)
+    .bss                                     0x20000754   Section      208  fe_smoke_eeprom_pt32l076.o(.bss)
+    .bss                                     0x20000824   Section       20  fe_smoke_timer_pt32l076.o(.bss)
+    STACK                                    0x20000838   Section     4096  startup_pt32x076.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_pt32x076.o(RESET)
+    __arm_fini_                               - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x000000c1   Thumb Code     4  startup_pt32x076.o(RESET)
+    NMI_Handler                              0x000000c5   Thumb Code     2  startup_pt32x076.o(RESET)
+    HardFault_Handler                        0x000000c7   Thumb Code     2  startup_pt32x076.o(RESET)
+    SVC_Handler                              0x000000c9   Thumb Code     2  startup_pt32x076.o(RESET)
+    PendSV_Handler                           0x000000cb   Thumb Code     2  startup_pt32x076.o(RESET)
+    SysTick_Handler                          0x000000cd   Thumb Code     2  startup_pt32x076.o(RESET)
+    AES_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    ALU_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    CMP0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    CMP_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    EXTIC_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    EXTIF_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    I2C0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    I2C1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    IFMC_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPTIM_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPUART0_Handler                          0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPUART1_Handler                          0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    PVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    RTC_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    SPI0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    SPI1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM2_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM5_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM6_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM7_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM8_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART0_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART1_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART2_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART3_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    __main                                   0x000000d5   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000d5   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000dd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000dd   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000dd   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000dd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_lib_shutdown_fini                   0x000000e5   Thumb Code     0  entry12b.o(.ARM.Collect$$$$0000000E)
+    __rt_final_cpp                           0x000000e9   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000F)
+    __rt_final_exit                          0x000000e9   Thumb Code     0  entry11a.o(.ARM.Collect$$$$00000011)
+    main                                     0x000000ed   Thumb Code   470  main.o(.text)
+    clear_sram                               0x0000030d   Thumb Code    32  755psma5l_system_pt32l076.o(.text)
+    sys_clock_init                           0x0000032d   Thumb Code    80  755psma5l_system_pt32l076.o(.text)
+    sys_gpio_init                            0x0000037d   Thumb Code   362  755psma5l_system_pt32l076.o(.text)
+    mem_data_add                             0x000004e7   Thumb Code    22  755psma5l_system_pt32l076.o(.text)
+    goto_deepsleep                           0x000004fd   Thumb Code   390  755psma5l_system_pt32l076.o(.text)
+    TIM1_Handler                             0x00000715   Thumb Code    64  755psma5l_timer_pt32l076.o(.text)
+    TIM4_Handler                             0x00000755   Thumb Code    22  755psma5l_timer_pt32l076.o(.text)
+    set_timer1                               0x0000076b   Thumb Code    58  755psma5l_timer_pt32l076.o(.text)
+    close_timer1                             0x000007a5   Thumb Code    80  755psma5l_timer_pt32l076.o(.text)
+    settimer5                                0x000007f5   Thumb Code    34  755psma5l_timer_pt32l076.o(.text)
+    checktimer5                              0x00000817   Thumb Code    40  755psma5l_timer_pt32l076.o(.text)
+    closetimer5                              0x0000083f   Thumb Code    28  755psma5l_timer_pt32l076.o(.text)
+    open_iwdg                                0x0000085b   Thumb Code    30  755psma5l_timer_pt32l076.o(.text)
+    feed_iwdg                                0x00000879   Thumb Code    22  755psma5l_timer_pt32l076.o(.text)
+    close_iwdg                               0x0000088f   Thumb Code    32  755psma5l_timer_pt32l076.o(.text)
+    open_swdg                                0x000008af   Thumb Code    32  755psma5l_timer_pt32l076.o(.text)
+    feed_swdg                                0x000008cf   Thumb Code    12  755psma5l_timer_pt32l076.o(.text)
+    close_swdg                               0x000008db   Thumb Code    18  755psma5l_timer_pt32l076.o(.text)
+    close_wdog                               0x000008ed   Thumb Code    46  755psma5l_timer_pt32l076.o(.text)
+    EXTIA_Handler                            0x00000959   Thumb Code    58  755psma5l_keyboard_pt32l076.o(.text)
+    EXTIB_Handler                            0x00000993   Thumb Code    60  755psma5l_keyboard_pt32l076.o(.text)
+    scankey3_process_run                     0x000009cf   Thumb Code   112  755psma5l_keyboard_pt32l076.o(.text)
+    key3_down_event                          0x00000a3f   Thumb Code    26  755psma5l_keyboard_pt32l076.o(.text)
+    key3_08s_event                           0x00000a59   Thumb Code    30  755psma5l_keyboard_pt32l076.o(.text)
+    key3_10s_event                           0x00000a77   Thumb Code    24  755psma5l_keyboard_pt32l076.o(.text)
+    key3_up_event                            0x00000a8f   Thumb Code    24  755psma5l_keyboard_pt32l076.o(.text)
+    scankey2_process_run                     0x00000aa7   Thumb Code   166  755psma5l_keyboard_pt32l076.o(.text)
+    scankey4_process_run                     0x00000b4d   Thumb Code   128  755psma5l_keyboard_pt32l076.o(.text)
+    scankey5_process_run                     0x00000bcd   Thumb Code   116  755psma5l_keyboard_pt32l076.o(.text)
+    smoke_callback                           0x00000c5d   Thumb Code    60  755psma5l_windows_pt32l076.o(.text)
+    battery_callback                         0x00000c99   Thumb Code    34  755psma5l_windows_pt32l076.o(.text)
+    uart_callback                            0x00000cbb   Thumb Code    48  755psma5l_windows_pt32l076.o(.text)
+    check_short_test                         0x00000ceb   Thumb Code    28  755psma5l_windows_pt32l076.o(.text)
+    open_buzzer                              0x00000d07   Thumb Code   106  755psma5l_windows_pt32l076.o(.text)
+    close_buzzer                             0x00000d71   Thumb Code    32  755psma5l_windows_pt32l076.o(.text)
+    boost_cfg                                0x00000d91   Thumb Code    22  755psma5l_windows_pt32l076.o(.text)
+    set_connect                              0x00000da7   Thumb Code   170  755psma5l_windows_pt32l076.o(.text)
+    remove_alarm                             0x00000e51   Thumb Code    66  755psma5l_windows_pt32l076.o(.text)
+    alarm_cfg                                0x00000e93   Thumb Code   262  755psma5l_windows_pt32l076.o(.text)
+    led_lighten                              0x00000f99   Thumb Code   344  755psma5l_windows_pt32l076.o(.text)
+    buzzer_sound                             0x000010f1   Thumb Code   376  755psma5l_windows_pt32l076.o(.text)
+    update_timer1                            0x00001269   Thumb Code    86  755psma5l_windows_pt32l076.o(.text)
+    key3_short_check                         0x000012d9   Thumb Code   140  755psma5l_message_pt32l076.o(.text)
+    key3_08s_check                           0x00001365   Thumb Code   120  755psma5l_message_pt32l076.o(.text)
+    message_proc                             0x000013dd   Thumb Code   818  755psma5l_message_pt32l076.o(.text)
+    message_execution                        0x0000170f   Thumb Code   356  755psma5l_message_pt32l076.o(.text)
+    __aeabi_uidiv                            0x00001891   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00001891   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x000018bd   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x000018bd   Thumb Code    40  idiv.o(.text)
+    __aeabi_fadd                             0x000018e5   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x00001987   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x0000198f   Thumb Code     8  fadd.o(.text)
+    __aeabi_fmul                             0x00001997   Thumb Code   122  fmul.o(.text)
+    __aeabi_fdiv                             0x00001a11   Thumb Code   124  fdiv.o(.text)
+    __ARM_scalbnf                            0x00001a8d   Thumb Code    24  fscalb.o(.text)
+    scalbnf                                  0x00001a8d   Thumb Code     0  fscalb.o(.text)
+    __aeabi_dadd                             0x00001aa5   Thumb Code   330  dadd.o(.text)
+    __aeabi_dsub                             0x00001bef   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x00001bfb   Thumb Code    12  dadd.o(.text)
+    __aeabi_ddiv                             0x00001c0d   Thumb Code   234  ddiv.o(.text)
+    __aeabi_ui2f                             0x00001cfd   Thumb Code    14  ffltui.o(.text)
+    __aeabi_f2uiz                            0x00001d0b   Thumb Code    40  ffixui.o(.text)
+    __aeabi_f2d                              0x00001d33   Thumb Code    40  f2d.o(.text)
+    __aeabi_d2f                              0x00001d5b   Thumb Code    56  d2f.o(.text)
+    __aeabi_cfcmpeq                          0x00001d95   Thumb Code     0  cfcmple.o(.text)
+    __aeabi_cfcmple                          0x00001d95   Thumb Code    20  cfcmple.o(.text)
+    __aeabi_cfrcmple                         0x00001da9   Thumb Code    20  cfrcmple.o(.text)
+    __aeabi_llsl                             0x00001dbd   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x00001dbd   Thumb Code     0  llshl.o(.text)
+    __aeabi_lasr                             0x00001ddd   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x00001ddd   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x00001e03   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x00001e03   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x00001e13   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x00001e85   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x00001e9f   Thumb Code   164  depilogue.o(.text)
+    __aeabi_dmul                             0x00001f45   Thumb Code   202  dmul.o(.text)
+    __ARM_scalbn                             0x00002015   Thumb Code    44  dscalb.o(.text)
+    scalbn                                   0x00002015   Thumb Code     0  dscalb.o(.text)
+    __aeabi_i2d                              0x00002041   Thumb Code    34  dflti.o(.text)
+    __aeabi_cdcmpeq                          0x00002069   Thumb Code     0  cdcmple.o(.text)
+    __aeabi_cdcmple                          0x00002069   Thumb Code    38  cdcmple.o(.text)
+    __scatterload                            0x00002091   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00002091   Thumb Code     0  init.o(.text)
+    __aeabi_llsr                             0x000020b5   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x000020b5   Thumb Code     0  llushr.o(.text)
+    ADC_Handler                              0x000020d9   Thumb Code    54  fe_755psma5l_adc_pt32l076.o(i.ADC_Handler)
+    CalculateActualVoltage                   0x0000211d   Thumb Code    18  fe_755psma5l_battery_pt32l076.o(i.CalculateActualVoltage)
+    CalculateCurve1Data                      0x00002135   Thumb Code    88  fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve1Data)
+    CalculateCurve2Data                      0x0000219d   Thumb Code    90  fe_755psma5l_smoke_pt32l076.o(i.CalculateCurve2Data)
+    CalculateTargetDensity                   0x00002205   Thumb Code    26  fe_755psma5l_smoke_pt32l076.o(i.CalculateTargetDensity)
+    Calculate_Temperature                    0x00002225   Thumb Code    22  fe_755psma5l_smoke_pt32l076.o(i.Calculate_Temperature)
+    CheckIsChamberDust                       0x00002241   Thumb Code   114  fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberDust)
+    CheckIsChamberFault                      0x000022cd   Thumb Code   102  fe_755psma5l_smoke_pt32l076.o(i.CheckIsChamberFault)
+    CheckIsDangerousState                    0x00002349   Thumb Code    64  fe_755psma5l_smoke_pt32l076.o(i.CheckIsDangerousState)
+    CheckIsFire                              0x00002399   Thumb Code    64  fe_755psma5l_smoke_pt32l076.o(i.CheckIsFire)
+    CheckIsLiquidFire                        0x000023e5   Thumb Code    98  fe_755psma5l_smoke_pt32l076.o(i.CheckIsLiquidFire)
+    CheckIsSafeState                         0x00002455   Thumb Code   276  fe_755psma5l_smoke_pt32l076.o(i.CheckIsSafeState)
+    CheckIsTemperatureChange                 0x00002581   Thumb Code    88  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureChange)
+    CheckIsTemperatureDrop                   0x000025e5   Thumb Code   122  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureDrop)
+    CheckIsTemperatureRise                   0x00002675   Thumb Code   122  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTemperatureRise)
+    CheckIsTesting                           0x00002705   Thumb Code   100  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting)
+    CheckIsTesting2                          0x00002779   Thumb Code    54  fe_755psma5l_smoke_pt32l076.o(i.CheckIsTesting2)
+    CheckIsWoodFire                          0x000027bd   Thumb Code    68  fe_755psma5l_smoke_pt32l076.o(i.CheckIsWoodFire)
+    CloseUART                                0x00002811   Thumb Code    34  fe_755psma5l_uart_pt32l076.o(i.CloseUART)
+    CorrectingDataForAngle30InCleanAir       0x0000283d   Thumb Code   266  fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle30InCleanAir)
+    CorrectingDataForAngle90InCleanAir       0x00002965   Thumb Code   252  fe_755psma5l_smoke_pt32l076.o(i.CorrectingDataForAngle90InCleanAir)
+    CorrectingOriginalDataInCleanAir         0x00002a81   Thumb Code   186  fe_755psma5l_smoke_pt32l076.o(i.CorrectingOriginalDataInCleanAir)
+    Current1LevelReduced                     0x00002b59   Thumb Code    12  fe_755psma5l_smoke_pt32l076.o(i.Current1LevelReduced)
+    Current2LevelReduced                     0x00002b65   Thumb Code     8  fe_755psma5l_smoke_pt32l076.o(i.Current2LevelReduced)
+    CurrentLevelIncreased                    0x00002b6d   Thumb Code    22  fe_755psma5l_smoke_pt32l076.o(i.CurrentLevelIncreased)
+    DMA_Handler                              0x00002b85   Thumb Code   154  fe_755psma5l_adc_pt32l076.o(i.DMA_Handler)
+    DataProcessingMethod_1                   0x00002c4d   Thumb Code    96  fe_755psma5l_smoke_pt32l076.o(i.DataProcessingMethod_1)
+    EEPROM_write_data                        0x00002cc5   Thumb Code   170  fe_smoke_eeprom_pt32l076.o(i.EEPROM_write_data)
+    FireAlarm                                0x00002d75   Thumb Code    48  fe_755psma5l_smoke_pt32l076.o(i.FireAlarm)
+    Get16FilterOfUnsignedShort               0x00002db9   Thumb Code    42  fe_755psma5l_smoke_pt32l076.o(i.Get16FilterOfUnsignedShort)
+    GetC30CompensatingCoefficientForTemperature 0x00002de9   Thumb Code    96  fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingCoefficientForTemperature)
+    GetC30CompensatingDataForTemperature     0x00002e4d   Thumb Code    28  fe_755psma5l_smoke_pt32l076.o(i.GetC30CompensatingDataForTemperature)
+    GetC90CompensatingCoefficientForTemperature 0x00002e69   Thumb Code    96  fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingCoefficientForTemperature)
+    GetC90CompensatingDataForTemperature     0x00002ecd   Thumb Code    28  fe_755psma5l_smoke_pt32l076.o(i.GetC90CompensatingDataForTemperature)
+    GetCodeFromBox                           0x00002ee9   Thumb Code    12  fe_smoke_eeprom_pt32l076.o(i.GetCodeFromBox)
+    GetCompensatingDataForCurve              0x00002ef5   Thumb Code   100  fe_755psma5l_smoke_pt32l076.o(i.GetCompensatingDataForCurve)
+    GetCurve2AmplitudeParameter              0x00002f65   Thumb Code   126  fe_755psma5l_smoke_pt32l076.o(i.GetCurve2AmplitudeParameter)
+    GetCurveAB                               0x00002fe9   Thumb Code    50  fe_755psma5l_smoke_pt32l076.o(i.GetCurveAB)
+    GetCurveParameter                        0x0000301d   Thumb Code   130  fe_755psma5l_smoke_pt32l076.o(i.GetCurveParameter)
+    GetParticleParameter                     0x000030a5   Thumb Code   106  fe_755psma5l_smoke_pt32l076.o(i.GetParticleParameter)
+    GetTemperatureCurveParameter             0x00003115   Thumb Code   160  fe_755psma5l_smoke_pt32l076.o(i.GetTemperatureCurveParameter)
+    GetUnsignedShortData                     0x000031b9   Thumb Code    16  fe_755psma5l_smoke_pt32l076.o(i.GetUnsignedShortData)
+    IsResetReferenceTemperature              0x000031cd   Thumb Code    32  fe_755psma5l_smoke_pt32l076.o(i.IsResetReferenceTemperature)
+    KeyExpansions                            0x000031f9   Thumb Code    88  fe_smoke_eeprom_pt32l076.o(i.KeyExpansions)
+    KillTimer2_ET                            0x00003251   Thumb Code    18  fe_smoke_timer_pt32l076.o(i.KillTimer2_ET)
+    KillWatchdog                             0x00003269   Thumb Code    36  fe_smoke_timer_pt32l076.o(i.KillWatchdog)
+    OpenADC                                  0x000032a1   Thumb Code     8  fe_755psma5l_adc_pt32l076.o(i.OpenADC)
+    OpenDMA                                  0x000032b1   Thumb Code    22  fe_755psma5l_adc_pt32l076.o(i.OpenDMA)
+    OpenUART                                 0x000032dd   Thumb Code    44  fe_755psma5l_uart_pt32l076.o(i.OpenUART)
+    PlainExpansions                          0x00003315   Thumb Code    22  fe_smoke_eeprom_pt32l076.o(i.PlainExpansions)
+    RunSciReceivingProc                      0x00003331   Thumb Code   184  fe_755psma5l_uart_pt32l076.o(i.RunSciReceivingProc)
+    RunSciTransmittingProc                   0x000033fd   Thumb Code   140  fe_755psma5l_uart_pt32l076.o(i.RunSciTransmittingProc)
+    RunTemperatureProc                       0x00003499   Thumb Code   248  fe_755psma5l_smoke_pt32l076.o(i.RunTemperatureProc)
+    RunUartServerTask                        0x000035a5   Thumb Code   180  fe_755psma5l_uart_pt32l076.o(i.RunUartServerTask)
+    SetADC_IN26_SCM                          0x00003661   Thumb Code    44  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN26_SCM)
+    SetADC_IN2_SCM                           0x0000369d   Thumb Code    46  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN2_SCM)
+    SetADC_IN4_CCM                           0x000036d9   Thumb Code    70  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_CCM)
+    SetADC_IN4_SCM_ET                        0x00003745   Thumb Code    38  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN4_SCM_ET)
+    SetADC_IN8_SCM                           0x0000377d   Thumb Code    44  fe_755psma5l_adc_pt32l076.o(i.SetADC_IN8_SCM)
+    SetTimer2_ET                             0x000037b9   Thumb Code    34  fe_smoke_timer_pt32l076.o(i.SetTimer2_ET)
+    SetTimer3                                0x000037e5   Thumb Code    40  fe_smoke_timer_pt32l076.o(i.SetTimer3)
+    TIM3_Handler                             0x00003819   Thumb Code   102  fe_smoke_timer_pt32l076.o(i.TIM3_Handler)
+    UpdateTemperatureParameter               0x000038a1   Thumb Code    28  fe_755psma5l_smoke_pt32l076.o(i.UpdateTemperatureParameter)
+    __ARM_clz                                0x000038c1   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __ARM_common_switch8                     0x000038ef   Thumb Code    26  755psma5l_windows_pt32l076.o(i.__ARM_common_switch8)
+    __kernel_poly                            0x00003909   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_divzero                    0x000039b5   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
+    __mathlib_dbl_infnan                     0x000039c9   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x000039d3   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __scatterload_copy                       0x000039e3   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000039f1   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000039f3   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x00003a01   Thumb Code     6  errno.o(i.__set_errno)
+    check_is_linear_curve                    0x00003a0d   Thumb Code    52  fe_755psma5l_smoke_pt32l076.o(i.check_is_linear_curve)
+    copy_eeprom_data                         0x00003a45   Thumb Code    16  fe_smoke_eeprom_pt32l076.o(i.copy_eeprom_data)
+    erase_all_flash_page                     0x00003a59   Thumb Code    50  fe_smoke_eeprom_pt32l076.o(i.erase_all_flash_page)
+    erase_flash_code                         0x00003a99   Thumb Code   110  fe_smoke_eeprom_pt32l076.o(i.erase_flash_code)
+    erase_flash_memory                       0x00003b0d   Thumb Code    26  fe_smoke_eeprom_pt32l076.o(i.erase_flash_memory)
+    explain_token_packet                     0x00003b2d   Thumb Code   334  fe_755psma5l_uart_pt32l076.o(i.explain_token_packet)
+    fe_battery_process_run                   0x00003ca5   Thumb Code   356  fe_755psma5l_battery_pt32l076.o(i.fe_battery_process_run)
+    fe_byte_data_move_to_left                0x00003e35   Thumb Code    18  fe_math.o(i.fe_byte_data_move_to_left)
+    fe_calculate_crc                         0x00003e49   Thumb Code    70  fe_math.o(i.fe_calculate_crc)
+    fe_calculate_external_8b_temperature     0x00003e95   Thumb Code   124  fe_math.o(i.fe_calculate_external_8b_temperature)
+    fe_char_real_comparision                 0x00003f2d   Thumb Code    48  fe_math.o(i.fe_char_real_comparision)
+    fe_char_real_subtractive                 0x00003f5d   Thumb Code    14  fe_math.o(i.fe_char_real_subtractive)
+    fe_check_key                             0x00003f6d   Thumb Code   104  fe_smoke_eeprom_pt32l076.o(i.fe_check_key)
+    fe_check_security_key                    0x00003fdd   Thumb Code   116  fe_smoke_eeprom_pt32l076.o(i.fe_check_security_key)
+    fe_check_system_tick_timer               0x00004061   Thumb Code    28  fe_smoke_timer_pt32l076.o(i.fe_check_system_tick_timer)
+    fe_clear_semaphore                       0x00004085   Thumb Code    22  fe_semaphore.o(i.fe_clear_semaphore)
+    fe_correcting_ad_data                    0x000040a1   Thumb Code    12  fe_math.o(i.fe_correcting_ad_data)
+    fe_data_move_to_left                     0x000040b1   Thumb Code    26  fe_math.o(i.fe_data_move_to_left)
+    fe_eeprom_process_run                    0x000040cd   Thumb Code    16  fe_smoke_eeprom_pt32l076.o(i.fe_eeprom_process_run)
+    fe_float_data_move_to_left               0x000040e1   Thumb Code    26  fe_math.o(i.fe_float_data_move_to_left)
+    fe_generating_box                        0x000040fd   Thumb Code    74  fe_smoke_eeprom_pt32l076.o(i.fe_generating_box)
+    fe_generating_cipher                     0x00004151   Thumb Code    66  fe_smoke_eeprom_pt32l076.o(i.fe_generating_cipher)
+    fe_get_average                           0x000041a1   Thumb Code    26  fe_math.o(i.fe_get_average)
+    fe_get_battery_state                     0x000041bd   Thumb Code    22  fe_755psma5l_battery_pt32l076.o(i.fe_get_battery_state)
+    fe_get_increment                         0x000041d9   Thumb Code    36  fe_math.o(i.fe_get_increment)
+    fe_get_maximum                           0x00004201   Thumb Code    28  fe_math.o(i.fe_get_maximum)
+    fe_get_semaphore_state                   0x0000421d   Thumb Code     6  fe_semaphore.o(i.fe_get_semaphore_state)
+    fe_get_smoke_state                       0x00004229   Thumb Code    24  fe_755psma5l_smoke_pt32l076.o(i.fe_get_smoke_state)
+    fe_get_uart_state                        0x00004249   Thumb Code    16  fe_755psma5l_uart_pt32l076.o(i.fe_get_uart_state)
+    fe_kill_system_tick_timer                0x0000425d   Thumb Code    12  fe_smoke_timer_pt32l076.o(i.fe_kill_system_tick_timer)
+    fe_set_backup_power_source               0x0000426d   Thumb Code    20  fe_755psma5l_smoke_pt32l076.o(i.fe_set_backup_power_source)
+    fe_set_battery_callback                  0x00004285   Thumb Code    16  fe_755psma5l_battery_pt32l076.o(i.fe_set_battery_callback)
+    fe_set_main_power_source                 0x00004299   Thumb Code    16  fe_755psma5l_smoke_pt32l076.o(i.fe_set_main_power_source)
+    fe_set_semaphore                         0x000042ad   Thumb Code    22  fe_semaphore.o(i.fe_set_semaphore)
+    fe_set_smoke_callback                    0x000042c9   Thumb Code    16  fe_755psma5l_smoke_pt32l076.o(i.fe_set_smoke_callback)
+    fe_set_system_tick_timer                 0x000042dd   Thumb Code    16  fe_smoke_timer_pt32l076.o(i.fe_set_system_tick_timer)
+    fe_set_uart_callback                     0x000042f1   Thumb Code    16  fe_755psma5l_uart_pt32l076.o(i.fe_set_uart_callback)
+    fe_smoke_process_run                     0x00004305   Thumb Code  2106  fe_755psma5l_smoke_pt32l076.o(i.fe_smoke_process_run)
+    fe_smoke_read_eeprom_data                0x00004b89   Thumb Code   188  fe_smoke_eeprom_pt32l076.o(i.fe_smoke_read_eeprom_data)
+    fe_start_up_battery_process              0x00004c61   Thumb Code    36  fe_755psma5l_battery_pt32l076.o(i.fe_start_up_battery_process)
+    fe_start_up_smoke_process                0x00004c89   Thumb Code   110  fe_755psma5l_smoke_pt32l076.o(i.fe_start_up_smoke_process)
+    fe_uart_process_run                      0x00004d0d   Thumb Code    38  fe_755psma5l_uart_pt32l076.o(i.fe_uart_process_run)
+    fe_write_eeprom_data                     0x00004d3d   Thumb Code   154  fe_smoke_eeprom_pt32l076.o(i.fe_write_eeprom_data)
+    get_average_in_backup_power_source       0x00004df1   Thumb Code    40  fe_755psma5l_smoke_pt32l076.o(i.get_average_in_backup_power_source)
+    get_average_in_main_power_source         0x00004e21   Thumb Code    40  fe_755psma5l_smoke_pt32l076.o(i.get_average_in_main_power_source)
+    get_curve_1_parameter                    0x00004e51   Thumb Code    56  fe_755psma5l_smoke_pt32l076.o(i.get_curve_1_parameter)
+    get_curve_2_parameter                    0x00004e99   Thumb Code    56  fe_755psma5l_smoke_pt32l076.o(i.get_curve_2_parameter)
+    get_new_curve_average_data               0x00004ee1   Thumb Code    96  fe_755psma5l_smoke_pt32l076.o(i.get_new_curve_average_data)
+    get_original_data_for_curve              0x00004f45   Thumb Code    84  fe_755psma5l_smoke_pt32l076.o(i.get_original_data_for_curve)
+    get_out_data                             0x00004fa5   Thumb Code    88  fe_755psma5l_uart_pt32l076.o(i.get_out_data)
+    log                                      0x00005029   Thumb Code   790  log.o(i.log)
+    malloc_ram                               0x0000537d   Thumb Code    34  fe_io.o(i.malloc_ram)
+    mem_byte_clear                           0x0000539f   Thumb Code    14  fe_io.o(i.mem_byte_clear)
+    mem_data_copy                            0x000053ad   Thumb Code    18  fe_io.o(i.mem_data_copy)
+    mem_word_copy                            0x000053bf   Thumb Code    20  fe_io.o(i.mem_word_copy)
+    open_flash                               0x000053d3   Thumb Code    30  fe_smoke_eeprom_pt32l076.o(i.open_flash)
+    reset_default_data                       0x000053f1   Thumb Code    18  fe_smoke_eeprom_pt32l076.o(i.reset_default_data)
+    restore_original_data                    0x0000540d   Thumb Code   120  fe_755psma5l_smoke_pt32l076.o(i.restore_original_data)
+    write_flash_code                         0x00005499   Thumb Code    40  fe_smoke_eeprom_pt32l076.o(i.write_flash_code)
+    write_flash_page                         0x000054c1   Thumb Code    84  fe_smoke_eeprom_pt32l076.o(i.write_flash_page)
+    ROM_DATA                                 0x00005520   Data         200  fe_smoke_eeprom_pt32l076.o(.constdata)
+    WHITENING_TABLE                          0x000055e8   Data          50  fe_math.o(.constdata)
+    CRC_CCITT_TABLE                          0x0000561a   Data          32  fe_math.o(.constdata)
+    __mathlib_zero                           0x00005678   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x00005680   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000056a0   Number         0  anon$$obj.o(Region$$Table)
+    key3                                     0x20000000   Data           4  755psma5l_keyboard_pt32l076.o(.data)
+    key4                                     0x20000004   Data           4  755psma5l_keyboard_pt32l076.o(.data)
+    key5                                     0x20000008   Data           4  755psma5l_keyboard_pt32l076.o(.data)
+    key2                                     0x2000000c   Data           8  755psma5l_keyboard_pt32l076.o(.data)
+    led                                      0x20000014   Data           4  755psma5l_windows_pt32l076.o(.data)
+    buzzer                                   0x20000018   Data           4  755psma5l_windows_pt32l076.o(.data)
+    update                                   0x2000001c   Data           4  755psma5l_windows_pt32l076.o(.data)
+    uart                                     0x20000020   Data           8  fe_755psma5l_uart_pt32l076.o(.data)
+    System                                   0x20000028   Data           4  fe_semaphore.o(.data)
+    Eeprom                                   0x2000002c   Data           4  fe_smoke_eeprom_pt32l076.o(.data)
+    adc                                      0x20000030   Data           8  fe_755psma5l_adc_pt32l076.o(.data)
+    system_data                              0x2000003c   Data          16  main.o(.bss)
+    timer5                                   0x2000004c   Data          72  755psma5l_timer_pt32l076.o(.bss)
+    Battery                                  0x20000094   Data          16  fe_755psma5l_battery_pt32l076.o(.bss)
+    Smoke                                    0x200000a4   Data        1620  fe_755psma5l_smoke_pt32l076.o(.bss)
+    Sci                                      0x200006f8   Data          92  fe_755psma5l_uart_pt32l076.o(.bss)
+    Rom                                      0x20000754   Data         208  fe_smoke_eeprom_pt32l076.o(.bss)
+    Timer                                    0x20000824   Data          20  fe_smoke_timer_pt32l076.o(.bss)
+    __initial_sp                             0x20001838   Data           0  startup_pt32x076.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000056dc, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000056a0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000d4   Code   RO            3  * RESET               startup_pt32x076.o
+    0x000000d4   0x000000d4   0x00000000   Code   RO         1387  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000d4   0x000000d4   0x00000004   Code   RO         1435    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000d8   0x000000d8   0x00000004   Code   RO         1438    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO         1440    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO         1442    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000dc   0x000000dc   0x00000008   Code   RO         1443    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO         1450    .ARM.Collect$$$$0000000E  mc_p.l(entry12b.o)
+    0x000000e8   0x000000e8   0x00000000   Code   RO         1445    .ARM.Collect$$$$0000000F  mc_p.l(entry10a.o)
+    0x000000e8   0x000000e8   0x00000000   Code   RO         1447    .ARM.Collect$$$$00000011  mc_p.l(entry11a.o)
+    0x000000e8   0x000000e8   0x00000004   Code   RO         1436    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000ec   0x000000ec   0x00000220   Code   RO           11    .text               main.o
+    0x0000030c   0x0000030c   0x00000408   Code   RO          112    .text               755psma5l_system_pt32l076.o
+    0x00000714   0x00000714   0x00000244   Code   RO          142    .text               755psma5l_timer_pt32l076.o
+    0x00000958   0x00000958   0x00000304   Code   RO          168    .text               755psma5l_keyboard_pt32l076.o
+    0x00000c5c   0x00000c5c   0x0000067c   Code   RO          194    .text               755psma5l_windows_pt32l076.o
+    0x000012d8   0x000012d8   0x000005b8   Code   RO          222    .text               755psma5l_message_pt32l076.o
+    0x00001890   0x00001890   0x0000002c   Code   RO         1390    .text               mc_p.l(uidiv.o)
+    0x000018bc   0x000018bc   0x00000028   Code   RO         1392    .text               mc_p.l(idiv.o)
+    0x000018e4   0x000018e4   0x000000b2   Code   RO         1394    .text               mf_p.l(fadd.o)
+    0x00001996   0x00001996   0x0000007a   Code   RO         1396    .text               mf_p.l(fmul.o)
+    0x00001a10   0x00001a10   0x0000007c   Code   RO         1398    .text               mf_p.l(fdiv.o)
+    0x00001a8c   0x00001a8c   0x00000018   Code   RO         1400    .text               mf_p.l(fscalb.o)
+    0x00001aa4   0x00001aa4   0x00000168   Code   RO         1402    .text               mf_p.l(dadd.o)
+    0x00001c0c   0x00001c0c   0x000000f0   Code   RO         1404    .text               mf_p.l(ddiv.o)
+    0x00001cfc   0x00001cfc   0x0000000e   Code   RO         1406    .text               mf_p.l(ffltui.o)
+    0x00001d0a   0x00001d0a   0x00000028   Code   RO         1408    .text               mf_p.l(ffixui.o)
+    0x00001d32   0x00001d32   0x00000028   Code   RO         1410    .text               mf_p.l(f2d.o)
+    0x00001d5a   0x00001d5a   0x00000038   Code   RO         1412    .text               mf_p.l(d2f.o)
+    0x00001d92   0x00001d92   0x00000002   PAD
+    0x00001d94   0x00001d94   0x00000014   Code   RO         1414    .text               mf_p.l(cfcmple.o)
+    0x00001da8   0x00001da8   0x00000014   Code   RO         1416    .text               mf_p.l(cfrcmple.o)
+    0x00001dbc   0x00001dbc   0x00000020   Code   RO         1451    .text               mc_p.l(llshl.o)
+    0x00001ddc   0x00001ddc   0x00000026   Code   RO         1453    .text               mc_p.l(llsshr.o)
+    0x00001e02   0x00001e02   0x00000000   Code   RO         1462    .text               mc_p.l(iusefp.o)
+    0x00001e02   0x00001e02   0x00000082   Code   RO         1463    .text               mf_p.l(fepilogue.o)
+    0x00001e84   0x00001e84   0x000000be   Code   RO         1465    .text               mf_p.l(depilogue.o)
+    0x00001f42   0x00001f42   0x00000002   PAD
+    0x00001f44   0x00001f44   0x000000d0   Code   RO         1469    .text               mf_p.l(dmul.o)
+    0x00002014   0x00002014   0x0000002c   Code   RO         1471    .text               mf_p.l(dscalb.o)
+    0x00002040   0x00002040   0x00000028   Code   RO         1473    .text               mf_p.l(dflti.o)
+    0x00002068   0x00002068   0x00000028   Code   RO         1475    .text               mf_p.l(cdcmple.o)
+    0x00002090   0x00002090   0x00000024   Code   RO         1477    .text               mc_p.l(init.o)
+    0x000020b4   0x000020b4   0x00000022   Code   RO         1479    .text               mc_p.l(llushr.o)
+    0x000020d6   0x000020d6   0x00000002   PAD
+    0x000020d8   0x000020d8   0x00000044   Code   RO         1100    i.ADC_Handler       FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x0000211c   0x0000211c   0x00000018   Code   RO          242    i.CalculateActualVoltage  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x00002134   0x00002134   0x00000068   Code   RO          359    i.CalculateCurve1Data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x0000219c   0x0000219c   0x00000068   Code   RO          360    i.CalculateCurve2Data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002204   0x00002204   0x00000020   Code   RO          361    i.CalculateTargetDensity  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002224   0x00002224   0x0000001c   Code   RO          362    i.Calculate_Temperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002240   0x00002240   0x0000008c   Code   RO          363    i.CheckIsChamberDust  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000022cc   0x000022cc   0x0000007c   Code   RO          364    i.CheckIsChamberFault  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002348   0x00002348   0x00000050   Code   RO          365    i.CheckIsDangerousState  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002398   0x00002398   0x0000004c   Code   RO          366    i.CheckIsFire       FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000023e4   0x000023e4   0x00000070   Code   RO          367    i.CheckIsLiquidFire  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002454   0x00002454   0x0000012c   Code   RO          368    i.CheckIsSafeState  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002580   0x00002580   0x00000064   Code   RO          369    i.CheckIsTemperatureChange  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000025e4   0x000025e4   0x00000090   Code   RO          370    i.CheckIsTemperatureDrop  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002674   0x00002674   0x00000090   Code   RO          371    i.CheckIsTemperatureRise  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002704   0x00002704   0x00000074   Code   RO          372    i.CheckIsTesting    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002778   0x00002778   0x00000044   Code   RO          373    i.CheckIsTesting2   FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000027bc   0x000027bc   0x00000054   Code   RO          374    i.CheckIsWoodFire   FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002810   0x00002810   0x0000002c   Code   RO          757    i.CloseUART         FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x0000283c   0x0000283c   0x00000128   Code   RO          375    i.CorrectingDataForAngle30InCleanAir  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002964   0x00002964   0x0000011c   Code   RO          376    i.CorrectingDataForAngle90InCleanAir  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002a80   0x00002a80   0x000000d8   Code   RO          377    i.CorrectingOriginalDataInCleanAir  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002b58   0x00002b58   0x0000000c   Code   RO          378    i.Current1LevelReduced  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002b64   0x00002b64   0x00000008   Code   RO          379    i.Current2LevelReduced  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002b6c   0x00002b6c   0x00000016   Code   RO          380    i.CurrentLevelIncreased  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002b82   0x00002b82   0x00000002   PAD
+    0x00002b84   0x00002b84   0x000000c8   Code   RO         1101    i.DMA_Handler       FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x00002c4c   0x00002c4c   0x00000078   Code   RO          381    i.DataProcessingMethod_1  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002cc4   0x00002cc4   0x000000b0   Code   RO          876    i.EEPROM_write_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00002d74   0x00002d74   0x00000044   Code   RO          382    i.FireAlarm         FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002db8   0x00002db8   0x00000030   Code   RO          384    i.Get16FilterOfUnsignedShort  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002de8   0x00002de8   0x00000064   Code   RO          386    i.GetC30CompensatingCoefficientForTemperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002e4c   0x00002e4c   0x0000001c   Code   RO          387    i.GetC30CompensatingDataForTemperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002e68   0x00002e68   0x00000064   Code   RO          388    i.GetC90CompensatingCoefficientForTemperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002ecc   0x00002ecc   0x0000001c   Code   RO          389    i.GetC90CompensatingDataForTemperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002ee8   0x00002ee8   0x0000000c   Code   RO          877    i.GetCodeFromBox    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00002ef4   0x00002ef4   0x00000070   Code   RO          390    i.GetCompensatingDataForCurve  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002f64   0x00002f64   0x00000084   Code   RO          391    i.GetCurve2AmplitudeParameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00002fe8   0x00002fe8   0x00000032   Code   RO          393    i.GetCurveAB        FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x0000301a   0x0000301a   0x00000002   PAD
+    0x0000301c   0x0000301c   0x00000088   Code   RO          394    i.GetCurveParameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000030a4   0x000030a4   0x00000070   Code   RO          395    i.GetParticleParameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00003114   0x00003114   0x000000a4   Code   RO          398    i.GetTemperatureCurveParameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000031b8   0x000031b8   0x00000014   Code   RO          399    i.GetUnsignedShortData  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000031cc   0x000031cc   0x0000002c   Code   RO          401    i.IsResetReferenceTemperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000031f8   0x000031f8   0x00000058   Code   RO          878    i.KeyExpansions     FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003250   0x00003250   0x00000018   Code   RO         1025    i.KillTimer2_ET     FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x00003268   0x00003268   0x00000038   Code   RO         1026    i.KillWatchdog      FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x000032a0   0x000032a0   0x00000010   Code   RO         1102    i.OpenADC           FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x000032b0   0x000032b0   0x0000002c   Code   RO         1103    i.OpenDMA           FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x000032dc   0x000032dc   0x00000038   Code   RO          758    i.OpenUART          FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00003314   0x00003314   0x0000001c   Code   RO          879    i.PlainExpansions   FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003330   0x00003330   0x000000cc   Code   RO          759    i.RunSciReceivingProc  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x000033fc   0x000033fc   0x0000009c   Code   RO          760    i.RunSciTransmittingProc  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00003498   0x00003498   0x0000010c   Code   RO          402    i.RunTemperatureProc  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000035a4   0x000035a4   0x000000bc   Code   RO          761    i.RunUartServerTask  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00003660   0x00003660   0x0000003c   Code   RO         1104    i.SetADC_IN26_SCM   FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x0000369c   0x0000369c   0x0000003c   Code   RO         1105    i.SetADC_IN2_SCM    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x000036d8   0x000036d8   0x0000006c   Code   RO         1106    i.SetADC_IN4_CCM    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x00003744   0x00003744   0x00000038   Code   RO         1107    i.SetADC_IN4_SCM_ET  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x0000377c   0x0000377c   0x0000003c   Code   RO         1108    i.SetADC_IN8_SCM    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x000037b8   0x000037b8   0x0000002c   Code   RO         1027    i.SetTimer2_ET      FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x000037e4   0x000037e4   0x00000034   Code   RO         1028    i.SetTimer3         FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x00003818   0x00003818   0x00000088   Code   RO         1029    i.TIM3_Handler      FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x000038a0   0x000038a0   0x00000020   Code   RO          403    i.UpdateTemperatureParameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000038c0   0x000038c0   0x0000002e   Code   RO         1467    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x000038ee   0x000038ee   0x0000001a   Code   RO          212    i.__ARM_common_switch8  755psma5l_windows_pt32l076.o
+    0x00003908   0x00003908   0x000000ac   Code   RO         1432    i.__kernel_poly     m_ps.l(poly.o)
+    0x000039b4   0x000039b4   0x00000014   Code   RO         1418    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
+    0x000039c8   0x000039c8   0x0000000a   Code   RO         1419    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x000039d2   0x000039d2   0x00000010   Code   RO         1421    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x000039e2   0x000039e2   0x0000000e   Code   RO         1483    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000039f0   0x000039f0   0x00000002   Code   RO         1484    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000039f2   0x000039f2   0x0000000e   Code   RO         1485    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00003a00   0x00003a00   0x0000000c   Code   RO         1457    i.__set_errno       mc_p.l(errno.o)
+    0x00003a0c   0x00003a0c   0x00000038   Code   RO          404    i.check_is_linear_curve  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00003a44   0x00003a44   0x00000014   Code   RO          880    i.copy_eeprom_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003a58   0x00003a58   0x00000040   Code   RO          881    i.erase_all_flash_page  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003a98   0x00003a98   0x00000074   Code   RO          882    i.erase_flash_code  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003b0c   0x00003b0c   0x00000020   Code   RO          883    i.erase_flash_memory  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003b2c   0x00003b2c   0x00000178   Code   RO          762    i.explain_token_packet  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00003ca4   0x00003ca4   0x00000190   Code   RO          244    i.fe_battery_process_run  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x00003e34   0x00003e34   0x00000012   Code   RO         1223    i.fe_byte_data_move_to_left  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00003e46   0x00003e46   0x00000002   PAD
+    0x00003e48   0x00003e48   0x0000004c   Code   RO         1224    i.fe_calculate_crc  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00003e94   0x00003e94   0x00000098   Code   RO         1227    i.fe_calculate_external_8b_temperature  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00003f2c   0x00003f2c   0x00000030   Code   RO         1228    i.fe_char_real_comparision  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00003f5c   0x00003f5c   0x0000000e   Code   RO         1229    i.fe_char_real_subtractive  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00003f6a   0x00003f6a   0x00000002   PAD
+    0x00003f6c   0x00003f6c   0x00000070   Code   RO          884    i.fe_check_key      FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00003fdc   0x00003fdc   0x00000084   Code   RO          885    i.fe_check_security_key  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00004060   0x00004060   0x00000024   Code   RO         1030    i.fe_check_system_tick_timer  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x00004084   0x00004084   0x0000001c   Code   RO          843    i.fe_clear_semaphore  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_semaphore.o)
+    0x000040a0   0x000040a0   0x00000010   Code   RO         1231    i.fe_correcting_ad_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x000040b0   0x000040b0   0x0000001a   Code   RO         1232    i.fe_data_move_to_left  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x000040ca   0x000040ca   0x00000002   PAD
+    0x000040cc   0x000040cc   0x00000014   Code   RO          886    i.fe_eeprom_process_run  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x000040e0   0x000040e0   0x0000001a   Code   RO         1235    i.fe_float_data_move_to_left  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x000040fa   0x000040fa   0x00000002   PAD
+    0x000040fc   0x000040fc   0x00000054   Code   RO          887    i.fe_generating_box  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00004150   0x00004150   0x00000050   Code   RO          888    i.fe_generating_cipher  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x000041a0   0x000041a0   0x0000001a   Code   RO         1237    i.fe_get_average    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x000041ba   0x000041ba   0x00000002   PAD
+    0x000041bc   0x000041bc   0x0000001c   Code   RO          245    i.fe_get_battery_state  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x000041d8   0x000041d8   0x00000028   Code   RO         1242    i.fe_get_increment  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x00004200   0x00004200   0x0000001c   Code   RO         1243    i.fe_get_maximum    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x0000421c   0x0000421c   0x0000000c   Code   RO          844    i.fe_get_semaphore_state  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_semaphore.o)
+    0x00004228   0x00004228   0x00000020   Code   RO          405    i.fe_get_smoke_state  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004248   0x00004248   0x00000014   Code   RO          763    i.fe_get_uart_state  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x0000425c   0x0000425c   0x00000010   Code   RO         1031    i.fe_kill_system_tick_timer  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x0000426c   0x0000426c   0x00000018   Code   RO          406    i.fe_set_backup_power_source  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004284   0x00004284   0x00000014   Code   RO          246    i.fe_set_battery_callback  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x00004298   0x00004298   0x00000014   Code   RO          407    i.fe_set_main_power_source  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000042ac   0x000042ac   0x0000001c   Code   RO          845    i.fe_set_semaphore  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_semaphore.o)
+    0x000042c8   0x000042c8   0x00000014   Code   RO          408    i.fe_set_smoke_callback  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x000042dc   0x000042dc   0x00000014   Code   RO         1032    i.fe_set_system_tick_timer  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x000042f0   0x000042f0   0x00000014   Code   RO          764    i.fe_set_uart_callback  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00004304   0x00004304   0x00000884   Code   RO          409    i.fe_smoke_process_run  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004b88   0x00004b88   0x000000d8   Code   RO          890    i.fe_smoke_read_eeprom_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00004c60   0x00004c60   0x00000028   Code   RO          247    i.fe_start_up_battery_process  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x00004c88   0x00004c88   0x00000084   Code   RO          411    i.fe_start_up_smoke_process  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004d0c   0x00004d0c   0x00000030   Code   RO          766    i.fe_uart_process_run  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00004d3c   0x00004d3c   0x000000b4   Code   RO          891    i.fe_write_eeprom_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00004df0   0x00004df0   0x00000030   Code   RO          414    i.get_average_in_backup_power_source  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004e20   0x00004e20   0x00000030   Code   RO          415    i.get_average_in_main_power_source  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004e50   0x00004e50   0x00000048   Code   RO          416    i.get_curve_1_parameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004e98   0x00004e98   0x00000048   Code   RO          417    i.get_curve_2_parameter  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004ee0   0x00004ee0   0x00000064   Code   RO          418    i.get_new_curve_average_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004f44   0x00004f44   0x00000060   Code   RO          419    i.get_original_data_for_curve  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00004fa4   0x00004fa4   0x00000084   Code   RO          767    i.get_out_data      FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x00005028   0x00005028   0x00000354   Code   RO         1378    i.log               m_ps.l(log.o)
+    0x0000537c   0x0000537c   0x00000022   Code   RO         1181    i.malloc_ram        FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_io.o)
+    0x0000539e   0x0000539e   0x0000000e   Code   RO         1182    i.mem_byte_clear    FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_io.o)
+    0x000053ac   0x000053ac   0x00000012   Code   RO         1183    i.mem_data_copy     FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_io.o)
+    0x000053be   0x000053be   0x00000014   Code   RO         1185    i.mem_word_copy     FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_io.o)
+    0x000053d2   0x000053d2   0x0000001e   Code   RO          892    i.open_flash        FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x000053f0   0x000053f0   0x0000001c   Code   RO          893    i.reset_default_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x0000540c   0x0000540c   0x0000008c   Code   RO          420    i.restore_original_data  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x00005498   0x00005498   0x00000028   Code   RO          894    i.write_flash_code  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x000054c0   0x000054c0   0x00000060   Code   RO          895    i.write_flash_page  FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x00005520   0x00005520   0x000000c8   Data   RO          897    .constdata          FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x000055e8   0x000055e8   0x00000052   Data   RO         1247    .constdata          FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_math.o)
+    0x0000563a   0x0000563a   0x00000006   PAD
+    0x00005640   0x00005640   0x00000038   Data   RO         1379    .constdata          m_ps.l(log.o)
+    0x00005678   0x00005678   0x00000008   Data   RO         1434    .constdata          m_ps.l(qnan.o)
+    0x00005680   0x00005680   0x00000020   Data   RO         1481    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000056a0, Size: 0x0000003c, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x000056a0   0x00000014   Data   RW          169    .data               755psma5l_keyboard_pt32l076.o
+    0x20000014   0x000056b4   0x0000000c   Data   RW          195    .data               755psma5l_windows_pt32l076.o
+    0x20000020   0x000056c0   0x00000008   Data   RW          769    .data               FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x20000028   0x000056c8   0x00000004   Data   RW          846    .data               FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_semaphore.o)
+    0x2000002c   0x000056cc   0x00000004   Data   RW          898    .data               FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x20000030   0x000056d0   0x00000008   Data   RW         1109    .data               FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_adc_pt32l076.o)
+    0x20000038   0x000056d8   0x00000004   Data   RW         1458    .data               mc_p.l(errno.o)
+
+
+    Execution Region ER_ZI (Exec base: 0x2000003c, Load base: 0x000056dc, Size: 0x000017fc, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x2000003c        -       0x00000010   Zero   RW           12    .bss                main.o
+    0x2000004c        -       0x00000048   Zero   RW          143    .bss                755psma5l_timer_pt32l076.o
+    0x20000094        -       0x00000010   Zero   RW          248    .bss                FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_battery_pt32l076.o)
+    0x200000a4        -       0x00000654   Zero   RW          421    .bss                FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_smoke_pt32l076.o)
+    0x200006f8        -       0x0000005c   Zero   RW          768    .bss                FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_755psma5l_uart_pt32l076.o)
+    0x20000754        -       0x000000d0   Zero   RW          896    .bss                FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_eeprom_pt32l076.o)
+    0x20000824        -       0x00000014   Zero   RW         1033    .bss                FE_755PSMA5L_RevC_PT32L076_20250816.lib(fe_smoke_timer_pt32l076.o)
+    0x20000838        -       0x00001000   Zero   RW            1    STACK               startup_pt32x076.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       772         28          0         20          0       3272   755psma5l_keyboard_pt32l076.o
+      1464         56          0          0          0       2349   755psma5l_message_pt32l076.o
+      1032        100          0          0          0      12330   755psma5l_system_pt32l076.o
+       580         62          0          0         72       2972   755psma5l_timer_pt32l076.o
+      1686        110          0         12          0       4786   755psma5l_windows_pt32l076.o
+       544         74          0          0         16      45229   main.o
+       212        196          0          0       4096        620   startup_pt32x076.o
+
+    ----------------------------------------------------------------------
+      6290        626         32         32       4184      71558   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+       672        192          0          8          0      15336   fe_755psma5l_adc_pt32l076.o
+       512         74          0          0         16      52856   fe_755psma5l_battery_pt32l076.o
+      7196        822          0          0       1620      50194   fe_755psma5l_smoke_pt32l076.o
+      1244        176          0          8         92      18360   fe_755psma5l_uart_pt32l076.o
+        86          0          0          0          0       2690   fe_io.o
+       470         42         82          0          0       7357   fe_math.o
+        68         18          0          4          0      11440   fe_semaphore.o
+      1554        176        200          4        208      26206   fe_smoke_eeprom_pt32l076.o
+       384         98          0          0         20      21964   fe_smoke_timer_pt32l076.o
+        46          4          0          0          0        204   dunder.o
+       852         62         56          0          0        136   log.o
+       172          0          0          0          0         76   poly.o
+         0          0          8          0          0          0   qnan.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         4          0          0          0          0          0   entry12b.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        12          6          0          4          0         60   errno.o
+        30          0          0          0          0          0   handlers.o
+        40          0          0          0          0         72   idiv.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        38          0          0          0          0         68   llsshr.o
+        34          0          0          0          0         68   llushr.o
+        44          0          0          0          0         72   uidiv.o
+        40          2          0          0          0         68   cdcmple.o
+        20          0          0          0          0         68   cfcmple.o
+        20          0          0          0          0         68   cfrcmple.o
+        56          0          0          0          0         68   d2f.o
+       360          6          0          0          0        140   dadd.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        40          6          0          0          0         68   dflti.o
+       208          6          0          0          0         88   dmul.o
+        44          0          0          0          0         72   dscalb.o
+        40          0          0          0          0         60   f2d.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        40          0          0          0          0         60   ffixui.o
+        14          0          0          0          0         68   ffltui.o
+       122          0          0          0          0         72   fmul.o
+        24          0          0          0          0         60   fscalb.o
+
+    ----------------------------------------------------------------------
+     15502       1712        352         28       1956     208879   Library Totals
+        20          0          6          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+     12186       1598        282         24       1956     206403   FE_755PSMA5L_RevC_PT32L076_20250816.lib
+      1070         66         64          0          0        416   m_ps.l
+       290         22          0          4          0        476   mc_p.l
+      1936         26          0          0          0       1584   mf_p.l
+
+    ----------------------------------------------------------------------
+     15502       1712        352         28       1956     208879   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     21792       2338        384         60       6140     273657   Grand Totals
+     21792       2338        384         60       6140     273657   ELF Image Totals
+     21792       2338        384         60          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                22176 (  21.66kB)
+    Total RW  Size (RW Data + ZI Data)              6200 (   6.05kB)
+    Total ROM Size (Code + RO Data + RW Data)      22236 (  21.71kB)
+
+==============================================================================
+

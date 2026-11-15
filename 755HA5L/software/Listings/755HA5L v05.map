@@ -1,0 +1,1750 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_pt32x031.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_pt32x031.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_pt32x031.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_pt32x031.o(RESET) refers to startup_pt32x031.o(STACK) for __initial_sp
+    startup_pt32x031.o(RESET) refers to 755lha_keyboard_pt32l031.o(.text) for PA_Handler
+    startup_pt32x031.o(RESET) refers to adc_pt32l031.o(.text) for ADC_Handler
+    startup_pt32x031.o(RESET) refers to 755lha_timer_pt32l031.o(.text) for TIMER1_Handler
+    startup_pt32x031.o(RESET) refers to fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler) for TIMER2_Handler
+    startup_pt32x031.o(RESET) refers to __main.o(!!!main) for __main
+    startup_pt32x031.o(RESET) refers to startup_pt32x031.o(HEAP) for Heap_Mem
+    main.o(.text) refers to fe_755lha_pt32l031_cfg.o(i.fe_clear_ram) for fe_clear_ram
+    main.o(.text) refers to 755lha_system_pt32l031.o(.text) for sys_clock_init
+    main.o(.text) refers to 755lha_timer_pt32l031.o(.text) for open_iwdg
+    main.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) for fe_read_eeprom_data
+    main.o(.text) refers to fe_timer_pt32l031.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    main.o(.text) refers to 755lha_keyboard_pt32l031.o(.text) for scankey2_process_run
+    main.o(.text) refers to 755lha_heat_pt32l031.o(.text) for heat_process_run
+    main.o(.text) refers to 755lha_rf_pt32l031.o(.text) for rf_pairing_process_run
+    main.o(.text) refers to 755lha_batterylow_pt32l031.o(.text) for measure_battery
+    main.o(.text) refers to 755lha_windows_pt32l031.o(.text) for red_led_lighten
+    main.o(.text) refers to 755lha_release_pt32l031.o(.text) for release_network
+    main.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    main.o(.text) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    main.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    main.o(.text) refers to fe_755lha_mac.o(i.fe_755lha_mac_send_data) for fe_755lha_mac_send_data
+    main.o(.text) refers to fe_755lha_mac.o(i.fe_755lha_mac_receive_data) for fe_755lha_mac_receive_data
+    main.o(.text) refers to 755lha_message_pt32l031.o(.text) for message_proc
+    main.o(.text) refers to fe_755lha_mac.o(i.fe_755lha_mac_process_run) for fe_755lha_mac_process_run
+    main.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_process_run) for fe_phy_process_run
+    main.o(.text) refers to fe_spi_pt32l031.o(i.fe_spi_process_run) for fe_spi_process_run
+    main.o(.text) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) for fe_uart_process_run
+    main.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) for fe_eeprom_process_run
+    main.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state) for fe_get_eeprom_state
+    main.o(.text) refers to fe_755lha_uart_pt32l031.o(i.fe_get_uart_state) for fe_get_uart_state
+    main.o(.text) refers to fe_755lha_mac.o(i.fe_get_755lha_mac_state) for fe_get_755lha_mac_state
+    main.o(.text) refers to fe_phy_bc3602.o(i.fe_get_phy_state) for fe_get_phy_state
+    main.o(.text) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    main.o(.text) refers to fe_timer_pt32l031.o(i.fe_check_system_tick_timer) for fe_check_system_tick_timer
+    main.o(.text) refers to 755lha_keyboard_pt32l031.o(.data) for key3
+    main.o(.text) refers to main.o(.bss) for .bss
+    main.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    main.o(.text) refers to 755lha_heat_pt32l031.o(.bss) for heat
+    main.o(.text) refers to 755lha_rf_pt32l031.o(.bss) for pair
+    main.o(.text) refers to 755lha_batterylow_pt32l031.o(.bss) for bat
+    main.o(.text) refers to 755lha_windows_pt32l031.o(.data) for red_led
+    main.o(.text) refers to 755lha_release_pt32l031.o(.data) for release
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) for fe_755LHA_read_eeprom_data
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_mac.o(i.fe_set_755lha_mac_callback) for fe_set_755lha_mac_callback
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback) for fe_set_uart_callback
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_open) for fe_uart_open
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s) for fe_calculate_sleep_8s
+    755lha_system_pt32l031.o(.text) refers to fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s) for fe_get_sleep_8s
+    755lha_system_pt32l031.o(.text) refers to fe_timer_pt32l031.o(i.fe_kill_system_tick_timer) for fe_kill_system_tick_timer
+    755lha_system_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.text) for kill_timer3
+    755lha_system_pt32l031.o(.text) refers to fe_timer_pt32l031.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    755lha_system_pt32l031.o(.text) refers to 755lha_message_pt32l031.o(.text) for message_execution
+    755lha_system_pt32l031.o(.text) refers to 755lha_system_pt32l031.o(.data) for .data
+    755lha_system_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_system_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_system_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.bss) for eeprom_data
+    755lha_system_pt32l031.o(.text) refers to 755lha_rf_pt32l031.o(.text) for mac_callback
+    755lha_system_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.text) for uart_callback
+    755lha_system_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.data) for release
+    755lha_timer_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_timer_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for .bss
+    755lha_timer_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_timer_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.data) for update
+    755lha_windows_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.text) for close_wdog
+    755lha_windows_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_windows_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_windows_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_windows_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(.text) refers to 755lha_rf_pt32l031.o(.bss) for pair
+    755lha_windows_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_keyboard_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_quit) for fe_phy_quit
+    755lha_keyboard_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_keyboard_pt32l031.o(.text) refers to 755lha_keyboard_pt32l031.o(.data) for .data
+    755lha_keyboard_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_keyboard_pt32l031.o(.text) refers to 755lha_rf_pt32l031.o(.bss) for pair
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_get_curve_average) for fe_get_curve_average
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_real_comparision) for fe_real_comparision
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_get_real_minimum) for fe_get_real_minimum
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_get_real_maximum) for fe_get_real_maximum
+    755lha_heat_pt32l031.o(.text) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    755lha_heat_pt32l031.o(.text) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_write) for fe_uart_write
+    755lha_heat_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_heat_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_heat_pt32l031.o(.text) refers to adc_pt32l031.o(.text) for fe_adc_init
+    755lha_heat_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_data_move_to_right) for fe_data_move_to_right
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_calculate_external_16b_temperature) for fe_calculate_external_16b_temperature
+    755lha_heat_pt32l031.o(.text) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_heat_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_heat_pt32l031.o(.text) refers to 755lha_batterylow_pt32l031.o(.bss) for bat
+    755lha_heat_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.bss) for eeprom_data
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_get_2b_filter) for fe_get_2b_filter
+    755lha_heat_pt32l031.o(.text) refers to fe_math.o(i.fe_get_average) for fe_get_average
+    755lha_batterylow_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_batterylow_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_batterylow_pt32l031.o(.text) refers to adc_pt32l031.o(.text) for fe_adc_init
+    755lha_batterylow_pt32l031.o(.text) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_batterylow_pt32l031.o(.text) refers to dflti.o(.text) for __aeabi_ui2d
+    755lha_batterylow_pt32l031.o(.text) refers to dscalbn.o(.text) for __ARM_scalbn
+    755lha_batterylow_pt32l031.o(.text) refers to ddiv.o(.text) for __aeabi_ddiv
+    755lha_batterylow_pt32l031.o(.text) refers to dfixui.o(.text) for __aeabi_d2uiz
+    755lha_batterylow_pt32l031.o(.text) refers to 755lha_heat_pt32l031.o(.text) for data_treating
+    755lha_batterylow_pt32l031.o(.text) refers to 755lha_batterylow_pt32l031.o(.bss) for .bss
+    755lha_batterylow_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.bss) for eeprom_data
+    755lha_batterylow_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_batterylow_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_rf_pt32l031.o(.text) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    755lha_rf_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.text) for set_wire_connect
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_set_phy_parameter) for fe_set_phy_parameter
+    755lha_rf_pt32l031.o(.text) refers to fe_755lha_mac.o(i.fe_set_755lha_mac_callback) for fe_set_755lha_mac_callback
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_set_phy_tx_parameter) for fe_set_phy_tx_parameter
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_send_data) for fe_phy_send_data
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_receive_data) for fe_phy_receive_data
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_get_phy_state) for fe_get_phy_state
+    755lha_rf_pt32l031.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) for fe_755LHA_write_eeprom_data
+    755lha_rf_pt32l031.o(.text) refers to 755lha_rf_pt32l031.o(.bss) for .bss
+    755lha_rf_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.bss) for eeprom_data
+    755lha_rf_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_rf_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_rf_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_quit) for fe_phy_quit
+    755lha_rf_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.data) for red_led
+    755lha_release_pt32l031.o(.text) refers to fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) for fe_755LHA_write_eeprom_data
+    755lha_release_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.data) for .data
+    755lha_release_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_release_pt32l031.o(.text) refers to 755lha_release_pt32l031.o(.bss) for .bss
+    755lha_release_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_message_pt32l031.o(.text) refers to 755lha_windows_pt32l031.o(.text) for alarm_cfg
+    755lha_message_pt32l031.o(.text) refers to fe_phy_bc3602.o(i.fe_phy_quit) for fe_phy_quit
+    755lha_message_pt32l031.o(.text) refers to main.o(.bss) for system_data
+    755lha_message_pt32l031.o(.text) refers to 755lha_timer_pt32l031.o(.bss) for timer3
+    755lha_message_pt32l031.o(.text) refers to 755lha_keyboard_pt32l031.o(.data) for key2
+    adc_pt32l031.o(.text) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    adc_pt32l031.o(.text) refers to adc_pt32l031.o(.bss) for .bss
+    fe_timer_pt32l031.o(i.fe_check_system_tick_timer) refers to fe_timer_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.fe_enter_spi_sleep) refers to fe_spi_pt32l031.o(i.spi_close) for spi_close
+    fe_spi_pt32l031.o(i.fe_enter_spi_sleep) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.fe_get_spi_state) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.fe_spi_process_run) refers to fe_spi_pt32l031.o(i.spi_open) for spi_open
+    fe_spi_pt32l031.o(i.fe_spi_process_run) refers to fe_spi_pt32l031.o(i.spi_run) for spi_run
+    fe_spi_pt32l031.o(i.fe_spi_process_run) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.fe_spi_read) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_spi_pt32l031.o(i.fe_spi_read) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.fe_spi_write) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_spi_pt32l031.o(i.fe_spi_write) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_spi_pt32l031.o(i.spi_run) refers to fe_spi_pt32l031.o(.bss) for .bss
+    fe_phy_bc3602.o(i.bc3602_configure_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.bc3602_configure_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.bc3602_configure_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.bc3602_configure_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.bc3602_configure_process_run) refers to fe_phy_bc3602.o(.constdata) for .constdata
+    fe_phy_bc3602.o(i.fe_get_phy_state) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_get_rssi) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_moniting_data) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_pluse_send_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.fe_phy_pluse_send_data) refers to fe_math.o(i.fe_calculate_crc16) for fe_calculate_crc16
+    fe_phy_bc3602.o(i.fe_phy_pluse_send_data) refers to fe_math.o(i.fe_data_whitening_pn7) for fe_data_whitening_pn7
+    fe_phy_bc3602.o(i.fe_phy_pluse_send_data) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.bc3602_configure_process_run) for bc3602_configure_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_wake_up_process_run) for phy_wake_up_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_transmitter_process_run) for phy_transmitter_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_receiver_process_run) for phy_receiver_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) for phy_infinite_transmitter_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_moniting_process_run) for phy_moniting_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(i.phy_deep_sleep_process_run) for phy_deep_sleep_process_run
+    fe_phy_bc3602.o(i.fe_phy_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_quit) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_receive_data) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_phy_send_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.fe_phy_send_data) refers to fe_math.o(i.fe_calculate_crc16) for fe_calculate_crc16
+    fe_phy_bc3602.o(i.fe_phy_send_data) refers to fe_math.o(i.fe_data_whitening_pn7) for fe_data_whitening_pn7
+    fe_phy_bc3602.o(i.fe_phy_send_data) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_set_phy_parameter) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.fe_set_phy_parameter) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_set_phy_tx_parameter) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.fe_set_phy_tx_parameter) refers to fe_phy_bc3602.o(.constdata) for .constdata
+    fe_phy_bc3602.o(i.phy_deep_sleep_process_run) refers to fe_spi_pt32l031.o(i.fe_enter_spi_sleep) for fe_enter_spi_sleep
+    fe_phy_bc3602.o(i.phy_deep_sleep_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_deep_sleep_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_deep_sleep_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_io.o(i.mem_byte_set) for mem_byte_set
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_read) for fe_spi_read
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_semaphore.o(.data) for System
+    fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_read) for fe_spi_read
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_semaphore.o(.data) for System
+    fe_phy_bc3602.o(i.phy_moniting_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_read) for fe_spi_read
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_math.o(i.fe_data_whitening_pn7) for fe_data_whitening_pn7
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_math.o(i.fe_calculate_crc16) for fe_calculate_crc16
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_semaphore.o(.data) for System
+    fe_phy_bc3602.o(i.phy_receiver_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_read) for fe_spi_read
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_semaphore.o(.data) for System
+    fe_phy_bc3602.o(i.phy_transmitter_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_phy_bc3602.o(i.phy_wake_up_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_write) for fe_spi_write
+    fe_phy_bc3602.o(i.phy_wake_up_process_run) refers to fe_spi_pt32l031.o(i.fe_get_spi_state) for fe_get_spi_state
+    fe_phy_bc3602.o(i.phy_wake_up_process_run) refers to fe_spi_pt32l031.o(i.fe_spi_read) for fe_spi_read
+    fe_phy_bc3602.o(i.phy_wake_up_process_run) refers to fe_phy_bc3602.o(.bss) for .bss
+    fe_phy_bc3602.o(i.phy_wake_up_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_mac.o(i.fe_755lha_mac_process_run) refers to fe_755lha_mac.o(i.mac_receiver_process_run) for mac_receiver_process_run
+    fe_755lha_mac.o(i.fe_755lha_mac_process_run) refers to fe_755lha_mac.o(i.mac_transmitter_process_run) for mac_transmitter_process_run
+    fe_755lha_mac.o(i.fe_755lha_mac_process_run) refers to fe_755lha_mac.o(i.mac_event_process_run) for mac_event_process_run
+    fe_755lha_mac.o(i.fe_755lha_mac_process_run) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_755lha_mac_quit) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_755lha_mac_receive_data) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_755lha_mac_send_data) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_explain_data_packet) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_explain_data_packet) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_mac.o(i.fe_get_755lha_mac_state) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_get_rssi_threshold) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.fe_get_rssi_threshold) refers to fe_755lha_eeprom_pt32l031.o(.bss) for Rom
+    fe_755lha_mac.o(i.fe_set_755lha_mac_callback) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_phy_bc3602.o(i.fe_phy_receive_data) for fe_phy_receive_data
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_phy_bc3602.o(i.fe_get_phy_state) for fe_get_phy_state
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_phy_bc3602.o(i.fe_get_rssi) for fe_get_rssi
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_phy_bc3602.o(i.fe_set_phy_tx_parameter) for fe_set_phy_tx_parameter
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_phy_bc3602.o(i.fe_phy_send_data) for fe_phy_send_data
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.mac_event_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_755lha_mac.o(i.fe_get_rssi_threshold) for fe_get_rssi_threshold
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_phy_bc3602.o(i.fe_phy_moniting_data) for fe_phy_moniting_data
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_phy_bc3602.o(i.fe_get_phy_state) for fe_get_phy_state
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_phy_bc3602.o(i.fe_get_rssi) for fe_get_rssi
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_math.o(i.fe_byte_data_move_to_right) for fe_byte_data_move_to_right
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_phy_bc3602.o(i.fe_set_phy_parameter) for fe_set_phy_parameter
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_phy_bc3602.o(i.fe_phy_receive_data) for fe_phy_receive_data
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_755lha_eeprom_pt32l031.o(.bss) for Rom
+    fe_755lha_mac.o(i.mac_receiver_process_run) refers to fe_755lha_mac.o(i.fe_explain_data_packet) for fe_explain_data_packet
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_phy_bc3602.o(i.fe_get_phy_state) for fe_get_phy_state
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_755lha_mac.o(i.fe_get_rssi_threshold) for fe_get_rssi_threshold
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_phy_bc3602.o(i.fe_set_phy_parameter) for fe_set_phy_parameter
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_phy_bc3602.o(i.fe_phy_pluse_send_data) for fe_phy_pluse_send_data
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_755lha_mac.o(.bss) for .bss
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_755lha_mac.o(i.fe_explain_data_packet) for fe_explain_data_packet
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_755lha_eeprom_pt32l031.o(.bss) for Rom
+    fe_755lha_mac.o(i.mac_transmitter_process_run) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) refers to fe_755lha_eeprom_pt32l031.o(i.write_flash_page) for write_flash_page
+    fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_io.o(i.mem_byte_clear) for mem_byte_clear
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) refers to fe_io.o(i.malloc_ram) for malloc_ram
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_all_page) for erase_flash_all_page
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) for erase_flash_memory
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) for PlainExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) for KeyExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) for erase_flash_memory
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) refers to fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) for fe_write_eeprom_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(i.write_flash_code) for write_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) for erase_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) for PlainExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) for KeyExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) for erase_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data) for copy_eeprom_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.reset_default_data) for reset_default_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_semaphore.o(.data) for System
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.reset_default_data) refers to fe_755lha_eeprom_pt32l031.o(.constdata) for .constdata
+    fe_755lha_eeprom_pt32l031.o(i.reset_default_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.write_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_755lha_eeprom_pt32l031.o(i.write_flash_code) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_math.o(i.fe_calculate_crc) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fflti.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to daddsub.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fscalbn.o(.text) for __ARM_scalbnf
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to faddsub.o(x$fpl$fadd) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fflti.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to daddsub.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to faddsub.o(x$fpl$fadd) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_correcting_ad_data) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_data_whitening_pn7) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_get_average) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_byte_data_average) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_curve_average) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_real_average) refers to aeabi_sdivfast.o(.text) for __aeabi_uidivmod
+    fe_semaphore.o(i.fe_clear_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_get_semaphore_state) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_set_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.OpenUART) for OpenUART
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.CloseUART) for CloseUART
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.get_out_data) for get_out_data
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.explain_token_packet) for explain_token_packet
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) for fe_generating_box
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) for fe_generating_cipher
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(.bss) for Rom
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(.data) for Eeprom
+    fe_755lha_uart_pt32l031.o(i.fe_get_uart_state) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_open) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) for RunSciReceivingProc
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) for RunSciTransmittingProc
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunUartServerTask) for RunUartServerTask
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.get_out_data) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s) refers to fe_timer_pt32l031.o(.bss) for Timer
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    d2f.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    daddsub.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    ddiv.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    ddiv.o(.text) refers to ddiv.o(.constdata) for .constdata
+    ddiv.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dfixui.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dflti.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dscalbn.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    f2d.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fadd) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fadd) refers to faddsub.o(x$fpl$fsub) for _fsub1
+    faddsub.o(x$fpl$frsb) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$frsb) refers to faddsub.o(x$fpl$fsub) for _fsub1
+    faddsub.o(x$fpl$frsb) refers to faddsub.o(x$fpl$fadd) for _fadd1
+    faddsub.o(x$fpl$fsub) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    faddsub.o(x$fpl$fsub) refers to faddsub.o(x$fpl$fadd) for _fadd1
+    fdiv.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fdiv.o(.text) refers to fdiv.o(.constdata) for .constdata
+    fdiv.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    ffixui.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fflti.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    fscalbn.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log.o(i.__softfp_log) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log.o(i.__softfp_log) refers to log.o(i.log) for log
+    log.o(i.log) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log.o(i.log) refers to _rserrno.o(.text) for __set_errno
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    log.o(i.log) refers to dscalbn.o(.text) for __ARM_scalbn
+    log.o(i.log) refers to daddsub.o(.text) for __aeabi_dsub
+    log.o(i.log) refers to deqf.o(x$fpl$deqf) for __aeabi_cdcmpeq
+    log.o(i.log) refers to dflti.o(.text) for __aeabi_i2d
+    log.o(i.log) refers to dmul.o(.text) for __aeabi_dmul
+    log.o(i.log) refers to ddiv.o(.text) for __aeabi_ddiv
+    log.o(i.log) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log.o(i.log) refers to qnan.o(.constdata) for __mathlib_zero
+    log.o(i.log) refers to log.o(.constdata) for .constdata
+    log.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers to log_x.o(i.__log$lsc) for __log$lsc
+    log_x.o(i.__log$lsc) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    log_x.o(i.__log$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log_x.o(i.__log$lsc) refers to _rserrno.o(.text) for __set_errno
+    log_x.o(i.__log$lsc) refers to dscalbn.o(.text) for __ARM_scalbn
+    log_x.o(i.__log$lsc) refers to daddsub.o(.text) for __aeabi_dsub
+    log_x.o(i.__log$lsc) refers to deqf.o(x$fpl$deqf) for __aeabi_cdcmpeq
+    log_x.o(i.__log$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log_x.o(i.__log$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log_x.o(i.__log$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    log_x.o(i.__log$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log_x.o(i.__log$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    log_x.o(i.__log$lsc) refers to log_x.o(.constdata) for .constdata
+    log_x.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    aeabi_idiv0_sigfpe.o(.text) refers to rt_div0.o(.text) for __rt_div0
+    _rserrno.o(.text) refers to rt_errno_addr_intlibspace.o(.text) for __aeabi_errno_addr
+    deqf.o(x$fpl$deqf) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    deqf.o(x$fpl$deqf) refers to dcmpin.o(.text) for __fpl_dcmp_InfNaN
+    dmul.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalbn.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to daddsub.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalbn.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalbn.o(.text) for __ARM_scalbn
+    poly.o(i.__kernel_poly) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to daddsub.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    rt_div0.o(.text) refers to defsig_fpe_outer.o(.text) for __rt_SIGFPE
+    rt_errno_addr.o(.text) refers to rt_errno_addr.o(.bss) for __aeabi_errno_addr_data
+    rt_errno_addr_intlibspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    dcmpin.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dcmpin.o(.text) refers to cmpret.o(.text) for __fpl_cmpreturn
+    dcmpin.o(.text) refers to dnan2.o(.text) for __fpl_dcheck_NaN2
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_pt32x031.o(RESET) for __user_initial_stackheap
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to tempstk.o(.text) for __temporary_stack_top
+    sys_stackheap_outer.o(__vectab_stack_and_reset_area) refers to __main.o(!!!main) for __main
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    defsig_fpe_outer.o(.text) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig_fpe_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_fpe_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    cmpret.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dnan2.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    dnan2.o(.text) refers to retnan.o(.text) for __fpl_return_NaN
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.text) for __ARM_argv_veneer
+    retnan.o(.text) refers (Special) to usenofp.o(x$fpl$usenofp) for __I$use$fp
+    retnan.o(.text) refers to cmpret.o(.text) for __fpl_cmpreturn
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_fpe_inner.o(.text) for __rt_SIGFPE_inner
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing 755lha_system_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_system_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_timer_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_timer_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_windows_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_windows_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_keyboard_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_keyboard_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_heat_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_heat_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_batterylow_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_batterylow_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_rf_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_rf_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_release_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_release_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_message_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_message_pt32l031.o(.revsh_text), (4 bytes).
+    Removing adc_pt32l031.o(.rev16_text), (4 bytes).
+    Removing adc_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_io.o(.rev16_text), (4 bytes).
+    Removing fe_io.o(.revsh_text), (4 bytes).
+    Removing fe_io.o(i.malloc_ram), (34 bytes).
+    Removing fe_io.o(i.mem_word_clear), (20 bytes).
+    Removing fe_timer_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_timer_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_timer_pt32l031.o(i.fe_kill_timer2_et), (24 bytes).
+    Removing fe_timer_pt32l031.o(i.fe_set_timer2_et), (44 bytes).
+    Removing fe_spi_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_spi_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_phy_bc3602.o(.rev16_text), (4 bytes).
+    Removing fe_phy_bc3602.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_mac.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_mac.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_mac.o(i.fe_755lha_mac_quit), (32 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.erase_flash_all_page), (88 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory), (20 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.fe_check_key), (112 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key), (132 bytes).
+    Removing fe_math.o(i.fe_byte_data_move_to_left), (18 bytes).
+    Removing fe_math.o(i.fe_calculate_external_8b_temperature), (152 bytes).
+    Removing fe_math.o(i.fe_char_real_comparision), (48 bytes).
+    Removing fe_math.o(i.fe_char_real_subtractive), (14 bytes).
+    Removing fe_math.o(i.fe_correcting_ad_data), (16 bytes).
+    Removing fe_math.o(i.fe_data_move_to_left), (26 bytes).
+    Removing fe_math.o(i.fe_float_data_move_to_left), (26 bytes).
+    Removing fe_math.o(i.fe_float_data_move_to_right), (20 bytes).
+    Removing fe_math.o(i.fe_get_5b_filter), (10 bytes).
+    Removing fe_math.o(i.fe_get_byte_data_average), (24 bytes).
+    Removing fe_math.o(i.fe_get_curve_amplitude), (60 bytes).
+    Removing fe_math.o(i.fe_get_increment), (40 bytes).
+    Removing fe_math.o(i.fe_get_maximum), (28 bytes).
+    Removing fe_math.o(i.fe_get_minimum), (32 bytes).
+    Removing fe_math.o(i.fe_get_real_average), (58 bytes).
+    Removing fe_math.o(i.fe_get_real_increment), (104 bytes).
+    Removing fe_math.o(i.fe_invert_data), (40 bytes).
+    Removing fe_math.o(.constdata), (32 bytes).
+    Removing fe_755lha_uart_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_uart_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(i.fe_initializing_gpio), (2 bytes).
+
+66 unused section(s) (total 1408 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      236  startup_pt32x031.o(RESET)
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit2.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit3.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardshut.o ABSOLUTE
+    ../clib/angel/boardlib.s                 0x00000000   Number         0  boardinit1.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_zi.o ABSOLUTE
+    ../clib/angel/handlers.s                 0x00000000   Number         0  __scatter_copy.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry2.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  __rtentry4.o ABSOLUTE
+    ../clib/angel/kernel.s                   0x00000000   Number         0  rtexit2.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  aeabi_idiv0_sigfpe.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_div0.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_errno_addr_intlibspace.o ABSOLUTE
+    ../clib/angel/rt.s                       0x00000000   Number         0  rt_raise.o ABSOLUTE
+    ../clib/angel/scatterp.s                 0x00000000   Number         0  __scatter.o ABSOLUTE
+    ../clib/angel/startup.s                  0x00000000   Number         0  __main.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  use_no_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  tempstk.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  indicate_semi.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  libspace.o ABSOLUTE
+    ../clib/angel/sys.s                      0x00000000   Number         0  sys_stackheap_outer.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_wrch.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_command.o ABSOLUTE
+    ../clib/angel/sysapp.c                   0x00000000   Number         0  sys_exit.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  no_argv.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  _get_argv_nomalloc.o ABSOLUTE
+    ../clib/armsys.c                         0x00000000   Number         0  argv_veneer.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdivfast.o ABSOLUTE
+    ../clib/division.s                       0x00000000   Number         0  aeabi_sdivfast_div0.o ABSOLUTE
+    ../clib/fenv.c                           0x00000000   Number         0  _rserrno.o ABSOLUTE
+    ../clib/heapalloc.c                      0x00000000   Number         0  hrguard.o ABSOLUTE
+    ../clib/heapaux.c                        0x00000000   Number         0  heapauxi.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libshutdown2.o ABSOLUTE
+    ../clib/libinit.s                        0x00000000   Number         0  libinit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtred_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_abrt_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_general.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_other.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  __raise.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_exit.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_segv_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_stak_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_rtmem_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_pvfn_inner.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_formal.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_fpe_outer.o ABSOLUTE
+    ../clib/signal.c                         0x00000000   Number         0  defsig_cppl_inner.o ABSOLUTE
+    ../clib/signal.s                         0x00000000   Number         0  defsig.o ABSOLUTE
+    ../clib/stdlib.c                         0x00000000   Number         0  exit.o ABSOLUTE
+    ../fplib/cfplib/cmpret.c                 0x00000000   Number         0  cmpret.o ABSOLUTE
+    ../fplib/cfplib/d2f.c                    0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/cfplib/daddsub.c                0x00000000   Number         0  daddsub.o ABSOLUTE
+    ../fplib/cfplib/dcmpin.c                 0x00000000   Number         0  dcmpin.o ABSOLUTE
+    ../fplib/cfplib/ddiv.c                   0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/cfplib/dmul.c                   0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/cfplib/f2d.c                    0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/cfplib/fdiv.c                   0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/cfplib/ffix.c                   0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/cfplib/ffix.c                   0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/cfplib/fflt.c                   0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/cfplib/fflt.c                   0x00000000   Number         0  fflti.o ABSOLUTE
+    ../fplib/cfplib/fpinit.c                 0x00000000   Number         0  fpinit.o ABSOLUTE
+    ../fplib/cfplib/nan2.c                   0x00000000   Number         0  dnan2.o ABSOLUTE
+    ../fplib/cfplib/retnan.c                 0x00000000   Number         0  retnan.o ABSOLUTE
+    ../fplib/cfplib/scalbn.c                 0x00000000   Number         0  fscalbn.o ABSOLUTE
+    ../fplib/cfplib/scalbn.c                 0x00000000   Number         0  dscalbn.o ABSOLUTE
+    ../fplib/deqf6m.s                        0x00000000   Number         0  deqf.o ABSOLUTE
+    ../fplib/faddsub6m.s                     0x00000000   Number         0  faddsub.o ABSOLUTE
+    ../fplib/usenofp.s                       0x00000000   Number         0  usenofp.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log_x.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
+    User\755LHA_Batterylow_PT32L031.c        0x00000000   Number         0  755lha_batterylow_pt32l031.o ABSOLUTE
+    User\755LHA_Keyboard_PT32L031.c          0x00000000   Number         0  755lha_keyboard_pt32l031.o ABSOLUTE
+    User\755LHA_Message_PT32L031.c           0x00000000   Number         0  755lha_message_pt32l031.o ABSOLUTE
+    User\755LHA_RF_PT32L031.c                0x00000000   Number         0  755lha_rf_pt32l031.o ABSOLUTE
+    User\755LHA_Release_PT32L031.c           0x00000000   Number         0  755lha_release_pt32l031.o ABSOLUTE
+    User\755LHA_System_PT32L031.c            0x00000000   Number         0  755lha_system_pt32l031.o ABSOLUTE
+    User\755LHA_Timer_PT32L031.c             0x00000000   Number         0  755lha_timer_pt32l031.o ABSOLUTE
+    User\755LHA_Windows_PT32L031.c           0x00000000   Number         0  755lha_windows_pt32l031.o ABSOLUTE
+    User\755LHA_heat_PT32L031.c              0x00000000   Number         0  755lha_heat_pt32l031.o ABSOLUTE
+    User\ADC_PT32L031.c                      0x00000000   Number         0  adc_pt32l031.o ABSOLUTE
+    User\FE_755LHA_EEPROM_PT32L031.c         0x00000000   Number         0  fe_755lha_eeprom_pt32l031.o ABSOLUTE
+    User\FE_755LHA_MAC.c                     0x00000000   Number         0  fe_755lha_mac.o ABSOLUTE
+    User\FE_755LHA_PT32L031_CFG.c            0x00000000   Number         0  fe_755lha_pt32l031_cfg.o ABSOLUTE
+    User\FE_755LHA_UART_PT32L031.c           0x00000000   Number         0  fe_755lha_uart_pt32l031.o ABSOLUTE
+    User\FE_IO.c                             0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\FE_PHY_BC3602.c                     0x00000000   Number         0  fe_phy_bc3602.o ABSOLUTE
+    User\FE_SPI_PT32L031.c                   0x00000000   Number         0  fe_spi_pt32l031.o ABSOLUTE
+    User\FE_TIMER_PT32L031.c                 0x00000000   Number         0  fe_timer_pt32l031.o ABSOLUTE
+    User\FE_math.c                           0x00000000   Number         0  fe_math.o ABSOLUTE
+    User\FE_semaphore.c                      0x00000000   Number         0  fe_semaphore.o ABSOLUTE
+    User\\755LHA_Batterylow_PT32L031.c       0x00000000   Number         0  755lha_batterylow_pt32l031.o ABSOLUTE
+    User\\755LHA_Keyboard_PT32L031.c         0x00000000   Number         0  755lha_keyboard_pt32l031.o ABSOLUTE
+    User\\755LHA_Message_PT32L031.c          0x00000000   Number         0  755lha_message_pt32l031.o ABSOLUTE
+    User\\755LHA_RF_PT32L031.c               0x00000000   Number         0  755lha_rf_pt32l031.o ABSOLUTE
+    User\\755LHA_Release_PT32L031.c          0x00000000   Number         0  755lha_release_pt32l031.o ABSOLUTE
+    User\\755LHA_System_PT32L031.c           0x00000000   Number         0  755lha_system_pt32l031.o ABSOLUTE
+    User\\755LHA_Timer_PT32L031.c            0x00000000   Number         0  755lha_timer_pt32l031.o ABSOLUTE
+    User\\755LHA_Windows_PT32L031.c          0x00000000   Number         0  755lha_windows_pt32l031.o ABSOLUTE
+    User\\755LHA_heat_PT32L031.c             0x00000000   Number         0  755lha_heat_pt32l031.o ABSOLUTE
+    User\\ADC_PT32L031.c                     0x00000000   Number         0  adc_pt32l031.o ABSOLUTE
+    User\\FE_755LHA_EEPROM_PT32L031.c        0x00000000   Number         0  fe_755lha_eeprom_pt32l031.o ABSOLUTE
+    User\\FE_755LHA_MAC.c                    0x00000000   Number         0  fe_755lha_mac.o ABSOLUTE
+    User\\FE_755LHA_PT32L031_CFG.c           0x00000000   Number         0  fe_755lha_pt32l031_cfg.o ABSOLUTE
+    User\\FE_755LHA_UART_PT32L031.c          0x00000000   Number         0  fe_755lha_uart_pt32l031.o ABSOLUTE
+    User\\FE_IO.c                            0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\\FE_PHY_BC3602.c                    0x00000000   Number         0  fe_phy_bc3602.o ABSOLUTE
+    User\\FE_SPI_PT32L031.c                  0x00000000   Number         0  fe_spi_pt32l031.o ABSOLUTE
+    User\\FE_TIMER_PT32L031.c                0x00000000   Number         0  fe_timer_pt32l031.o ABSOLUTE
+    User\\main.c                             0x00000000   Number         0  main.o ABSOLUTE
+    User\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    User\startup_pt32x031.s                  0x00000000   Number         0  startup_pt32x031.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    !!!main                                  0x000000ec   Section        8  __main.o(!!!main)
+    !!!scatter                               0x000000f4   Section       60  __scatter.o(!!!scatter)
+    !!handler_copy                           0x00000130   Section       26  __scatter_copy.o(!!handler_copy)
+    !!handler_zi                             0x0000014c   Section       28  __scatter_zi.o(!!handler_zi)
+    .ARM.Collect$$libinit$$00000000          0x00000168   Section        2  libinit.o(.ARM.Collect$$libinit$$00000000)
+    .ARM.Collect$$libinit$$00000002          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    .ARM.Collect$$libinit$$00000004          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    .ARM.Collect$$libinit$$0000000A          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    .ARM.Collect$$libinit$$0000000C          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    .ARM.Collect$$libinit$$0000000E          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    .ARM.Collect$$libinit$$00000011          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    .ARM.Collect$$libinit$$00000013          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    .ARM.Collect$$libinit$$00000015          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    .ARM.Collect$$libinit$$00000017          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    .ARM.Collect$$libinit$$00000019          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    .ARM.Collect$$libinit$$0000001B          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    .ARM.Collect$$libinit$$0000001D          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    .ARM.Collect$$libinit$$0000001F          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    .ARM.Collect$$libinit$$00000021          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    .ARM.Collect$$libinit$$00000023          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    .ARM.Collect$$libinit$$00000025          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    .ARM.Collect$$libinit$$0000002C          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    .ARM.Collect$$libinit$$0000002E          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    .ARM.Collect$$libinit$$00000030          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    .ARM.Collect$$libinit$$00000032          0x0000016a   Section        0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    .ARM.Collect$$libinit$$00000033          0x0000016a   Section        2  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    .ARM.Collect$$libshutdown$$00000000      0x0000016c   Section        2  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    .ARM.Collect$$libshutdown$$00000002      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    .ARM.Collect$$libshutdown$$00000004      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    .ARM.Collect$$libshutdown$$00000007      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    .ARM.Collect$$libshutdown$$0000000A      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    .ARM.Collect$$libshutdown$$0000000C      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    .ARM.Collect$$libshutdown$$0000000F      0x0000016e   Section        0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    .ARM.Collect$$libshutdown$$00000010      0x0000016e   Section        2  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    .ARM.Collect$$rtentry$$00000000          0x00000170   Section        0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    .ARM.Collect$$rtentry$$00000002          0x00000170   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    .ARM.Collect$$rtentry$$00000004          0x00000170   Section        6  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    .ARM.Collect$$rtentry$$00000009          0x00000176   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    .ARM.Collect$$rtentry$$0000000A          0x00000176   Section        4  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    .ARM.Collect$$rtentry$$0000000C          0x0000017a   Section        0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    .ARM.Collect$$rtentry$$0000000D          0x0000017a   Section        8  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    .ARM.Collect$$rtexit$$00000000           0x00000182   Section        2  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    .ARM.Collect$$rtexit$$00000002           0x00000184   Section        0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    .ARM.Collect$$rtexit$$00000003           0x00000184   Section        4  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    .ARM.Collect$$rtexit$$00000004           0x00000188   Section        6  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    .text                                    0x00000190   Section        0  main.o(.text)
+    .text                                    0x000004c4   Section        0  755lha_system_pt32l031.o(.text)
+    .text                                    0x000008bc   Section        0  755lha_timer_pt32l031.o(.text)
+    .text                                    0x00000b10   Section        0  755lha_windows_pt32l031.o(.text)
+    .text                                    0x00001550   Section        0  755lha_keyboard_pt32l031.o(.text)
+    .text                                    0x00001820   Section        0  755lha_heat_pt32l031.o(.text)
+    .text                                    0x00001db8   Section        0  755lha_batterylow_pt32l031.o(.text)
+    .text                                    0x00001fa8   Section        0  755lha_rf_pt32l031.o(.text)
+    .text                                    0x00002450   Section        0  755lha_release_pt32l031.o(.text)
+    .text                                    0x000025f0   Section        0  755lha_message_pt32l031.o(.text)
+    .text                                    0x00002d54   Section        0  adc_pt32l031.o(.text)
+    .text                                    0x00002ea0   Section      488  aeabi_sdivfast.o(.text)
+    .text                                    0x00003088   Section        0  heapauxi.o(.text)
+    .text                                    0x00003090   Section        0  d2f.o(.text)
+    .text                                    0x0000310c   Section        0  daddsub.o(.text)
+    _dadd1                                   0x0000310d   Thumb Code   290  daddsub.o(.text)
+    _dsub1                                   0x0000322f   Thumb Code   470  daddsub.o(.text)
+    .text                                    0x00003464   Section        0  ddiv.o(.text)
+    .text                                    0x000038ac   Section        0  dfixui.o(.text)
+    .text                                    0x000038f4   Section        0  dflti.o(.text)
+    .text                                    0x0000394c   Section        0  dscalbn.o(.text)
+    .text                                    0x000039ac   Section        0  f2d.o(.text)
+    .text                                    0x00003a00   Section        0  fdiv.o(.text)
+    .text                                    0x00003b60   Section        0  ffixui.o(.text)
+    .text                                    0x00003b90   Section        0  fflti.o(.text)
+    .text                                    0x00003bf0   Section        0  fscalbn.o(.text)
+    .text                                    0x00003c34   Section        0  _rserrno.o(.text)
+    .text                                    0x00003c4c   Section        0  dmul.o(.text)
+    .text                                    0x00003e94   Section        8  rt_errno_addr_intlibspace.o(.text)
+    .text                                    0x00003e9c   Section        0  dcmpin.o(.text)
+    .text                                    0x00003f2c   Section        8  libspace.o(.text)
+    .text                                    0x00003f34   Section       62  sys_stackheap_outer.o(.text)
+    .text                                    0x00003f72   Section        0  exit.o(.text)
+    .text                                    0x00003f82   Section        0  cmpret.o(.text)
+    .text                                    0x00003fb0   Section        0  dnan2.o(.text)
+    .text                                    0x00003fc4   Section        0  retnan.o(.text)
+    .text                                    0x00004024   Section        0  sys_exit.o(.text)
+    .text                                    0x00004030   Section        2  use_no_semi.o(.text)
+    .text                                    0x00004032   Section        0  indicate_semi.o(.text)
+    i.CloseUART                              0x00004034   Section        0  fe_755lha_uart_pt32l031.o(i.CloseUART)
+    i.EEPROM_write_data                      0x0000405c   Section        0  fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data)
+    i.GetCodeFromBox                         0x00004104   Section        0  fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox)
+    i.KeyExpansions                          0x00004110   Section        0  fe_755lha_eeprom_pt32l031.o(i.KeyExpansions)
+    i.OpenUART                               0x00004168   Section        0  fe_755lha_uart_pt32l031.o(i.OpenUART)
+    i.PlainExpansions                        0x00004198   Section        0  fe_755lha_eeprom_pt32l031.o(i.PlainExpansions)
+    i.RunSciReceivingProc                    0x000041b4   Section        0  fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc)
+    i.RunSciTransmittingProc                 0x00004294   Section        0  fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc)
+    i.RunUartServerTask                      0x00004330   Section        0  fe_755lha_uart_pt32l031.o(i.RunUartServerTask)
+    i.TIMER2_Handler                         0x000043ec   Section        0  fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler)
+    i.__kernel_poly                          0x0000443c   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_divzero                  0x000044e8   Section        0  dunder.o(i.__mathlib_dbl_divzero)
+    i.__mathlib_dbl_infnan                   0x000044fc   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x00004506   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.bc3602_configure_process_run           0x00004518   Section        0  fe_phy_bc3602.o(i.bc3602_configure_process_run)
+    i.copy_eeprom_data                       0x000046b8   Section        0  fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data)
+    i.erase_flash_code                       0x000046cc   Section        0  fe_755lha_eeprom_pt32l031.o(i.erase_flash_code)
+    i.explain_token_packet                   0x00004740   Section        0  fe_755lha_uart_pt32l031.o(i.explain_token_packet)
+    i.fe_755LHA_read_eeprom_data             0x00004878   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data)
+    i.fe_755LHA_write_eeprom_data            0x000048cc   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data)
+    i.fe_755lha_mac_process_run              0x0000492c   Section        0  fe_755lha_mac.o(i.fe_755lha_mac_process_run)
+    i.fe_755lha_mac_receive_data             0x00004954   Section        0  fe_755lha_mac.o(i.fe_755lha_mac_receive_data)
+    i.fe_755lha_mac_send_data                0x00004970   Section        0  fe_755lha_mac.o(i.fe_755lha_mac_send_data)
+    i.fe_byte_data_move_to_right             0x00004994   Section        0  fe_math.o(i.fe_byte_data_move_to_right)
+    i.fe_calculate_crc                       0x000049a8   Section        0  fe_math.o(i.fe_calculate_crc)
+    i.fe_calculate_crc16                     0x000049f4   Section        0  fe_math.o(i.fe_calculate_crc16)
+    i.fe_calculate_external_16b_temperature  0x00004a38   Section        0  fe_math.o(i.fe_calculate_external_16b_temperature)
+    i.fe_calculate_sleep_8s                  0x00004ac8   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s)
+    i.fe_check_system_tick_timer             0x00004b44   Section        0  fe_timer_pt32l031.o(i.fe_check_system_tick_timer)
+    i.fe_clear_ram                           0x00004b68   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_clear_ram)
+    i.fe_clear_semaphore                     0x00004b8c   Section        0  fe_semaphore.o(i.fe_clear_semaphore)
+    i.fe_data_move_to_right                  0x00004ba8   Section        0  fe_math.o(i.fe_data_move_to_right)
+    i.fe_data_whitening_pn7                  0x00004bbc   Section        0  fe_math.o(i.fe_data_whitening_pn7)
+    i.fe_eeprom_process_run                  0x00004bd8   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run)
+    i.fe_enter_spi_sleep                     0x00004bec   Section        0  fe_spi_pt32l031.o(i.fe_enter_spi_sleep)
+    i.fe_explain_data_packet                 0x00004c14   Section        0  fe_755lha_mac.o(i.fe_explain_data_packet)
+    i.fe_generating_box                      0x00004c78   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_generating_box)
+    i.fe_generating_cipher                   0x00004ccc   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher)
+    i.fe_get_2b_filter                       0x00004d1c   Section        0  fe_math.o(i.fe_get_2b_filter)
+    i.fe_get_755lha_mac_state                0x00004d28   Section        0  fe_755lha_mac.o(i.fe_get_755lha_mac_state)
+    i.fe_get_average                         0x00004d44   Section        0  fe_math.o(i.fe_get_average)
+    i.fe_get_curve_average                   0x00004d60   Section        0  fe_math.o(i.fe_get_curve_average)
+    i.fe_get_eeprom_state                    0x00004e20   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state)
+    i.fe_get_phy_state                       0x00004e3c   Section        0  fe_phy_bc3602.o(i.fe_get_phy_state)
+    i.fe_get_real_maximum                    0x00004e68   Section        0  fe_math.o(i.fe_get_real_maximum)
+    i.fe_get_real_minimum                    0x00004ea4   Section        0  fe_math.o(i.fe_get_real_minimum)
+    i.fe_get_rssi                            0x00004ee0   Section        0  fe_phy_bc3602.o(i.fe_get_rssi)
+    i.fe_get_rssi_threshold                  0x00004ef4   Section        0  fe_755lha_mac.o(i.fe_get_rssi_threshold)
+    i.fe_get_semaphore_state                 0x00004f54   Section        0  fe_semaphore.o(i.fe_get_semaphore_state)
+    i.fe_get_sleep_8s                        0x00004f60   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s)
+    i.fe_get_spi_state                       0x00004f6c   Section        0  fe_spi_pt32l031.o(i.fe_get_spi_state)
+    i.fe_get_uart_state                      0x00004f80   Section        0  fe_755lha_uart_pt32l031.o(i.fe_get_uart_state)
+    i.fe_kill_system_tick_timer              0x00004f98   Section        0  fe_timer_pt32l031.o(i.fe_kill_system_tick_timer)
+    i.fe_phy_moniting_data                   0x00004fa8   Section        0  fe_phy_bc3602.o(i.fe_phy_moniting_data)
+    i.fe_phy_pluse_send_data                 0x00004fe0   Section        0  fe_phy_bc3602.o(i.fe_phy_pluse_send_data)
+    i.fe_phy_process_run                     0x00005060   Section        0  fe_phy_bc3602.o(i.fe_phy_process_run)
+    i.fe_phy_quit                            0x000050b8   Section        0  fe_phy_bc3602.o(i.fe_phy_quit)
+    i.fe_phy_receive_data                    0x000050d0   Section        0  fe_phy_bc3602.o(i.fe_phy_receive_data)
+    i.fe_phy_send_data                       0x00005124   Section        0  fe_phy_bc3602.o(i.fe_phy_send_data)
+    i.fe_read_eeprom_data                    0x000051b8   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data)
+    i.fe_real_comparision                    0x00005290   Section        0  fe_math.o(i.fe_real_comparision)
+    i.fe_set_755lha_mac_callback             0x000052d4   Section        0  fe_755lha_mac.o(i.fe_set_755lha_mac_callback)
+    i.fe_set_phy_parameter                   0x000052ec   Section        0  fe_phy_bc3602.o(i.fe_set_phy_parameter)
+    i.fe_set_phy_tx_parameter                0x00005320   Section        0  fe_phy_bc3602.o(i.fe_set_phy_tx_parameter)
+    i.fe_set_semaphore                       0x00005360   Section        0  fe_semaphore.o(i.fe_set_semaphore)
+    i.fe_set_system_tick_timer               0x0000537c   Section        0  fe_timer_pt32l031.o(i.fe_set_system_tick_timer)
+    i.fe_set_uart_callback                   0x00005394   Section        0  fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback)
+    i.fe_spi_process_run                     0x000053a4   Section        0  fe_spi_pt32l031.o(i.fe_spi_process_run)
+    i.fe_spi_read                            0x000053d0   Section        0  fe_spi_pt32l031.o(i.fe_spi_read)
+    i.fe_spi_write                           0x000053f0   Section        0  fe_spi_pt32l031.o(i.fe_spi_write)
+    i.fe_subtractive                         0x00005424   Section        0  fe_math.o(i.fe_subtractive)
+    i.fe_uart_open                           0x00005434   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_open)
+    i.fe_uart_process_run                    0x0000545c   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_process_run)
+    i.fe_uart_write                          0x0000548c   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_write)
+    i.fe_write_eeprom_data                   0x000054d0   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data)
+    i.get_out_data                           0x00005580   Section        0  fe_755lha_uart_pt32l031.o(i.get_out_data)
+    i.log                                    0x000055a4   Section        0  log.o(i.log)
+    i.mac_event_process_run                  0x000058f8   Section        0  fe_755lha_mac.o(i.mac_event_process_run)
+    i.mac_receiver_process_run               0x00005ab8   Section        0  fe_755lha_mac.o(i.mac_receiver_process_run)
+    i.mac_transmitter_process_run            0x00005c00   Section        0  fe_755lha_mac.o(i.mac_transmitter_process_run)
+    i.mem_byte_clear                         0x00005cd8   Section        0  fe_io.o(i.mem_byte_clear)
+    i.mem_byte_set                           0x00005ce6   Section        0  fe_io.o(i.mem_byte_set)
+    i.mem_data_copy                          0x00005cf2   Section        0  fe_io.o(i.mem_data_copy)
+    i.mem_word_copy                          0x00005d04   Section        0  fe_io.o(i.mem_word_copy)
+    i.phy_deep_sleep_process_run             0x00005d18   Section        0  fe_phy_bc3602.o(i.phy_deep_sleep_process_run)
+    i.phy_infinite_transmitter_process_run   0x00005d80   Section        0  fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run)
+    i.phy_moniting_process_run               0x00006110   Section        0  fe_phy_bc3602.o(i.phy_moniting_process_run)
+    i.phy_receiver_process_run               0x00006244   Section        0  fe_phy_bc3602.o(i.phy_receiver_process_run)
+    i.phy_transmitter_process_run            0x000064f8   Section        0  fe_phy_bc3602.o(i.phy_transmitter_process_run)
+    i.phy_wake_up_process_run                0x00006758   Section        0  fe_phy_bc3602.o(i.phy_wake_up_process_run)
+    i.reset_default_data                     0x00006830   Section        0  fe_755lha_eeprom_pt32l031.o(i.reset_default_data)
+    i.spi_close                              0x0000684c   Section        0  fe_spi_pt32l031.o(i.spi_close)
+    i.spi_open                               0x00006878   Section        0  fe_spi_pt32l031.o(i.spi_open)
+    i.spi_run                                0x000068bc   Section        0  fe_spi_pt32l031.o(i.spi_run)
+    i.write_flash_code                       0x00006980   Section        0  fe_755lha_eeprom_pt32l031.o(i.write_flash_code)
+    i.write_flash_page                       0x000069a8   Section        0  fe_755lha_eeprom_pt32l031.o(i.write_flash_page)
+    x$fpl$deqf                               0x00006a28   Section      100  deqf.o(x$fpl$deqf)
+    x$fpl$fadd                               0x00006a8c   Section      140  faddsub.o(x$fpl$fadd)
+    _fadd1                                   0x00006a99   Thumb Code     0  faddsub.o(x$fpl$fadd)
+    x$fpl$fsub                               0x00006b18   Section      208  faddsub.o(x$fpl$fsub)
+    _fsub1                                   0x00006b25   Thumb Code     0  faddsub.o(x$fpl$fsub)
+    .constdata                               0x00006be8   Section      140  fe_phy_bc3602.o(.constdata)
+    x$fpl$usenofp                            0x00006be8   Section        0  usenofp.o(x$fpl$usenofp)
+    .constdata                               0x00006c74   Section       68  fe_755lha_eeprom_pt32l031.o(.constdata)
+    .constdata                               0x00006cb8   Section       82  fe_math.o(.constdata)
+    .constdata                               0x00006d0a   Section      128  ddiv.o(.constdata)
+    ddiv_reciptbl                            0x00006d0a   Data         128  ddiv.o(.constdata)
+    .constdata                               0x00006d8a   Section       64  fdiv.o(.constdata)
+    fdiv_tab                                 0x00006d8a   Data          64  fdiv.o(.constdata)
+    .constdata                               0x00006dd0   Section       56  log.o(.constdata)
+    Lg2                                      0x00006dd0   Data          24  log.o(.constdata)
+    Lg                                       0x00006de8   Data          32  log.o(.constdata)
+    .constdata                               0x00006e08   Section        8  qnan.o(.constdata)
+    .data                                    0x20000000   Section        2  755lha_system_pt32l031.o(.data)
+    .data                                    0x20000002   Section       16  755lha_windows_pt32l031.o(.data)
+    .data                                    0x20000012   Section       16  755lha_keyboard_pt32l031.o(.data)
+    .data                                    0x20000022   Section        4  755lha_release_pt32l031.o(.data)
+    .data                                    0x20000026   Section        4  fe_755lha_eeprom_pt32l031.o(.data)
+    .data                                    0x2000002c   Section        4  fe_semaphore.o(.data)
+    .data                                    0x20000030   Section        8  fe_755lha_uart_pt32l031.o(.data)
+    .bss                                     0x20000038   Section       12  main.o(.bss)
+    .bss                                     0x20000044   Section       84  755lha_timer_pt32l031.o(.bss)
+    .bss                                     0x20000098   Section     1296  755lha_heat_pt32l031.o(.bss)
+    .bss                                     0x200005a8   Section       10  755lha_batterylow_pt32l031.o(.bss)
+    .bss                                     0x200005b2   Section       28  755lha_rf_pt32l031.o(.bss)
+    .bss                                     0x200005ce   Section       16  755lha_release_pt32l031.o(.bss)
+    .bss                                     0x200005e0   Section       12  adc_pt32l031.o(.bss)
+    .bss                                     0x200005ec   Section       24  fe_timer_pt32l031.o(.bss)
+    .bss                                     0x20000604   Section       28  fe_spi_pt32l031.o(.bss)
+    .bss                                     0x20000620   Section       92  fe_phy_bc3602.o(.bss)
+    .bss                                     0x2000067c   Section       68  fe_755lha_mac.o(.bss)
+    .bss                                     0x200006c0   Section       76  fe_755lha_eeprom_pt32l031.o(.bss)
+    .bss                                     0x2000070c   Section       92  fe_755lha_uart_pt32l031.o(.bss)
+    .bss                                     0x20000768   Section       96  libspace.o(.bss)
+    HEAP                                     0x200007c8   Section        0  startup_pt32x031.o(HEAP)
+    STACK                                    0x200007c8   Section     2000  startup_pt32x031.o(STACK)
+    Heap_Mem                                 0x200007c8   Data           0  startup_pt32x031.o(HEAP)
+    Stack_Mem                                0x200007c8   Data        2000  startup_pt32x031.o(STACK)
+    __initial_sp                             0x20000f98   Data           0  startup_pt32x031.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$UX$STANDARDLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_pt32x031.o(RESET)
+    __ARM_exceptions_init                     - Undefined Weak Reference
+    __alloca_initialize                       - Undefined Weak Reference
+    __arm_preinit_                            - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __rt_locale                               - Undefined Weak Reference
+    __sigvec_lookup                           - Undefined Weak Reference
+    _atexit_init                              - Undefined Weak Reference
+    _call_atexit_fns                          - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _fp_trap_init                             - Undefined Weak Reference
+    _fp_trap_shutdown                         - Undefined Weak Reference
+    _get_lc_collate                           - Undefined Weak Reference
+    _get_lc_ctype                             - Undefined Weak Reference
+    _get_lc_monetary                          - Undefined Weak Reference
+    _get_lc_numeric                           - Undefined Weak Reference
+    _get_lc_time                              - Undefined Weak Reference
+    _getenv_init                              - Undefined Weak Reference
+    _handle_redirection                       - Undefined Weak Reference
+    _init_alloc                               - Undefined Weak Reference
+    _init_user_alloc                          - Undefined Weak Reference
+    _initio                                   - Undefined Weak Reference
+    _rand_init                                - Undefined Weak Reference
+    _signal_finish                            - Undefined Weak Reference
+    _signal_init                              - Undefined Weak Reference
+    _terminate_alloc                          - Undefined Weak Reference
+    _terminate_user_alloc                     - Undefined Weak Reference
+    _terminateio                              - Undefined Weak Reference
+    Reset_Handler                            0x000000c1   Thumb Code     4  startup_pt32x031.o(RESET)
+    NMI_Handler                              0x000000c5   Thumb Code     2  startup_pt32x031.o(RESET)
+    HardFault_Handler                        0x000000c7   Thumb Code     2  startup_pt32x031.o(RESET)
+    SVC_Handler                              0x000000c9   Thumb Code     2  startup_pt32x031.o(RESET)
+    PendSV_Handler                           0x000000cb   Thumb Code     2  startup_pt32x031.o(RESET)
+    SysTick_Handler                          0x000000cd   Thumb Code     2  startup_pt32x031.o(RESET)
+    CLK_FAIL_Handler                         0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    Comparator0_Handler                      0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    Comparator1_Handler                      0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    FLASH_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    I2C0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    I2C1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    LED_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    LVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    PF_Handler                               0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    PVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SPI0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SPI1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SWDG_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    TIMER0_Handler                           0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    TIMER3_Handler                           0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    UART0_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    UART1_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    __user_initial_stackheap                 0x000000d1   Thumb Code     0  startup_pt32x031.o(RESET)
+    __main                                   0x000000ed   Thumb Code     8  __main.o(!!!main)
+    __scatterload                            0x000000f5   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_rt2                        0x000000f5   Thumb Code    52  __scatter.o(!!!scatter)
+    __scatterload_rt2_thumb_only             0x000000f5   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_null                       0x00000105   Thumb Code     0  __scatter.o(!!!scatter)
+    __scatterload_copy                       0x00000131   Thumb Code    26  __scatter_copy.o(!!handler_copy)
+    __scatterload_zeroinit                   0x0000014d   Thumb Code    28  __scatter_zi.o(!!handler_zi)
+    __rt_lib_init                            0x00000169   Thumb Code     0  libinit.o(.ARM.Collect$$libinit$$00000000)
+    __rt_lib_init_alloca_1                   0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002E)
+    __rt_lib_init_argv_1                     0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000002C)
+    __rt_lib_init_atexit_1                   0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001B)
+    __rt_lib_init_clock_1                    0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000021)
+    __rt_lib_init_cpp_1                      0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000032)
+    __rt_lib_init_exceptions_1               0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000030)
+    __rt_lib_init_fp_1                       0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000002)
+    __rt_lib_init_fp_trap_1                  0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001F)
+    __rt_lib_init_getenv_1                   0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000023)
+    __rt_lib_init_heap_1                     0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000A)
+    __rt_lib_init_lc_collate_1               0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000011)
+    __rt_lib_init_lc_ctype_1                 0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000013)
+    __rt_lib_init_lc_monetary_1              0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000015)
+    __rt_lib_init_lc_numeric_1               0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000017)
+    __rt_lib_init_lc_time_1                  0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000019)
+    __rt_lib_init_preinit_1                  0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000004)
+    __rt_lib_init_rand_1                     0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000E)
+    __rt_lib_init_return                     0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000033)
+    __rt_lib_init_signal_1                   0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000001D)
+    __rt_lib_init_stdio_1                    0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$00000025)
+    __rt_lib_init_user_alloc_1               0x0000016b   Thumb Code     0  libinit2.o(.ARM.Collect$$libinit$$0000000C)
+    __rt_lib_shutdown                        0x0000016d   Thumb Code     0  libshutdown.o(.ARM.Collect$$libshutdown$$00000000)
+    __rt_lib_shutdown_cpp_1                  0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000002)
+    __rt_lib_shutdown_fp_trap_1              0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000007)
+    __rt_lib_shutdown_heap_1                 0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F)
+    __rt_lib_shutdown_return                 0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000010)
+    __rt_lib_shutdown_signal_1               0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A)
+    __rt_lib_shutdown_stdio_1                0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$00000004)
+    __rt_lib_shutdown_user_alloc_1           0x0000016f   Thumb Code     0  libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C)
+    __rt_entry                               0x00000171   Thumb Code     0  __rtentry.o(.ARM.Collect$$rtentry$$00000000)
+    __rt_entry_presh_1                       0x00000171   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000002)
+    __rt_entry_sh                            0x00000171   Thumb Code     0  __rtentry4.o(.ARM.Collect$$rtentry$$00000004)
+    __rt_entry_li                            0x00000177   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000A)
+    __rt_entry_postsh_1                      0x00000177   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$00000009)
+    __rt_entry_main                          0x0000017b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
+    __rt_entry_postli_1                      0x0000017b   Thumb Code     0  __rtentry2.o(.ARM.Collect$$rtentry$$0000000C)
+    __rt_exit                                0x00000183   Thumb Code     0  rtexit.o(.ARM.Collect$$rtexit$$00000000)
+    __rt_exit_ls                             0x00000185   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000003)
+    __rt_exit_prels_1                        0x00000185   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000002)
+    __rt_exit_exit                           0x00000189   Thumb Code     0  rtexit2.o(.ARM.Collect$$rtexit$$00000004)
+    main                                     0x00000191   Thumb Code   742  main.o(.text)
+    sys_clock_init                           0x000004c5   Thumb Code    62  755lha_system_pt32l031.o(.text)
+    sys_gpio_init                            0x00000503   Thumb Code   196  755lha_system_pt32l031.o(.text)
+    system_start_proc_run                    0x000005c7   Thumb Code   232  755lha_system_pt32l031.o(.text)
+    mem_data_add                             0x000006af   Thumb Code    28  755lha_system_pt32l031.o(.text)
+    goto_deepsleep                           0x000006cb   Thumb Code   384  755lha_system_pt32l031.o(.text)
+    set_timer3                               0x000008bd   Thumb Code    38  755lha_timer_pt32l031.o(.text)
+    check_timer3                             0x000008e3   Thumb Code    42  755lha_timer_pt32l031.o(.text)
+    kill_timer3                              0x0000090d   Thumb Code    24  755lha_timer_pt32l031.o(.text)
+    TIMER1_Handler                           0x00000925   Thumb Code   104  755lha_timer_pt32l031.o(.text)
+    open_timer4                              0x0000098d   Thumb Code    76  755lha_timer_pt32l031.o(.text)
+    TIMER4_Handler                           0x000009d9   Thumb Code    34  755lha_timer_pt32l031.o(.text)
+    open_iwdg                                0x000009fb   Thumb Code    32  755lha_timer_pt32l031.o(.text)
+    feed_iwdg                                0x00000a1b   Thumb Code    20  755lha_timer_pt32l031.o(.text)
+    close_iwdg                               0x00000a2f   Thumb Code    32  755lha_timer_pt32l031.o(.text)
+    open_swdg                                0x00000a4f   Thumb Code    32  755lha_timer_pt32l031.o(.text)
+    feed_swdg                                0x00000a6f   Thumb Code    20  755lha_timer_pt32l031.o(.text)
+    close_swdg                               0x00000a83   Thumb Code    22  755lha_timer_pt32l031.o(.text)
+    close_wdog                               0x00000a99   Thumb Code    52  755lha_timer_pt32l031.o(.text)
+    uart_callback                            0x00000b11   Thumb Code   152  755lha_windows_pt32l031.o(.text)
+    open_buzzer                              0x00000ba9   Thumb Code   148  755lha_windows_pt32l031.o(.text)
+    close_buzzer                             0x00000c3d   Thumb Code    46  755lha_windows_pt32l031.o(.text)
+    set_wire_connect                         0x00000c6b   Thumb Code   154  755lha_windows_pt32l031.o(.text)
+    set_wireless_connect                     0x00000d05   Thumb Code    20  755lha_windows_pt32l031.o(.text)
+    remove_alarm                             0x00000d19   Thumb Code    80  755lha_windows_pt32l031.o(.text)
+    alarm_cfg                                0x00000d69   Thumb Code   848  755lha_windows_pt32l031.o(.text)
+    red_led_lighten                          0x000010b9   Thumb Code   508  755lha_windows_pt32l031.o(.text)
+    yellow_led_lighten                       0x000012b5   Thumb Code   148  755lha_windows_pt32l031.o(.text)
+    buzzer_sound                             0x00001349   Thumb Code   386  755lha_windows_pt32l031.o(.text)
+    update_timer1                            0x000014cb   Thumb Code   110  755lha_windows_pt32l031.o(.text)
+    PA_Handler                               0x00001551   Thumb Code    26  755lha_keyboard_pt32l031.o(.text)
+    PB_Handler                               0x0000156b   Thumb Code    34  755lha_keyboard_pt32l031.o(.text)
+    scankey3_process_run                     0x0000158d   Thumb Code   128  755lha_keyboard_pt32l031.o(.text)
+    key3_down_event                          0x0000160d   Thumb Code    32  755lha_keyboard_pt32l031.o(.text)
+    key3_08s_event                           0x0000162d   Thumb Code    36  755lha_keyboard_pt32l031.o(.text)
+    key3_10s_event                           0x00001651   Thumb Code    30  755lha_keyboard_pt32l031.o(.text)
+    key3_up_event                            0x0000166f   Thumb Code    30  755lha_keyboard_pt32l031.o(.text)
+    keyfrequency_check                       0x0000168d   Thumb Code    98  755lha_keyboard_pt32l031.o(.text)
+    scankey2_process_run                     0x000016ef   Thumb Code   262  755lha_keyboard_pt32l031.o(.text)
+    generating_basedata                      0x00001821   Thumb Code   138  755lha_heat_pt32l031.o(.text)
+    check_is20k                              0x000018ab   Thumb Code    62  755lha_heat_pt32l031.o(.text)
+    check_is10k                              0x000018e9   Thumb Code    46  755lha_heat_pt32l031.o(.text)
+    check_is5k                               0x00001917   Thumb Code    46  755lha_heat_pt32l031.o(.text)
+    check_is3k                               0x00001945   Thumb Code    42  755lha_heat_pt32l031.o(.text)
+    check_is1k                               0x0000196f   Thumb Code    62  755lha_heat_pt32l031.o(.text)
+    check_is02k                              0x000019ad   Thumb Code   102  755lha_heat_pt32l031.o(.text)
+    check_issafe                             0x00001a13   Thumb Code    62  755lha_heat_pt32l031.o(.text)
+    data_treating                            0x00001a51   Thumb Code    54  755lha_heat_pt32l031.o(.text)
+    issue_outputdata                         0x00001a87   Thumb Code    20  755lha_heat_pt32l031.o(.text)
+    fire_alarm                               0x00001a9b   Thumb Code    48  755lha_heat_pt32l031.o(.text)
+    heat_process_run                         0x00001acb   Thumb Code   734  755lha_heat_pt32l031.o(.text)
+    array_right                              0x00001db9   Thumb Code    26  755lha_batterylow_pt32l031.o(.text)
+    check_islowbattery                       0x00001dd3   Thumb Code    42  755lha_batterylow_pt32l031.o(.text)
+    check_isok                               0x00001dfd   Thumb Code    42  755lha_batterylow_pt32l031.o(.text)
+    measure_battery                          0x00001e27   Thumb Code   360  755lha_batterylow_pt32l031.o(.text)
+    phy_callback                             0x00001fa9   Thumb Code   122  755lha_rf_pt32l031.o(.text)
+    mac_callback                             0x00002023   Thumb Code   148  755lha_rf_pt32l031.o(.text)
+    explain_command                          0x000020b7   Thumb Code   140  755lha_rf_pt32l031.o(.text)
+    rf_pairing_process_run                   0x00002143   Thumb Code   766  755lha_rf_pt32l031.o(.text)
+    release_network                          0x00002451   Thumb Code   394  755lha_release_pt32l031.o(.text)
+    key3_short_check                         0x000025f1   Thumb Code   114  755lha_message_pt32l031.o(.text)
+    key3_08s_check                           0x00002663   Thumb Code   116  755lha_message_pt32l031.o(.text)
+    message_proc                             0x000026d7   Thumb Code  1220  755lha_message_pt32l031.o(.text)
+    message_execution                        0x00002b9b   Thumb Code   402  755lha_message_pt32l031.o(.text)
+    fe_adc_init                              0x00002d55   Thumb Code    12  adc_pt32l031.o(.text)
+    fe_adc_kill                              0x00002d61   Thumb Code    34  adc_pt32l031.o(.text)
+    fe_adc_open_scm_in3                      0x00002d83   Thumb Code    46  adc_pt32l031.o(.text)
+    fe_adc_open_scm_in6                      0x00002db1   Thumb Code    46  adc_pt32l031.o(.text)
+    fe_adc_open_scm_in1                      0x00002ddf   Thumb Code    46  adc_pt32l031.o(.text)
+    fe_adc_open_scm_in12                     0x00002e0d   Thumb Code    46  adc_pt32l031.o(.text)
+    ADC_Handler                              0x00002e3b   Thumb Code    56  adc_pt32l031.o(.text)
+    CalculateActualVoltage                   0x00002e73   Thumb Code    14  adc_pt32l031.o(.text)
+    __aeabi_uidiv                            0x00002ea1   Thumb Code     0  aeabi_sdivfast.o(.text)
+    __aeabi_uidivmod                         0x00002ea1   Thumb Code    28  aeabi_sdivfast.o(.text)
+    __aeabi_idiv                             0x00002ebd   Thumb Code     0  aeabi_sdivfast.o(.text)
+    __aeabi_idivmod                          0x00002ebd   Thumb Code   460  aeabi_sdivfast.o(.text)
+    __use_two_region_memory                  0x00003089   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_escrow$2region                 0x0000308b   Thumb Code     2  heapauxi.o(.text)
+    __rt_heap_expand$2region                 0x0000308d   Thumb Code     2  heapauxi.o(.text)
+    __aeabi_d2f                              0x00003091   Thumb Code     0  d2f.o(.text)
+    _d2f                                     0x00003091   Thumb Code   120  d2f.o(.text)
+    __aeabi_dadd                             0x00003405   Thumb Code     0  daddsub.o(.text)
+    _dadd                                    0x00003405   Thumb Code    26  daddsub.o(.text)
+    __aeabi_dsub                             0x0000341f   Thumb Code     0  daddsub.o(.text)
+    _dsub                                    0x0000341f   Thumb Code    22  daddsub.o(.text)
+    __aeabi_drsub                            0x00003435   Thumb Code     0  daddsub.o(.text)
+    _drsb                                    0x00003435   Thumb Code    28  daddsub.o(.text)
+    __aeabi_ddiv                             0x00003465   Thumb Code     0  ddiv.o(.text)
+    _ddiv                                    0x00003465   Thumb Code  1072  ddiv.o(.text)
+    _drdiv                                   0x00003895   Thumb Code    20  ddiv.o(.text)
+    __aeabi_d2uiz                            0x000038ad   Thumb Code     0  dfixui.o(.text)
+    _dfixu                                   0x000038ad   Thumb Code    68  dfixui.o(.text)
+    __aeabi_i2d_normalise                    0x000038f5   Thumb Code    66  dflti.o(.text)
+    __aeabi_i2d                              0x00003937   Thumb Code    16  dflti.o(.text)
+    _dflt                                    0x00003937   Thumb Code     0  dflti.o(.text)
+    __aeabi_ui2d                             0x00003947   Thumb Code     6  dflti.o(.text)
+    _dfltu                                   0x00003947   Thumb Code     0  dflti.o(.text)
+    __ARM_scalbn                             0x0000394d   Thumb Code    84  dscalbn.o(.text)
+    __aeabi_f2d                              0x000039ad   Thumb Code     0  f2d.o(.text)
+    _f2d                                     0x000039ad   Thumb Code    80  f2d.o(.text)
+    __aeabi_fdiv                             0x00003a01   Thumb Code     0  fdiv.o(.text)
+    _fdiv                                    0x00003a01   Thumb Code   334  fdiv.o(.text)
+    _frdiv                                   0x00003b4f   Thumb Code     8  fdiv.o(.text)
+    __aeabi_f2uiz                            0x00003b61   Thumb Code     0  ffixui.o(.text)
+    _ffixu                                   0x00003b61   Thumb Code    48  ffixui.o(.text)
+    __aeabi_i2f_normalise                    0x00003b91   Thumb Code    72  fflti.o(.text)
+    __aeabi_i2f                              0x00003bd9   Thumb Code    16  fflti.o(.text)
+    _fflt                                    0x00003bd9   Thumb Code     0  fflti.o(.text)
+    __aeabi_ui2f                             0x00003be9   Thumb Code     6  fflti.o(.text)
+    _ffltu                                   0x00003be9   Thumb Code     0  fflti.o(.text)
+    __ARM_scalbnf                            0x00003bf1   Thumb Code    64  fscalbn.o(.text)
+    __read_errno                             0x00003c35   Thumb Code    10  _rserrno.o(.text)
+    __set_errno                              0x00003c3f   Thumb Code    12  _rserrno.o(.text)
+    __aeabi_dmul                             0x00003c4d   Thumb Code     0  dmul.o(.text)
+    _dmul                                    0x00003c4d   Thumb Code   558  dmul.o(.text)
+    __aeabi_errno_addr                       0x00003e95   Thumb Code     8  rt_errno_addr_intlibspace.o(.text)
+    __errno$intlibspace                      0x00003e95   Thumb Code     0  rt_errno_addr_intlibspace.o(.text)
+    __rt_errno_addr$intlibspace              0x00003e95   Thumb Code     0  rt_errno_addr_intlibspace.o(.text)
+    __fpl_dcmp_InfNaN                        0x00003e9d   Thumb Code   140  dcmpin.o(.text)
+    __user_libspace                          0x00003f2d   Thumb Code     8  libspace.o(.text)
+    __user_perproc_libspace                  0x00003f2d   Thumb Code     0  libspace.o(.text)
+    __user_perthread_libspace                0x00003f2d   Thumb Code     0  libspace.o(.text)
+    __user_setup_stackheap                   0x00003f35   Thumb Code    62  sys_stackheap_outer.o(.text)
+    exit                                     0x00003f73   Thumb Code    16  exit.o(.text)
+    __fpl_cmpreturn                          0x00003f83   Thumb Code    46  cmpret.o(.text)
+    __fpl_dcheck_NaN2                        0x00003fb1   Thumb Code    14  dnan2.o(.text)
+    __fpl_return_NaN                         0x00003fc5   Thumb Code    94  retnan.o(.text)
+    _sys_exit                                0x00004025   Thumb Code     8  sys_exit.o(.text)
+    __I$use$semihosting                      0x00004031   Thumb Code     0  use_no_semi.o(.text)
+    __use_no_semihosting_swi                 0x00004031   Thumb Code     2  use_no_semi.o(.text)
+    __semihosting_library_function           0x00004033   Thumb Code     0  indicate_semi.o(.text)
+    CloseUART                                0x00004035   Thumb Code    34  fe_755lha_uart_pt32l031.o(i.CloseUART)
+    EEPROM_write_data                        0x0000405d   Thumb Code   162  fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data)
+    GetCodeFromBox                           0x00004105   Thumb Code    12  fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox)
+    KeyExpansions                            0x00004111   Thumb Code    88  fe_755lha_eeprom_pt32l031.o(i.KeyExpansions)
+    OpenUART                                 0x00004169   Thumb Code    36  fe_755lha_uart_pt32l031.o(i.OpenUART)
+    PlainExpansions                          0x00004199   Thumb Code    22  fe_755lha_eeprom_pt32l031.o(i.PlainExpansions)
+    RunSciReceivingProc                      0x000041b5   Thumb Code   204  fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc)
+    RunSciTransmittingProc                   0x00004295   Thumb Code   140  fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc)
+    RunUartServerTask                        0x00004331   Thumb Code   180  fe_755lha_uart_pt32l031.o(i.RunUartServerTask)
+    TIMER2_Handler                           0x000043ed   Thumb Code    64  fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler)
+    __kernel_poly                            0x0000443d   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_divzero                    0x000044e9   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
+    __mathlib_dbl_infnan                     0x000044fd   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x00004507   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    bc3602_configure_process_run             0x00004519   Thumb Code   390  fe_phy_bc3602.o(i.bc3602_configure_process_run)
+    copy_eeprom_data                         0x000046b9   Thumb Code    16  fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data)
+    erase_flash_code                         0x000046cd   Thumb Code   110  fe_755lha_eeprom_pt32l031.o(i.erase_flash_code)
+    explain_token_packet                     0x00004741   Thumb Code   286  fe_755lha_uart_pt32l031.o(i.explain_token_packet)
+    fe_755LHA_read_eeprom_data               0x00004879   Thumb Code    70  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data)
+    fe_755LHA_write_eeprom_data              0x000048cd   Thumb Code    84  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data)
+    fe_755lha_mac_process_run                0x0000492d   Thumb Code    36  fe_755lha_mac.o(i.fe_755lha_mac_process_run)
+    fe_755lha_mac_receive_data               0x00004955   Thumb Code    22  fe_755lha_mac.o(i.fe_755lha_mac_receive_data)
+    fe_755lha_mac_send_data                  0x00004971   Thumb Code    26  fe_755lha_mac.o(i.fe_755lha_mac_send_data)
+    fe_byte_data_move_to_right               0x00004995   Thumb Code    18  fe_math.o(i.fe_byte_data_move_to_right)
+    fe_calculate_crc                         0x000049a9   Thumb Code    70  fe_math.o(i.fe_calculate_crc)
+    fe_calculate_crc16                       0x000049f5   Thumb Code    58  fe_math.o(i.fe_calculate_crc16)
+    fe_calculate_external_16b_temperature    0x00004a39   Thumb Code   118  fe_math.o(i.fe_calculate_external_16b_temperature)
+    fe_calculate_sleep_8s                    0x00004ac9   Thumb Code    98  fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s)
+    fe_check_system_tick_timer               0x00004b45   Thumb Code    28  fe_timer_pt32l031.o(i.fe_check_system_tick_timer)
+    fe_clear_ram                             0x00004b69   Thumb Code    34  fe_755lha_pt32l031_cfg.o(i.fe_clear_ram)
+    fe_clear_semaphore                       0x00004b8d   Thumb Code    22  fe_semaphore.o(i.fe_clear_semaphore)
+    fe_data_move_to_right                    0x00004ba9   Thumb Code    20  fe_math.o(i.fe_data_move_to_right)
+    fe_data_whitening_pn7                    0x00004bbd   Thumb Code    24  fe_math.o(i.fe_data_whitening_pn7)
+    fe_eeprom_process_run                    0x00004bd9   Thumb Code    16  fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run)
+    fe_enter_spi_sleep                       0x00004bed   Thumb Code    34  fe_spi_pt32l031.o(i.fe_enter_spi_sleep)
+    fe_explain_data_packet                   0x00004c15   Thumb Code    82  fe_755lha_mac.o(i.fe_explain_data_packet)
+    fe_generating_box                        0x00004c79   Thumb Code    74  fe_755lha_eeprom_pt32l031.o(i.fe_generating_box)
+    fe_generating_cipher                     0x00004ccd   Thumb Code    66  fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher)
+    fe_get_2b_filter                         0x00004d1d   Thumb Code    10  fe_math.o(i.fe_get_2b_filter)
+    fe_get_755lha_mac_state                  0x00004d29   Thumb Code    24  fe_755lha_mac.o(i.fe_get_755lha_mac_state)
+    fe_get_average                           0x00004d45   Thumb Code    26  fe_math.o(i.fe_get_average)
+    fe_get_curve_average                     0x00004d61   Thumb Code   186  fe_math.o(i.fe_get_curve_average)
+    fe_get_eeprom_state                      0x00004e21   Thumb Code    20  fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state)
+    fe_get_phy_state                         0x00004e3d   Thumb Code    30  fe_phy_bc3602.o(i.fe_get_phy_state)
+    fe_get_real_maximum                      0x00004e69   Thumb Code    58  fe_math.o(i.fe_get_real_maximum)
+    fe_get_real_minimum                      0x00004ea5   Thumb Code    54  fe_math.o(i.fe_get_real_minimum)
+    fe_get_rssi                              0x00004ee1   Thumb Code    14  fe_phy_bc3602.o(i.fe_get_rssi)
+    fe_get_rssi_threshold                    0x00004ef5   Thumb Code    86  fe_755lha_mac.o(i.fe_get_rssi_threshold)
+    fe_get_semaphore_state                   0x00004f55   Thumb Code     6  fe_semaphore.o(i.fe_get_semaphore_state)
+    fe_get_sleep_8s                          0x00004f61   Thumb Code     6  fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s)
+    fe_get_spi_state                         0x00004f6d   Thumb Code    16  fe_spi_pt32l031.o(i.fe_get_spi_state)
+    fe_get_uart_state                        0x00004f81   Thumb Code    18  fe_755lha_uart_pt32l031.o(i.fe_get_uart_state)
+    fe_kill_system_tick_timer                0x00004f99   Thumb Code    12  fe_timer_pt32l031.o(i.fe_kill_system_tick_timer)
+    fe_phy_moniting_data                     0x00004fa9   Thumb Code    44  fe_phy_bc3602.o(i.fe_phy_moniting_data)
+    fe_phy_pluse_send_data                   0x00004fe1   Thumb Code   106  fe_phy_bc3602.o(i.fe_phy_pluse_send_data)
+    fe_phy_process_run                       0x00005061   Thumb Code    78  fe_phy_bc3602.o(i.fe_phy_process_run)
+    fe_phy_quit                              0x000050b9   Thumb Code    18  fe_phy_bc3602.o(i.fe_phy_quit)
+    fe_phy_receive_data                      0x000050d1   Thumb Code    72  fe_phy_bc3602.o(i.fe_phy_receive_data)
+    fe_phy_send_data                         0x00005125   Thumb Code   130  fe_phy_bc3602.o(i.fe_phy_send_data)
+    fe_read_eeprom_data                      0x000051b9   Thumb Code   190  fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data)
+    fe_real_comparision                      0x00005291   Thumb Code    64  fe_math.o(i.fe_real_comparision)
+    fe_set_755lha_mac_callback               0x000052d5   Thumb Code    18  fe_755lha_mac.o(i.fe_set_755lha_mac_callback)
+    fe_set_phy_parameter                     0x000052ed   Thumb Code    40  fe_phy_bc3602.o(i.fe_set_phy_parameter)
+    fe_set_phy_tx_parameter                  0x00005321   Thumb Code    50  fe_phy_bc3602.o(i.fe_set_phy_tx_parameter)
+    fe_set_semaphore                         0x00005361   Thumb Code    22  fe_semaphore.o(i.fe_set_semaphore)
+    fe_set_system_tick_timer                 0x0000537d   Thumb Code    14  fe_timer_pt32l031.o(i.fe_set_system_tick_timer)
+    fe_set_uart_callback                     0x00005395   Thumb Code    12  fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback)
+    fe_spi_process_run                       0x000053a5   Thumb Code    40  fe_spi_pt32l031.o(i.fe_spi_process_run)
+    fe_spi_read                              0x000053d1   Thumb Code    26  fe_spi_pt32l031.o(i.fe_spi_read)
+    fe_spi_write                             0x000053f1   Thumb Code    48  fe_spi_pt32l031.o(i.fe_spi_write)
+    fe_subtractive                           0x00005425   Thumb Code    16  fe_math.o(i.fe_subtractive)
+    fe_uart_open                             0x00005435   Thumb Code    34  fe_755lha_uart_pt32l031.o(i.fe_uart_open)
+    fe_uart_process_run                      0x0000545d   Thumb Code    38  fe_755lha_uart_pt32l031.o(i.fe_uart_process_run)
+    fe_uart_write                            0x0000548d   Thumb Code    56  fe_755lha_uart_pt32l031.o(i.fe_uart_write)
+    fe_write_eeprom_data                     0x000054d1   Thumb Code   154  fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data)
+    get_out_data                             0x00005581   Thumb Code    26  fe_755lha_uart_pt32l031.o(i.get_out_data)
+    log                                      0x000055a5   Thumb Code   790  log.o(i.log)
+    mac_event_process_run                    0x000058f9   Thumb Code   422  fe_755lha_mac.o(i.mac_event_process_run)
+    mac_receiver_process_run                 0x00005ab9   Thumb Code   300  fe_755lha_mac.o(i.mac_receiver_process_run)
+    mac_transmitter_process_run              0x00005c01   Thumb Code   180  fe_755lha_mac.o(i.mac_transmitter_process_run)
+    mem_byte_clear                           0x00005cd9   Thumb Code    14  fe_io.o(i.mem_byte_clear)
+    mem_byte_set                             0x00005ce7   Thumb Code    12  fe_io.o(i.mem_byte_set)
+    mem_data_copy                            0x00005cf3   Thumb Code    18  fe_io.o(i.mem_data_copy)
+    mem_word_copy                            0x00005d05   Thumb Code    20  fe_io.o(i.mem_word_copy)
+    phy_deep_sleep_process_run               0x00005d19   Thumb Code    92  fe_phy_bc3602.o(i.phy_deep_sleep_process_run)
+    phy_infinite_transmitter_process_run     0x00005d81   Thumb Code   866  fe_phy_bc3602.o(i.phy_infinite_transmitter_process_run)
+    phy_moniting_process_run                 0x00006111   Thumb Code   290  fe_phy_bc3602.o(i.phy_moniting_process_run)
+    phy_receiver_process_run                 0x00006245   Thumb Code   664  fe_phy_bc3602.o(i.phy_receiver_process_run)
+    phy_transmitter_process_run              0x000064f9   Thumb Code   578  fe_phy_bc3602.o(i.phy_transmitter_process_run)
+    phy_wake_up_process_run                  0x00006759   Thumb Code   204  fe_phy_bc3602.o(i.phy_wake_up_process_run)
+    reset_default_data                       0x00006831   Thumb Code    18  fe_755lha_eeprom_pt32l031.o(i.reset_default_data)
+    spi_close                                0x0000684d   Thumb Code    34  fe_spi_pt32l031.o(i.spi_close)
+    spi_open                                 0x00006879   Thumb Code    52  fe_spi_pt32l031.o(i.spi_open)
+    spi_run                                  0x000068bd   Thumb Code   188  fe_spi_pt32l031.o(i.spi_run)
+    write_flash_code                         0x00006981   Thumb Code    40  fe_755lha_eeprom_pt32l031.o(i.write_flash_code)
+    write_flash_page                         0x000069a9   Thumb Code   118  fe_755lha_eeprom_pt32l031.o(i.write_flash_page)
+    __aeabi_cdcmpeq                          0x00006a29   Thumb Code     0  deqf.o(x$fpl$deqf)
+    _dcmpeq                                  0x00006a29   Thumb Code    94  deqf.o(x$fpl$deqf)
+    __aeabi_fadd                             0x00006a8d   Thumb Code     0  faddsub.o(x$fpl$fadd)
+    _fadd                                    0x00006a8d   Thumb Code   134  faddsub.o(x$fpl$fadd)
+    __aeabi_fsub                             0x00006b19   Thumb Code     0  faddsub.o(x$fpl$fsub)
+    _fsub                                    0x00006b19   Thumb Code   204  faddsub.o(x$fpl$fsub)
+    PA_Power_Table                           0x00006be8   Data           4  fe_phy_bc3602.o(.constdata)
+    __I$use$fp                               0x00006be8   Number         0  usenofp.o(x$fpl$usenofp)
+    Public_Register                          0x00006bec   Data          64  fe_phy_bc3602.o(.constdata)
+    Bank1_Register                           0x00006c2c   Data          48  fe_phy_bc3602.o(.constdata)
+    Bank2_Register                           0x00006c5c   Data          24  fe_phy_bc3602.o(.constdata)
+    ROM_DATA                                 0x00006c74   Data          68  fe_755lha_eeprom_pt32l031.o(.constdata)
+    WHITENING_TABLE                          0x00006cb8   Data          50  fe_math.o(.constdata)
+    CRC_CCITT_TABLE                          0x00006cea   Data          32  fe_math.o(.constdata)
+    __mathlib_zero                           0x00006e08   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x00006e10   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00006e30   Number         0  anon$$obj.o(Region$$Table)
+    start                                    0x20000000   Data           2  755lha_system_pt32l031.o(.data)
+    yel_led                                  0x20000002   Data           4  755lha_windows_pt32l031.o(.data)
+    red_led                                  0x20000006   Data           4  755lha_windows_pt32l031.o(.data)
+    buzzer                                   0x2000000a   Data           4  755lha_windows_pt32l031.o(.data)
+    update                                   0x2000000e   Data           4  755lha_windows_pt32l031.o(.data)
+    check_fre                                0x20000012   Data           4  755lha_keyboard_pt32l031.o(.data)
+    key3                                     0x20000016   Data           4  755lha_keyboard_pt32l031.o(.data)
+    key2                                     0x2000001a   Data           8  755lha_keyboard_pt32l031.o(.data)
+    release                                  0x20000022   Data           4  755lha_release_pt32l031.o(.data)
+    Eeprom                                   0x20000026   Data           4  fe_755lha_eeprom_pt32l031.o(.data)
+    System                                   0x2000002c   Data           4  fe_semaphore.o(.data)
+    uart                                     0x20000030   Data           8  fe_755lha_uart_pt32l031.o(.data)
+    system_data                              0x20000038   Data          12  main.o(.bss)
+    timer3                                   0x20000044   Data          84  755lha_timer_pt32l031.o(.bss)
+    heat                                     0x20000098   Data        1296  755lha_heat_pt32l031.o(.bss)
+    bat                                      0x200005a8   Data          10  755lha_batterylow_pt32l031.o(.bss)
+    pair                                     0x200005b2   Data          28  755lha_rf_pt32l031.o(.bss)
+    eeprom_data                              0x200005ce   Data          16  755lha_release_pt32l031.o(.bss)
+    adc                                      0x200005e0   Data          12  adc_pt32l031.o(.bss)
+    Timer                                    0x200005ec   Data          24  fe_timer_pt32l031.o(.bss)
+    spi                                      0x20000604   Data          28  fe_spi_pt32l031.o(.bss)
+    phy                                      0x20000620   Data          92  fe_phy_bc3602.o(.bss)
+    mac                                      0x2000067c   Data          68  fe_755lha_mac.o(.bss)
+    Rom                                      0x200006c0   Data          76  fe_755lha_eeprom_pt32l031.o(.bss)
+    Sci                                      0x2000070c   Data          92  fe_755lha_uart_pt32l031.o(.bss)
+    __libspace_start                         0x20000768   Data          96  libspace.o(.bss)
+    __temporary_stack_top$libspace           0x200007c8   Data           0  libspace.o(.bss)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00006e68, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00006e30, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000ec   Code   RO            3  * RESET               startup_pt32x031.o
+    0x000000ec   0x000000ec   0x00000008   Code   RO         1369  * !!!main             c_p.l(__main.o)
+    0x000000f4   0x000000f4   0x0000003c   Code   RO         1615    !!!scatter          c_p.l(__scatter.o)
+    0x00000130   0x00000130   0x0000001a   Code   RO         1617    !!handler_copy      c_p.l(__scatter_copy.o)
+    0x0000014a   0x0000014a   0x00000002   PAD
+    0x0000014c   0x0000014c   0x0000001c   Code   RO         1619    !!handler_zi        c_p.l(__scatter_zi.o)
+    0x00000168   0x00000168   0x00000002   Code   RO         1481    .ARM.Collect$$libinit$$00000000  c_p.l(libinit.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1496    .ARM.Collect$$libinit$$00000002  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1498    .ARM.Collect$$libinit$$00000004  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1501    .ARM.Collect$$libinit$$0000000A  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1503    .ARM.Collect$$libinit$$0000000C  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1505    .ARM.Collect$$libinit$$0000000E  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1508    .ARM.Collect$$libinit$$00000011  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1510    .ARM.Collect$$libinit$$00000013  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1512    .ARM.Collect$$libinit$$00000015  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1514    .ARM.Collect$$libinit$$00000017  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1516    .ARM.Collect$$libinit$$00000019  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1518    .ARM.Collect$$libinit$$0000001B  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1520    .ARM.Collect$$libinit$$0000001D  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1522    .ARM.Collect$$libinit$$0000001F  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1524    .ARM.Collect$$libinit$$00000021  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1526    .ARM.Collect$$libinit$$00000023  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1528    .ARM.Collect$$libinit$$00000025  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1532    .ARM.Collect$$libinit$$0000002C  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1534    .ARM.Collect$$libinit$$0000002E  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1536    .ARM.Collect$$libinit$$00000030  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000000   Code   RO         1538    .ARM.Collect$$libinit$$00000032  c_p.l(libinit2.o)
+    0x0000016a   0x0000016a   0x00000002   Code   RO         1539    .ARM.Collect$$libinit$$00000033  c_p.l(libinit2.o)
+    0x0000016c   0x0000016c   0x00000002   Code   RO         1572    .ARM.Collect$$libshutdown$$00000000  c_p.l(libshutdown.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1598    .ARM.Collect$$libshutdown$$00000002  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1600    .ARM.Collect$$libshutdown$$00000004  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1603    .ARM.Collect$$libshutdown$$00000007  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1606    .ARM.Collect$$libshutdown$$0000000A  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1608    .ARM.Collect$$libshutdown$$0000000C  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000000   Code   RO         1611    .ARM.Collect$$libshutdown$$0000000F  c_p.l(libshutdown2.o)
+    0x0000016e   0x0000016e   0x00000002   Code   RO         1612    .ARM.Collect$$libshutdown$$00000010  c_p.l(libshutdown2.o)
+    0x00000170   0x00000170   0x00000000   Code   RO         1411    .ARM.Collect$$rtentry$$00000000  c_p.l(__rtentry.o)
+    0x00000170   0x00000170   0x00000000   Code   RO         1441    .ARM.Collect$$rtentry$$00000002  c_p.l(__rtentry2.o)
+    0x00000170   0x00000170   0x00000006   Code   RO         1453    .ARM.Collect$$rtentry$$00000004  c_p.l(__rtentry4.o)
+    0x00000176   0x00000176   0x00000000   Code   RO         1443    .ARM.Collect$$rtentry$$00000009  c_p.l(__rtentry2.o)
+    0x00000176   0x00000176   0x00000004   Code   RO         1444    .ARM.Collect$$rtentry$$0000000A  c_p.l(__rtentry2.o)
+    0x0000017a   0x0000017a   0x00000000   Code   RO         1446    .ARM.Collect$$rtentry$$0000000C  c_p.l(__rtentry2.o)
+    0x0000017a   0x0000017a   0x00000008   Code   RO         1447    .ARM.Collect$$rtentry$$0000000D  c_p.l(__rtentry2.o)
+    0x00000182   0x00000182   0x00000002   Code   RO         1487    .ARM.Collect$$rtexit$$00000000  c_p.l(rtexit.o)
+    0x00000184   0x00000184   0x00000000   Code   RO         1545    .ARM.Collect$$rtexit$$00000002  c_p.l(rtexit2.o)
+    0x00000184   0x00000184   0x00000004   Code   RO         1546    .ARM.Collect$$rtexit$$00000003  c_p.l(rtexit2.o)
+    0x00000188   0x00000188   0x00000006   Code   RO         1547    .ARM.Collect$$rtexit$$00000004  c_p.l(rtexit2.o)
+    0x0000018e   0x0000018e   0x00000002   PAD
+    0x00000190   0x00000190   0x00000334   Code   RO           11    .text               main.o
+    0x000004c4   0x000004c4   0x000003f8   Code   RO          132    .text               755lha_system_pt32l031.o
+    0x000008bc   0x000008bc   0x00000254   Code   RO          165    .text               755lha_timer_pt32l031.o
+    0x00000b10   0x00000b10   0x00000a40   Code   RO          191    .text               755lha_windows_pt32l031.o
+    0x00001550   0x00001550   0x000002d0   Code   RO          220    .text               755lha_keyboard_pt32l031.o
+    0x00001820   0x00001820   0x00000598   Code   RO          246    .text               755lha_heat_pt32l031.o
+    0x00001db8   0x00001db8   0x000001f0   Code   RO          272    .text               755lha_batterylow_pt32l031.o
+    0x00001fa8   0x00001fa8   0x000004a8   Code   RO          302    .text               755lha_rf_pt32l031.o
+    0x00002450   0x00002450   0x000001a0   Code   RO          328    .text               755lha_release_pt32l031.o
+    0x000025f0   0x000025f0   0x00000764   Code   RO          355    .text               755lha_message_pt32l031.o
+    0x00002d54   0x00002d54   0x0000014c   Code   RO          375    .text               adc_pt32l031.o
+    0x00002ea0   0x00002ea0   0x000001e8   Code   RO         1363    .text               c_p.l(aeabi_sdivfast.o)
+    0x00003088   0x00003088   0x00000006   Code   RO         1367    .text               c_p.l(heapauxi.o)
+    0x0000308e   0x0000308e   0x00000002   PAD
+    0x00003090   0x00003090   0x0000007c   Code   RO         1371    .text               fz_ps.l(d2f.o)
+    0x0000310c   0x0000310c   0x00000358   Code   RO         1373    .text               fz_ps.l(daddsub.o)
+    0x00003464   0x00003464   0x00000448   Code   RO         1375    .text               fz_ps.l(ddiv.o)
+    0x000038ac   0x000038ac   0x00000048   Code   RO         1378    .text               fz_ps.l(dfixui.o)
+    0x000038f4   0x000038f4   0x00000058   Code   RO         1380    .text               fz_ps.l(dflti.o)
+    0x0000394c   0x0000394c   0x00000060   Code   RO         1382    .text               fz_ps.l(dscalbn.o)
+    0x000039ac   0x000039ac   0x00000054   Code   RO         1384    .text               fz_ps.l(f2d.o)
+    0x00003a00   0x00003a00   0x00000160   Code   RO         1392    .text               fz_ps.l(fdiv.o)
+    0x00003b60   0x00003b60   0x00000030   Code   RO         1395    .text               fz_ps.l(ffixui.o)
+    0x00003b90   0x00003b90   0x0000005e   Code   RO         1397    .text               fz_ps.l(fflti.o)
+    0x00003bee   0x00003bee   0x00000002   PAD
+    0x00003bf0   0x00003bf0   0x00000044   Code   RO         1399    .text               fz_ps.l(fscalbn.o)
+    0x00003c34   0x00003c34   0x00000016   Code   RO         1416    .text               c_p.l(_rserrno.o)
+    0x00003c4a   0x00003c4a   0x00000002   PAD
+    0x00003c4c   0x00003c4c   0x00000248   Code   RO         1420    .text               fz_ps.l(dmul.o)
+    0x00003e94   0x00003e94   0x00000008   Code   RO         1460    .text               c_p.l(rt_errno_addr_intlibspace.o)
+    0x00003e9c   0x00003e9c   0x00000090   Code   RO         1462    .text               fz_ps.l(dcmpin.o)
+    0x00003f2c   0x00003f2c   0x00000008   Code   RO         1464    .text               c_p.l(libspace.o)
+    0x00003f34   0x00003f34   0x0000003e   Code   RO         1467    .text               c_p.l(sys_stackheap_outer.o)
+    0x00003f72   0x00003f72   0x00000010   Code   RO         1470    .text               c_p.l(exit.o)
+    0x00003f82   0x00003f82   0x0000002e   Code   RO         1482    .text               fz_ps.l(cmpret.o)
+    0x00003fb0   0x00003fb0   0x00000014   Code   RO         1484    .text               fz_ps.l(dnan2.o)
+    0x00003fc4   0x00003fc4   0x0000005e   Code   RO         1540    .text               fz_ps.l(retnan.o)
+    0x00004022   0x00004022   0x00000002   PAD
+    0x00004024   0x00004024   0x0000000c   Code   RO         1542    .text               c_p.l(sys_exit.o)
+    0x00004030   0x00004030   0x00000002   Code   RO         1561    .text               c_p.l(use_no_semi.o)
+    0x00004032   0x00004032   0x00000000   Code   RO         1563    .text               c_p.l(indicate_semi.o)
+    0x00004032   0x00004032   0x00000002   PAD
+    0x00004034   0x00004034   0x00000028   Code   RO         1219    i.CloseUART         FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x0000405c   0x0000405c   0x000000a8   Code   RO          839    i.EEPROM_write_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004104   0x00004104   0x0000000c   Code   RO          840    i.GetCodeFromBox    FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004110   0x00004110   0x00000058   Code   RO          841    i.KeyExpansions     FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004168   0x00004168   0x00000030   Code   RO         1220    i.OpenUART          FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x00004198   0x00004198   0x0000001c   Code   RO          842    i.PlainExpansions   FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000041b4   0x000041b4   0x000000e0   Code   RO         1221    i.RunSciReceivingProc  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x00004294   0x00004294   0x0000009c   Code   RO         1222    i.RunSciTransmittingProc  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x00004330   0x00004330   0x000000bc   Code   RO         1223    i.RunUartServerTask  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x000043ec   0x000043ec   0x00000050   Code   RO         1313    i.TIMER2_Handler    FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_pt32l031_cfg.o)
+    0x0000443c   0x0000443c   0x000000ac   Code   RO         1437    i.__kernel_poly     m_ps.l(poly.o)
+    0x000044e8   0x000044e8   0x00000014   Code   RO         1423    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
+    0x000044fc   0x000044fc   0x0000000a   Code   RO         1424    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x00004506   0x00004506   0x00000010   Code   RO         1426    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x00004516   0x00004516   0x00000002   PAD
+    0x00004518   0x00004518   0x000001a0   Code   RO          621    i.bc3602_configure_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x000046b8   0x000046b8   0x00000014   Code   RO          843    i.copy_eeprom_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000046cc   0x000046cc   0x00000074   Code   RO          845    i.erase_flash_code  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004740   0x00004740   0x00000138   Code   RO         1224    i.explain_token_packet  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x00004878   0x00004878   0x00000054   Code   RO          847    i.fe_755LHA_read_eeprom_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000048cc   0x000048cc   0x00000060   Code   RO          848    i.fe_755LHA_write_eeprom_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x0000492c   0x0000492c   0x00000028   Code   RO          750    i.fe_755lha_mac_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004954   0x00004954   0x0000001c   Code   RO          752    i.fe_755lha_mac_receive_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004970   0x00004970   0x00000024   Code   RO          753    i.fe_755lha_mac_send_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004994   0x00004994   0x00000012   Code   RO          990    i.fe_byte_data_move_to_right  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x000049a6   0x000049a6   0x00000002   PAD
+    0x000049a8   0x000049a8   0x0000004c   Code   RO          991    i.fe_calculate_crc  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x000049f4   0x000049f4   0x00000044   Code   RO          992    i.fe_calculate_crc16  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004a38   0x00004a38   0x00000090   Code   RO          993    i.fe_calculate_external_16b_temperature  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004ac8   0x00004ac8   0x0000007c   Code   RO         1314    i.fe_calculate_sleep_8s  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_pt32l031_cfg.o)
+    0x00004b44   0x00004b44   0x00000024   Code   RO          467    i.fe_check_system_tick_timer  FE_755LHA_RevB_PT32L031_20251202.lib(fe_timer_pt32l031.o)
+    0x00004b68   0x00004b68   0x00000022   Code   RO         1315    i.fe_clear_ram      FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_pt32l031_cfg.o)
+    0x00004b8a   0x00004b8a   0x00000002   PAD
+    0x00004b8c   0x00004b8c   0x0000001c   Code   RO         1183    i.fe_clear_semaphore  FE_755LHA_RevB_PT32L031_20251202.lib(fe_semaphore.o)
+    0x00004ba8   0x00004ba8   0x00000014   Code   RO          999    i.fe_data_move_to_right  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004bbc   0x00004bbc   0x0000001c   Code   RO         1000    i.fe_data_whitening_pn7  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004bd8   0x00004bd8   0x00000014   Code   RO          851    i.fe_eeprom_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004bec   0x00004bec   0x00000028   Code   RO          543    i.fe_enter_spi_sleep  FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x00004c14   0x00004c14   0x00000064   Code   RO          754    i.fe_explain_data_packet  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004c78   0x00004c78   0x00000054   Code   RO          852    i.fe_generating_box  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004ccc   0x00004ccc   0x00000050   Code   RO          853    i.fe_generating_cipher  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004d1c   0x00004d1c   0x0000000a   Code   RO         1003    i.fe_get_2b_filter  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004d26   0x00004d26   0x00000002   PAD
+    0x00004d28   0x00004d28   0x0000001c   Code   RO          755    i.fe_get_755lha_mac_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004d44   0x00004d44   0x0000001a   Code   RO         1005    i.fe_get_average    FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004d5e   0x00004d5e   0x00000002   PAD
+    0x00004d60   0x00004d60   0x000000c0   Code   RO         1008    i.fe_get_curve_average  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004e20   0x00004e20   0x0000001c   Code   RO          854    i.fe_get_eeprom_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00004e3c   0x00004e3c   0x0000002c   Code   RO          622    i.fe_get_phy_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00004e68   0x00004e68   0x0000003a   Code   RO         1014    i.fe_get_real_maximum  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004ea2   0x00004ea2   0x00000002   PAD
+    0x00004ea4   0x00004ea4   0x0000003c   Code   RO         1015    i.fe_get_real_minimum  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00004ee0   0x00004ee0   0x00000014   Code   RO          623    i.fe_get_rssi       FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00004ef4   0x00004ef4   0x00000060   Code   RO          756    i.fe_get_rssi_threshold  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00004f54   0x00004f54   0x0000000c   Code   RO         1184    i.fe_get_semaphore_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_semaphore.o)
+    0x00004f60   0x00004f60   0x0000000c   Code   RO         1316    i.fe_get_sleep_8s   FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_pt32l031_cfg.o)
+    0x00004f6c   0x00004f6c   0x00000014   Code   RO          544    i.fe_get_spi_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x00004f80   0x00004f80   0x00000018   Code   RO         1225    i.fe_get_uart_state  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x00004f98   0x00004f98   0x00000010   Code   RO          468    i.fe_kill_system_tick_timer  FE_755LHA_RevB_PT32L031_20251202.lib(fe_timer_pt32l031.o)
+    0x00004fa8   0x00004fa8   0x00000038   Code   RO          624    i.fe_phy_moniting_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00004fe0   0x00004fe0   0x00000080   Code   RO          625    i.fe_phy_pluse_send_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00005060   0x00005060   0x00000058   Code   RO          626    i.fe_phy_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x000050b8   0x000050b8   0x00000018   Code   RO          627    i.fe_phy_quit       FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x000050d0   0x000050d0   0x00000054   Code   RO          628    i.fe_phy_receive_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00005124   0x00005124   0x00000094   Code   RO          629    i.fe_phy_send_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x000051b8   0x000051b8   0x000000d8   Code   RO          855    i.fe_read_eeprom_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00005290   0x00005290   0x00000044   Code   RO         1017    i.fe_real_comparision  FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x000052d4   0x000052d4   0x00000018   Code   RO          757    i.fe_set_755lha_mac_callback  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x000052ec   0x000052ec   0x00000034   Code   RO          630    i.fe_set_phy_parameter  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00005320   0x00005320   0x00000040   Code   RO          631    i.fe_set_phy_tx_parameter  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00005360   0x00005360   0x0000001c   Code   RO         1185    i.fe_set_semaphore  FE_755LHA_RevB_PT32L031_20251202.lib(fe_semaphore.o)
+    0x0000537c   0x0000537c   0x00000018   Code   RO          470    i.fe_set_system_tick_timer  FE_755LHA_RevB_PT32L031_20251202.lib(fe_timer_pt32l031.o)
+    0x00005394   0x00005394   0x00000010   Code   RO         1226    i.fe_set_uart_callback  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x000053a4   0x000053a4   0x0000002c   Code   RO          545    i.fe_spi_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x000053d0   0x000053d0   0x00000020   Code   RO          546    i.fe_spi_read       FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x000053f0   0x000053f0   0x00000034   Code   RO          547    i.fe_spi_write      FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x00005424   0x00005424   0x00000010   Code   RO         1018    i.fe_subtractive    FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00005434   0x00005434   0x00000028   Code   RO         1227    i.fe_uart_open      FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x0000545c   0x0000545c   0x00000030   Code   RO         1228    i.fe_uart_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x0000548c   0x0000548c   0x00000044   Code   RO         1229    i.fe_uart_write     FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x000054d0   0x000054d0   0x000000b0   Code   RO          856    i.fe_write_eeprom_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00005580   0x00005580   0x00000024   Code   RO         1230    i.get_out_data      FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x000055a4   0x000055a4   0x00000354   Code   RO         1402    i.log               m_ps.l(log.o)
+    0x000058f8   0x000058f8   0x000001c0   Code   RO          758    i.mac_event_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00005ab8   0x00005ab8   0x00000148   Code   RO          759    i.mac_receiver_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00005c00   0x00005c00   0x000000d8   Code   RO          760    i.mac_transmitter_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x00005cd8   0x00005cd8   0x0000000e   Code   RO          405    i.mem_byte_clear    FE_755LHA_RevB_PT32L031_20251202.lib(fe_io.o)
+    0x00005ce6   0x00005ce6   0x0000000c   Code   RO          406    i.mem_byte_set      FE_755LHA_RevB_PT32L031_20251202.lib(fe_io.o)
+    0x00005cf2   0x00005cf2   0x00000012   Code   RO          407    i.mem_data_copy     FE_755LHA_RevB_PT32L031_20251202.lib(fe_io.o)
+    0x00005d04   0x00005d04   0x00000014   Code   RO          409    i.mem_word_copy     FE_755LHA_RevB_PT32L031_20251202.lib(fe_io.o)
+    0x00005d18   0x00005d18   0x00000068   Code   RO          632    i.phy_deep_sleep_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00005d80   0x00005d80   0x00000390   Code   RO          633    i.phy_infinite_transmitter_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00006110   0x00006110   0x00000134   Code   RO          634    i.phy_moniting_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00006244   0x00006244   0x000002b4   Code   RO          635    i.phy_receiver_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x000064f8   0x000064f8   0x00000260   Code   RO          636    i.phy_transmitter_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00006758   0x00006758   0x000000d8   Code   RO          637    i.phy_wake_up_process_run  FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00006830   0x00006830   0x0000001c   Code   RO          857    i.reset_default_data  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x0000684c   0x0000684c   0x0000002c   Code   RO          548    i.spi_close         FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x00006878   0x00006878   0x00000044   Code   RO          549    i.spi_open          FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x000068bc   0x000068bc   0x000000c4   Code   RO          550    i.spi_run           FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x00006980   0x00006980   0x00000028   Code   RO          858    i.write_flash_code  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000069a8   0x000069a8   0x00000080   Code   RO          859    i.write_flash_page  FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00006a28   0x00006a28   0x00000064   Code   RO         1418    x$fpl$deqf          fz_ps.l(deqf.o)
+    0x00006a8c   0x00006a8c   0x0000008c   Code   RO         1386    x$fpl$fadd          fz_ps.l(faddsub.o)
+    0x00006b18   0x00006b18   0x000000d0   Code   RO         1388    x$fpl$fsub          fz_ps.l(faddsub.o)
+    0x00006be8   0x00006be8   0x00000000   Code   RO         1422    x$fpl$usenofp       fz_ps.l(usenofp.o)
+    0x00006be8   0x00006be8   0x0000008c   Data   RO          639    .constdata          FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x00006c74   0x00006c74   0x00000044   Data   RO          861    .constdata          FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00006cb8   0x00006cb8   0x00000052   Data   RO         1019    .constdata          FE_755LHA_RevB_PT32L031_20251202.lib(fe_math.o)
+    0x00006d0a   0x00006d0a   0x00000080   Data   RO         1376    .constdata          fz_ps.l(ddiv.o)
+    0x00006d8a   0x00006d8a   0x00000040   Data   RO         1393    .constdata          fz_ps.l(fdiv.o)
+    0x00006dca   0x00006dca   0x00000006   PAD
+    0x00006dd0   0x00006dd0   0x00000038   Data   RO         1403    .constdata          m_ps.l(log.o)
+    0x00006e08   0x00006e08   0x00000008   Data   RO         1439    .constdata          m_ps.l(qnan.o)
+    0x00006e10   0x00006e10   0x00000020   Data   RO         1613    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00006e30, Size: 0x00000038, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00006e30   0x00000002   Data   RW          133    .data               755lha_system_pt32l031.o
+    0x20000002   0x00006e32   0x00000010   Data   RW          192    .data               755lha_windows_pt32l031.o
+    0x20000012   0x00006e42   0x00000010   Data   RW          221    .data               755lha_keyboard_pt32l031.o
+    0x20000022   0x00006e52   0x00000004   Data   RW          330    .data               755lha_release_pt32l031.o
+    0x20000026   0x00006e56   0x00000004   Data   RW          862    .data               FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x2000002a   0x00006e5a   0x00000002   PAD
+    0x2000002c   0x00006e5c   0x00000004   Data   RW         1186    .data               FE_755LHA_RevB_PT32L031_20251202.lib(fe_semaphore.o)
+    0x20000030   0x00006e60   0x00000008   Data   RW         1232    .data               FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+
+
+    Execution Region ER_ZI (Exec base: 0x20000038, Load base: 0x00006e68, Size: 0x00000f60, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000038        -       0x0000000c   Zero   RW           12    .bss                main.o
+    0x20000044        -       0x00000054   Zero   RW          166    .bss                755lha_timer_pt32l031.o
+    0x20000098        -       0x00000510   Zero   RW          247    .bss                755lha_heat_pt32l031.o
+    0x200005a8        -       0x0000000a   Zero   RW          273    .bss                755lha_batterylow_pt32l031.o
+    0x200005b2        -       0x0000001c   Zero   RW          303    .bss                755lha_rf_pt32l031.o
+    0x200005ce        -       0x00000010   Zero   RW          329    .bss                755lha_release_pt32l031.o
+    0x200005de   0x00006e68   0x00000002   PAD
+    0x200005e0        -       0x0000000c   Zero   RW          376    .bss                adc_pt32l031.o
+    0x200005ec        -       0x00000018   Zero   RW          472    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_timer_pt32l031.o)
+    0x20000604        -       0x0000001c   Zero   RW          551    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_spi_pt32l031.o)
+    0x20000620        -       0x0000005c   Zero   RW          638    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_phy_bc3602.o)
+    0x2000067c        -       0x00000044   Zero   RW          761    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_mac.o)
+    0x200006c0        -       0x0000004c   Zero   RW          860    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_eeprom_pt32l031.o)
+    0x2000070c        -       0x0000005c   Zero   RW         1231    .bss                FE_755LHA_RevB_PT32L031_20251202.lib(fe_755lha_uart_pt32l031.o)
+    0x20000768        -       0x00000060   Zero   RW         1465    .bss                c_p.l(libspace.o)
+    0x200007c8        -       0x00000000   Zero   RW            2    HEAP                startup_pt32x031.o
+    0x200007c8        -       0x000007d0   Zero   RW            1    STACK               startup_pt32x031.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       496         38          0          0         10       2098   755lha_batterylow_pt32l031.o
+      1432         92          0          0       1296       4706   755lha_heat_pt32l031.o
+       720         44          0         16          0       3419   755lha_keyboard_pt32l031.o
+      1892         76          0          0          0       2917   755lha_message_pt32l031.o
+       416         32          0          4         16       1508   755lha_release_pt32l031.o
+      1192         74          0          0         28       3338   755lha_rf_pt32l031.o
+      1016        122          0          2          0      10609   755lha_system_pt32l031.o
+       596         68          0          0         84       2902   755lha_timer_pt32l031.o
+      2624        162          0         16          0      13940   755lha_windows_pt32l031.o
+       332         32          0          0         12      53608   adc_pt32l031.o
+       820         78          0          0         12      57669   main.o
+       236        210          0          0       2000        612   startup_pt32x031.o
+
+    ----------------------------------------------------------------------
+     11772       1028         32         38       3460     157326   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         0          0          0          0          2          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+      1412        158         68          4         76      16843   fe_755lha_eeprom_pt32l031.o
+      1344        166          0          0         68       8846   fe_755lha_mac.o
+       250         48          0          0          0      10570   fe_755lha_pt32l031_cfg.o
+      1200        142          0          8         92      13029   fe_755lha_uart_pt32l031.o
+        64          0          0          0          0       8676   fe_io.o
+       784         62         82          0          0       9043   fe_math.o
+      3964        384        140          0         92      15746   fe_phy_bc3602.o
+        68         18          0          4          0       5282   fe_semaphore.o
+       496         58          0          0         28       5297   fe_spi_pt32l031.o
+        76         22          0          0         24      49317   fe_timer_pt32l031.o
+         8          0          0          0          0         68   __main.o
+         0          0          0          0          0          0   __rtentry.o
+        12          0          0          0          0          0   __rtentry2.o
+         6          0          0          0          0          0   __rtentry4.o
+        60          8          0          0          0          0   __scatter.o
+        26          0          0          0          0          0   __scatter_copy.o
+        28          0          0          0          0          0   __scatter_zi.o
+        22          0          0          0          0         92   _rserrno.o
+       488          0          0          0          0         92   aeabi_sdivfast.o
+        16          0          0          0          0         68   exit.o
+         6          0          0          0          0        136   heapauxi.o
+         0          0          0          0          0          0   indicate_semi.o
+         2          0          0          0          0          0   libinit.o
+         2          0          0          0          0          0   libinit2.o
+         2          0          0          0          0          0   libshutdown.o
+         2          0          0          0          0          0   libshutdown2.o
+         8          4          0          0         96         68   libspace.o
+         8          4          0          0          0         68   rt_errno_addr_intlibspace.o
+         2          0          0          0          0          0   rtexit.o
+        10          0          0          0          0          0   rtexit2.o
+        12          4          0          0          0         60   sys_exit.o
+        62          0          0          0          0         80   sys_stackheap_outer.o
+         2          0          0          0          0         68   use_no_semi.o
+        46          0          0          0          0         60   cmpret.o
+       124          4          0          0          0         72   d2f.o
+       856         20          0          0          0        208   daddsub.o
+       144          4          0          0          0         76   dcmpin.o
+      1096         26        128          0          0        112   ddiv.o
+       100          4          0          0          0         92   deqf.o
+        72          4          0          0          0         68   dfixui.o
+        88          0          0          0          0         92   dflti.o
+       584         26          0          0          0         84   dmul.o
+        20          6          0          0          0         68   dnan2.o
+        96         12          0          0          0         72   dscalbn.o
+        84          4          0          0          0         60   f2d.o
+       348          8          0          0          0        160   faddsub.o
+       352         10         64          0          0         92   fdiv.o
+        48          0          0          0          0         60   ffixui.o
+        94          0          0          0          0         92   fflti.o
+        68          4          0          0          0         68   fscalbn.o
+        94          0          0          0          0         68   retnan.o
+         0          0          0          0          0          0   usenofp.o
+        46          4          0          0          0        204   dunder.o
+       852         62         56          0          0        136   log.o
+       172          0          0          0          0         76   poly.o
+         0          0          8          0          0          0   qnan.o
+
+    ----------------------------------------------------------------------
+     15852       1276        552         18        476     145469   Library Totals
+        26          0          6          2          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      9658       1058        290         16        380     142649   FE_755LHA_RevB_PT32L031_20251202.lib
+       784         20          0          0         96        800   c_p.l
+      4314        132        192          0          0       1604   fz_ps.l
+      1070         66         64          0          0        416   m_ps.l
+
+    ----------------------------------------------------------------------
+     15852       1276        552         18        476     145469   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     27624       2304        584         56       3936     296899   Grand Totals
+     27624       2304        584         56       3936     296899   ELF Image Totals
+     27624       2304        584         56          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                28208 (  27.55kB)
+    Total RW  Size (RW Data + ZI Data)              3992 (   3.90kB)
+    Total ROM Size (Code + RO Data + RW Data)      28264 (  27.60kB)
+
+==============================================================================
+
