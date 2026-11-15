@@ -50,34 +50,6 @@ void TIM4_Handler(void)
 }
 
 /**
-* @brief 设置定时器1
-* @param flag
-*  0: low
-*  1: high
-* @retval None
-*/
-void set_timer1(void)
-{
-	//PA11 PA12
-	AFIOA->AFS[1] = (0x05 << 12) + (0x05 << 16);
-	
-	// 16M / (15 + 1) = 1M
-	TIM1->PSC = 15;
-	
-  TIM1->ARR = LOW_TIMER_US;
-	TIM1->OCR[3] = LOW_TIMER_US >> 1;
-
-	TIM1->OCMR = 0x001000;
-	
-	//死区时间 8us
-	TIM1->BDTR = 255;
-	TIM1->CR1 = TIM_CR1_DIR;
-	TIM1->CR2 |= TIM_CR2_ARI;
-	
-	NVIC_EnableIRQ(TIM1_IRQn);
-}
-
-/**
 * @brief 恢复默认设置
 * @param None
 * @retval None
@@ -96,7 +68,7 @@ void close_timer1(void)
 }
 
 /**
-* @brief 设置定时器2，1ms发生一次中断
+* @brief 设置定时器5，1ms发生一次中断
 * @param None
 * @retval None
 * PCLK: 16MHz
@@ -105,13 +77,14 @@ void settimer5(void)
 {
 	//CLK:16MHz = 16 / (PSC[15:0]+1)
 	TIM5->PSC = 0;
-	TIM5->CNT = 
-	TIM5->ARR = 16000;
-	TIM5->CR1 = TIM_CR1_DIR + TIM_CR1_UG;
+	TIM5->CNT = 0;
 	TIM5->CR2 = 0;
+  TIM5->ARR = 16000;
+  
 	__NOP();
 	__NOP();
 	__NOP();
+  
 	TIM5->SR |= TIM_SR_ARF;
 	TIM5->CR1 |= TIM_CR1_EN;
 }
@@ -123,16 +96,18 @@ void settimer5(void)
 */
 void checktimer5(void)
 {
-	uint32_t i;
+	unsigned char i;
 	
 	if((TIM5->SR & TIM_SR_ARF) != 0)
 	{
-		TIM5->SR |= TIM_SR_ARF;
+    TIM5->SR |= TIM_SR_ARF;
 		i = 0;
-		do{
+		do
+    {
 			timer5.t[i]++;
-			i++;
-		}while(i < TIMER_SIZE);
+      i++;
+		}
+    while(i < TIMER_SIZE);
 	}
 }
 
