@@ -35,13 +35,16 @@ extern SIMPLE_KEY_Tytedef key5;
 
 /* --------------------------------------------------------------------------- */
 void PA_Handler(void);
-void key3_upevent(void);
-void key3_shortevent(void);
-void key3_longevent(void);
+
 void scankey2_process_run(void);
 void scankey3_process_run(void);
 void scankey4_process_run(void);
 void scankey5_process_run(void);
+
+void key3_down_event(void);
+void key3_08s_event(void);
+void key3_10s_event(void);
+void key3_up_event(void);
 
 /* --------------------------------------------------------------------------- */
 #endif

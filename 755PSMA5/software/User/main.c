@@ -53,50 +53,41 @@ int main(void)
 	
 	while(1)
 	{
-		
 /************************************************************************
   * @brief System  Initalize Function
 	* 
 *************************************************************************/		
 		if(system_data.masking & SYSTEM_INITIALIZE_FLAG_MSK)
 		{
-			if(SYSINIT_TIMER > 990)
+			if(SYSINIT_TIMER == 990)
 			{
-				if((system_data.resource & LED_FLAG_MSK) == 0)
+				RED_LED_ON;
+				fe_set_smoke_callback(smoke_callback);
+				fe_set_battery_callback(battery_callback);
+				fe_set_uart_callback(uart_callback);
+			}
+			
+			if(SYSINIT_TIMER == 1000)
+			{
+				RED_LED_OFF;
+
+				if(TEST_KEY == 0)
 				{
-					RED_LED_ON;
-					system_data.resource |= LED_FLAG_MSK;
-					fe_set_smoke_callback(smoke_callback);
-				  fe_set_battery_callback(battery_callback);
-				  fe_set_uart_callback(uart_callback);
+					if(EXT_KEY == 0)
+					{
+						system_data.masking |= DEBUG_FLAG_MSK;
+						fe_start_up_smoke_process(2);
+						fe_start_up_battery_process(1);
+					}
+				}
+				else
+				{
+					IO_PIN_IN;
+					fe_start_up_smoke_process(1);
+					fe_start_up_battery_process(0);
 				}
 				
-				if(SYSINIT_TIMER > 999)
-				{
-					RED_LED_OFF;
-					system_data.resource &= ~LED_FLAG_MSK;
-
-					if(TEST_KEY == 0)
-					{
-						if(EXT_KEY == 0)
-						{
-							close_iwdg();
-						  close_swdg();
-							RED_LED_ON;
-							system_data.masking |= DEBUG_FLAG_MSK;
-							fe_start_up_smoke_process(2);
-						  fe_start_up_battery_process(1);
-						}
-					}
-					else
-					{
-						IO_PIN_IN;
-						fe_start_up_smoke_process(1);
-					  fe_start_up_battery_process(0);
-					}
-					
-					system_data.masking &= ~SYSTEM_INITIALIZE_FLAG_MSK;
-				}
+				system_data.masking &= ~SYSTEM_INITIALIZE_FLAG_MSK;
 			}
 		}
 		
@@ -104,28 +95,6 @@ int main(void)
   * @brief Key Function
 	* 
 *************************************************************************/			
-		if(KEY3_TIMER > 49)
-		{
-			KEY3_TIMER = 0;
-			
-			scankey3_process_run();
-			
-			if(key3.value & 0x08)
-			{
-				key3_shortevent();
-			}
-			
-			if(key3.value & 0x10)
-			{
-				key3_longevent();
-			}
-			
-			if(key3.value & 0x80)
-			{
-				key3_upevent();
-			}
-		}
-		
 		if(AC_TIMER > 4)
 		{
 			AC_TIMER = 0;
@@ -134,16 +103,40 @@ int main(void)
 			scankey5_process_run();
 		}
 		
-		if(SMOKE_TIMER >= 8000)
+		if(KEY3_TIMER > 49)
 		{
-			SMOKE_TIMER = 0;
-			fe_start_up_smoke_process(0);
+			KEY3_TIMER = 0;
+			
+			scankey3_process_run();
+			
+			if(key3.value & 0x10)
+			{
+				key3_down_event();
+		  }
+			
+			if(key3.value & 0x20)
+			{
+        key3_08s_event();
+			}
+			
+			if(key3.value & 0x40)
+			{
+				key3_10s_event();
+			}
+			
+			if(key3.value & 0x80)
+			{
+				key3_up_event();
+			}
 		}
-		
-		if(BATTERY_TIMER >= 48000)
+
+		if(system_data.state & HUSH_FLAG_MSK)
 		{
-			BATTERY_TIMER = 0;
-			fe_start_up_battery_process(0);
+			if(HUSH_TIMER >= 600000)
+			{
+				system_data.signal &= ~DEVICE_HUSH_FLAG_MSK;
+				system_data.masking |= MESSAGE_FLAG_MSK;
+			}
 		}
 		
 /************************************************************************
@@ -158,11 +151,11 @@ int main(void)
 		if(buzzer.mode & _exe)
 		{
 		  buzzer_sound();
-		}
-		
-		if(update.mode & _exe)
-		{
-			update_timer1();
+			
+			if(update.mode & _exe)
+			{
+				update_timer1();
+			}
 		}
 		
 /************************************************************************
@@ -175,15 +168,21 @@ int main(void)
 	  }
 		
 /************************************************************************
- * @brief Message Exe Function
- *
-*************************************************************************/
-		message_execution();
-    
-/************************************************************************
   * @brief  lib Function
 	* 
 *************************************************************************/		
+		if(SMOKE_TIMER >= 8000)
+		{
+			SMOKE_TIMER = 0;
+			fe_start_up_smoke_process(0);
+		}
+		
+		if(BATTERY_TIMER >= 48000)
+		{
+			BATTERY_TIMER = 0;
+			fe_start_up_battery_process(0);
+		}
+		
 	  fe_smoke_process_run();
 		fe_battery_process_run();
 		fe_uart_process_run();
@@ -204,6 +203,7 @@ int main(void)
 						if(DEEPSLEEP == _idle)
 						{
 							goto_deepsleep();
+							message_execution();
 						}
 					}
 				}

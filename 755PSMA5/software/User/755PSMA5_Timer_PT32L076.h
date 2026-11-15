@@ -23,10 +23,8 @@ typedef struct
 extern TIMER_TypeDef timer5;
 
 /* --------------------------------------------------------------------------- */
-void set_alarm(unsigned char flag);
-void open_buzzer(unsigned char flag);
-void close_buzzer(void);
-void de_alarm(void);
+void set_timer1(void);
+void close_timer1(void);
 
 /* --------------------------------------------------------------------------- */
 void settimer5(void);

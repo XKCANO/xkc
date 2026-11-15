@@ -2,7 +2,6 @@
 
 Alarm_typedef led;
 Alarm_typedef buzzer;
-Alarm_typedef alarm;
 Alarm_typedef update;
 
 /*
@@ -55,8 +54,8 @@ void uart_callback(uint32_t p, uint32_t l)
 {
 	if( p == OPEN_BUZZER)
 	{
-		set_alarm(1);
-		buzzer.step = 4;
+		set_timer1();
+		buzzer.step = 5;
 		buzzer.mode = _exe;
 	}
 }
@@ -73,216 +72,185 @@ void check_short_test(void)
 	}
 }
 
-/*
- * 设置更新模式
- */
-void set_update_timer1(unsigned char state)
+/**
+* @brief 设置声音大小
+* @param flag
+*  0: low
+*  1: high
+* @retval None
+*/
+void open_buzzer(void)
 {
-	update.step = 0;
-	
 	timer5.mr0 = MIN_TIMER_US;
+	
+	TIM1->BKICR &= ~TIM_BKICR_SWE;
+	TIM1->BDTR &= ~(TIM_BDTR_BKSC + TIM_BDTR_BKE + TIM_BDTR_BKP);
+	TIM1->SR |= TIM_SR_BIF;
 	
 	if(system_data.masking & LOW_SOUND_FLAG_MSK)
 	{
 		TIM1->ARR = timer5.mr0 * 2;
 		TIM1->OCR[3] = timer5.mr0;
+		TIM1->OCMR |= TIM_OCMR_OC4E;
 	}
 	else
 	{
 		TIM1->ARR = timer5.mr0;
 		TIM1->OCR[3] = timer5.mr0 / 2;
+		TIM1->OCMR |= TIM_OCMR_OC4E + TIM_OCMR_OC4NE;
 	}
+	
+  update.step = 0;
+	update.mode = _exe;
 
-	if(state == 0)
-	{
-		update.mode = _idle;
-	}
-	else if(state == 1)
-	{
-		update.mode = _exe;
-	}
+	TIM1->CR1 |= TIM_CR1_EN;
+}
+
+/**
+* @brief 关闭声音
+* @param None
+* @retval None
+*/
+void close_buzzer(void)
+{
+	update.step = 0;
+	update.mode = _idle;
+	
+	TIM1->BKICR |= TIM_BKICR_SWE;
+	TIM1->BDTR |= TIM_BDTR_BKE + TIM_BDTR_BKP + TIM_BDTR_BKSC;
 }
 
 /*
  * 报警声光指示配置函数
  */
-unsigned char alarm_cfg(uint8_t mode)
+void alarm_cfg(uint8_t mode)
 {
-	alarm.mode = 0x01;
-	
 	switch(mode)
 	{
 		//测试报警，声光T3时刻，有渐响
 		case TEST_MODE:
-			if((system_data.resource & (BUZZER_FLAG_MSK + LED_FLAG_MSK)) == 0)
-			{
-				led.step = 0;
-			  led.mode = _exe;
-		    set_alarm(0);
-		    buzzer.step = 0;
-		    buzzer.mode = _exe;
-				alarm.mode = 0;
-				system_data.masking |= LOW_SOUND_FLAG_MSK;
-			}
+			set_timer1();
+			led.counter = 0;
+			led.step = 0;
+			led.mode = _exe;
+		  buzzer.offset = 0;
+		  buzzer.counter = 0;
+			buzzer.step = 0;
+			buzzer.mode = _exe;
+			system_data.masking |= LOW_SOUND_FLAG_MSK;
 			break;
 		
     //火灾报警，声光T3时刻，无渐响
 		case FIRE_MODE:
-			if((system_data.resource & (BUZZER_FLAG_MSK + LED_FLAG_MSK)) == 0)
-			{
-				set_alarm(1);
-				led.step = 0;
-				led.mode = _exe;
-				buzzer.step = 4;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+			set_timer1();
+		  led.counter = 0;
+			led.step = 0;
+			led.mode = _exe;
+		  buzzer.counter = 0;
+			buzzer.step = 5;
+			buzzer.mode = _exe;
+		  system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 			break;
 		
 		//互联报警，蜂鸣器 T3时序
 		case EXTERNAL_MODE:
-			if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-			{
-				set_alarm(1);
-				buzzer.step = 4;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+			set_timer1();
+		  HRED_LED_OFF;
+		  led.step = 0;
+			led.mode = _idle;
+		  buzzer.counter = 0;
+			buzzer.step = 5;
+			buzzer.mode = _exe;
+		  system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 			break;
 		
 		//互联错误 红灯中亮度 0.2s亮 0.8s灭
 		case EXT_ERROR_MODE:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				led.step = 12;
-				led.mode = _exe;
-				alarm.mode = 0;
-			}
+			close_buzzer();
+		  close_timer1();
+			buzzer.step = 0;
+			buzzer.mode = _idle;
+			led.step = 14;
+			led.mode = _exe;
 			break;
 		
-		//低亮度闪一次 -> 2ms (待机、低压免打扰)
+		//低亮度闪一次 -> 2ms
 		case ONE_LOW_MODE:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				led.offset = 2;
-				LED_TIMER = 110;
-				led.step = 9;
-				led.mode = _exe;
-				alarm.mode = 0;
-			}
+			led.offset = 2;
+			LED_TIMER = 110;
+			led.step = 11;
+			led.mode = _exe;
+		  close_buzzer();
+		  close_timer1();
+			buzzer.step = 0;
+			buzzer.mode = _idle;
 			break;
 		
-		//低亮度闪两次(失效故障免打扰)
+		//低亮度闪两次
 		case TWO_LOW_MODE:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				led.offset = 2;
-				led.step = 7;
-				led.mode = _exe;
-				alarm.mode = 0;
-			}
+			led.offset = 2;
+			led.step = 8;
+			led.mode = _exe;
+		  close_buzzer();
+		  close_timer1();
+			buzzer.step = 0;
+			buzzer.mode = _idle;
 			break;
 		
-		//中亮度闪一次 -> 10ms (报警记忆、低压、静音)
+		//中亮度闪一次 -> 10ms
 		case ONE_MED_MODE:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				led.offset = 10;
-				LED_TIMER = 110;
-				led.step = 9;
-				led.mode = _exe;
-				alarm.mode = 0;
-			}
+			led.offset = 10;
+			LED_TIMER = 110;
+			led.step = 11;
+			led.mode = _exe;
+		  close_buzzer();
+		  close_timer1();
+			buzzer.step = 0;
+			buzzer.mode = _idle;
 			break;
 		
-		//哔叫一声 （低压、进入失效故障免打扰）
+		//哔叫一声
 		case ONE_SOUND_MODE:
-			if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-			{
-				set_alarm(1);
-				BUZZER_TIMER = 110;
-				buzzer.step = 13;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+			set_timer1();
+		  HRED_LED_OFF;
+		  led.step = 0;
+			led.mode = _idle;
+			BUZZER_TIMER = 110;
+			buzzer.step = 12;
+			buzzer.mode = _exe;
 			break;
 			
 		//中等亮度闪一下，叫一声
 		case LOW_BAT_MODE:
-			if((system_data.resource & (LED_FLAG_MSK + BUZZER_FLAG_MSK)) == 0)
-			{
-				set_alarm(1);
-				LED_TIMER = 110;
-				BUZZER_TIMER = 110;
-				led.offset = 10;
-				led.step = 9;
-				led.mode = _exe;
-				buzzer.step = 13;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+			set_timer1();
+			LED_TIMER = 110;
+			BUZZER_TIMER = 110;
+			led.offset = 10;
+			led.step = 11;
+			led.mode = _exe;
+			buzzer.step = 12;
+			buzzer.mode = _exe;
 			break;
 			
-    //中亮度闪两次、哔叫两声（传感器失效故障）
+    //中亮度闪两次、哔叫两声
 		case SENSOR_FAULT_MODE:
-			if((system_data.resource & (LED_FLAG_MSK + BUZZER_FLAG_MSK)) == 0)
-			{
-				set_alarm(1);
-				led.offset = 10;
-				led.step = 7;
-				led.mode = _exe;
-				buzzer.step = 11;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+			set_timer1();
+			led.offset = 10;
+			led.step = 8;
+			led.mode = _exe;
+			buzzer.step = 9;
+			buzzer.mode = _exe;
 			break;
-			
-		case FIND_ALARM_MODE:
-			if((system_data.resource & (LED_FLAG_MSK + BUZZER_FLAG_MSK)) == 0)
-			{
-				led.step = 0;
-				led.mode = _exe;
-				set_alarm(1);
-				buzzer.step = 4;
-				buzzer.mode = _exe;
-				alarm.mode = 0;
-			}
+		
+		case HUSH_MODE:
+			close_buzzer();
+		  close_timer1();
+			buzzer.step = 0;
+			buzzer.mode = _idle;
+			led.step = 4;
+		  led.mode = _exe; 
 			break;
 	}
-	
-	if(alarm.mode != 0)
-	{
-		system_data.masking |= MESSAGE_FLAG_MSK;
-	}
-	
-	return alarm.mode;
-}
-
-void de_led(void)
-{
-	RED_LED_OFF;
-	HRED_LED_OFF;
-	
-	led.offset = 0;
-	led.counter = 0;
-	led.counter1 = 0;
-	led.step = 0;
-	led.mode = _idle;
-}
-
-void de_buzzer(void)
-{
-	system_data.masking &= ~LOW_SOUND_FLAG_MSK;
-	
-	de_alarm();
-	
-	buzzer.offset = 0;
-	buzzer.counter = 0;
-	buzzer.counter1 = 0;
-	buzzer.step = 0;
-  buzzer.mode = _idle;
-	
-	set_update_timer1(0);
 }
 
 /**
@@ -302,45 +270,51 @@ void set_connect(unsigned char flag)
 		  IOUT_OFF;
 	    IO_PIN_L;
 		  IO_PIN_IN;
-		  system_data.masking &= ~IO_OUTPUT_FLAG_MSK;
+		  system_data.masking &= ~(KY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK);
 			break;
 		
 		case 1:
 			IOUT_ON;
-		
+		  system_data.masking |= KEY2_OUT_FLAG_MSK;
 			break;
 		
 		case 2:
 			IO_PIN_OUT;
 	    IO_PIN_H;
-		  system_data.masking |= IO_OUTPUT_FLAG_MSK;
+		  system_data.masking |= KY5_OUTPUT_FLAG_MSK;
 			break;
 		
 		case 3:
 			IO_PIN_OUT;
 		  IOUT_ON;
 	    IO_PIN_H;
-		  system_data.masking |= IO_OUTPUT_FLAG_MSK;
+		  system_data.masking |= KY5_OUTPUT_FLAG_MSK + KEY2_OUT_FLAG_MSK;
 			break;
-		
-		default:
-		  IOUT_OFF;
-      IO_PIN_L;
-		  IO_PIN_IN;
-		  system_data.masking &= ~IO_OUTPUT_FLAG_MSK;
 	}
 }
 
 
-void alarm_del(void)
+void remove_alarm(void)
 {
-	de_led();
+	HRED_LED_OFF;
+	led.offset = 0;
+	led.counter = 0;
+	led.step = 0;
+	led.mode = _idle;
 	
-	de_buzzer();
-
+	close_timer1();
+	
+	buzzer.offset = 0;
+	buzzer.counter = 0;
+	buzzer.step = 0;
+	buzzer.mode = _idle;
+	
+	update.step = 0;
+	update.mode = _idle;
+	
 	set_connect(0);
 	
-	system_data.resource &= ~(BUZZER_FLAG_MSK + LED_FLAG_MSK);
+	system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 }
 
 
@@ -348,15 +322,10 @@ void led_lighten(void)
 {
 	switch(led.step)
 	{
-		//测试报警、火灾报警
 		case 0:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				HRED_LED_ON;
-				LED_TIMER = 0;
-				system_data.resource |= LED_FLAG_MSK;
-				led.step++;
-			}
+			HRED_LED_ON;
+			LED_TIMER = 0;
+			led.step++;
 			break;
 		case 1:
 			if(LED_TIMER > 499)
@@ -366,92 +335,91 @@ void led_lighten(void)
 					check_short_test();
 				}
 				HRED_LED_OFF;
-				system_data.resource &= ~LED_FLAG_MSK;
 				led.step++;
 			}
 			break;
 		case 2:
 			if(LED_TIMER > 999)
 			{
-				led.counter++;
-				if(led.counter > 2)
+				if(led.counter < 2)
 				{
-					led.counter = 0;
-					led.step++;
+					led.counter++;
+					led.step -= 2;
 				}
 				else
-          led.step -= 2;
-			}
-			break;
-		case 3:
-			if(LED_TIMER > 1999)
-			{
-				led.step -= 3;
+				{
+					if(LED_TIMER > 1999)
+					{
+						led.counter = 0;
+						led.step -= 2;
+					}
+				}
 			}
 			break;
 		
-		
-		//闪2次
-		case 7:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				RED_LED_ON;
-				LED_TIMER = 0;
-				system_data.resource |= LED_FLAG_MSK;
-				led.step++;
-			}
+		case 4:
+			RED_LED_ON;
+			LED_TIMER = 0;
+			led.step++;
 			break;
-		case 8:
-			if(LED_TIMER > (led.offset - 1))
+		case 5:
+			if(LED_TIMER >= 10)
 			{
 				RED_LED_OFF;
-				system_data.resource &= ~LED_FLAG_MSK;
+				LED_TIMER = 0;
 				led.step++;
+			}
+			break;	
+		case 6:
+			if(LED_TIMER >= 8000)
+			{
+				led.step -= 2;
 			}
 			break;
 			
-	 //闪1次
-	 case 9:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
+		case 8:
+			RED_LED_ON;
+			LED_TIMER = 0;
+			led.step++;
+			break;
+		case 9:
+			if(LED_TIMER > (led.offset - 1))
 			{
-				if(LED_TIMER > 109)
-				{
-					RED_LED_ON;
-					LED_TIMER = 110;
-					system_data.resource |= LED_FLAG_MSK;
-					led.step++;
-				}
+				RED_LED_OFF;
+				led.step += 2;
 			}
 			break;
-		case 10:
+			
+	 case 11:
+			if(LED_TIMER > 109)
+			{
+				RED_LED_ON;
+				led.step++;
+			}
+			break;
+		case 12:
 			if(LED_TIMER > (109 + led.offset))
 			{
 				RED_LED_OFF;
-				system_data.resource &= ~LED_FLAG_MSK;
 				led.step = 0;
 				led.mode = _idle;
 			}
 			break;
 			
     //互联错误
-		case 12:
-			if((system_data.resource & LED_FLAG_MSK) == 0)
-			{
-				HRED_LED_ON;
-				LED_TIMER = 0;
-				system_data.resource |= LED_FLAG_MSK;
-				led.step++;
-			}
+		case 14:
+			HRED_LED_ON;
+			LED_TIMER = 0;
+			led.step++;
 			break;
-		case 13:
+		case 15:
 			if(LED_TIMER > 19)
 			{
 				HRED_LED_OFF;
-				system_data.resource &= ~LED_FLAG_MSK;
 				led.step++;
 			}
 			break;
-		case 14:
+		case 16:
 			if(LED_TIMER > 329)
 			{
 				led.step -= 2;
@@ -467,21 +435,14 @@ void buzzer_sound(void)
 	{
 		//T3时刻，低声音
 		case 0:
-			if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-			{ 
-				set_update_timer1(1);
-				open_buzzer(0);
-				BUZZER_TIMER = 0;
-				system_data.resource |= BUZZER_FLAG_MSK;
-				buzzer.step++;
-			}
+			open_buzzer();
+			BUZZER_TIMER = 0;
+			buzzer.step++;
 			break;
 		case 1:
 			if(BUZZER_TIMER > 499)
 			{
-				set_update_timer1(0);
 				close_buzzer();
-				system_data.resource &= ~BUZZER_FLAG_MSK;
 				buzzer.step++;
 			}
 			break;
@@ -501,106 +462,82 @@ void buzzer_sound(void)
 		case 3:
 			if(BUZZER_TIMER > 1999)
 			{
-				buzzer.counter1++;
-				if(buzzer.counter1 < 2)
+				buzzer.offset++;
+				if(buzzer.offset < 2)
 				{
 					buzzer.step -= 3;
 				}
 				else
 				{
 					system_data.masking &= ~LOW_SOUND_FLAG_MSK;
-					de_alarm();
-					__NOP();
-					__NOP();
-					set_alarm(1);
 					buzzer.counter = 0;
-					buzzer.counter1 = 0;
-					buzzer.step++;
+					buzzer.offset = 0;
+					buzzer.step += 2;
 				}
 			}
 			break;
 			
-			
 	  //T3时序，大声音
-		case 4:
-			if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-			{
-				set_update_timer1(1);
-				open_buzzer(1);
-				BUZZER_TIMER = 0;
-				system_data.resource |= BUZZER_FLAG_MSK;
-				buzzer.step++;
-			}
-			break;
 		case 5:
+			open_buzzer();
+			BUZZER_TIMER = 0;
+			buzzer.step++;
+			break;
+		case 6:
 			if(BUZZER_TIMER > 499)
 			{
-				set_update_timer1(0);
 				close_buzzer();
-				system_data.resource &= ~BUZZER_FLAG_MSK;
 				buzzer.step++;
 			}
 			break;
-		case 6:  
+		case 7:  
 			if(BUZZER_TIMER > 999)
 			{
-				buzzer.counter++;
-        if(buzzer.counter > 2)
+				if(buzzer.counter < 2)
 				{
-					buzzer.counter = 0;
-				  buzzer.step++;
+					buzzer.counter++;
+					buzzer.step -= 2;
 				}
 				else
 				{
-					 buzzer.step -= 2;
-				}
-			}
-			break;
-		case 7:
-			if(BUZZER_TIMER > 1999)
-			{
-				buzzer.step -= 3;
+					if(BUZZER_TIMER > 1999)
+					{
+						buzzer.counter = 0;
+						buzzer.step -= 2;
+					}
+				}   
 			}
 			break;
 
 			
 		//哔叫两声 每次10ms
-		case 11:
-			if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-			{
-				open_buzzer(1);
-				BUZZER_TIMER = 0;
-				system_data.resource |= BUZZER_FLAG_MSK;
-				buzzer.step++;
-			}
+		case 9:
+			open_buzzer();
+			BUZZER_TIMER = 0;
+			buzzer.step++;
 			break;
-    case 12:
+    case 10:
 			if(BUZZER_TIMER > 9)
 			{
 				close_buzzer();
-				system_data.resource &= ~BUZZER_FLAG_MSK;
-				buzzer.step++;
+				buzzer.step += 2;
 			}
       break;
 			
 		//哔叫两声 每次10ms 间隔100ms
-		case 13:
+		case 12:
 			if(BUZZER_TIMER > 109)
 			{
-				if((system_data.resource & BUZZER_FLAG_MSK) == 0)
-				{
-					open_buzzer(1);
-					BUZZER_TIMER = 110;
-					system_data.resource |= BUZZER_FLAG_MSK;
-					buzzer.step++;
-				}
+				open_buzzer();
+				BUZZER_TIMER = 110;
+				buzzer.step++;
 			}
       break;
-    case 14:
+    case 13:
 			if(BUZZER_TIMER > 119)
 			{
-				de_alarm();
-				system_data.resource &= ~BUZZER_FLAG_MSK;
+				close_buzzer();
+				close_timer1();
         buzzer.step = 0;
 				buzzer.mode = _idle;
 			}

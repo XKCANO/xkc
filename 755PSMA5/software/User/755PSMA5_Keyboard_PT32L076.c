@@ -61,66 +61,48 @@ void EXTIB_Handler(void)
 ************************************************************************/
 void scankey3_process_run(void)
 {
-  if(key3.value == 0x01)
+	if((key3.value & 0x01) != 0)
 	{
-		if(TEST_KEY)
+		if(!TEST_KEY)
 		{
-			key3.value = 0x01;
-			key3.hold_t = 0;
-			system_data.masking &= ~TEST_HOLD_FLAG_MSK;
-		}
-		else
-		{
-			key3.hold_t++;
-			
-			if(key3.hold_t >= 2)
+			key3.l_time++;
+			if(key3.l_time >= 2)
 			{
-				key3.hold_t = 0;
-				key3.value = 0x02;
-			}
-		}
-	}
-	else if(key3.value == 0x02)
-	{
-    if(TEST_KEY)
-		{
-			key3.hold_t = 0;
-		  key3.value = 0x04;
-		}
-		else
-		{
-			key3.hold_t++;
-			
-			if(key3.hold_t >= 16)
-			{
-				key3.hold_t = 0;
 				key3.value = 0x10;
+				key3.h_time = 0;
 			}
-		}
-	}
-	else if(key3.value == 0x04)
-	{
-		if(TEST_KEY)
-		{
-			key3.value = 0x08;
 		}
 		else
 		{
-			key3.value = 0x02;
+			key3.l_time = 0;
 		}
 	}
-  else if(key3.value == 0x20)
+	else
 	{
 		if(TEST_KEY)
 		{
-			key3.value = 0x40;
+			key3.h_time++;
+			if(key3.h_time >= 2)
+			{
+				key3.value = 0x81;
+				key3.l_time = 0;
+			}
 		}
-	}
-	else if(key3.value == 0x40)
-	{
-		if(TEST_KEY)
+		else
 		{
-			key3.value = 0x80;
+			if(key3.l_time < 255)
+			{
+			  key3.l_time++;
+			}
+			if(key3.l_time == 16)
+			{
+				key3.value = 0x20;
+			}
+			else if(key3.l_time == 200)
+			{
+				key3.value = 0x40;
+			}
+			key3.h_time = 0;
 		}
 	}
 }
@@ -131,125 +113,33 @@ void scankey3_process_run(void)
 ** @note 	 
 ** @retval no
 ************************************************************************/
-void key3_shortevent(void)
+void key3_down_event(void)
 {
-	if((system_data.masking & (SYSTEM_INITIALIZE_FLAG_MSK + DEBUG_FLAG_MSK)) == 0)
-	{
-		system_data.masking &= ~TEST_HOLD_FLAG_MSK;
-		
-		if((system_data.state & KEY3_NO_RESPONSE1) == 0)
-		{
-			if(system_data.state & ALARM_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_HUSH_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & (SNOOZE_FAULT_FLAG_MSK + SNOOZE_LOW_FLAG_MSK))
-			{
-				if(system_data.state & ALARM_MEMORY_FLAG_MSK)
-				{
-					system_data.signal |= DEVICE_SNOOZE_MEMORY_FLAG_MSK;
-					system_data.masking |= MESSAGE_FLAG_MSK;
-				}
-			}
-			else if(system_data.state & SENSOR_FAULT_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_SNOOZE_FAULT_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-				
-				if(system_data.state & LOW_BATTERY_FLAG_MSK)
-				{
-					if(system_data.state & ALARM_MEMORY_FLAG_MSK)
-					{
-						system_data.signal |= DEVICE_SNOOZE_LOW_FLAG_MSK + DEVICE_SNOOZE_MEMORY_FLAG_MSK;
-					}
-				}
-			}
-			else if(system_data.state & LOW_BATTERY_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_SNOOZE_LOW_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & ALARM_MEMORY_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_SNOOZE_MEMORY_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state == 0)
-			{
-				system_data.signal |= DEVICE_SHORT_TEST_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-		}
-  }
-
-	key3.value = 0x01;
-}
-
-void key3_longevent(void)
-{
-	if((system_data.masking & (SYSTEM_INITIALIZE_FLAG_MSK + DEBUG_FLAG_MSK)) == 0)
-	{
-		if((system_data.state & KEY3_NO_RESPONSE) == 0)
-		{
-			if(system_data.state & HUSH_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_TEST_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & DEVICE_ALARM_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_HUSH_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & SNOOZE_FAULT_FLAG_MSK)
-			{
-				if(system_data.state & ALARM_MEMORY_FLAG_MSK)
-				{
-					system_data.signal |= SNOOZE_MEMORY_FLAG_MSK;
-					system_data.masking |= MESSAGE_FLAG_MSK;
-				}
-			}
-			else if(system_data.state & SNOOZE_LOW_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_TEST_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & SENSOR_FAULT_FLAG_MSK)
-			{
-				system_data.signal |= DEVICE_SNOOZE_FAULT_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state & (LOW_BATTERY_FLAG_MSK + ALARM_MEMORY_FLAG_MSK + SNOOZE_MEMORY_FLAG_MSK))
-			{
-				system_data.signal |= DEVICE_TEST_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-			else if(system_data.state == 0)
-			{
-				system_data.signal |= DEVICE_TEST_FLAG_MSK;
-				system_data.masking |= MESSAGE_FLAG_MSK;
-			}
-		}
-	}
+	key3.value &= ~0x10;
 	
-	key3.value = 0x20;
+	system_data.masking |= KEY3_DOWN_FLAG_MSK;
 }
 
-void key3_upevent(void)
+void key3_08s_event(void)
 {
-	if((system_data.masking & (SYSTEM_INITIALIZE_FLAG_MSK + DEBUG_FLAG_MSK)) == 0)
-	{
-		if(system_data.signal & DEVICE_TEST_FLAG_MSK)
-		{
-			system_data.signal &= ~DEVICE_TEST_FLAG_MSK;
-		}
-		
-		system_data.masking &= ~TEST_HOLD_FLAG_MSK;
-		system_data.masking |= MESSAGE_FLAG_MSK;
-	}
+	key3.value &= ~0x20;
+	
+	system_data.masking &= ~KEY3_DOWN_FLAG_MSK;
+	system_data.masking |= KEY3_08S_FLAG_MSK + MESSAGE_FLAG_MSK;
+}
 
-	key3.value = 0x01;
+void key3_10s_event(void)
+{
+	key3.value &= ~0x40;
+	
+	system_data.masking |= KEY3_10S_FLAG_MSK + MESSAGE_FLAG_MSK;
+}
+
+void key3_up_event(void)
+{
+	key3.value &= ~0x80;
+	
+	system_data.masking |= KEY3_UP_FLAG_MSK + MESSAGE_FLAG_MSK;
 }
 
 /************************************************************************
@@ -277,26 +167,20 @@ void scankey2_process_run(void)
 			{
 				key2.value = 0;
 				
-				if((system_data.masking & (SYSTEM_INITIALIZE_FLAG_MSK + DEBUG_FLAG_MSK)) == 0)
+				if((system_data.masking & KEY2_OUT_FLAG_MSK) == 0)
 				{
-					if((system_data.state & KEY2_NO_RESPONSE) == 0)
-					{
-						system_data.signal |= DEVICE_EXTERNAL_ALARM_FLAG_MSK;
-						system_data.masking |= MESSAGE_FLAG_MSK;
-					}
+					system_data.signal |= DEVICE_EXTERNAL_ALARM_FLAG_MSK;
+				  system_data.masking |= MESSAGE_FLAG_MSK;
 				}
 			}
 			else if(key2.h_time >= 100 && key2.l_time >= 200)
 			{
 				key2.value = 0;
 				
-				if((system_data.masking & (SYSTEM_INITIALIZE_FLAG_MSK + DEBUG_FLAG_MSK)) == 0)
+				if((system_data.masking & KEY2_OUT_FLAG_MSK) == 0)
 				{
-					if((system_data.state & KEY2_NO_RESPONSE) == 0)
-					{
-						system_data.signal |= DEVICE_EXTERNAL_ERROR_FLAG_MSK;
-						system_data.masking |= MESSAGE_FLAG_MSK;
-					}
+					system_data.signal |= DEVICE_EXTERNAL_ERROR_FLAG_MSK;
+					system_data.masking |= MESSAGE_FLAG_MSK;
 				}
 		  }
 			
@@ -367,7 +251,7 @@ void scankey4_process_run(void)
 				key4.value = 0x01;
 				key4.h_time = 0;
 				key4.l_time = 0;
-				fe_set_backup_power_source();
+				fe_set_backup_power_source();//½â³ý
 			}
 		}
 		else
@@ -400,14 +284,11 @@ void scankey5_process_run(void)
 			key5.h_time = 0;
 			key5.l_time = 0;
 			
-			if((system_data.state & KEY5_NO_RESPONSE) == 0)
+			if((system_data.masking & KY5_OUTPUT_FLAG_MSK) == 0)
 			{
-				if((system_data.masking & IO_OUTPUT_FLAG_MSK) == 0)
-				{
-					system_data.signal |= DEVICE_RELAYIN_ALARM_FLAG_MSK;
-					system_data.masking &= ~RIN_CHECK_FLAG_MSK;
-					system_data.masking |= MESSAGE_FLAG_MSK;
-				}
+				system_data.signal |= DEVICE_RELAYIN_ALARM_FLAG_MSK;
+				system_data.masking &= ~RIN_CHECK_FLAG_MSK;
+				system_data.masking |= MESSAGE_FLAG_MSK;
 			}
 		}
 	}
