@@ -303,7 +303,10 @@ void message_execution(void)
 		if(ALARM_TIMER >= 40000)
 		{
 			ALARM_TIMER = 0;
-			alarm_cfg(ONE_LOW_MODE);
+      if((system_data.masking & DEBUG_FLAG_MSK) == 0)
+      {
+        alarm_cfg(ONE_LOW_MODE);
+      }
 		}
 	}
 	else if(system_data.state & LED_NULLIFY)
