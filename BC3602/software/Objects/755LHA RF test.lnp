@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+".\objects\startup_pt32x031.o"
+".\objects\main.o"
+".\objects\fe_755lha_system_pt32l031.o"
+".\objects\fe_755lha_timer_pt32l031.o"
+".\objects\fe_755lha_pt32l031_cfg.o"
+".\objects\fe_timer_pt32l031.o"
+".\objects\fe_io.o"
+".\objects\fe_math.o"
+".\objects\fe_spi_pt32l031.o"
+".\objects\fe_phy_bc3602.o"
+".\objects\fe_755lha_uart_pt32l031.o"
+--strict --scatter ".\Objects\755LHA RF test.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\755LHA RF test.map" -o ".\Objects\755LHA RF test.axf"

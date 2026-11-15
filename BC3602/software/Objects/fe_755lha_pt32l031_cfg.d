@@ -1,0 +1,11 @@
+.\objects\fe_755lha_pt32l031_cfg.o: User\FE_755LHA_PT32L031_CFG.c
+.\objects\fe_755lha_pt32l031_cfg.o: User\FE_755LHA_PT32L031_CFG.h
+.\objects\fe_755lha_pt32l031_cfg.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fe_755lha_pt32l031_cfg.o: User\FE_HEAT_CFG.h
+.\objects\fe_755lha_pt32l031_cfg.o: User\FE_755LHA_UART_PT32L031.h
+.\objects\fe_755lha_pt32l031_cfg.o: User\PT32X031.h
+.\objects\fe_755lha_pt32l031_cfg.o: .\cmsis\core_cm0.h
+.\objects\fe_755lha_pt32l031_cfg.o: .\cmsis\cmsis_version.h
+.\objects\fe_755lha_pt32l031_cfg.o: .\cmsis\cmsis_compiler.h
+.\objects\fe_755lha_pt32l031_cfg.o: .\cmsis\cmsis_armcc.h
+.\objects\fe_755lha_pt32l031_cfg.o: .\cmsis\system_pt32x031.h
