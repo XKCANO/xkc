@@ -1,0 +1,51 @@
+#ifndef __755LPSMA5_TIMER_PT32L076_H
+#define __755LPSMA5_TIMER_PT32L076_H
+
+
+#include "stdint.h"
+#include "755PSMA5_DEF.h"
+#include "FE_IO.h"
+
+
+/* --------------------------------------------------------------------------- */
+#define   WDG_LockKey_Unlock        ((u32)0x1ACCE551)
+#define   WDG_LockKey_Lock          ((u32)0x00000000)
+#define   WWDG_CR2_KEYVALUE         ((u32)0xACBD0000)
+
+#define 	TIMER_SIZE		20
+
+/* --------------------------------------------------------------------------- */
+typedef struct
+{
+	uint32_t t[TIMER_SIZE];
+	uint32_t mr0;
+}TIMER_TypeDef;
+extern TIMER_TypeDef timer5;
+
+/* --------------------------------------------------------------------------- */
+void set_alarm(unsigned char flag);
+void open_buzzer(unsigned char flag);
+void close_buzzer(void);
+void de_alarm(void);
+
+/* --------------------------------------------------------------------------- */
+void settimer5(void);
+void checktimer5(void);
+void closetimer5(void);
+
+/* --------------------------------------------------------------------------- */
+void settimer4(void);
+void closetimer4(void);
+void system_irq_counter(void);
+
+/* --------------------------------------------------------------------------- */
+void open_iwdg(void);
+void feed_iwdg(void);
+void close_iwdg(void);
+
+/* --------------------------------------------------------------------------- */
+void open_swdg(void);
+void feed_swdg(void);
+void close_swdg(void);
+/* --------------------------------------------------------------------------- */
+#endif

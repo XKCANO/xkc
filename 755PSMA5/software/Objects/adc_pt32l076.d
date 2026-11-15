@@ -1,0 +1,15 @@
+.\objects\adc_pt32l076.o: User\ADC_PT32L076.c
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\adc_pt32l076.o: User\PT32x076.h
+.\objects\adc_pt32l076.o: .\CMSIS\core_cm0.h
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\adc_pt32l076.o: .\CMSIS\cmsis_version.h
+.\objects\adc_pt32l076.o: .\CMSIS\cmsis_compiler.h
+.\objects\adc_pt32l076.o: .\CMSIS\cmsis_armcc.h
+.\objects\adc_pt32l076.o: User\PT32x076_Type.h
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_misc.h
+.\objects\adc_pt32l076.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\adc_pt32l076.o: User\system_PT32x076.h
+.\objects\adc_pt32l076.o: User\ADC_PT32L076.h
