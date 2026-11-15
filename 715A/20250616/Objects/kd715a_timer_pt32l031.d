@@ -1,0 +1,16 @@
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_Timer_PT32L031.c
+.\objects\kd715a_timer_pt32l031.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\pt32x031.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\core_cm0.h
+.\objects\kd715a_timer_pt32l031.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\cmsis_version.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\cmsis_compiler.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\cmsis_armcc.h
+.\objects\kd715a_timer_pt32l031.o: .\CMSIS\system_pt32x031.h
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_Timer_PT32L031.h
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_DEF.h
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_Timer_PT32L031.h
+.\objects\kd715a_timer_pt32l031.o: .\Lib\FE_755LHA_EEPROM_PT32L031.h
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_Keyboard_PT32L031.h
+.\objects\kd715a_timer_pt32l031.o: User\KD715A_Windows_PT32L031.h
+.\objects\kd715a_timer_pt32l031.o: .\Lib\FE_755LHA_Uart_PT32L031.h

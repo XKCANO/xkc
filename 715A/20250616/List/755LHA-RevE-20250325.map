@@ -1,0 +1,1302 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_pt32x031.o(RESET) refers to startup_pt32x031.o(STACK) for __initial_sp
+    startup_pt32x031.o(RESET) refers to 755lha_keyboard_pt32l031.o(i.PA_Handler) for PA_Handler
+    startup_pt32x031.o(RESET) refers to 755lha_keyboard_pt32l031.o(i.PB_Handler) for PB_Handler
+    startup_pt32x031.o(RESET) refers to 755lha_keyboard_pt32l031.o(i.PF_Handler) for PF_Handler
+    startup_pt32x031.o(RESET) refers to adc_pt32l031.o(i.ADC_Handler) for ADC_Handler
+    startup_pt32x031.o(RESET) refers to 755lha_timer_pt32l031.o(i.TIMER1_Handler) for TIMER1_Handler
+    startup_pt32x031.o(RESET) refers to 755lha_timer_pt32l031.o(i.TIMER4_Handler) for TIMER4_Handler
+    startup_pt32x031.o(RESET) refers to fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler) for TIMER2_Handler
+    startup_pt32x031.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(i.main) refers to fe_755lha_pt32l031_cfg.o(i.fe_clear_ram) for fe_clear_ram
+    main.o(i.main) refers to 755lha_system_pt32l031.o(i.sys_clock_init) for sys_clock_init
+    main.o(i.main) refers to 755lha_system_pt32l031.o(i.sys_gpio_init) for sys_gpio_init
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.open_iwdg) for open_iwdg
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.open_swdg) for open_swdg
+    main.o(i.main) refers to fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) for fe_read_eeprom_data
+    main.o(i.main) refers to fe_timer_pt32l031.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.set_timer3) for set_timer3
+    main.o(i.main) refers to 755lha_system_pt32l031.o(i.system_start_proc_run) for system_start_proc_run
+    main.o(i.main) refers to 755lha_keyboard_pt32l031.o(i.scan_testkey_process) for scan_testkey_process
+    main.o(i.main) refers to 755lha_keyboard_pt32l031.o(i.testkey_downevent) for testkey_downevent
+    main.o(i.main) refers to 755lha_keyboard_pt32l031.o(i.testkey_upevent) for testkey_upevent
+    main.o(i.main) refers to 755lha_keyboard_pt32l031.o(i.testkeylongevent) for testkeylongevent
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.feed_iwdg) for feed_iwdg
+    main.o(i.main) refers to 755lha_heat_pt32l031.o(i.fe_heat_process_run) for fe_heat_process_run
+    main.o(i.main) refers to 755lha_batterylow_pt32l031.o(i.measure_battery) for measure_battery
+    main.o(i.main) refers to 755lha_windows_pt32l031.o(i.update_timer1) for update_timer1
+    main.o(i.main) refers to 755lha_windows_pt32l031.o(i.red_led_lighten) for red_led_lighten
+    main.o(i.main) refers to 755lha_windows_pt32l031.o(i.yellow_led_lighten) for yellow_led_lighten
+    main.o(i.main) refers to 755lha_windows_pt32l031.o(i.buzzer_sound) for buzzer_sound
+    main.o(i.main) refers to 755lha_message_pt32l031.o(i.messageproc) for messageproc
+    main.o(i.main) refers to 755lha_message_pt32l031.o(i.message_execution) for message_execution
+    main.o(i.main) refers to fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state) for fe_get_eeprom_state
+    main.o(i.main) refers to fe_755lha_uart_pt32l031.o(i.fe_get_uart_state) for fe_get_uart_state
+    main.o(i.main) refers to 755lha_system_pt32l031.o(i.goto_deepsleep) for goto_deepsleep
+    main.o(i.main) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) for fe_uart_process_run
+    main.o(i.main) refers to fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) for fe_eeprom_process_run
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.feed_swdg) for feed_swdg
+    main.o(i.main) refers to fe_timer_pt32l031.o(i.fe_check_system_tick_timer) for fe_check_system_tick_timer
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(i.check_timer3) for check_timer3
+    main.o(i.main) refers to main.o(.bss) for .bss
+    main.o(i.main) refers to 755lha_keyboard_pt32l031.o(.data) for key
+    main.o(i.main) refers to 755lha_system_pt32l031.o(.data) for start
+    main.o(i.main) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    main.o(i.main) refers to 755lha_heat_pt32l031.o(.bss) for Heat
+    main.o(i.main) refers to 755lha_batterylow_pt32l031.o(.bss) for bat
+    main.o(i.main) refers to 755lha_windows_pt32l031.o(.data) for update
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to fe_timer_pt32l031.o(i.fe_kill_system_tick_timer) for fe_kill_system_tick_timer
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.kill_timer3) for kill_timer3
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.close_swdg) for close_swdg
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.open_timer4) for open_timer4
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.close_timer4) for close_timer4
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to fe_timer_pt32l031.o(i.fe_set_system_tick_timer) for fe_set_system_tick_timer
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.set_timer3) for set_timer3
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.system_irq_proc_run) for system_irq_proc_run
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to 755lha_timer_pt32l031.o(i.open_swdg) for open_swdg
+    755lha_system_pt32l031.o(i.goto_deepsleep) refers to main.o(.bss) for system_data
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) for fe_755LHA_read_eeprom_data
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback) for fe_set_uart_callback
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_timer_pt32l031.o(i.close_iwdg) for close_iwdg
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_open) for fe_uart_open
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s) for fe_calculate_sleep_8s
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s) for fe_get_sleep_8s
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_windows_pt32l031.o(i.alarm_init) for alarm_init
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_system_pt32l031.o(.data) for .data
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to main.o(.bss) for eeprom_data
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_windows_pt32l031.o(i.UartCallBack) for UartCallBack
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to main.o(.bss) for system_data
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_timer_pt32l031.o(.data) for timer4_T8s
+    755lha_system_pt32l031.o(i.system_start_proc_run) refers to 755lha_windows_pt32l031.o(.data) for red_led
+    755lha_timer_pt32l031.o(i.TIMER1_Handler) refers to main.o(.bss) for system_data
+    755lha_timer_pt32l031.o(i.TIMER1_Handler) refers to 755lha_windows_pt32l031.o(.data) for update
+    755lha_timer_pt32l031.o(i.TIMER4_Handler) refers to main.o(.bss) for system_data
+    755lha_timer_pt32l031.o(i.check_timer3) refers to 755lha_timer_pt32l031.o(.bss) for .bss
+    755lha_timer_pt32l031.o(i.open_timer4) refers to 755lha_timer_pt32l031.o(.data) for .data
+    755lha_timer_pt32l031.o(i.set_alarm) refers to 755lha_windows_pt32l031.o(.data) for update
+    755lha_timer_pt32l031.o(i.system_irq_proc_run) refers to 755lha_timer_pt32l031.o(i.mem_data_add) for mem_data_add
+    755lha_timer_pt32l031.o(i.system_irq_proc_run) refers to 755lha_timer_pt32l031.o(.bss) for .bss
+    755lha_windows_pt32l031.o(i.UartCallBack) refers to 755lha_timer_pt32l031.o(i.set_alarm) for set_alarm
+    755lha_windows_pt32l031.o(i.UartCallBack) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.alarm_init) refers to 755lha_timer_pt32l031.o(i.set_alarm) for set_alarm
+    755lha_windows_pt32l031.o(i.alarm_init) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.alarm_init) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.alarm_init) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_windows_pt32l031.o(i.buzzer_close) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_windows_pt32l031.o(i.buzzer_close) refers to 755lha_timer_pt32l031.o(i.del_alarm) for del_alarm
+    755lha_windows_pt32l031.o(i.buzzer_close) refers to 755lha_windows_pt32l031.o(i.set_update_timer1) for set_update_timer1
+    755lha_windows_pt32l031.o(i.buzzer_close) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.buzzer_close) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_timer_pt32l031.o(i.open_buzzer) for open_buzzer
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_windows_pt32l031.o(i.set_update_timer1) for set_update_timer1
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_timer_pt32l031.o(i.close_buzzer) for close_buzzer
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_timer_pt32l031.o(i.del_alarm) for del_alarm
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_timer_pt32l031.o(i.set_alarm) for set_alarm
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.buzzer_sound) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_windows_pt32l031.o(i.led_close) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.red_led_lighten) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.red_led_lighten) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.red_led_lighten) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_windows_pt32l031.o(i.remove_alarm) refers to 755lha_windows_pt32l031.o(i.led_close) for led_close
+    755lha_windows_pt32l031.o(i.remove_alarm) refers to 755lha_windows_pt32l031.o(i.buzzer_close) for buzzer_close
+    755lha_windows_pt32l031.o(i.remove_alarm) refers to 755lha_windows_pt32l031.o(i.set_wire_connect) for set_wire_connect
+    755lha_windows_pt32l031.o(i.remove_alarm) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.set_update_timer1) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.set_update_timer1) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.update_timer1) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.update_timer1) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_windows_pt32l031.o(i.update_timer1) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.yellow_led_lighten) refers to 755lha_windows_pt32l031.o(.data) for .data
+    755lha_windows_pt32l031.o(i.yellow_led_lighten) refers to main.o(.bss) for system_data
+    755lha_windows_pt32l031.o(i.yellow_led_lighten) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_heat_pt32l031.o(i.CheckIs02K) refers to fe_math.o(i.fe_get_minimum) for fe_get_minimum
+    755lha_heat_pt32l031.o(i.CheckIs02K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIs10K) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(i.CheckIs10K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIs1K) refers to fe_math.o(i.fe_get_minimum) for fe_get_minimum
+    755lha_heat_pt32l031.o(i.CheckIs1K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIs20K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIs3K) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(i.CheckIs3K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIs5K) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(i.CheckIs5K) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIsSafe) refers to fe_math.o(i.fe_get_maximum) for fe_get_maximum
+    755lha_heat_pt32l031.o(i.CheckIsSafe) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.CheckIsSafe) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_heat_pt32l031.o(i.CheckIsSafe) refers to main.o(.bss) for system_data
+    755lha_heat_pt32l031.o(i.FireAlarm) refers to 755lha_heat_pt32l031.o(i.IssueOutputData) for IssueOutputData
+    755lha_heat_pt32l031.o(i.FireAlarm) refers to main.o(.bss) for system_data
+    755lha_heat_pt32l031.o(i.GeneratingBaseData) refers to fe_math.o(i.fe_get_curve_average) for fe_get_curve_average
+    755lha_heat_pt32l031.o(i.GeneratingBaseData) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(i.GeneratingBaseData) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.IssueOutputData) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    755lha_heat_pt32l031.o(i.IssueOutputData) refers to fe_755lha_uart_pt32l031.o(i.fe_uart_write) for fe_uart_write
+    755lha_heat_pt32l031.o(i.IssueOutputData) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.IssueOutputData) refers to main.o(.bss) for eeprom_data
+    755lha_heat_pt32l031.o(i.IssueOutputData) refers to 755lha_batterylow_pt32l031.o(.bss) for bat
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to adc_pt32l031.o(i.fe_adc_init) for fe_adc_init
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to adc_pt32l031.o(i.fe_adc_open_scm_in6) for fe_adc_open_scm_in6
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.IssueOutputData) for IssueOutputData
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_data_move_to_right) for fe_data_move_to_right
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_calculate_external_16b_temperature) for fe_calculate_external_16b_temperature
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_comparision) for fe_comparision
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_get_2b_filter) for fe_get_2b_filter
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_subtractive) for fe_subtractive
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.GeneratingBaseData) for GeneratingBaseData
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to fe_math.o(i.fe_get_average) for fe_get_average
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIsSafe) for CheckIsSafe
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs20K) for CheckIs20K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.FireAlarm) for FireAlarm
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs10K) for CheckIs10K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs5K) for CheckIs5K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs3K) for CheckIs3K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs1K) for CheckIs1K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(i.CheckIs02K) for CheckIs02K
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_heat_pt32l031.o(.bss) for .bss
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_heat_pt32l031.o(i.fe_heat_process_run) refers to main.o(.bss) for system_data
+    755lha_keyboard_pt32l031.o(i.PA_Handler) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_keyboard_pt32l031.o(i.scan_testkey_process) refers to 755lha_keyboard_pt32l031.o(.data) for .data
+    755lha_keyboard_pt32l031.o(i.testkey_downevent) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_keyboard_pt32l031.o(i.testkey_downevent) refers to 755lha_keyboard_pt32l031.o(.data) for .data
+    755lha_keyboard_pt32l031.o(i.testkey_upevent) refers to main.o(.bss) for system_data
+    755lha_keyboard_pt32l031.o(i.testkey_upevent) refers to 755lha_keyboard_pt32l031.o(.data) for .data
+    755lha_keyboard_pt32l031.o(i.testkeylongevent) refers to main.o(.bss) for system_data
+    755lha_keyboard_pt32l031.o(i.testkeylongevent) refers to 755lha_keyboard_pt32l031.o(.data) for .data
+    755lha_batterylow_pt32l031.o(i.CheckIsLowbattery) refers to 755lha_batterylow_pt32l031.o(.bss) for .bss
+    755lha_batterylow_pt32l031.o(i.CheckIsLowbattery) refers to main.o(.bss) for eeprom_data
+    755lha_batterylow_pt32l031.o(i.CheckIsLowbattery) refers to main.o(.bss) for system_data
+    755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk) refers to 755lha_batterylow_pt32l031.o(.bss) for .bss
+    755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk) refers to main.o(.bss) for eeprom_data
+    755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk) refers to main.o(.bss) for system_data
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to fe_semaphore.o(i.fe_get_semaphore_state) for fe_get_semaphore_state
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to fe_semaphore.o(i.fe_set_semaphore) for fe_set_semaphore
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to adc_pt32l031.o(i.fe_adc_init) for fe_adc_init
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to adc_pt32l031.o(i.fe_adc_open_scm_in1) for fe_adc_open_scm_in1
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to adc_pt32l031.o(i.fe_adc_open_scm_in12) for fe_adc_open_scm_in12
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to fe_semaphore.o(i.fe_clear_semaphore) for fe_clear_semaphore
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to 755lha_batterylow_pt32l031.o(i.array_right) for array_right
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to dfltui.o(.text) for __aeabi_ui2d
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to dscalb.o(.text) for __ARM_scalbn
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to ddiv.o(.text) for __aeabi_ddiv
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to dfixui.o(.text) for __aeabi_d2uiz
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to 755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk) for CheckVoltageIsOk
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to 755lha_batterylow_pt32l031.o(i.CheckIsLowbattery) for CheckIsLowbattery
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to 755lha_batterylow_pt32l031.o(.bss) for .bss
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_batterylow_pt32l031.o(i.measure_battery) refers to main.o(.bss) for system_data
+    755lha_message_pt32l031.o(i.message_execution) refers to 755lha_windows_pt32l031.o(i.alarm_init) for alarm_init
+    755lha_message_pt32l031.o(i.message_execution) refers to main.o(.bss) for system_data
+    755lha_message_pt32l031.o(i.message_execution) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    755lha_message_pt32l031.o(i.messageproc) refers to 755lha_windows_pt32l031.o(i.alarm_init) for alarm_init
+    755lha_message_pt32l031.o(i.messageproc) refers to 755lha_windows_pt32l031.o(i.remove_alarm) for remove_alarm
+    755lha_message_pt32l031.o(i.messageproc) refers to main.o(.bss) for system_data
+    755lha_message_pt32l031.o(i.messageproc) refers to 755lha_system_pt32l031.o(.data) for start
+    755lha_message_pt32l031.o(i.messageproc) refers to 755lha_timer_pt32l031.o(.bss) for Timer3
+    adc_pt32l031.o(i.ADC_Handler) refers to adc_pt32l031.o(.data) for .data
+    adc_pt32l031.o(i.CalculateActualVoltage) refers to uidiv.o(.text) for __aeabi_uidivmod
+    adc_pt32l031.o(i.fe_adc_init) refers to adc_pt32l031.o(.data) for .data
+    adc_pt32l031.o(i.fe_adc_open_scm_in1) refers to adc_pt32l031.o(.data) for .data
+    adc_pt32l031.o(i.fe_adc_open_scm_in12) refers to adc_pt32l031.o(.data) for .data
+    adc_pt32l031.o(i.fe_adc_open_scm_in3) refers to adc_pt32l031.o(.data) for .data
+    adc_pt32l031.o(i.fe_adc_open_scm_in6) refers to adc_pt32l031.o(.data) for .data
+    fe_timer_pt32l031.o(i.fe_check_system_tick_timer) refers to fe_timer_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) refers to fe_755lha_eeprom_pt32l031.o(i.write_flash_page) for write_flash_page
+    fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_io.o(i.mem_byte_clear) for mem_byte_clear
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) refers to fe_io.o(i.malloc_ram) for malloc_ram
+    fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_all_page) for erase_flash_all_page
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) for erase_flash_memory
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) for PlainExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) for KeyExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_key) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory) for erase_flash_memory
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) refers to fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) for fe_write_eeprom_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(i.write_flash_code) for write_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) for erase_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.PlainExpansions) for PlainExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.KeyExpansions) for KeyExpansions
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox) for GetCodeFromBox
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(i.erase_flash_code) for erase_flash_code
+    fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data) for copy_eeprom_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.reset_default_data) for reset_default_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.data) for .data
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_semaphore.o(.data) for System
+    fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.reset_default_data) refers to fe_755lha_eeprom_pt32l031.o(.constdata) for .constdata
+    fe_755lha_eeprom_pt32l031.o(i.reset_default_data) refers to fe_755lha_eeprom_pt32l031.o(.bss) for .bss
+    fe_755lha_eeprom_pt32l031.o(i.write_flash_code) refers to fe_io.o(i.mem_word_copy) for mem_word_copy
+    fe_755lha_eeprom_pt32l031.o(i.write_flash_code) refers to fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data) for EEPROM_write_data
+    fe_math.o(i.fe_calculate_crc) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to dadd.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fscalb.o(.text) for __ARM_scalbnf
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to fadd.o(.text) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_16b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ffltui.o(.text) for __aeabi_ui2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fdiv.o(.text) for __aeabi_fdiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to f2d.o(.text) for __aeabi_f2d
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to log.o(i.log) for log
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to d2f.o(.text) for __aeabi_d2f
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to dadd.o(.text) for __aeabi_dadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ddiv.o(.text) for __aeabi_ddiv
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to fadd.o(.text) for __aeabi_fadd
+    fe_math.o(i.fe_calculate_external_8b_temperature) refers to ffixui.o(.text) for __aeabi_f2uiz
+    fe_math.o(i.fe_correcting_ad_data) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_data_whitening_pn7) refers to fe_math.o(.constdata) for .constdata
+    fe_math.o(i.fe_get_average) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_math.o(i.fe_get_curve_average) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fe_semaphore.o(i.fe_clear_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_get_semaphore_state) refers to fe_semaphore.o(.data) for .data
+    fe_semaphore.o(i.fe_set_semaphore) refers to fe_semaphore.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) refers to fe_math.o(i.fe_calculate_crc) for fe_calculate_crc
+    fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.OpenUART) for OpenUART
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.CloseUART) for CloseUART
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.get_out_data) for get_out_data
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(i.explain_token_packet) for explain_token_packet
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.RunUartServerTask) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(i.fe_generating_box) for fe_generating_box
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher) for fe_generating_cipher
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(.bss) for Rom
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.explain_token_packet) refers to fe_755lha_eeprom_pt32l031.o(.data) for Eeprom
+    fe_755lha_uart_pt32l031.o(i.fe_get_uart_state) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_open) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc) for RunSciReceivingProc
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc) for RunSciTransmittingProc
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(i.RunUartServerTask) for RunUartServerTask
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.fe_uart_process_run) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_io.o(i.mem_data_copy) for mem_data_copy
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_755lha_uart_pt32l031.o(.data) for .data
+    fe_755lha_uart_pt32l031.o(i.fe_uart_write) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_uart_pt32l031.o(i.get_out_data) refers to fe_755lha_uart_pt32l031.o(.bss) for .bss
+    fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s) refers to fe_timer_pt32l031.o(.bss) for Timer
+    fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s) refers to fe_timer_pt32l031.o(.bss) for Timer
+    log.o(i.__softfp_log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.__softfp_log) refers to log.o(i.log) for log
+    log.o(i.log) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log.o(i.log) refers to errno.o(i.__set_errno) for __set_errno
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_invalid) for __mathlib_dbl_invalid
+    log.o(i.log) refers to dunder.o(i.__mathlib_dbl_divzero) for __mathlib_dbl_divzero
+    log.o(i.log) refers to dscalb.o(.text) for __ARM_scalbn
+    log.o(i.log) refers to dadd.o(.text) for __aeabi_dsub
+    log.o(i.log) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log.o(i.log) refers to dflti.o(.text) for __aeabi_i2d
+    log.o(i.log) refers to dmul.o(.text) for __aeabi_dmul
+    log.o(i.log) refers to ddiv.o(.text) for __aeabi_ddiv
+    log.o(i.log) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log.o(i.log) refers to qnan.o(.constdata) for __mathlib_zero
+    log.o(i.log) refers to log.o(.constdata) for .constdata
+    log.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.____softfp_log$lsc) refers to log_x.o(i.__log$lsc) for __log$lsc
+    log_x.o(i.__log$lsc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    log_x.o(i.__log$lsc) refers to dunder.o(i.__mathlib_dbl_infnan) for __mathlib_dbl_infnan
+    log_x.o(i.__log$lsc) refers to errno.o(i.__set_errno) for __set_errno
+    log_x.o(i.__log$lsc) refers to dscalb.o(.text) for __ARM_scalbn
+    log_x.o(i.__log$lsc) refers to dadd.o(.text) for __aeabi_dsub
+    log_x.o(i.__log$lsc) refers to cdcmple.o(.text) for __aeabi_cdcmpeq
+    log_x.o(i.__log$lsc) refers to dflti.o(.text) for __aeabi_i2d
+    log_x.o(i.__log$lsc) refers to dmul.o(.text) for __aeabi_dmul
+    log_x.o(i.__log$lsc) refers to ddiv.o(.text) for __aeabi_ddiv
+    log_x.o(i.__log$lsc) refers to poly.o(i.__kernel_poly) for __kernel_poly
+    log_x.o(i.__log$lsc) refers to qnan.o(.constdata) for __mathlib_zero
+    log_x.o(i.__log$lsc) refers to log_x.o(.constdata) for .constdata
+    log_x.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    fscalb.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ddiv.o(.text) refers to depilogue.o(.text) for _double_round
+    dscalb.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    f2d.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
+    dunder.o(i.__mathlib_dbl_divzero) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_infnan) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_infnan2) refers to dadd.o(.text) for __aeabi_dadd
+    dunder.o(i.__mathlib_dbl_invalid) refers to ddiv.o(.text) for __aeabi_ddiv
+    dunder.o(i.__mathlib_dbl_overflow) refers to dscalb.o(.text) for __ARM_scalbn
+    dunder.o(i.__mathlib_dbl_posinfnan) refers to dmul.o(.text) for __aeabi_dmul
+    dunder.o(i.__mathlib_dbl_underflow) refers to dscalb.o(.text) for __ARM_scalbn
+    poly.o(i.__kernel_poly) refers (Special) to iusefp.o(.text) for __I$use$fp
+    poly.o(i.__kernel_poly) refers to dmul.o(.text) for __aeabi_dmul
+    poly.o(i.__kernel_poly) refers to dadd.o(.text) for __aeabi_dadd
+    qnan.o(.constdata) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_pt32x031.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_pt32x031.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
+    errno.o(i.__read_errno) refers to errno.o(.data) for .data
+    errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_pt32x031.o(HEAP), (0 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing 755lha_system_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_system_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_timer_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_timer_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_timer_pt32l031.o(.data), (2 bytes).
+    Removing 755lha_windows_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_windows_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_heat_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_heat_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_keyboard_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_keyboard_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_keyboard_pt32l031.o(i.testkeyshortevent), (2 bytes).
+    Removing 755lha_batterylow_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_batterylow_pt32l031.o(.revsh_text), (4 bytes).
+    Removing 755lha_message_pt32l031.o(.rev16_text), (4 bytes).
+    Removing 755lha_message_pt32l031.o(.revsh_text), (4 bytes).
+    Removing adc_pt32l031.o(.rev16_text), (4 bytes).
+    Removing adc_pt32l031.o(.revsh_text), (4 bytes).
+    Removing adc_pt32l031.o(i.CalculateActualVoltage), (14 bytes).
+    Removing adc_pt32l031.o(i.fe_adc_kill), (44 bytes).
+    Removing adc_pt32l031.o(i.fe_adc_open_scm_in3), (64 bytes).
+    Removing fe_io.o(.rev16_text), (4 bytes).
+    Removing fe_io.o(.revsh_text), (4 bytes).
+    Removing fe_io.o(i.malloc_ram), (34 bytes).
+    Removing fe_io.o(i.mem_byte_set), (12 bytes).
+    Removing fe_io.o(i.mem_word_clear), (20 bytes).
+    Removing fe_timer_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_timer_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_timer_pt32l031.o(i.fe_kill_timer2_et), (24 bytes).
+    Removing fe_timer_pt32l031.o(i.fe_set_timer2_et), (48 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.erase_flash_all_page), (88 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.erase_flash_memory), (20 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_write_eeprom_data), (96 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.fe_check_key), (112 bytes).
+    Removing fe_755lha_eeprom_pt32l031.o(i.fe_check_security_key), (132 bytes).
+    Removing fe_math.o(i.fe_byte_data_move_to_left), (18 bytes).
+    Removing fe_math.o(i.fe_calculate_crc16), (68 bytes).
+    Removing fe_math.o(i.fe_calculate_external_8b_temperature), (152 bytes).
+    Removing fe_math.o(i.fe_char_real_comparision), (48 bytes).
+    Removing fe_math.o(i.fe_char_real_subtractive), (14 bytes).
+    Removing fe_math.o(i.fe_correcting_ad_data), (16 bytes).
+    Removing fe_math.o(i.fe_data_move_to_left), (26 bytes).
+    Removing fe_math.o(i.fe_data_whitening_pn7), (28 bytes).
+    Removing fe_math.o(i.fe_float_data_move_to_left), (26 bytes).
+    Removing fe_math.o(i.fe_float_data_move_to_right), (20 bytes).
+    Removing fe_math.o(i.fe_get_5b_filter), (10 bytes).
+    Removing fe_math.o(i.fe_get_curve_amplitude), (60 bytes).
+    Removing fe_math.o(i.fe_get_increment), (40 bytes).
+    Removing fe_math.o(i.fe_invert_data), (40 bytes).
+    Removing fe_math.o(.constdata), (32 bytes).
+    Removing fe_755lha_uart_pt32l031.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_uart_pt32l031.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(.rev16_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(.revsh_text), (4 bytes).
+    Removing fe_755lha_pt32l031_cfg.o(i.fe_initializing_gpio), (2 bytes).
+
+60 unused section(s) (total 1424 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      212  startup_pt32x031.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
+    ../fplib/microlib/f2d.c                  0x00000000   Number         0  f2d.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  dscalb.o ABSOLUTE
+    ../fplib/microlib/fpscalb.c              0x00000000   Number         0  fscalb.o ABSOLUTE
+    ../mathlib/dunder.c                      0x00000000   Number         0  dunder.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log_x.o ABSOLUTE
+    ../mathlib/log.c                         0x00000000   Number         0  log.o ABSOLUTE
+    ../mathlib/poly.c                        0x00000000   Number         0  poly.o ABSOLUTE
+    ../mathlib/qnan.c                        0x00000000   Number         0  qnan.o ABSOLUTE
+    User\755LHA_Batterylow_PT32L031.c        0x00000000   Number         0  755lha_batterylow_pt32l031.o ABSOLUTE
+    User\755LHA_Keyboard_PT32L031.c          0x00000000   Number         0  755lha_keyboard_pt32l031.o ABSOLUTE
+    User\755LHA_Message_PT32L031.c           0x00000000   Number         0  755lha_message_pt32l031.o ABSOLUTE
+    User\755LHA_System_PT32L031.c            0x00000000   Number         0  755lha_system_pt32l031.o ABSOLUTE
+    User\755LHA_Timer_PT32L031.c             0x00000000   Number         0  755lha_timer_pt32l031.o ABSOLUTE
+    User\755LHA_Windows_PT32L031.c           0x00000000   Number         0  755lha_windows_pt32l031.o ABSOLUTE
+    User\755LHA_heat_PT32L031.c              0x00000000   Number         0  755lha_heat_pt32l031.o ABSOLUTE
+    User\ADC_PT32L031.c                      0x00000000   Number         0  adc_pt32l031.o ABSOLUTE
+    User\FE_755LHA_EEPROM_PT32L031.c         0x00000000   Number         0  fe_755lha_eeprom_pt32l031.o ABSOLUTE
+    User\FE_755LHA_PT32L031_CFG.c            0x00000000   Number         0  fe_755lha_pt32l031_cfg.o ABSOLUTE
+    User\FE_755LHA_UART_PT32L031.c           0x00000000   Number         0  fe_755lha_uart_pt32l031.o ABSOLUTE
+    User\FE_IO.c                             0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\FE_TIMER_PT32L031.c                 0x00000000   Number         0  fe_timer_pt32l031.o ABSOLUTE
+    User\FE_math.c                           0x00000000   Number         0  fe_math.o ABSOLUTE
+    User\FE_semaphore.c                      0x00000000   Number         0  fe_semaphore.o ABSOLUTE
+    User\\755LHA_Batterylow_PT32L031.c       0x00000000   Number         0  755lha_batterylow_pt32l031.o ABSOLUTE
+    User\\755LHA_Keyboard_PT32L031.c         0x00000000   Number         0  755lha_keyboard_pt32l031.o ABSOLUTE
+    User\\755LHA_Message_PT32L031.c          0x00000000   Number         0  755lha_message_pt32l031.o ABSOLUTE
+    User\\755LHA_System_PT32L031.c           0x00000000   Number         0  755lha_system_pt32l031.o ABSOLUTE
+    User\\755LHA_Timer_PT32L031.c            0x00000000   Number         0  755lha_timer_pt32l031.o ABSOLUTE
+    User\\755LHA_Windows_PT32L031.c          0x00000000   Number         0  755lha_windows_pt32l031.o ABSOLUTE
+    User\\755LHA_heat_PT32L031.c             0x00000000   Number         0  755lha_heat_pt32l031.o ABSOLUTE
+    User\\ADC_PT32L031.c                     0x00000000   Number         0  adc_pt32l031.o ABSOLUTE
+    User\\FE_755LHA_EEPROM_PT32L031.c        0x00000000   Number         0  fe_755lha_eeprom_pt32l031.o ABSOLUTE
+    User\\FE_755LHA_PT32L031_CFG.c           0x00000000   Number         0  fe_755lha_pt32l031_cfg.o ABSOLUTE
+    User\\FE_755LHA_UART_PT32L031.c          0x00000000   Number         0  fe_755lha_uart_pt32l031.o ABSOLUTE
+    User\\FE_IO.c                            0x00000000   Number         0  fe_io.o ABSOLUTE
+    User\\FE_TIMER_PT32L031.c                0x00000000   Number         0  fe_timer_pt32l031.o ABSOLUTE
+    User\\main.c                             0x00000000   Number         0  main.o ABSOLUTE
+    User\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    User\startup_pt32x031.s                  0x00000000   Number         0  startup_pt32x031.o ABSOLUTE
+    cdcmple.s                                0x00000000   Number         0  cdcmple.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000d4   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000d4   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d8   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000dc   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000dc   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000dc   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000e4   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000e4   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000e4   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000e4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e8   Section        0  uidiv.o(.text)
+    .text                                    0x00000114   Section        0  fadd.o(.text)
+    .text                                    0x000001c6   Section        0  fdiv.o(.text)
+    .text                                    0x00000242   Section        0  fscalb.o(.text)
+    .text                                    0x0000025c   Section        0  dadd.o(.text)
+    .text                                    0x000003c0   Section        0  ddiv.o(.text)
+    .text                                    0x000004b0   Section        0  dscalb.o(.text)
+    .text                                    0x000004dc   Section        0  ffltui.o(.text)
+    .text                                    0x000004ec   Section        0  dfltui.o(.text)
+    .text                                    0x00000508   Section        0  ffixui.o(.text)
+    .text                                    0x00000530   Section        0  dfixui.o(.text)
+    .text                                    0x0000056c   Section        0  f2d.o(.text)
+    .text                                    0x00000594   Section        0  d2f.o(.text)
+    .text                                    0x000005cc   Section        0  llshl.o(.text)
+    .text                                    0x000005ec   Section        0  llushr.o(.text)
+    .text                                    0x0000060e   Section        0  llsshr.o(.text)
+    .text                                    0x00000634   Section        0  iusefp.o(.text)
+    .text                                    0x00000634   Section        0  fepilogue.o(.text)
+    .text                                    0x000006b6   Section        0  depilogue.o(.text)
+    .text                                    0x00000774   Section        0  dmul.o(.text)
+    .text                                    0x00000844   Section        0  dflti.o(.text)
+    .text                                    0x0000086c   Section       40  cdcmple.o(.text)
+    .text                                    0x00000894   Section       36  init.o(.text)
+    i.ADC_Handler                            0x000008b8   Section        0  adc_pt32l031.o(i.ADC_Handler)
+    i.CheckIs02K                             0x000008fc   Section        0  755lha_heat_pt32l031.o(i.CheckIs02K)
+    i.CheckIs10K                             0x0000092c   Section        0  755lha_heat_pt32l031.o(i.CheckIs10K)
+    i.CheckIs1K                              0x00000960   Section        0  755lha_heat_pt32l031.o(i.CheckIs1K)
+    i.CheckIs20K                             0x00000998   Section        0  755lha_heat_pt32l031.o(i.CheckIs20K)
+    i.CheckIs3K                              0x000009cc   Section        0  755lha_heat_pt32l031.o(i.CheckIs3K)
+    i.CheckIs5K                              0x000009fc   Section        0  755lha_heat_pt32l031.o(i.CheckIs5K)
+    i.CheckIsLowbattery                      0x00000a30   Section        0  755lha_batterylow_pt32l031.o(i.CheckIsLowbattery)
+    i.CheckIsSafe                            0x00000a68   Section        0  755lha_heat_pt32l031.o(i.CheckIsSafe)
+    i.CheckVoltageIsOk                       0x00000ab4   Section        0  755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk)
+    i.CloseUART                              0x00000aec   Section        0  fe_755lha_uart_pt32l031.o(i.CloseUART)
+    i.EEPROM_write_data                      0x00000b14   Section        0  fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data)
+    i.FireAlarm                              0x00000bbc   Section        0  755lha_heat_pt32l031.o(i.FireAlarm)
+    i.GeneratingBaseData                     0x00000bdc   Section        0  755lha_heat_pt32l031.o(i.GeneratingBaseData)
+    i.GetCodeFromBox                         0x00000c3c   Section        0  fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox)
+    i.IssueOutputData                        0x00000c48   Section        0  755lha_heat_pt32l031.o(i.IssueOutputData)
+    i.KeyExpansions                          0x00000c9c   Section        0  fe_755lha_eeprom_pt32l031.o(i.KeyExpansions)
+    i.OpenUART                               0x00000cf4   Section        0  fe_755lha_uart_pt32l031.o(i.OpenUART)
+    i.PA_Handler                             0x00000d20   Section        0  755lha_keyboard_pt32l031.o(i.PA_Handler)
+    i.PB_Handler                             0x00000d50   Section        0  755lha_keyboard_pt32l031.o(i.PB_Handler)
+    i.PF_Handler                             0x00000d74   Section        0  755lha_keyboard_pt32l031.o(i.PF_Handler)
+    i.PlainExpansions                        0x00000d98   Section        0  fe_755lha_eeprom_pt32l031.o(i.PlainExpansions)
+    i.RunSciReceivingProc                    0x00000db4   Section        0  fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc)
+    i.RunSciTransmittingProc                 0x00000e94   Section        0  fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc)
+    i.RunUartServerTask                      0x00000f30   Section        0  fe_755lha_uart_pt32l031.o(i.RunUartServerTask)
+    i.TIMER1_Handler                         0x00000fec   Section        0  755lha_timer_pt32l031.o(i.TIMER1_Handler)
+    i.TIMER2_Handler                         0x00001040   Section        0  fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler)
+    i.TIMER4_Handler                         0x00001090   Section        0  755lha_timer_pt32l031.o(i.TIMER4_Handler)
+    i.UartCallBack                           0x000010b8   Section        0  755lha_windows_pt32l031.o(i.UartCallBack)
+    i.__ARM_clz                              0x000010d4   Section        0  depilogue.o(i.__ARM_clz)
+    i.__kernel_poly                          0x00001102   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_divzero                  0x000011b0   Section        0  dunder.o(i.__mathlib_dbl_divzero)
+    i.__mathlib_dbl_infnan                   0x000011c4   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_invalid                  0x000011ce   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__scatterload_copy                     0x000011de   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000011ec   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000011ee   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x000011fc   Section        0  errno.o(i.__set_errno)
+    i.alarm_init                             0x00001208   Section        0  755lha_windows_pt32l031.o(i.alarm_init)
+    i.array_right                            0x000013c0   Section        0  755lha_batterylow_pt32l031.o(i.array_right)
+    i.buzzer_close                           0x000013dc   Section        0  755lha_windows_pt32l031.o(i.buzzer_close)
+    i.buzzer_sound                           0x0000140c   Section        0  755lha_windows_pt32l031.o(i.buzzer_sound)
+    i.check_timer3                           0x0000169c   Section        0  755lha_timer_pt32l031.o(i.check_timer3)
+    i.close_buzzer                           0x000016d0   Section        0  755lha_timer_pt32l031.o(i.close_buzzer)
+    i.close_iwdg                             0x000016f0   Section        0  755lha_timer_pt32l031.o(i.close_iwdg)
+    i.close_swdg                             0x00001720   Section        0  755lha_timer_pt32l031.o(i.close_swdg)
+    i.close_timer4                           0x00001744   Section        0  755lha_timer_pt32l031.o(i.close_timer4)
+    i.copy_eeprom_data                       0x00001770   Section        0  fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data)
+    i.del_alarm                              0x00001784   Section        0  755lha_timer_pt32l031.o(i.del_alarm)
+    i.erase_flash_code                       0x000017d4   Section        0  fe_755lha_eeprom_pt32l031.o(i.erase_flash_code)
+    i.explain_token_packet                   0x00001848   Section        0  fe_755lha_uart_pt32l031.o(i.explain_token_packet)
+    i.fe_755LHA_read_eeprom_data             0x00001980   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data)
+    i.fe_adc_init                            0x000019d4   Section        0  adc_pt32l031.o(i.fe_adc_init)
+    i.fe_adc_open_scm_in1                    0x000019e8   Section        0  adc_pt32l031.o(i.fe_adc_open_scm_in1)
+    i.fe_adc_open_scm_in12                   0x00001a28   Section        0  adc_pt32l031.o(i.fe_adc_open_scm_in12)
+    i.fe_adc_open_scm_in6                    0x00001a68   Section        0  adc_pt32l031.o(i.fe_adc_open_scm_in6)
+    i.fe_calculate_crc                       0x00001aa8   Section        0  fe_math.o(i.fe_calculate_crc)
+    i.fe_calculate_external_16b_temperature  0x00001af4   Section        0  fe_math.o(i.fe_calculate_external_16b_temperature)
+    i.fe_calculate_sleep_8s                  0x00001b84   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s)
+    i.fe_check_system_tick_timer             0x00001c00   Section        0  fe_timer_pt32l031.o(i.fe_check_system_tick_timer)
+    i.fe_clear_ram                           0x00001c24   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_clear_ram)
+    i.fe_clear_semaphore                     0x00001c48   Section        0  fe_semaphore.o(i.fe_clear_semaphore)
+    i.fe_comparision                         0x00001c64   Section        0  fe_math.o(i.fe_comparision)
+    i.fe_data_move_to_right                  0x00001ca8   Section        0  fe_math.o(i.fe_data_move_to_right)
+    i.fe_eeprom_process_run                  0x00001cbc   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run)
+    i.fe_generating_box                      0x00001cd0   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_generating_box)
+    i.fe_generating_cipher                   0x00001d24   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher)
+    i.fe_get_2b_filter                       0x00001d74   Section        0  fe_math.o(i.fe_get_2b_filter)
+    i.fe_get_average                         0x00001d7e   Section        0  fe_math.o(i.fe_get_average)
+    i.fe_get_curve_average                   0x00001d98   Section        0  fe_math.o(i.fe_get_curve_average)
+    i.fe_get_eeprom_state                    0x00001e58   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state)
+    i.fe_get_maximum                         0x00001e74   Section        0  fe_math.o(i.fe_get_maximum)
+    i.fe_get_minimum                         0x00001e90   Section        0  fe_math.o(i.fe_get_minimum)
+    i.fe_get_semaphore_state                 0x00001eb0   Section        0  fe_semaphore.o(i.fe_get_semaphore_state)
+    i.fe_get_sleep_8s                        0x00001ebc   Section        0  fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s)
+    i.fe_get_uart_state                      0x00001ec8   Section        0  fe_755lha_uart_pt32l031.o(i.fe_get_uart_state)
+    i.fe_heat_process_run                    0x00001ee0   Section        0  755lha_heat_pt32l031.o(i.fe_heat_process_run)
+    i.fe_kill_system_tick_timer              0x0000219c   Section        0  fe_timer_pt32l031.o(i.fe_kill_system_tick_timer)
+    i.fe_read_eeprom_data                    0x000021ac   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data)
+    i.fe_set_semaphore                       0x00002284   Section        0  fe_semaphore.o(i.fe_set_semaphore)
+    i.fe_set_system_tick_timer               0x000022a0   Section        0  fe_timer_pt32l031.o(i.fe_set_system_tick_timer)
+    i.fe_set_uart_callback                   0x000022b8   Section        0  fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback)
+    i.fe_subtractive                         0x000022c8   Section        0  fe_math.o(i.fe_subtractive)
+    i.fe_uart_open                           0x000022d8   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_open)
+    i.fe_uart_process_run                    0x00002300   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_process_run)
+    i.fe_uart_write                          0x00002330   Section        0  fe_755lha_uart_pt32l031.o(i.fe_uart_write)
+    i.fe_write_eeprom_data                   0x00002374   Section        0  fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data)
+    i.feed_iwdg                              0x00002424   Section        0  755lha_timer_pt32l031.o(i.feed_iwdg)
+    i.feed_swdg                              0x00002444   Section        0  755lha_timer_pt32l031.o(i.feed_swdg)
+    i.get_out_data                           0x00002464   Section        0  fe_755lha_uart_pt32l031.o(i.get_out_data)
+    i.goto_deepsleep                         0x00002488   Section        0  755lha_system_pt32l031.o(i.goto_deepsleep)
+    i.kill_timer3                            0x000025ec   Section        0  755lha_timer_pt32l031.o(i.kill_timer3)
+    i.led_close                              0x00002608   Section        0  755lha_windows_pt32l031.o(i.led_close)
+    i.log                                    0x0000264c   Section        0  log.o(i.log)
+    i.main                                   0x000029a0   Section        0  main.o(i.main)
+    i.measure_battery                        0x00002b30   Section        0  755lha_batterylow_pt32l031.o(i.measure_battery)
+    i.mem_byte_clear                         0x00002c98   Section        0  fe_io.o(i.mem_byte_clear)
+    i.mem_data_add                           0x00002ca6   Section        0  755lha_timer_pt32l031.o(i.mem_data_add)
+    i.mem_data_copy                          0x00002cc0   Section        0  fe_io.o(i.mem_data_copy)
+    i.mem_word_copy                          0x00002cd2   Section        0  fe_io.o(i.mem_word_copy)
+    i.message_execution                      0x00002ce8   Section        0  755lha_message_pt32l031.o(i.message_execution)
+    i.messageproc                            0x00002d64   Section        0  755lha_message_pt32l031.o(i.messageproc)
+    i.open_buzzer                            0x00002e84   Section        0  755lha_timer_pt32l031.o(i.open_buzzer)
+    i.open_iwdg                              0x00002ea4   Section        0  755lha_timer_pt32l031.o(i.open_iwdg)
+    i.open_swdg                              0x00002ed4   Section        0  755lha_timer_pt32l031.o(i.open_swdg)
+    i.open_timer4                            0x00002f04   Section        0  755lha_timer_pt32l031.o(i.open_timer4)
+    i.red_led_lighten                        0x00002f50   Section        0  755lha_windows_pt32l031.o(i.red_led_lighten)
+    i.remove_alarm                           0x0000315c   Section        0  755lha_windows_pt32l031.o(i.remove_alarm)
+    i.reset_default_data                     0x0000317c   Section        0  fe_755lha_eeprom_pt32l031.o(i.reset_default_data)
+    i.scan_testkey_process                   0x00003198   Section        0  755lha_keyboard_pt32l031.o(i.scan_testkey_process)
+    i.set_alarm                              0x000031f0   Section        0  755lha_timer_pt32l031.o(i.set_alarm)
+    i.set_timer3                             0x00003258   Section        0  755lha_timer_pt32l031.o(i.set_timer3)
+    i.set_update_timer1                      0x00003288   Section        0  755lha_windows_pt32l031.o(i.set_update_timer1)
+    i.set_wire_connect                       0x000032d0   Section        0  755lha_windows_pt32l031.o(i.set_wire_connect)
+    i.sys_clock_init                         0x00003394   Section        0  755lha_system_pt32l031.o(i.sys_clock_init)
+    i.sys_gpio_init                          0x000033c8   Section        0  755lha_system_pt32l031.o(i.sys_gpio_init)
+    i.system_irq_proc_run                    0x000034b0   Section        0  755lha_timer_pt32l031.o(i.system_irq_proc_run)
+    i.system_start_proc_run                  0x000034c4   Section        0  755lha_system_pt32l031.o(i.system_start_proc_run)
+    i.testkey_downevent                      0x00003614   Section        0  755lha_keyboard_pt32l031.o(i.testkey_downevent)
+    i.testkey_upevent                        0x00003630   Section        0  755lha_keyboard_pt32l031.o(i.testkey_upevent)
+    i.testkeylongevent                       0x00003658   Section        0  755lha_keyboard_pt32l031.o(i.testkeylongevent)
+    i.update_timer1                          0x00003680   Section        0  755lha_windows_pt32l031.o(i.update_timer1)
+    i.write_flash_code                       0x000036c0   Section        0  fe_755lha_eeprom_pt32l031.o(i.write_flash_code)
+    i.write_flash_page                       0x000036e8   Section        0  fe_755lha_eeprom_pt32l031.o(i.write_flash_page)
+    i.yellow_led_lighten                     0x00003768   Section        0  755lha_windows_pt32l031.o(i.yellow_led_lighten)
+    .constdata                               0x00003828   Section       68  fe_755lha_eeprom_pt32l031.o(.constdata)
+    .constdata                               0x0000386c   Section       82  fe_math.o(.constdata)
+    .constdata                               0x000038c0   Section       56  log.o(.constdata)
+    Lg2                                      0x000038c0   Data          24  log.o(.constdata)
+    Lg                                       0x000038d8   Data          32  log.o(.constdata)
+    .constdata                               0x000038f8   Section        8  qnan.o(.constdata)
+    .data                                    0x20000000   Section        2  755lha_system_pt32l031.o(.data)
+    .data                                    0x20000002   Section        2  755lha_timer_pt32l031.o(.data)
+    .data                                    0x20000004   Section       19  755lha_windows_pt32l031.o(.data)
+    .data                                    0x20000017   Section        2  755lha_keyboard_pt32l031.o(.data)
+    .data                                    0x2000001c   Section        8  adc_pt32l031.o(.data)
+    .data                                    0x20000024   Section        4  fe_755lha_eeprom_pt32l031.o(.data)
+    .data                                    0x20000028   Section        4  fe_semaphore.o(.data)
+    .data                                    0x2000002c   Section        8  fe_755lha_uart_pt32l031.o(.data)
+    .data                                    0x20000034   Section        4  errno.o(.data)
+    _errno                                   0x20000034   Data           4  errno.o(.data)
+    .bss                                     0x20000038   Section       16  main.o(.bss)
+    .bss                                     0x20000048   Section       16  main.o(.bss)
+    .bss                                     0x20000058   Section      100  755lha_timer_pt32l031.o(.bss)
+    .bss                                     0x200000bc   Section     1296  755lha_heat_pt32l031.o(.bss)
+    .bss                                     0x200005cc   Section       10  755lha_batterylow_pt32l031.o(.bss)
+    .bss                                     0x200005d8   Section       24  fe_timer_pt32l031.o(.bss)
+    .bss                                     0x200005f0   Section       76  fe_755lha_eeprom_pt32l031.o(.bss)
+    .bss                                     0x2000063c   Section       92  fe_755lha_uart_pt32l031.o(.bss)
+    STACK                                    0x20000698   Section     2000  startup_pt32x031.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$IEEEX$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_pt32x031.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x000000c1   Thumb Code     4  startup_pt32x031.o(RESET)
+    NMI_Handler                              0x000000c5   Thumb Code     2  startup_pt32x031.o(RESET)
+    HardFault_Handler                        0x000000c7   Thumb Code     2  startup_pt32x031.o(RESET)
+    SVC_Handler                              0x000000c9   Thumb Code     2  startup_pt32x031.o(RESET)
+    PendSV_Handler                           0x000000cb   Thumb Code     2  startup_pt32x031.o(RESET)
+    SysTick_Handler                          0x000000cd   Thumb Code     2  startup_pt32x031.o(RESET)
+    CLK_FAIL_Handler                         0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    Comparator0_Handler                      0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    Comparator1_Handler                      0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    FLASH_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    I2C0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    I2C1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    LED_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    LVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    PVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SPI0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SPI1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    SWDG_Handler                             0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    TIMER0_Handler                           0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    TIMER3_Handler                           0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    UART0_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    UART1_Handler                            0x000000cf   Thumb Code     0  startup_pt32x031.o(RESET)
+    __main                                   0x000000d5   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000d5   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000dd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000dd   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000dd   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000dd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000e5   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000e5   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    __aeabi_uidiv                            0x000000e9   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x000000e9   Thumb Code    44  uidiv.o(.text)
+    __aeabi_fadd                             0x00000115   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x000001b7   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x000001bf   Thumb Code     8  fadd.o(.text)
+    __aeabi_fdiv                             0x000001c7   Thumb Code   124  fdiv.o(.text)
+    __ARM_scalbnf                            0x00000243   Thumb Code    24  fscalb.o(.text)
+    scalbnf                                  0x00000243   Thumb Code     0  fscalb.o(.text)
+    __aeabi_dadd                             0x0000025d   Thumb Code   328  dadd.o(.text)
+    __aeabi_dsub                             0x000003a5   Thumb Code    12  dadd.o(.text)
+    __aeabi_drsub                            0x000003b1   Thumb Code    12  dadd.o(.text)
+    __aeabi_ddiv                             0x000003c1   Thumb Code   234  ddiv.o(.text)
+    __ARM_scalbn                             0x000004b1   Thumb Code    44  dscalb.o(.text)
+    scalbn                                   0x000004b1   Thumb Code     0  dscalb.o(.text)
+    __aeabi_ui2f                             0x000004dd   Thumb Code    14  ffltui.o(.text)
+    __aeabi_ui2d                             0x000004ed   Thumb Code    24  dfltui.o(.text)
+    __aeabi_f2uiz                            0x00000509   Thumb Code    40  ffixui.o(.text)
+    __aeabi_d2uiz                            0x00000531   Thumb Code    50  dfixui.o(.text)
+    __aeabi_f2d                              0x0000056d   Thumb Code    40  f2d.o(.text)
+    __aeabi_d2f                              0x00000595   Thumb Code    56  d2f.o(.text)
+    __aeabi_llsl                             0x000005cd   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x000005cd   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x000005ed   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x000005ed   Thumb Code     0  llushr.o(.text)
+    __aeabi_lasr                             0x0000060f   Thumb Code    38  llsshr.o(.text)
+    _ll_sshift_r                             0x0000060f   Thumb Code     0  llsshr.o(.text)
+    __I$use$fp                               0x00000635   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x00000635   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x00000645   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x000006b7   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x000006d1   Thumb Code   164  depilogue.o(.text)
+    __aeabi_dmul                             0x00000775   Thumb Code   202  dmul.o(.text)
+    __aeabi_i2d                              0x00000845   Thumb Code    34  dflti.o(.text)
+    __aeabi_cdcmpeq                          0x0000086d   Thumb Code     0  cdcmple.o(.text)
+    __aeabi_cdcmple                          0x0000086d   Thumb Code    38  cdcmple.o(.text)
+    __scatterload                            0x00000895   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000895   Thumb Code     0  init.o(.text)
+    ADC_Handler                              0x000008b9   Thumb Code    56  adc_pt32l031.o(i.ADC_Handler)
+    CheckIs02K                               0x000008fd   Thumb Code    40  755lha_heat_pt32l031.o(i.CheckIs02K)
+    CheckIs10K                               0x0000092d   Thumb Code    46  755lha_heat_pt32l031.o(i.CheckIs10K)
+    CheckIs1K                                0x00000961   Thumb Code    46  755lha_heat_pt32l031.o(i.CheckIs1K)
+    CheckIs20K                               0x00000999   Thumb Code    42  755lha_heat_pt32l031.o(i.CheckIs20K)
+    CheckIs3K                                0x000009cd   Thumb Code    42  755lha_heat_pt32l031.o(i.CheckIs3K)
+    CheckIs5K                                0x000009fd   Thumb Code    46  755lha_heat_pt32l031.o(i.CheckIs5K)
+    CheckIsLowbattery                        0x00000a31   Thumb Code    44  755lha_batterylow_pt32l031.o(i.CheckIsLowbattery)
+    CheckIsSafe                              0x00000a69   Thumb Code    60  755lha_heat_pt32l031.o(i.CheckIsSafe)
+    CheckVoltageIsOk                         0x00000ab5   Thumb Code    44  755lha_batterylow_pt32l031.o(i.CheckVoltageIsOk)
+    CloseUART                                0x00000aed   Thumb Code    34  fe_755lha_uart_pt32l031.o(i.CloseUART)
+    EEPROM_write_data                        0x00000b15   Thumb Code   162  fe_755lha_eeprom_pt32l031.o(i.EEPROM_write_data)
+    FireAlarm                                0x00000bbd   Thumb Code    26  755lha_heat_pt32l031.o(i.FireAlarm)
+    GeneratingBaseData                       0x00000bdd   Thumb Code    88  755lha_heat_pt32l031.o(i.GeneratingBaseData)
+    GetCodeFromBox                           0x00000c3d   Thumb Code    12  fe_755lha_eeprom_pt32l031.o(i.GetCodeFromBox)
+    IssueOutputData                          0x00000c49   Thumb Code    68  755lha_heat_pt32l031.o(i.IssueOutputData)
+    KeyExpansions                            0x00000c9d   Thumb Code    88  fe_755lha_eeprom_pt32l031.o(i.KeyExpansions)
+    OpenUART                                 0x00000cf5   Thumb Code    36  fe_755lha_uart_pt32l031.o(i.OpenUART)
+    PA_Handler                               0x00000d21   Thumb Code    38  755lha_keyboard_pt32l031.o(i.PA_Handler)
+    PB_Handler                               0x00000d51   Thumb Code    28  755lha_keyboard_pt32l031.o(i.PB_Handler)
+    PF_Handler                               0x00000d75   Thumb Code    28  755lha_keyboard_pt32l031.o(i.PF_Handler)
+    PlainExpansions                          0x00000d99   Thumb Code    22  fe_755lha_eeprom_pt32l031.o(i.PlainExpansions)
+    RunSciReceivingProc                      0x00000db5   Thumb Code   204  fe_755lha_uart_pt32l031.o(i.RunSciReceivingProc)
+    RunSciTransmittingProc                   0x00000e95   Thumb Code   140  fe_755lha_uart_pt32l031.o(i.RunSciTransmittingProc)
+    RunUartServerTask                        0x00000f31   Thumb Code   180  fe_755lha_uart_pt32l031.o(i.RunUartServerTask)
+    TIMER1_Handler                           0x00000fed   Thumb Code    72  755lha_timer_pt32l031.o(i.TIMER1_Handler)
+    TIMER2_Handler                           0x00001041   Thumb Code    64  fe_755lha_pt32l031_cfg.o(i.TIMER2_Handler)
+    TIMER4_Handler                           0x00001091   Thumb Code    32  755lha_timer_pt32l031.o(i.TIMER4_Handler)
+    UartCallBack                             0x000010b9   Thumb Code    24  755lha_windows_pt32l031.o(i.UartCallBack)
+    __ARM_clz                                0x000010d5   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __kernel_poly                            0x00001103   Thumb Code   172  poly.o(i.__kernel_poly)
+    __mathlib_dbl_divzero                    0x000011b1   Thumb Code    16  dunder.o(i.__mathlib_dbl_divzero)
+    __mathlib_dbl_infnan                     0x000011c5   Thumb Code    10  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_invalid                    0x000011cf   Thumb Code    16  dunder.o(i.__mathlib_dbl_invalid)
+    __scatterload_copy                       0x000011df   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000011ed   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000011ef   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x000011fd   Thumb Code     6  errno.o(i.__set_errno)
+    alarm_init                               0x00001209   Thumb Code   416  755lha_windows_pt32l031.o(i.alarm_init)
+    array_right                              0x000013c1   Thumb Code    26  755lha_batterylow_pt32l031.o(i.array_right)
+    buzzer_close                             0x000013dd   Thumb Code    40  755lha_windows_pt32l031.o(i.buzzer_close)
+    buzzer_sound                             0x0000140d   Thumb Code   630  755lha_windows_pt32l031.o(i.buzzer_sound)
+    check_timer3                             0x0000169d   Thumb Code    42  755lha_timer_pt32l031.o(i.check_timer3)
+    close_buzzer                             0x000016d1   Thumb Code    24  755lha_timer_pt32l031.o(i.close_buzzer)
+    close_iwdg                               0x000016f1   Thumb Code    32  755lha_timer_pt32l031.o(i.close_iwdg)
+    close_swdg                               0x00001721   Thumb Code    22  755lha_timer_pt32l031.o(i.close_swdg)
+    close_timer4                             0x00001745   Thumb Code    36  755lha_timer_pt32l031.o(i.close_timer4)
+    copy_eeprom_data                         0x00001771   Thumb Code    16  fe_755lha_eeprom_pt32l031.o(i.copy_eeprom_data)
+    del_alarm                                0x00001785   Thumb Code    68  755lha_timer_pt32l031.o(i.del_alarm)
+    erase_flash_code                         0x000017d5   Thumb Code   110  fe_755lha_eeprom_pt32l031.o(i.erase_flash_code)
+    explain_token_packet                     0x00001849   Thumb Code   286  fe_755lha_uart_pt32l031.o(i.explain_token_packet)
+    fe_755LHA_read_eeprom_data               0x00001981   Thumb Code    70  fe_755lha_eeprom_pt32l031.o(i.fe_755LHA_read_eeprom_data)
+    fe_adc_init                              0x000019d5   Thumb Code    12  adc_pt32l031.o(i.fe_adc_init)
+    fe_adc_open_scm_in1                      0x000019e9   Thumb Code    46  adc_pt32l031.o(i.fe_adc_open_scm_in1)
+    fe_adc_open_scm_in12                     0x00001a29   Thumb Code    46  adc_pt32l031.o(i.fe_adc_open_scm_in12)
+    fe_adc_open_scm_in6                      0x00001a69   Thumb Code    46  adc_pt32l031.o(i.fe_adc_open_scm_in6)
+    fe_calculate_crc                         0x00001aa9   Thumb Code    70  fe_math.o(i.fe_calculate_crc)
+    fe_calculate_external_16b_temperature    0x00001af5   Thumb Code   118  fe_math.o(i.fe_calculate_external_16b_temperature)
+    fe_calculate_sleep_8s                    0x00001b85   Thumb Code    98  fe_755lha_pt32l031_cfg.o(i.fe_calculate_sleep_8s)
+    fe_check_system_tick_timer               0x00001c01   Thumb Code    28  fe_timer_pt32l031.o(i.fe_check_system_tick_timer)
+    fe_clear_ram                             0x00001c25   Thumb Code    34  fe_755lha_pt32l031_cfg.o(i.fe_clear_ram)
+    fe_clear_semaphore                       0x00001c49   Thumb Code    22  fe_semaphore.o(i.fe_clear_semaphore)
+    fe_comparision                           0x00001c65   Thumb Code    64  fe_math.o(i.fe_comparision)
+    fe_data_move_to_right                    0x00001ca9   Thumb Code    20  fe_math.o(i.fe_data_move_to_right)
+    fe_eeprom_process_run                    0x00001cbd   Thumb Code    16  fe_755lha_eeprom_pt32l031.o(i.fe_eeprom_process_run)
+    fe_generating_box                        0x00001cd1   Thumb Code    74  fe_755lha_eeprom_pt32l031.o(i.fe_generating_box)
+    fe_generating_cipher                     0x00001d25   Thumb Code    66  fe_755lha_eeprom_pt32l031.o(i.fe_generating_cipher)
+    fe_get_2b_filter                         0x00001d75   Thumb Code    10  fe_math.o(i.fe_get_2b_filter)
+    fe_get_average                           0x00001d7f   Thumb Code    26  fe_math.o(i.fe_get_average)
+    fe_get_curve_average                     0x00001d99   Thumb Code   186  fe_math.o(i.fe_get_curve_average)
+    fe_get_eeprom_state                      0x00001e59   Thumb Code    20  fe_755lha_eeprom_pt32l031.o(i.fe_get_eeprom_state)
+    fe_get_maximum                           0x00001e75   Thumb Code    28  fe_math.o(i.fe_get_maximum)
+    fe_get_minimum                           0x00001e91   Thumb Code    28  fe_math.o(i.fe_get_minimum)
+    fe_get_semaphore_state                   0x00001eb1   Thumb Code     6  fe_semaphore.o(i.fe_get_semaphore_state)
+    fe_get_sleep_8s                          0x00001ebd   Thumb Code     6  fe_755lha_pt32l031_cfg.o(i.fe_get_sleep_8s)
+    fe_get_uart_state                        0x00001ec9   Thumb Code    18  fe_755lha_uart_pt32l031.o(i.fe_get_uart_state)
+    fe_heat_process_run                      0x00001ee1   Thumb Code   664  755lha_heat_pt32l031.o(i.fe_heat_process_run)
+    fe_kill_system_tick_timer                0x0000219d   Thumb Code    12  fe_timer_pt32l031.o(i.fe_kill_system_tick_timer)
+    fe_read_eeprom_data                      0x000021ad   Thumb Code   190  fe_755lha_eeprom_pt32l031.o(i.fe_read_eeprom_data)
+    fe_set_semaphore                         0x00002285   Thumb Code    22  fe_semaphore.o(i.fe_set_semaphore)
+    fe_set_system_tick_timer                 0x000022a1   Thumb Code    14  fe_timer_pt32l031.o(i.fe_set_system_tick_timer)
+    fe_set_uart_callback                     0x000022b9   Thumb Code    12  fe_755lha_uart_pt32l031.o(i.fe_set_uart_callback)
+    fe_subtractive                           0x000022c9   Thumb Code    16  fe_math.o(i.fe_subtractive)
+    fe_uart_open                             0x000022d9   Thumb Code    34  fe_755lha_uart_pt32l031.o(i.fe_uart_open)
+    fe_uart_process_run                      0x00002301   Thumb Code    38  fe_755lha_uart_pt32l031.o(i.fe_uart_process_run)
+    fe_uart_write                            0x00002331   Thumb Code    56  fe_755lha_uart_pt32l031.o(i.fe_uart_write)
+    fe_write_eeprom_data                     0x00002375   Thumb Code   154  fe_755lha_eeprom_pt32l031.o(i.fe_write_eeprom_data)
+    feed_iwdg                                0x00002425   Thumb Code    20  755lha_timer_pt32l031.o(i.feed_iwdg)
+    feed_swdg                                0x00002445   Thumb Code    20  755lha_timer_pt32l031.o(i.feed_swdg)
+    get_out_data                             0x00002465   Thumb Code    26  fe_755lha_uart_pt32l031.o(i.get_out_data)
+    goto_deepsleep                           0x00002489   Thumb Code   322  755lha_system_pt32l031.o(i.goto_deepsleep)
+    kill_timer3                              0x000025ed   Thumb Code    24  755lha_timer_pt32l031.o(i.kill_timer3)
+    led_close                                0x00002609   Thumb Code    54  755lha_windows_pt32l031.o(i.led_close)
+    log                                      0x0000264d   Thumb Code   790  log.o(i.log)
+    main                                     0x000029a1   Thumb Code   350  main.o(i.main)
+    measure_battery                          0x00002b31   Thumb Code   340  755lha_batterylow_pt32l031.o(i.measure_battery)
+    mem_byte_clear                           0x00002c99   Thumb Code    14  fe_io.o(i.mem_byte_clear)
+    mem_data_add                             0x00002ca7   Thumb Code    26  755lha_timer_pt32l031.o(i.mem_data_add)
+    mem_data_copy                            0x00002cc1   Thumb Code    18  fe_io.o(i.mem_data_copy)
+    mem_word_copy                            0x00002cd3   Thumb Code    20  fe_io.o(i.mem_word_copy)
+    message_execution                        0x00002ce9   Thumb Code   108  755lha_message_pt32l031.o(i.message_execution)
+    messageproc                              0x00002d65   Thumb Code   270  755lha_message_pt32l031.o(i.messageproc)
+    open_buzzer                              0x00002e85   Thumb Code    24  755lha_timer_pt32l031.o(i.open_buzzer)
+    open_iwdg                                0x00002ea5   Thumb Code    32  755lha_timer_pt32l031.o(i.open_iwdg)
+    open_swdg                                0x00002ed5   Thumb Code    32  755lha_timer_pt32l031.o(i.open_swdg)
+    open_timer4                              0x00002f05   Thumb Code    62  755lha_timer_pt32l031.o(i.open_timer4)
+    red_led_lighten                          0x00002f51   Thumb Code   500  755lha_windows_pt32l031.o(i.red_led_lighten)
+    remove_alarm                             0x0000315d   Thumb Code    28  755lha_windows_pt32l031.o(i.remove_alarm)
+    reset_default_data                       0x0000317d   Thumb Code    18  fe_755lha_eeprom_pt32l031.o(i.reset_default_data)
+    scan_testkey_process                     0x00003199   Thumb Code    84  755lha_keyboard_pt32l031.o(i.scan_testkey_process)
+    set_alarm                                0x000031f1   Thumb Code    82  755lha_timer_pt32l031.o(i.set_alarm)
+    set_timer3                               0x00003259   Thumb Code    38  755lha_timer_pt32l031.o(i.set_timer3)
+    set_update_timer1                        0x00003289   Thumb Code    60  755lha_windows_pt32l031.o(i.set_update_timer1)
+    set_wire_connect                         0x000032d1   Thumb Code   186  755lha_windows_pt32l031.o(i.set_wire_connect)
+    sys_clock_init                           0x00003395   Thumb Code    42  755lha_system_pt32l031.o(i.sys_clock_init)
+    sys_gpio_init                            0x000033c9   Thumb Code   188  755lha_system_pt32l031.o(i.sys_gpio_init)
+    system_irq_proc_run                      0x000034b1   Thumb Code    16  755lha_timer_pt32l031.o(i.system_irq_proc_run)
+    system_start_proc_run                    0x000034c5   Thumb Code   288  755lha_system_pt32l031.o(i.system_start_proc_run)
+    testkey_downevent                        0x00003615   Thumb Code    18  755lha_keyboard_pt32l031.o(i.testkey_downevent)
+    testkey_upevent                          0x00003631   Thumb Code    32  755lha_keyboard_pt32l031.o(i.testkey_upevent)
+    testkeylongevent                         0x00003659   Thumb Code    30  755lha_keyboard_pt32l031.o(i.testkeylongevent)
+    update_timer1                            0x00003681   Thumb Code    52  755lha_windows_pt32l031.o(i.update_timer1)
+    write_flash_code                         0x000036c1   Thumb Code    40  fe_755lha_eeprom_pt32l031.o(i.write_flash_code)
+    write_flash_page                         0x000036e9   Thumb Code   118  fe_755lha_eeprom_pt32l031.o(i.write_flash_page)
+    yellow_led_lighten                       0x00003769   Thumb Code   174  755lha_windows_pt32l031.o(i.yellow_led_lighten)
+    ROM_DATA                                 0x00003828   Data          68  fe_755lha_eeprom_pt32l031.o(.constdata)
+    WHITENING_TABLE                          0x0000386c   Data          50  fe_math.o(.constdata)
+    CRC_CCITT_TABLE                          0x0000389e   Data          32  fe_math.o(.constdata)
+    __mathlib_zero                           0x000038f8   Data           8  qnan.o(.constdata)
+    Region$$Table$$Base                      0x00003900   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003920   Number         0  anon$$obj.o(Region$$Table)
+    start                                    0x20000000   Data           2  755lha_system_pt32l031.o(.data)
+    timer4_T8s                               0x20000002   Data           2  755lha_timer_pt32l031.o(.data)
+    update                                   0x20000004   Data           4  755lha_windows_pt32l031.o(.data)
+    yellow_led                               0x20000008   Data           5  755lha_windows_pt32l031.o(.data)
+    red_led                                  0x2000000d   Data           5  755lha_windows_pt32l031.o(.data)
+    buzzer                                   0x20000012   Data           5  755lha_windows_pt32l031.o(.data)
+    key                                      0x20000017   Data           2  755lha_keyboard_pt32l031.o(.data)
+    adc                                      0x2000001c   Data           8  adc_pt32l031.o(.data)
+    Eeprom                                   0x20000024   Data           4  fe_755lha_eeprom_pt32l031.o(.data)
+    System                                   0x20000028   Data           4  fe_semaphore.o(.data)
+    uart                                     0x2000002c   Data           8  fe_755lha_uart_pt32l031.o(.data)
+    system_data                              0x20000038   Data          16  main.o(.bss)
+    eeprom_data                              0x20000048   Data          16  main.o(.bss)
+    Timer3                                   0x20000058   Data         100  755lha_timer_pt32l031.o(.bss)
+    Heat                                     0x200000bc   Data        1296  755lha_heat_pt32l031.o(.bss)
+    bat                                      0x200005cc   Data          10  755lha_batterylow_pt32l031.o(.bss)
+    Timer                                    0x200005d8   Data          24  fe_timer_pt32l031.o(.bss)
+    Rom                                      0x200005f0   Data          76  fe_755lha_eeprom_pt32l031.o(.bss)
+    Sci                                      0x2000063c   Data          92  fe_755lha_uart_pt32l031.o(.bss)
+    __initial_sp                             0x20000e68   Data           0  startup_pt32x031.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000d5
+
+  Load Region LR_IROM1 (Base: 0x00000000, Size: 0x00003958, Max: 0x00008000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00003920, Max: 0x00008000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000d4   Code   RO            3    RESET               startup_pt32x031.o
+    0x000000d4   0x000000d4   0x00000000   Code   RO         1335  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000d4   0x000000d4   0x00000004   Code   RO         1381    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000d8   0x000000d8   0x00000004   Code   RO         1384    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO         1386    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO         1388    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000dc   0x000000dc   0x00000008   Code   RO         1389    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000e4   0x000000e4   0x00000000   Code   RO         1391    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000e4   0x000000e4   0x00000000   Code   RO         1393    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO         1382    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000e8   0x000000e8   0x0000002c   Code   RO         1338    .text               mc_p.l(uidiv.o)
+    0x00000114   0x00000114   0x000000b2   Code   RO         1340    .text               mf_p.l(fadd.o)
+    0x000001c6   0x000001c6   0x0000007c   Code   RO         1342    .text               mf_p.l(fdiv.o)
+    0x00000242   0x00000242   0x00000018   Code   RO         1344    .text               mf_p.l(fscalb.o)
+    0x0000025a   0x0000025a   0x00000002   PAD
+    0x0000025c   0x0000025c   0x00000164   Code   RO         1346    .text               mf_p.l(dadd.o)
+    0x000003c0   0x000003c0   0x000000f0   Code   RO         1348    .text               mf_p.l(ddiv.o)
+    0x000004b0   0x000004b0   0x0000002c   Code   RO         1350    .text               mf_p.l(dscalb.o)
+    0x000004dc   0x000004dc   0x0000000e   Code   RO         1352    .text               mf_p.l(ffltui.o)
+    0x000004ea   0x000004ea   0x00000002   PAD
+    0x000004ec   0x000004ec   0x0000001c   Code   RO         1354    .text               mf_p.l(dfltui.o)
+    0x00000508   0x00000508   0x00000028   Code   RO         1356    .text               mf_p.l(ffixui.o)
+    0x00000530   0x00000530   0x0000003c   Code   RO         1358    .text               mf_p.l(dfixui.o)
+    0x0000056c   0x0000056c   0x00000028   Code   RO         1360    .text               mf_p.l(f2d.o)
+    0x00000594   0x00000594   0x00000038   Code   RO         1362    .text               mf_p.l(d2f.o)
+    0x000005cc   0x000005cc   0x00000020   Code   RO         1395    .text               mc_p.l(llshl.o)
+    0x000005ec   0x000005ec   0x00000022   Code   RO         1397    .text               mc_p.l(llushr.o)
+    0x0000060e   0x0000060e   0x00000026   Code   RO         1399    .text               mc_p.l(llsshr.o)
+    0x00000634   0x00000634   0x00000000   Code   RO         1408    .text               mc_p.l(iusefp.o)
+    0x00000634   0x00000634   0x00000082   Code   RO         1409    .text               mf_p.l(fepilogue.o)
+    0x000006b6   0x000006b6   0x000000be   Code   RO         1411    .text               mf_p.l(depilogue.o)
+    0x00000774   0x00000774   0x000000d0   Code   RO         1415    .text               mf_p.l(dmul.o)
+    0x00000844   0x00000844   0x00000028   Code   RO         1417    .text               mf_p.l(dflti.o)
+    0x0000086c   0x0000086c   0x00000028   Code   RO         1419    .text               mf_p.l(cdcmple.o)
+    0x00000894   0x00000894   0x00000024   Code   RO         1421    .text               mc_p.l(init.o)
+    0x000008b8   0x000008b8   0x00000044   Code   RO          616    i.ADC_Handler       adc_pt32l031.o
+    0x000008fc   0x000008fc   0x00000030   Code   RO          389    i.CheckIs02K        755lha_heat_pt32l031.o
+    0x0000092c   0x0000092c   0x00000034   Code   RO          390    i.CheckIs10K        755lha_heat_pt32l031.o
+    0x00000960   0x00000960   0x00000038   Code   RO          391    i.CheckIs1K         755lha_heat_pt32l031.o
+    0x00000998   0x00000998   0x00000034   Code   RO          392    i.CheckIs20K        755lha_heat_pt32l031.o
+    0x000009cc   0x000009cc   0x00000030   Code   RO          393    i.CheckIs3K         755lha_heat_pt32l031.o
+    0x000009fc   0x000009fc   0x00000034   Code   RO          394    i.CheckIs5K         755lha_heat_pt32l031.o
+    0x00000a30   0x00000a30   0x00000038   Code   RO          546    i.CheckIsLowbattery  755lha_batterylow_pt32l031.o
+    0x00000a68   0x00000a68   0x0000004c   Code   RO          395    i.CheckIsSafe       755lha_heat_pt32l031.o
+    0x00000ab4   0x00000ab4   0x00000038   Code   RO          547    i.CheckVoltageIsOk  755lha_batterylow_pt32l031.o
+    0x00000aec   0x00000aec   0x00000028   Code   RO         1173    i.CloseUART         FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00000b14   0x00000b14   0x000000a8   Code   RO          826    i.EEPROM_write_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00000bbc   0x00000bbc   0x00000020   Code   RO          396    i.FireAlarm         755lha_heat_pt32l031.o
+    0x00000bdc   0x00000bdc   0x00000060   Code   RO          397    i.GeneratingBaseData  755lha_heat_pt32l031.o
+    0x00000c3c   0x00000c3c   0x0000000c   Code   RO          827    i.GetCodeFromBox    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00000c48   0x00000c48   0x00000054   Code   RO          398    i.IssueOutputData   755lha_heat_pt32l031.o
+    0x00000c9c   0x00000c9c   0x00000058   Code   RO          828    i.KeyExpansions     FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00000cf4   0x00000cf4   0x0000002c   Code   RO         1174    i.OpenUART          FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00000d20   0x00000d20   0x00000030   Code   RO          478    i.PA_Handler        755lha_keyboard_pt32l031.o
+    0x00000d50   0x00000d50   0x00000024   Code   RO          479    i.PB_Handler        755lha_keyboard_pt32l031.o
+    0x00000d74   0x00000d74   0x00000024   Code   RO          480    i.PF_Handler        755lha_keyboard_pt32l031.o
+    0x00000d98   0x00000d98   0x0000001c   Code   RO          829    i.PlainExpansions   FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00000db4   0x00000db4   0x000000e0   Code   RO         1175    i.RunSciReceivingProc  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00000e94   0x00000e94   0x0000009c   Code   RO         1176    i.RunSciTransmittingProc  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00000f30   0x00000f30   0x000000bc   Code   RO         1177    i.RunUartServerTask  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00000fec   0x00000fec   0x00000054   Code   RO          167    i.TIMER1_Handler    755lha_timer_pt32l031.o
+    0x00001040   0x00001040   0x00000050   Code   RO         1273    i.TIMER2_Handler    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_pt32l031_cfg.o)
+    0x00001090   0x00001090   0x00000028   Code   RO          168    i.TIMER4_Handler    755lha_timer_pt32l031.o
+    0x000010b8   0x000010b8   0x0000001c   Code   RO          303    i.UartCallBack      755lha_windows_pt32l031.o
+    0x000010d4   0x000010d4   0x0000002e   Code   RO         1413    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x00001102   0x00001102   0x000000ac   Code   RO         1378    i.__kernel_poly     m_ps.l(poly.o)
+    0x000011ae   0x000011ae   0x00000002   PAD
+    0x000011b0   0x000011b0   0x00000014   Code   RO         1364    i.__mathlib_dbl_divzero  m_ps.l(dunder.o)
+    0x000011c4   0x000011c4   0x0000000a   Code   RO         1365    i.__mathlib_dbl_infnan  m_ps.l(dunder.o)
+    0x000011ce   0x000011ce   0x00000010   Code   RO         1367    i.__mathlib_dbl_invalid  m_ps.l(dunder.o)
+    0x000011de   0x000011de   0x0000000e   Code   RO         1425    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000011ec   0x000011ec   0x00000002   Code   RO         1426    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000011ee   0x000011ee   0x0000000e   Code   RO         1427    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x000011fc   0x000011fc   0x0000000c   Code   RO         1403    i.__set_errno       mc_p.l(errno.o)
+    0x00001208   0x00001208   0x000001b8   Code   RO          304    i.alarm_init        755lha_windows_pt32l031.o
+    0x000013c0   0x000013c0   0x0000001a   Code   RO          548    i.array_right       755lha_batterylow_pt32l031.o
+    0x000013da   0x000013da   0x00000002   PAD
+    0x000013dc   0x000013dc   0x00000030   Code   RO          305    i.buzzer_close      755lha_windows_pt32l031.o
+    0x0000140c   0x0000140c   0x00000290   Code   RO          306    i.buzzer_sound      755lha_windows_pt32l031.o
+    0x0000169c   0x0000169c   0x00000034   Code   RO          169    i.check_timer3      755lha_timer_pt32l031.o
+    0x000016d0   0x000016d0   0x00000020   Code   RO          170    i.close_buzzer      755lha_timer_pt32l031.o
+    0x000016f0   0x000016f0   0x00000030   Code   RO          171    i.close_iwdg        755lha_timer_pt32l031.o
+    0x00001720   0x00001720   0x00000024   Code   RO          172    i.close_swdg        755lha_timer_pt32l031.o
+    0x00001744   0x00001744   0x0000002c   Code   RO          173    i.close_timer4      755lha_timer_pt32l031.o
+    0x00001770   0x00001770   0x00000014   Code   RO          830    i.copy_eeprom_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001784   0x00001784   0x00000050   Code   RO          174    i.del_alarm         755lha_timer_pt32l031.o
+    0x000017d4   0x000017d4   0x00000074   Code   RO          832    i.erase_flash_code  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001848   0x00001848   0x00000138   Code   RO         1178    i.explain_token_packet  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00001980   0x00001980   0x00000054   Code   RO          834    i.fe_755LHA_read_eeprom_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000019d4   0x000019d4   0x00000014   Code   RO          618    i.fe_adc_init       adc_pt32l031.o
+    0x000019e8   0x000019e8   0x00000040   Code   RO          620    i.fe_adc_open_scm_in1  adc_pt32l031.o
+    0x00001a28   0x00001a28   0x00000040   Code   RO          621    i.fe_adc_open_scm_in12  adc_pt32l031.o
+    0x00001a68   0x00001a68   0x00000040   Code   RO          623    i.fe_adc_open_scm_in6  adc_pt32l031.o
+    0x00001aa8   0x00001aa8   0x0000004c   Code   RO          980    i.fe_calculate_crc  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001af4   0x00001af4   0x00000090   Code   RO          982    i.fe_calculate_external_16b_temperature  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001b84   0x00001b84   0x0000007c   Code   RO         1274    i.fe_calculate_sleep_8s  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_pt32l031_cfg.o)
+    0x00001c00   0x00001c00   0x00000024   Code   RO          750    i.fe_check_system_tick_timer  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_timer_pt32l031.o)
+    0x00001c24   0x00001c24   0x00000022   Code   RO         1275    i.fe_clear_ram      FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_pt32l031_cfg.o)
+    0x00001c46   0x00001c46   0x00000002   PAD
+    0x00001c48   0x00001c48   0x0000001c   Code   RO         1137    i.fe_clear_semaphore  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_semaphore.o)
+    0x00001c64   0x00001c64   0x00000044   Code   RO          986    i.fe_comparision    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001ca8   0x00001ca8   0x00000014   Code   RO          989    i.fe_data_move_to_right  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001cbc   0x00001cbc   0x00000014   Code   RO          838    i.fe_eeprom_process_run  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001cd0   0x00001cd0   0x00000054   Code   RO          839    i.fe_generating_box  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001d24   0x00001d24   0x00000050   Code   RO          840    i.fe_generating_cipher  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001d74   0x00001d74   0x0000000a   Code   RO          993    i.fe_get_2b_filter  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001d7e   0x00001d7e   0x0000001a   Code   RO          995    i.fe_get_average    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001d98   0x00001d98   0x000000c0   Code   RO          997    i.fe_get_curve_average  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001e58   0x00001e58   0x0000001c   Code   RO          841    i.fe_get_eeprom_state  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00001e74   0x00001e74   0x0000001c   Code   RO          999    i.fe_get_maximum    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001e90   0x00001e90   0x00000020   Code   RO         1000    i.fe_get_minimum    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x00001eb0   0x00001eb0   0x0000000c   Code   RO         1138    i.fe_get_semaphore_state  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_semaphore.o)
+    0x00001ebc   0x00001ebc   0x0000000c   Code   RO         1276    i.fe_get_sleep_8s   FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_pt32l031_cfg.o)
+    0x00001ec8   0x00001ec8   0x00000018   Code   RO         1179    i.fe_get_uart_state  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00001ee0   0x00001ee0   0x000002bc   Code   RO          399    i.fe_heat_process_run  755lha_heat_pt32l031.o
+    0x0000219c   0x0000219c   0x00000010   Code   RO          751    i.fe_kill_system_tick_timer  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_timer_pt32l031.o)
+    0x000021ac   0x000021ac   0x000000d8   Code   RO          842    i.fe_read_eeprom_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00002284   0x00002284   0x0000001c   Code   RO         1139    i.fe_set_semaphore  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_semaphore.o)
+    0x000022a0   0x000022a0   0x00000018   Code   RO          753    i.fe_set_system_tick_timer  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_timer_pt32l031.o)
+    0x000022b8   0x000022b8   0x00000010   Code   RO         1180    i.fe_set_uart_callback  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x000022c8   0x000022c8   0x00000010   Code   RO         1002    i.fe_subtractive    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x000022d8   0x000022d8   0x00000028   Code   RO         1181    i.fe_uart_open      FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00002300   0x00002300   0x00000030   Code   RO         1182    i.fe_uart_process_run  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00002330   0x00002330   0x00000044   Code   RO         1183    i.fe_uart_write     FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00002374   0x00002374   0x000000b0   Code   RO          843    i.fe_write_eeprom_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00002424   0x00002424   0x00000020   Code   RO          175    i.feed_iwdg         755lha_timer_pt32l031.o
+    0x00002444   0x00002444   0x00000020   Code   RO          176    i.feed_swdg         755lha_timer_pt32l031.o
+    0x00002464   0x00002464   0x00000024   Code   RO         1184    i.get_out_data      FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x00002488   0x00002488   0x00000164   Code   RO          116    i.goto_deepsleep    755lha_system_pt32l031.o
+    0x000025ec   0x000025ec   0x0000001c   Code   RO          177    i.kill_timer3       755lha_timer_pt32l031.o
+    0x00002608   0x00002608   0x00000044   Code   RO          307    i.led_close         755lha_windows_pt32l031.o
+    0x0000264c   0x0000264c   0x00000354   Code   RO         1326    i.log               m_ps.l(log.o)
+    0x000029a0   0x000029a0   0x00000190   Code   RO           11    i.main              main.o
+    0x00002b30   0x00002b30   0x00000168   Code   RO          549    i.measure_battery   755lha_batterylow_pt32l031.o
+    0x00002c98   0x00002c98   0x0000000e   Code   RO          688    i.mem_byte_clear    FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_io.o)
+    0x00002ca6   0x00002ca6   0x0000001a   Code   RO          178    i.mem_data_add      755lha_timer_pt32l031.o
+    0x00002cc0   0x00002cc0   0x00000012   Code   RO          690    i.mem_data_copy     FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_io.o)
+    0x00002cd2   0x00002cd2   0x00000014   Code   RO          692    i.mem_word_copy     FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_io.o)
+    0x00002ce6   0x00002ce6   0x00000002   PAD
+    0x00002ce8   0x00002ce8   0x0000007c   Code   RO          590    i.message_execution  755lha_message_pt32l031.o
+    0x00002d64   0x00002d64   0x00000120   Code   RO          591    i.messageproc       755lha_message_pt32l031.o
+    0x00002e84   0x00002e84   0x00000020   Code   RO          179    i.open_buzzer       755lha_timer_pt32l031.o
+    0x00002ea4   0x00002ea4   0x00000030   Code   RO          180    i.open_iwdg         755lha_timer_pt32l031.o
+    0x00002ed4   0x00002ed4   0x00000030   Code   RO          181    i.open_swdg         755lha_timer_pt32l031.o
+    0x00002f04   0x00002f04   0x0000004c   Code   RO          182    i.open_timer4       755lha_timer_pt32l031.o
+    0x00002f50   0x00002f50   0x0000020c   Code   RO          308    i.red_led_lighten   755lha_windows_pt32l031.o
+    0x0000315c   0x0000315c   0x00000020   Code   RO          309    i.remove_alarm      755lha_windows_pt32l031.o
+    0x0000317c   0x0000317c   0x0000001c   Code   RO          844    i.reset_default_data  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00003198   0x00003198   0x00000058   Code   RO          481    i.scan_testkey_process  755lha_keyboard_pt32l031.o
+    0x000031f0   0x000031f0   0x00000068   Code   RO          183    i.set_alarm         755lha_timer_pt32l031.o
+    0x00003258   0x00003258   0x00000030   Code   RO          184    i.set_timer3        755lha_timer_pt32l031.o
+    0x00003288   0x00003288   0x00000048   Code   RO          310    i.set_update_timer1  755lha_windows_pt32l031.o
+    0x000032d0   0x000032d0   0x000000c4   Code   RO          311    i.set_wire_connect  755lha_windows_pt32l031.o
+    0x00003394   0x00003394   0x00000034   Code   RO          117    i.sys_clock_init    755lha_system_pt32l031.o
+    0x000033c8   0x000033c8   0x000000e8   Code   RO          118    i.sys_gpio_init     755lha_system_pt32l031.o
+    0x000034b0   0x000034b0   0x00000014   Code   RO          185    i.system_irq_proc_run  755lha_timer_pt32l031.o
+    0x000034c4   0x000034c4   0x00000150   Code   RO          119    i.system_start_proc_run  755lha_system_pt32l031.o
+    0x00003614   0x00003614   0x0000001c   Code   RO          482    i.testkey_downevent  755lha_keyboard_pt32l031.o
+    0x00003630   0x00003630   0x00000028   Code   RO          483    i.testkey_upevent   755lha_keyboard_pt32l031.o
+    0x00003658   0x00003658   0x00000028   Code   RO          484    i.testkeylongevent  755lha_keyboard_pt32l031.o
+    0x00003680   0x00003680   0x00000040   Code   RO          312    i.update_timer1     755lha_windows_pt32l031.o
+    0x000036c0   0x000036c0   0x00000028   Code   RO          845    i.write_flash_code  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x000036e8   0x000036e8   0x00000080   Code   RO          846    i.write_flash_page  FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x00003768   0x00003768   0x000000c0   Code   RO          313    i.yellow_led_lighten  755lha_windows_pt32l031.o
+    0x00003828   0x00003828   0x00000044   Data   RO          848    .constdata          FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x0000386c   0x0000386c   0x00000052   Data   RO         1003    .constdata          FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_math.o)
+    0x000038be   0x000038be   0x00000002   PAD
+    0x000038c0   0x000038c0   0x00000038   Data   RO         1327    .constdata          m_ps.l(log.o)
+    0x000038f8   0x000038f8   0x00000008   Data   RO         1380    .constdata          m_ps.l(qnan.o)
+    0x00003900   0x00003900   0x00000020   Data   RO         1423    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00003920, Size: 0x00000e68, Max: 0x00001000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00003920   0x00000002   Data   RW          120    .data               755lha_system_pt32l031.o
+    0x20000002   0x00003922   0x00000002   Data   RW          187    .data               755lha_timer_pt32l031.o
+    0x20000004   0x00003924   0x00000013   Data   RW          314    .data               755lha_windows_pt32l031.o
+    0x20000017   0x00003937   0x00000002   Data   RW          486    .data               755lha_keyboard_pt32l031.o
+    0x20000019   0x00003939   0x00000003   PAD
+    0x2000001c   0x0000393c   0x00000008   Data   RW          624    .data               adc_pt32l031.o
+    0x20000024   0x00003944   0x00000004   Data   RW          849    .data               FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x20000028   0x00003948   0x00000004   Data   RW         1140    .data               FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_semaphore.o)
+    0x2000002c   0x0000394c   0x00000008   Data   RW         1186    .data               FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x20000034   0x00003954   0x00000004   Data   RW         1404    .data               mc_p.l(errno.o)
+    0x20000038        -       0x00000010   Zero   RW           12    .bss                main.o
+    0x20000048        -       0x00000010   Zero   RW           13    .bss                main.o
+    0x20000058        -       0x00000064   Zero   RW          186    .bss                755lha_timer_pt32l031.o
+    0x200000bc        -       0x00000510   Zero   RW          400    .bss                755lha_heat_pt32l031.o
+    0x200005cc        -       0x0000000a   Zero   RW          550    .bss                755lha_batterylow_pt32l031.o
+    0x200005d6   0x00003958   0x00000002   PAD
+    0x200005d8        -       0x00000018   Zero   RW          755    .bss                FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_timer_pt32l031.o)
+    0x200005f0        -       0x0000004c   Zero   RW          847    .bss                FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_eeprom_pt32l031.o)
+    0x2000063c        -       0x0000005c   Zero   RW         1185    .bss                FE_755LHA_RevB_PT32L031_20250509 13dBm.lib(fe_755lha_uart_pt32l031.o)
+    0x20000698        -       0x000007d0   Zero   RW            1    STACK               startup_pt32x031.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       498         56          0          0         10       3269   755lha_batterylow_pt32l031.o
+      1296        142          0          0       1296       7433   755lha_heat_pt32l031.o
+       316         58          0          2          0       4005   755lha_keyboard_pt32l031.o
+       412         34          0          0          0       1310   755lha_message_pt32l031.o
+       976        150          0          2          0      11050   755lha_system_pt32l031.o
+       910        206          0          2        100      10206   755lha_timer_pt32l031.o
+      2320        208          0         19          0       9014   755lha_windows_pt32l031.o
+       280         74          0          8          0      54297   adc_pt32l031.o
+       400         50          0          0         32      53653   main.o
+       212        196          0          0       2000        612   startup_pt32x031.o
+
+    ----------------------------------------------------------------------
+      7622       1174         32         36       3440     154849   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         2          0          0          3          2          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+      1316        146         68          4         76      16561   fe_755lha_eeprom_pt32l031.o
+       250         48          0          0          0      10566   fe_755lha_pt32l031_cfg.o
+      1196        138          0          8         92      13021   fe_755lha_uart_pt32l031.o
+        52          0          0          0          0       8169   fe_io.o
+       612         46         82          0          0       7102   fe_math.o
+        68         18          0          4          0       5274   fe_semaphore.o
+        76         22          0          0         24      49309   fe_timer_pt32l031.o
+        46          4          0          0          0        204   dunder.o
+       852         62         56          0          0        136   log.o
+       172          0          0          0          0         76   poly.o
+         0          0          8          0          0          0   qnan.o
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        12          6          0          4          0         60   errno.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        38          0          0          0          0         68   llsshr.o
+        34          0          0          0          0         68   llushr.o
+        44          0          0          0          0         72   uidiv.o
+        40          2          0          0          0         68   cdcmple.o
+        56          0          0          0          0         68   d2f.o
+       356          4          0          0          0        140   dadd.o
+       240          6          0          0          0         84   ddiv.o
+       236          0          0          0          0        216   depilogue.o
+        60         10          0          0          0         68   dfixui.o
+        40          6          0          0          0         68   dflti.o
+        28          4          0          0          0         68   dfltui.o
+       208          6          0          0          0         88   dmul.o
+        44          0          0          0          0         72   dscalb.o
+        40          0          0          0          0         60   f2d.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        40          0          0          0          0         60   ffixui.o
+        14          0          0          0          0         68   ffltui.o
+        24          0          0          0          0         60   fscalb.o
+
+    ----------------------------------------------------------------------
+      6754        544        216         20        192     112334   Library Totals
+        10          0          2          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+      3570        418        150         16        192     110002   FE_755LHA_RevB_PT32L031_20250509 13dBm.lib
+      1070         66         64          0          0        416   m_ps.l
+       246         22          0          4          0        404   mc_p.l
+      1858         38          0          0          0       1512   mf_p.l
+
+    ----------------------------------------------------------------------
+      6754        544        216         20        192     112334   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     14376       1718        248         56       3632     261255   Grand Totals
+     14376       1718        248         56       3632     261255   ELF Image Totals
+     14376       1718        248         56          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                14624 (  14.28kB)
+    Total RW  Size (RW Data + ZI Data)              3688 (   3.60kB)
+    Total ROM Size (Code + RO Data + RW Data)      14680 (  14.34kB)
+
+==============================================================================
+

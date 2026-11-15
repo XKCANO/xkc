@@ -1,0 +1,16 @@
+.\out\755lha_batterylow_pt32l031.o: User\755LHA_Batterylow_PT32L031.c
+.\out\755lha_batterylow_pt32l031.o: User\755LHA_Batterylow_PT32L031.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\pt32x031.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\core_cm0.h
+.\out\755lha_batterylow_pt32l031.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\cmsis_version.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\cmsis_compiler.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\cmsis_armcc.h
+.\out\755lha_batterylow_pt32l031.o: .\CMSIS\system_pt32x031.h
+.\out\755lha_batterylow_pt32l031.o: .\Lib\FE_MATH.h
+.\out\755lha_batterylow_pt32l031.o: User\755LHA_DEF.h
+.\out\755lha_batterylow_pt32l031.o: User\755LHA_Timer_PT32L031.h
+.\out\755lha_batterylow_pt32l031.o: User\755LHA_DEF.h
+.\out\755lha_batterylow_pt32l031.o: .\Lib\FE_755LHA_EEPROM_PT32L031.h
+.\out\755lha_batterylow_pt32l031.o: User\ADC_PT32L031.h
+.\out\755lha_batterylow_pt32l031.o: .\Lib\FE_semaphore.h
