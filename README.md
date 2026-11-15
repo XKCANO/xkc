@@ -1,2 +1,0 @@
-# xkc
-all project

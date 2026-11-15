@@ -1,0 +1,13 @@
+--cpu Cortex-M0
+".\out\startup_pt32x076.o"
+".\out\main.o"
+".\out\755psma5_system_pt32l076.o"
+".\out\755psma5_timer_pt32l076.o"
+".\out\755psma5_keyboard_pt32l076.o"
+".\out\755psma5_windows_pt32l076.o"
+".\out\755psma5_message_pt32l076.o"
+".\lib\FE_755PSMA5_RevC_PT32L076_20250509.lib"
+--library_type=microlib --strict --scatter ".\Out\755PSMA5-RevD-20250606.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\List\755PSMA5-RevD-20250606.map" -o .\Out\755PSMA5-RevD-20250606.axf
