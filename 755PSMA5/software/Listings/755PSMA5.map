@@ -628,15 +628,15 @@ Image Symbol Table
     .ARM.Collect$$$$00002712                 0x000000e4   Section        4  entry2.o(.ARM.Collect$$$$00002712)
     __lit__00000000                          0x000000e4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
     .text                                    0x000000e8   Section        0  main.o(.text)
-    .text                                    0x00000390   Section        0  755psma5_system_pt32l076.o(.text)
-    __NVIC_DisableIRQ                        0x00000391   Thumb Code    50  755psma5_system_pt32l076.o(.text)
-    __NVIC_EnableIRQ                         0x0000092f   Thumb Code    18  755psma5_system_pt32l076.o(.text)
-    .text                                    0x00000964   Section        0  755psma5_timer_pt32l076.o(.text)
-    __NVIC_DisableIRQ                        0x00000965   Thumb Code    50  755psma5_timer_pt32l076.o(.text)
-    __NVIC_EnableIRQ                         0x00000d27   Thumb Code    20  755psma5_timer_pt32l076.o(.text)
-    .text                                    0x00000d80   Section        0  755psma5_keyboard_pt32l076.o(.text)
-    .text                                    0x000014bc   Section        0  755psma5_windows_pt32l076.o(.text)
-    .text                                    0x00001eb8   Section        0  755psma5_message_pt32l076.o(.text)
+    .text                                    0x00000384   Section        0  755psma5_system_pt32l076.o(.text)
+    __NVIC_DisableIRQ                        0x00000385   Thumb Code    50  755psma5_system_pt32l076.o(.text)
+    __NVIC_EnableIRQ                         0x00000923   Thumb Code    18  755psma5_system_pt32l076.o(.text)
+    .text                                    0x00000958   Section        0  755psma5_timer_pt32l076.o(.text)
+    __NVIC_DisableIRQ                        0x00000959   Thumb Code    50  755psma5_timer_pt32l076.o(.text)
+    __NVIC_EnableIRQ                         0x00000d1b   Thumb Code    20  755psma5_timer_pt32l076.o(.text)
+    .text                                    0x00000d74   Section        0  755psma5_keyboard_pt32l076.o(.text)
+    .text                                    0x000014b0   Section        0  755psma5_windows_pt32l076.o(.text)
+    .text                                    0x00001eac   Section        0  755psma5_message_pt32l076.o(.text)
     .text                                    0x0000270c   Section        0  uidiv.o(.text)
     .text                                    0x00002738   Section        0  idiv.o(.text)
     .text                                    0x00002760   Section        0  fadd.o(.text)
@@ -865,53 +865,53 @@ Image Symbol Table
     _main_init                               0x000000dd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
     __rt_final_cpp                           0x000000e5   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
     __rt_final_exit                          0x000000e5   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
-    main                                     0x000000e9   Thumb Code   606  main.o(.text)
-    clear_sram                               0x000003c3   Thumb Code    38  755psma5_system_pt32l076.o(.text)
-    sys_clock_init                           0x000003e9   Thumb Code   104  755psma5_system_pt32l076.o(.text)
-    sys_gpio_init                            0x00000451   Thumb Code   660  755psma5_system_pt32l076.o(.text)
-    mem_data_add                             0x000006e5   Thumb Code    28  755psma5_system_pt32l076.o(.text)
-    goto_deepsleep                           0x00000701   Thumb Code   558  755psma5_system_pt32l076.o(.text)
-    TIM1_Handler                             0x00000997   Thumb Code   128  755psma5_timer_pt32l076.o(.text)
-    set_alarm                                0x00000a17   Thumb Code   100  755psma5_timer_pt32l076.o(.text)
-    open_buzzer                              0x00000a7b   Thumb Code    98  755psma5_timer_pt32l076.o(.text)
-    close_buzzer                             0x00000add   Thumb Code    34  755psma5_timer_pt32l076.o(.text)
-    de_alarm                                 0x00000aff   Thumb Code   102  755psma5_timer_pt32l076.o(.text)
-    settimer5                                0x00000b65   Thumb Code    40  755psma5_timer_pt32l076.o(.text)
-    checktimer5                              0x00000b8d   Thumb Code    52  755psma5_timer_pt32l076.o(.text)
-    closetimer5                              0x00000bc1   Thumb Code    38  755psma5_timer_pt32l076.o(.text)
-    settimer4                                0x00000be7   Thumb Code    74  755psma5_timer_pt32l076.o(.text)
-    closetimer4                              0x00000c31   Thumb Code    50  755psma5_timer_pt32l076.o(.text)
-    TIM4_Handler                             0x00000c63   Thumb Code    26  755psma5_timer_pt32l076.o(.text)
-    open_iwdg                                0x00000c7d   Thumb Code    36  755psma5_timer_pt32l076.o(.text)
-    feed_iwdg                                0x00000ca1   Thumb Code    24  755psma5_timer_pt32l076.o(.text)
-    close_iwdg                               0x00000cb9   Thumb Code    36  755psma5_timer_pt32l076.o(.text)
-    open_swdg                                0x00000cdd   Thumb Code    40  755psma5_timer_pt32l076.o(.text)
-    feed_swdg                                0x00000d05   Thumb Code    14  755psma5_timer_pt32l076.o(.text)
-    close_swdg                               0x00000d13   Thumb Code    20  755psma5_timer_pt32l076.o(.text)
-    EXTIA_Handler                            0x00000d81   Thumb Code   116  755psma5_keyboard_pt32l076.o(.text)
-    EXTIB_Handler                            0x00000df5   Thumb Code    86  755psma5_keyboard_pt32l076.o(.text)
-    scankey3_process_run                     0x00000e4b   Thumb Code   236  755psma5_keyboard_pt32l076.o(.text)
-    key3_shortevent                          0x00000f37   Thumb Code   320  755psma5_keyboard_pt32l076.o(.text)
-    key3_longevent                           0x00001077   Thumb Code   334  755psma5_keyboard_pt32l076.o(.text)
-    key3_upevent                             0x000011c5   Thumb Code    68  755psma5_keyboard_pt32l076.o(.text)
-    scankey2_process_run                     0x00001209   Thumb Code   302  755psma5_keyboard_pt32l076.o(.text)
-    scankey4_process_run                     0x00001337   Thumb Code   160  755psma5_keyboard_pt32l076.o(.text)
-    scankey5_process_run                     0x000013d7   Thumb Code   198  755psma5_keyboard_pt32l076.o(.text)
-    smoke_callback                           0x000014bd   Thumb Code    82  755psma5_windows_pt32l076.o(.text)
-    battery_callback                         0x0000150f   Thumb Code    48  755psma5_windows_pt32l076.o(.text)
-    uart_callback                            0x0000153f   Thumb Code    28  755psma5_windows_pt32l076.o(.text)
-    check_short_test                         0x0000155b   Thumb Code    38  755psma5_windows_pt32l076.o(.text)
-    set_update_timer1                        0x00001581   Thumb Code    90  755psma5_windows_pt32l076.o(.text)
-    alarm_cfg                                0x000015db   Thumb Code   540  755psma5_windows_pt32l076.o(.text)
-    de_led                                   0x000017f7   Thumb Code    40  755psma5_windows_pt32l076.o(.text)
-    de_buzzer                                0x0000181f   Thumb Code    40  755psma5_windows_pt32l076.o(.text)
-    set_connect                              0x00001847   Thumb Code   290  755psma5_windows_pt32l076.o(.text)
-    alarm_del                                0x00001969   Thumb Code    30  755psma5_windows_pt32l076.o(.text)
-    led_lighten                              0x00001987   Thumb Code   564  755psma5_windows_pt32l076.o(.text)
-    buzzer_sound                             0x00001bbb   Thumb Code   664  755psma5_windows_pt32l076.o(.text)
-    update_timer1                            0x00001e53   Thumb Code    76  755psma5_windows_pt32l076.o(.text)
-    messageproc                              0x00001eb9   Thumb Code  1250  755psma5_message_pt32l076.o(.text)
-    message_execution                        0x0000239b   Thumb Code   870  755psma5_message_pt32l076.o(.text)
+    main                                     0x000000e9   Thumb Code   594  main.o(.text)
+    clear_sram                               0x000003b7   Thumb Code    38  755psma5_system_pt32l076.o(.text)
+    sys_clock_init                           0x000003dd   Thumb Code   104  755psma5_system_pt32l076.o(.text)
+    sys_gpio_init                            0x00000445   Thumb Code   660  755psma5_system_pt32l076.o(.text)
+    mem_data_add                             0x000006d9   Thumb Code    28  755psma5_system_pt32l076.o(.text)
+    goto_deepsleep                           0x000006f5   Thumb Code   558  755psma5_system_pt32l076.o(.text)
+    TIM1_Handler                             0x0000098b   Thumb Code   128  755psma5_timer_pt32l076.o(.text)
+    set_alarm                                0x00000a0b   Thumb Code   100  755psma5_timer_pt32l076.o(.text)
+    open_buzzer                              0x00000a6f   Thumb Code    98  755psma5_timer_pt32l076.o(.text)
+    close_buzzer                             0x00000ad1   Thumb Code    34  755psma5_timer_pt32l076.o(.text)
+    de_alarm                                 0x00000af3   Thumb Code   102  755psma5_timer_pt32l076.o(.text)
+    settimer5                                0x00000b59   Thumb Code    40  755psma5_timer_pt32l076.o(.text)
+    checktimer5                              0x00000b81   Thumb Code    52  755psma5_timer_pt32l076.o(.text)
+    closetimer5                              0x00000bb5   Thumb Code    38  755psma5_timer_pt32l076.o(.text)
+    settimer4                                0x00000bdb   Thumb Code    74  755psma5_timer_pt32l076.o(.text)
+    closetimer4                              0x00000c25   Thumb Code    50  755psma5_timer_pt32l076.o(.text)
+    TIM4_Handler                             0x00000c57   Thumb Code    26  755psma5_timer_pt32l076.o(.text)
+    open_iwdg                                0x00000c71   Thumb Code    36  755psma5_timer_pt32l076.o(.text)
+    feed_iwdg                                0x00000c95   Thumb Code    24  755psma5_timer_pt32l076.o(.text)
+    close_iwdg                               0x00000cad   Thumb Code    36  755psma5_timer_pt32l076.o(.text)
+    open_swdg                                0x00000cd1   Thumb Code    40  755psma5_timer_pt32l076.o(.text)
+    feed_swdg                                0x00000cf9   Thumb Code    14  755psma5_timer_pt32l076.o(.text)
+    close_swdg                               0x00000d07   Thumb Code    20  755psma5_timer_pt32l076.o(.text)
+    EXTIA_Handler                            0x00000d75   Thumb Code   116  755psma5_keyboard_pt32l076.o(.text)
+    EXTIB_Handler                            0x00000de9   Thumb Code    86  755psma5_keyboard_pt32l076.o(.text)
+    scankey3_process_run                     0x00000e3f   Thumb Code   236  755psma5_keyboard_pt32l076.o(.text)
+    key3_shortevent                          0x00000f2b   Thumb Code   320  755psma5_keyboard_pt32l076.o(.text)
+    key3_longevent                           0x0000106b   Thumb Code   334  755psma5_keyboard_pt32l076.o(.text)
+    key3_upevent                             0x000011b9   Thumb Code    68  755psma5_keyboard_pt32l076.o(.text)
+    scankey2_process_run                     0x000011fd   Thumb Code   302  755psma5_keyboard_pt32l076.o(.text)
+    scankey4_process_run                     0x0000132b   Thumb Code   160  755psma5_keyboard_pt32l076.o(.text)
+    scankey5_process_run                     0x000013cb   Thumb Code   198  755psma5_keyboard_pt32l076.o(.text)
+    smoke_callback                           0x000014b1   Thumb Code    82  755psma5_windows_pt32l076.o(.text)
+    battery_callback                         0x00001503   Thumb Code    48  755psma5_windows_pt32l076.o(.text)
+    uart_callback                            0x00001533   Thumb Code    28  755psma5_windows_pt32l076.o(.text)
+    check_short_test                         0x0000154f   Thumb Code    38  755psma5_windows_pt32l076.o(.text)
+    set_update_timer1                        0x00001575   Thumb Code    90  755psma5_windows_pt32l076.o(.text)
+    alarm_cfg                                0x000015cf   Thumb Code   540  755psma5_windows_pt32l076.o(.text)
+    de_led                                   0x000017eb   Thumb Code    40  755psma5_windows_pt32l076.o(.text)
+    de_buzzer                                0x00001813   Thumb Code    40  755psma5_windows_pt32l076.o(.text)
+    set_connect                              0x0000183b   Thumb Code   290  755psma5_windows_pt32l076.o(.text)
+    alarm_del                                0x0000195d   Thumb Code    30  755psma5_windows_pt32l076.o(.text)
+    led_lighten                              0x0000197b   Thumb Code   564  755psma5_windows_pt32l076.o(.text)
+    buzzer_sound                             0x00001baf   Thumb Code   664  755psma5_windows_pt32l076.o(.text)
+    update_timer1                            0x00001e47   Thumb Code    76  755psma5_windows_pt32l076.o(.text)
+    messageproc                              0x00001ead   Thumb Code  1250  755psma5_message_pt32l076.o(.text)
+    message_execution                        0x0000238f   Thumb Code   880  755psma5_message_pt32l076.o(.text)
     __aeabi_uidiv                            0x0000270d   Thumb Code     0  uidiv.o(.text)
     __aeabi_uidivmod                         0x0000270d   Thumb Code    44  uidiv.o(.text)
     __aeabi_idiv                             0x00002739   Thumb Code     0  idiv.o(.text)
@@ -1132,12 +1132,12 @@ Memory Map of the image
     0x000000e4   0x000000e4   0x00000000   Code   RO         1458    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
     0x000000e4   0x000000e4   0x00000000   Code   RO         1460    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
     0x000000e4   0x000000e4   0x00000004   Code   RO         1449    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
-    0x000000e8   0x000000e8   0x000002a8   Code   RO           11    .text               main.o
-    0x00000390   0x00000390   0x000005d4   Code   RO          115    .text               755psma5_system_pt32l076.o
-    0x00000964   0x00000964   0x0000041c   Code   RO          145    .text               755psma5_timer_pt32l076.o
-    0x00000d80   0x00000d80   0x0000073c   Code   RO          171    .text               755psma5_keyboard_pt32l076.o
-    0x000014bc   0x000014bc   0x000009fc   Code   RO          213    .text               755psma5_windows_pt32l076.o
-    0x00001eb8   0x00001eb8   0x00000854   Code   RO          241    .text               755psma5_message_pt32l076.o
+    0x000000e8   0x000000e8   0x0000029c   Code   RO           11    .text               main.o
+    0x00000384   0x00000384   0x000005d4   Code   RO          115    .text               755psma5_system_pt32l076.o
+    0x00000958   0x00000958   0x0000041c   Code   RO          145    .text               755psma5_timer_pt32l076.o
+    0x00000d74   0x00000d74   0x0000073c   Code   RO          171    .text               755psma5_keyboard_pt32l076.o
+    0x000014b0   0x000014b0   0x000009fc   Code   RO          213    .text               755psma5_windows_pt32l076.o
+    0x00001eac   0x00001eac   0x00000860   Code   RO          241    .text               755psma5_message_pt32l076.o
     0x0000270c   0x0000270c   0x0000002c   Code   RO         1403    .text               mc_p.l(uidiv.o)
     0x00002738   0x00002738   0x00000028   Code   RO         1405    .text               mc_p.l(idiv.o)
     0x00002760   0x00002760   0x000000b2   Code   RO         1407    .text               mf_p.l(fadd.o)
@@ -1344,16 +1344,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      1852         58          0         24          0       3164   755psma5_keyboard_pt32l076.o
-      2132         56          0          0          0       1740   755psma5_message_pt32l076.o
-      1492        104          0          0          0      12122   755psma5_system_pt32l076.o
-      1052         70          0          0         84       3631   755psma5_timer_pt32l076.o
-      2584        148          0         32          0       4637   755psma5_windows_pt32l076.o
-       680         74          0          0         16      45437   main.o
-       212        196          0          0       4096        616   startup_pt32x076.o
+      1852         58          0         24          0       3152   755psma5_keyboard_pt32l076.o
+      2144         58          0          0          0       1740   755psma5_message_pt32l076.o
+      1492        104          0          0          0      12110   755psma5_system_pt32l076.o
+      1052         70          0          0         84       3619   755psma5_timer_pt32l076.o
+      2584        148          0         32          0       4625   755psma5_windows_pt32l076.o
+       668         74          0          0         16      45413   main.o
+       212        196          0          0       4096        612   startup_pt32x076.o
 
     ----------------------------------------------------------------------
-     10004        706         32         56       4196      71347   Object Totals
+     10004        708         32         56       4196      71271   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -1433,9 +1433,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     25024       2320        384         84       6148     268619   Grand Totals
-     25024       2320        384         84       6148     268619   ELF Image Totals
-     25024       2320        384         84          0          0   ROM Totals
+     25024       2322        384         84       6148     268543   Grand Totals
+     25024       2322        384         84       6148     268543   ELF Image Totals
+     25024       2322        384         84          0          0   ROM Totals
 
 ==============================================================================
 

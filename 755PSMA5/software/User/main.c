@@ -178,11 +178,8 @@ int main(void)
  * @brief Message Exe Function
  *
 *************************************************************************/
-		if((system_data.masking & DEBUG_FLAG_MSK) == 0)
-		{
-			message_execution();
-		}
-		 
+		message_execution();
+    
 /************************************************************************
   * @brief  lib Function
 	* 
