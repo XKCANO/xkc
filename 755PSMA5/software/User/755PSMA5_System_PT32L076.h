@@ -8,6 +8,7 @@
 #include "FE_755PSMA5_BATTERY_PT32L076.h"
 #include "755PSMA5_Keyboard_PT32L076.h"
 #include "755PSMA5_Windows_PT32L076.h"
+#include "755PSMA5_Message_PT32L076.h"
 
 
 /* --------------------------------------------------------------------------- */

@@ -17,14 +17,11 @@ enum
 	
 	ONE_LOW_MODE,//低亮度闪一次
 	TWO_LOW_MODE,//低亮度闪两次
-	THREE_LOW_MODE,//低亮度闪三次
 	
 	ONE_MED_MODE,//中亮度闪一次
-	ONE_SOUND_MODE,//哔叫一声
 
 	LOW_BAT_MODE,
 	SENSOR_FAULT_MODE,
-	SENSOR_POLLUTE_MODE,
 	HUSH_MODE,
 };
 
@@ -48,10 +45,11 @@ void remove_alarm(void);
 void led_lighten(void);
 void buzzer_sound(void);
 void update_timer1(void);
+void set_connect(unsigned char flag);
+
 void smoke_callback(uint32_t state);
 void battery_callback(uint32_t state);
 void uart_callback(uint32_t p, uint32_t l);
-void set_connect(unsigned char flag);
 
 /* --------------------------------------------------------------------------- */
 #endif

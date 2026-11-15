@@ -57,7 +57,6 @@
 #define     SHORT_TEST_FLAG_POS  12
 #define     SHORT_TEST_FLAG_MSK  (1UL << SHORT_TEST_FLAG_POS)
 
-
 /* --------------------------------------------------------------------------- */
 //SYSTEM SIGNAL
 #define     DEVICE_ALARM_FLAG_POS  0
@@ -104,11 +103,11 @@
 #define     SYSTEM_INITIALIZE_FLAG_POS  0
 #define     SYSTEM_INITIALIZE_FLAG_MSK  (1UL	<< SYSTEM_INITIALIZE_FLAG_POS)
 
-#define     MESSAGE_FLAG_POS  1
-#define     MESSAGE_FLAG_MSK  (1UL << MESSAGE_FLAG_POS)
-
-#define     SYSTEM_INTERRUPT_FLAG_POS  2
+#define     SYSTEM_INTERRUPT_FLAG_POS  1
 #define     SYSTEM_INTERRUPT_FLAG_MSK  (1UL << SYSTEM_INTERRUPT_FLAG_POS)
+
+#define     MESSAGE_FLAG_POS  2
+#define     MESSAGE_FLAG_MSK  (1UL << MESSAGE_FLAG_POS)
 
 #define     AC_CHECK_FLAG_POS  3
 #define     AC_CHECK_FLAG_MSK  (1UL << AC_CHECK_FLAG_POS)
@@ -128,27 +127,29 @@
 #define     LOW_SOUND_FLAG_POS  8
 #define     LOW_SOUND_FLAG_MSK  (1UL << LOW_SOUND_FLAG_POS)
 
-#define     TEST_HOLD_FLAG_POS  9
-#define     TEST_HOLD_FLAG_MSK  (1UL << TEST_HOLD_FLAG_POS)
-
-#define     KEY3_DOWN_FLAG_POS  10
+#define     KEY3_DOWN_FLAG_POS  9
 #define     KEY3_DOWN_FLAG_MSK  (1UL << KEY3_DOWN_FLAG_POS)
 
-#define     KEY3_08S_FLAG_POS  11
+#define     KEY3_08S_FLAG_POS  10
 #define     KEY3_08S_FLAG_MSK  (1UL << KEY3_08S_FLAG_POS)
 
-#define     KEY3_10S_FLAG_POS  12
+#define     KEY3_10S_FLAG_POS  11
 #define     KEY3_10S_FLAG_MSK  (1UL << KEY3_10S_FLAG_POS)
 
-#define     KEY3_UP_FLAG_POS  13
+#define     KEY3_UP_FLAG_POS  12
 #define     KEY3_UP_FLAG_MSK  (1UL << KEY3_UP_FLAG_POS)
 
-#define     KY5_OUTPUT_FLAG_POS  14
-#define     KY5_OUTPUT_FLAG_MSK  (1UL << KY5_OUTPUT_FLAG_POS)
+#define     KEY5_OUTPUT_FLAG_POS  13
+#define     KEY5_OUTPUT_FLAG_MSK  (1UL << KEY5_OUTPUT_FLAG_POS)
 
-#define     KEY2_OUT_FLAG_POS  15
+#define     KEY2_OUT_FLAG_POS  14
 #define     KEY2_OUT_FLAG_MSK  (1UL << KEY2_OUT_FLAG_POS)
 
+#define     KEY2_PENDING_FLAG_POS  15
+#define     KEY2_PENDING_FLAG_MSK  (1UL << KEY2_PENDING_FLAG_POS)
+
+#define     TIMER1_CLOSE_FLAG_POS    16
+#define     TIMER1_CLOSE_FLAG_MSK   (1UL << TIMER1_CLOSE_FLAG_POS)
 
 /* --------------------------------------------------------------------------- */
 //RED  -> PA5
@@ -158,6 +159,9 @@
 
 //RED1 -> PA6
 #define     RED1_PIN        0x0040
+#define     RED1_LED_ON     GPIOA->BRR |= RED1_PIN
+#define     RED1_LED_OFF    GPIOA->BSR |= RED1_PIN
+
 #define     HRED_LED_ON     GPIOA->BRR |= RED_PIN + RED1_PIN
 #define     HRED_LED_OFF    GPIOA->BSR |= RED_PIN + RED1_PIN
 
@@ -200,56 +204,47 @@
 #define     IOUT_ON         GPIOB->BSR |= IOUT_PIN
 #define     IOUT_OFF        GPIOB->BRR |= IOUT_PIN
 
-//Timer1
-#define     MIN_TIMER_US        289
-#define     MAX_TIMER_US        299
+/* --------------------------------------------------------------------------- */
+//timer1
+#define     MIN_TIMER_US        295
+#define     MAX_TIMER_US        305
+
+#define     LOW_TIMER_US        270 // 1/ 270 = 3.7kHz
 
 /* --------------------------------------------------------------------------- */
-//TIMER
+//timer5
 #define     KEY3_TIMER 				       timer5.t[0]
-#define     AC_TIMER 		             timer5.t[1]
-#define     LED_TIMER 				       timer5.t[2]
-#define     BUZZER_TIMER 				     timer5.t[3]
+#define     KEY_TIMER 		           timer5.t[1]
+#define     TIMER1_TIMER 		         timer5.t[2]
+#define     GENERAL_TIMER 				   timer5.t[3]
+#define     LED_TIMER 				       timer5.t[4]
+#define     BUZZER_TIMER 				     timer5.t[5]
+#define     EXT_TIMER 				       timer5.t[6]
+#define     RIN_TIMER 				       timer5.t[7]
 
-#define     SMOKE_TIMER 				     timer5.t[4]
-#define     ALARM_TIMER 				     timer5.t[5]
-#define     ALARM_TIMER1 				     timer5.t[6]
-#define     BATTERY_TIMER 				   timer5.t[7]
-#define     HUSH_TIMER 				       timer5.t[8]
-#define     SNOOZE_FAULT_TIMER       timer5.t[9]
-#define     SNOOZE_LOW_TIMER         timer5.t[10]
-#define     SNOOZE_MEMORY_TIMER      timer5.t[11]
-#define     ALARM_MEMORY_TIMER       timer5.t[12]
-
-#define     SYSINIT_TIMER 				   timer5.t[13]
-#define     TEST_TIMER 				       timer5.t[14]
-#define     EXT_TIMER 				       timer5.t[15]
-#define     RIN_TIMER 				       timer5.t[16]
-#define     TIMER1_TIMER 		         timer5.t[17]
+#define     SMOKE_TIMER 				     timer5.t[8]
+#define     ALARM_TIMER 				     timer5.t[9]
+#define     ALARM_TIMER1 				     timer5.t[10]
+#define     BATTERY_TIMER 				   timer5.t[11]
+#define     SNOOZE_FAULT_TIMER       timer5.t[12]
+#define     SNOOZE_LOW_TIMER         timer5.t[13]
+#define     SNOOZE_MEMORY_TIMER      timer5.t[14]
+#define     ALARM_MEMORY_TIMER       timer5.t[15]
 
 /* --------------------------------------------------------------------------- */
-#define     ALARM_MODE             (ALARM_FLAG_MSK + EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK)
-
 //按键长按失效
 #define     KEY3_NO_RESPONSE       (EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK + SHORT_TEST_FLAG_MSK)
 
 //按键短按失效
 #define     KEY3_NO_RESPONSE1      (EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK + HUSH_FLAG_MSK + SNOOZE_MEMORY_FLAG_MSK)
 
-//挂起
-#define     DEVICE_PENDING_MODE    (SYSTEM_INITIALIZE_FLAG_MSK + AC_CHECK_FLAG_MSK + RIN_CHECK_FLAG_MSK + EXT_CHECK_FLAG_MSK + \
-                                    TEST_HOLD_FLAG_MSK + DEBUG_FLAG_MSK + MESSAGE_FLAG_MSK) 
-//睡眠
-#define     DEEPSLEEP              (led.mode + buzzer.mode)
 
 /* --------------------------------------------------------------------------- */
 typedef struct
 {
-  uint32_t state;//状态位
-	uint32_t masking;//标志位
-	uint32_t signal;//信号位
-	uint32_t resource;//资源互斥位
-
+  uint32_t state;
+	uint32_t masking;
+	uint32_t signal;
 }SYSTEM_DATA_typedef;
 
 extern SYSTEM_DATA_typedef system_data;

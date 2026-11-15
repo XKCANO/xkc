@@ -8,11 +8,13 @@
 
 
 /* --------------------------------------------------------------------------- */
+#define   WDG_CR_ENABLE             ((u32)0x00000001)
 #define   WDG_LockKey_Unlock        ((u32)0x1ACCE551)
 #define   WDG_LockKey_Lock          ((u32)0x00000000)
 #define   WWDG_CR2_KEYVALUE         ((u32)0xACBD0000)
 
-#define 	TIMER_SIZE		20
+
+#define 	TIMER_SIZE		17
 
 /* --------------------------------------------------------------------------- */
 typedef struct
@@ -32,11 +34,6 @@ void checktimer5(void);
 void closetimer5(void);
 
 /* --------------------------------------------------------------------------- */
-void settimer4(void);
-void closetimer4(void);
-void system_irq_counter(void);
-
-/* --------------------------------------------------------------------------- */
 void open_iwdg(void);
 void feed_iwdg(void);
 void close_iwdg(void);
@@ -45,5 +42,6 @@ void close_iwdg(void);
 void open_swdg(void);
 void feed_swdg(void);
 void close_swdg(void);
+void close_wdog(void);
 /* --------------------------------------------------------------------------- */
 #endif
