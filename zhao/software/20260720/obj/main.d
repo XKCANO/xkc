@@ -1,0 +1,14 @@
+.\obj\main.o: User\main.c
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\main.o: User\M0518.h
+.\obj\main.o: .\CMSIS\core_cm0.h
+.\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\main.o: .\CMSIS\core_cmInstr.h
+.\obj\main.o: .\CMSIS\core_cmFunc.h
+.\obj\main.o: User\WCS_M0518_DEF.h
+.\obj\main.o: User\wcs_timer_m0518.h
+.\obj\main.o: User\wcs_system_m0518.h
+.\obj\main.o: User\wcs_keyboard_m0518.h
+.\obj\main.o: User\wcs_adc_m0518.h
+.\obj\main.o: User\wcs_windows_m0518.h
+.\obj\main.o: User\wcs_message_m0518.h
