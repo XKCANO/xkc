@@ -1,0 +1,9 @@
+.\obj\wcs_windows_m0518.o: User\wcs_windows_m0518.c
+.\obj\wcs_windows_m0518.o: User\wcs_windows_m0518.h
+.\obj\wcs_windows_m0518.o: User\M0518.h
+.\obj\wcs_windows_m0518.o: .\CMSIS\core_cm0.h
+.\obj\wcs_windows_m0518.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\obj\wcs_windows_m0518.o: .\CMSIS\core_cmInstr.h
+.\obj\wcs_windows_m0518.o: .\CMSIS\core_cmFunc.h
+.\obj\wcs_windows_m0518.o: User\WCS_M0518_DEF.h
+.\obj\wcs_windows_m0518.o: User\wcs_timer_m0518.h

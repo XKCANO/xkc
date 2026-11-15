@@ -1,0 +1,113 @@
+Dependencies for Project 'bc3602', Target '755LHA RF test': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\User\startup_pt32x031.s)(0x669607CB)(--cpu Cortex-M0 --pd "__EVAL SETA 1" -g --16 --apcs=interwork -ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include--pd "__UVISION_VERSION SETA 540"--list .\listings\startup_pt32x031.lst --xref -o .\objects\startup_pt32x031.o --depend .\objects\startup_pt32x031.d)
+F (.\User\main.c)(0x68D9F31D)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (User\pt32x031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+I (User\FE_755LHA_CFG.h)(0x66683853)
+I (User\FE_755LHA_System_PT32L031.h)(0x68B513F3)
+I (User\FE_755LHA_Timer_PT32L031.h)(0x67C59213)
+I (User\FE_755LHA_PT32L031_CFG.h)(0x6821DF9B)
+I (User\FE_TIMER_PT32L031.h)(0x66B1C872)
+I (User\FE_SPI_PT32L031.h)(0x6703B757)
+I (User\FE_PHY_BC3602.h)(0x68219139)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+F (.\User\FE_755LHA_System_PT32L031.c)(0x68B6620F)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_755lha_system_pt32l031.o --omf_browse .\objects\fe_755lha_system_pt32l031.crf --depend .\objects\fe_755lha_system_pt32l031.d)
+I (User\FE_755LHA_System_PT32L031.h)(0x68B513F3)
+I (User\FE_755LHA_CFG.h)(0x66683853)
+I (User\PT32X031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+F (.\User\FE_755LHA_Timer_PT32L031.c)(0x67C5982D)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_755lha_timer_pt32l031.o --omf_browse .\objects\fe_755lha_timer_pt32l031.crf --depend .\objects\fe_755lha_timer_pt32l031.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\PT32X031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+I (User\FE_755LHA_Timer_PT32L031.h)(0x67C59213)
+F (.\User\FE_755LHA_PT32L031_CFG.c)(0x6821DF0C)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_755lha_pt32l031_cfg.o --omf_browse .\objects\fe_755lha_pt32l031_cfg.crf --depend .\objects\fe_755lha_pt32l031_cfg.d)
+I (User\FE_755LHA_PT32L031_CFG.h)(0x6821DF9B)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (User\FE_HEAT_CFG.h)(0x6821DE07)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+I (User\PT32X031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+F (.\User\FE_TIMER_PT32L031.c)(0x67C597E4)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_timer_pt32l031.o --omf_browse .\objects\fe_timer_pt32l031.crf --depend .\objects\fe_timer_pt32l031.d)
+I (User\FE_TIMER_PT32L031.h)(0x66B1C872)
+I (User\FE_HEAT_CFG.h)(0x6821DE07)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+I (User\PT32X031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+F (.\User\FE_IO.c)(0x6821E111)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_io.o --omf_browse .\objects\fe_io.crf --depend .\objects\fe_io.d)
+I (User\FE_IO.h)(0x6821E120)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+F (.\User\FE_math.c)(0x6821E0C0)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_math.o --omf_browse .\objects\fe_math.crf --depend .\objects\fe_math.d)
+I (User\FE_math.h)(0x6821E18C)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5D9B3482)
+F (.\User\FE_SPI_PT32L031.c)(0x67D77AE1)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_spi_pt32l031.o --omf_browse .\objects\fe_spi_pt32l031.crf --depend .\objects\fe_spi_pt32l031.d)
+I (User\FE_SPI_PT32L031.h)(0x6703B757)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\PT32x031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+I (User\FE_HEAT_CFG.h)(0x6821DE07)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+I (User\FE_IO.h)(0x6821E120)
+F (.\User\FE_PHY_BC3602.c)(0x68BAE108)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_phy_bc3602.o --omf_browse .\objects\fe_phy_bc3602.crf --depend .\objects\fe_phy_bc3602.d)
+I (User\FE_PHY_BC3602.h)(0x68219139)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\PT32x031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+I (User\FE_HEAT_CFG.h)(0x6821DE07)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+I (User\FE_IO.h)(0x6821E120)
+I (User\FE_MATH.h)(0x6821E18C)
+I (User\BC3602reg.h)(0x623A7DAC)
+I (User\FE_SPI_PT32L031.h)(0x6703B757)
+F (.\User\FE_755LHA_UART_PT32L031.c)(0x6821DD1A)(-c --cpu Cortex-M0 -D__EVAL -g -O0 -Otime --apcs=interwork --split_sections -I .\User -I .\cmsis-ID:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\fe_755lha_uart_pt32l031.o --omf_browse .\objects\fe_755lha_uart_pt32l031.crf --depend .\objects\fe_755lha_uart_pt32l031.d)
+I (User\FE_755LHA_UART_PT32L031.h)(0x67A179B6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\PT32x031.h)(0x68B4FFEE)
+I (.\cmsis\core_cm0.h)(0x65D562E8)
+I (.\cmsis\cmsis_version.h)(0x65D562E8)
+I (.\cmsis\cmsis_compiler.h)(0x65D562E8)
+I (.\cmsis\cmsis_armcc.h)(0x65D562E8)
+I (.\cmsis\system_pt32x031.h)(0x65D562E8)
+I (User\FE_HEAT_CFG.h)(0x6821DE07)
+I (User\FE_IO.h)(0x6821E120)
+I (User\FE_math.h)(0x6821E18C)

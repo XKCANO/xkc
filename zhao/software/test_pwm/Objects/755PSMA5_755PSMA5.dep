@@ -1,0 +1,167 @@
+Dependencies for Project '755PSMA5', Target '755PSMA5': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
+F (.\User\startup_PT32x076.s)(0x6746EC36)(--cpu Cortex-M0 -g --16 --apcs=interwork --pd "__MICROLIB SETA 1"-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc--pd "__UVISION_VERSION SETA 542" --pd "PT32L076xBx7 SETA 1"--list .\listings\startup_pt32x076.lst --xref -o .\objects\startup_pt32x076.o --depend .\objects\startup_pt32x076.d)
+F (.\User\main.c)(0x6A152EAB)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (User\755PSMA5_System_PT32L076.h)(0x68ABB08A)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)
+I (User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)
+I (.\lib\FE_SMOKE_EEPROM_PT32L076.h)(0x68A674D0)
+F (.\User\PT32x076.h)(0x6854BBE2)()
+F (.\User\755PSMA5_DEF.h)(0x6A13C166)()
+F (.\User\755PSMA5_System_PT32L076.c)(0x6A152E7A)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\755psma5_system_pt32l076.o --omf_browse .\objects\755psma5_system_pt32l076.crf --depend .\objects\755psma5_system_pt32l076.d)
+I (User\755PSMA5_System_PT32L076.h)(0x68ABB08A)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)
+I (User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)
+F (.\User\755PSMA5_System_PT32L076.h)(0x68ABB08A)()
+F (.\User\755PSMA5_Timer_PT32L076.c)(0x68CCC6BF)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\755psma5_timer_pt32l076.o --omf_browse .\objects\755psma5_timer_pt32l076.crf --depend .\objects\755psma5_timer_pt32l076.d)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (User\755PSMA5_System_PT32L076.h)(0x68ABB08A)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)
+I (User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)
+I (.\lib\FE_semaphore.h)(0x68CB9D8F)
+F (.\User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)()
+F (.\User\755PSMA5_Keyboard_PT32L076.c)(0x6A0140B4)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\755psma5_keyboard_pt32l076.o --omf_browse .\objects\755psma5_keyboard_pt32l076.crf --depend .\objects\755psma5_keyboard_pt32l076.d)
+I (User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (User\755PSMA5_System_PT32L076.h)(0x68ABB08A)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)
+I (User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)
+F (.\User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)()
+F (.\User\755PSMA5_Windows_PT32L076.c)(0x69B3C012)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\755psma5_windows_pt32l076.o --omf_browse .\objects\755psma5_windows_pt32l076.crf --depend .\objects\755psma5_windows_pt32l076.d)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_semaphore.h)(0x68CB9D8F)
+F (.\User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)()
+F (.\User\755PSMA5_Message_PT32L076.c)(0x6A0E542F)(--c99 -c --cpu Cortex-M0 -D__MICROLIB -g -O0 -Otime --apcs=interwork -I .\CMSIS -I .\lib -I .\User-ID:\Keil_v5\ARM\Packs\PAI-IC\PT32x076_DFP\1.1.0\stdperiph_lib\Libraries\PT32x076_FWLib\inc-D__UVISION_VERSION="542" -DPT32L076xBx7-o .\objects\755psma5_message_pt32l076.o --omf_browse .\objects\755psma5_message_pt32l076.crf --depend .\objects\755psma5_message_pt32l076.d)
+I (User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)
+I (User\755PSMA5_System_PT32L076.h)(0x68ABB08A)
+I (User\755PSMA5_Windows_PT32L076.h)(0x68C8FDC4)
+I (User\PT32x076.h)(0x6854BBE2)
+I (.\CMSIS\core_cm0.h)(0x638850C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (.\CMSIS\cmsis_version.h)(0x638850C6)
+I (.\CMSIS\cmsis_compiler.h)(0x638850C6)
+I (.\CMSIS\cmsis_armcc.h)(0x638850C6)
+I (User\PT32x076_Type.h)(0x67AB3536)
+I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x60252378)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (D:\Keil_v5\ARM\ARMCC\include\rt_misc.h)(0x60252376)
+I (D:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x6025237E)
+I (User\755PSMA5_DEF.h)(0x6A13C166)
+I (User\755PSMA5_Timer_PT32L076.h)(0x68C8FF3A)
+I (.\lib\FE_IO.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)
+I (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)
+I (User\755PSMA5_Keyboard_PT32L076.h)(0x68C7FCC4)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
+F (.\User\755PSMA5_Message_PT32L076.h)(0x6886D2F8)()
+F (.\lib\FE_755PSMA5_BATTERY_PT32L076.h)(0x68CBA902)()
+F (.\lib\FE_755PSMA5_PT32L076_CFG.h)(0x68A674D0)()
+F (.\lib\FE_755PSMA5_SMOKE_PT32L076.h)(0x68A674D0)()
+F (.\lib\FE_755PSMA5_UART_PT32L076.h)(0x68A674D0)()
+F (.\lib\FE_event.h)(0x68A674D0)()
+F (.\lib\FE_IO.h)(0x68A674D0)()
+F (.\lib\FE_math.h)(0x68A674D0)()
+F (.\lib\FE_semaphore.h)(0x68CB9D8F)()
+F (.\lib\FE_SMOKE_EEPROM_PT32L076.h)(0x68A674D0)()
+F (.\lib\FE_SMOKE_TIMER_PT32L076.h)(0x68A674D0)()
+F (.\lib\FE_755PSMA5_RevC_PT32L076_20251109.lib)(0x69195BDE)()

@@ -1,0 +1,10 @@
+.\objects\fe_755lha_timer_pt32l031.o: User\FE_755LHA_Timer_PT32L031.c
+.\objects\fe_755lha_timer_pt32l031.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\fe_755lha_timer_pt32l031.o: User\PT32X031.h
+.\objects\fe_755lha_timer_pt32l031.o: .\cmsis\core_cm0.h
+.\objects\fe_755lha_timer_pt32l031.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fe_755lha_timer_pt32l031.o: .\cmsis\cmsis_version.h
+.\objects\fe_755lha_timer_pt32l031.o: .\cmsis\cmsis_compiler.h
+.\objects\fe_755lha_timer_pt32l031.o: .\cmsis\cmsis_armcc.h
+.\objects\fe_755lha_timer_pt32l031.o: .\cmsis\system_pt32x031.h
+.\objects\fe_755lha_timer_pt32l031.o: User\FE_755LHA_Timer_PT32L031.h

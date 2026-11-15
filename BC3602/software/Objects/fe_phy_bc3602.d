@@ -1,0 +1,16 @@
+.\objects\fe_phy_bc3602.o: User\FE_PHY_BC3602.c
+.\objects\fe_phy_bc3602.o: User\FE_PHY_BC3602.h
+.\objects\fe_phy_bc3602.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fe_phy_bc3602.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\fe_phy_bc3602.o: User\PT32x031.h
+.\objects\fe_phy_bc3602.o: .\cmsis\core_cm0.h
+.\objects\fe_phy_bc3602.o: .\cmsis\cmsis_version.h
+.\objects\fe_phy_bc3602.o: .\cmsis\cmsis_compiler.h
+.\objects\fe_phy_bc3602.o: .\cmsis\cmsis_armcc.h
+.\objects\fe_phy_bc3602.o: .\cmsis\system_pt32x031.h
+.\objects\fe_phy_bc3602.o: User\FE_HEAT_CFG.h
+.\objects\fe_phy_bc3602.o: User\FE_755LHA_UART_PT32L031.h
+.\objects\fe_phy_bc3602.o: User\FE_IO.h
+.\objects\fe_phy_bc3602.o: User\FE_MATH.h
+.\objects\fe_phy_bc3602.o: User\BC3602reg.h
+.\objects\fe_phy_bc3602.o: User\FE_SPI_PT32L031.h

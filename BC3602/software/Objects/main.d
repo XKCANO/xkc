@@ -1,0 +1,16 @@
+.\objects\main.o: User\main.c
+.\objects\main.o: User\pt32x031.h
+.\objects\main.o: .\cmsis\core_cm0.h
+.\objects\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: .\cmsis\cmsis_version.h
+.\objects\main.o: .\cmsis\cmsis_compiler.h
+.\objects\main.o: .\cmsis\cmsis_armcc.h
+.\objects\main.o: .\cmsis\system_pt32x031.h
+.\objects\main.o: User\FE_755LHA_CFG.h
+.\objects\main.o: User\FE_755LHA_System_PT32L031.h
+.\objects\main.o: User\FE_755LHA_Timer_PT32L031.h
+.\objects\main.o: User\FE_755LHA_PT32L031_CFG.h
+.\objects\main.o: User\FE_TIMER_PT32L031.h
+.\objects\main.o: User\FE_SPI_PT32L031.h
+.\objects\main.o: User\FE_PHY_BC3602.h
+.\objects\main.o: User\FE_755LHA_UART_PT32L031.h

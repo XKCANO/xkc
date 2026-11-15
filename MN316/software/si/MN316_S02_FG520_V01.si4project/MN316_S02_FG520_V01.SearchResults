@@ -1,0 +1,2 @@
+---- cm_ctw_send Matches (1 in 0 files) ----
+aep_notifying in network_api.c (D:\MN316_S02_FG520_V01\custom\src) :   if(cm_ctw_send_ex(buffer, l, CM_CTW_COAP_TYPE_CON, CM_CTW_RAI_0, (unsigned char)network_data.seq) != 0)
