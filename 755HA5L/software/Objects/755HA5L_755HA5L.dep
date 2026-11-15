@@ -1,0 +1,264 @@
+Dependencies for Project '755HA5L', Target '755HA5L': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\User\startup_pt32x031.s)(0x67E614FC)(--cpu Cortex-M0 -g --16 --apcs=interwork -IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include--pd "__UVISION_VERSION SETA 540"--list .\listings\startup_pt32x031.lst --xref -o .\objects\startup_pt32x031.o --depend .\objects\startup_pt32x031.d)
+F (.\User\main.c)(0x69CFB633)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_MATH.h)(0x68A66C68)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x68A66C68)
+I (User\755LHA_System_PT32L031.h)(0x6899A1BA)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x68A66C68)
+I (User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)
+I (User\755LHA_Message_PT32L031.h)(0x688743C4)
+I (User\755LHA_heat_PT32L031.h)(0x69242740)
+I (User\ADC_PT32L031.h)(0x67B58264)
+I (User\755LHA_Batterylow_PT32L031.h)(0x6924290C)
+I (.\Lib\FE_semaphore.h)(0x68A66C68)
+F (.\User\pt32x031.h)(0x6854B670)()
+F (.\User\755LHA_DEF.h)(0x69CE58E1)()
+F (.\User\755LHA_System_PT32L031.c)(0x69CE8B0E)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_system_pt32l031.o --omf_browse .\objects\755lha_system_pt32l031.crf --depend .\objects\755lha_system_pt32l031.d)
+I (User\755LHA_System_PT32L031.h)(0x6899A1BA)
+I (.\Lib\FE_MATH.h)(0x68A66C68)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)
+I (User\755LHA_Message_PT32L031.h)(0x688743C4)
+F (.\User\755LHA_System_PT32L031.h)(0x6899A1BA)()
+F (.\User\755LHA_Timer_PT32L031.c)(0x69CFB633)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_timer_pt32l031.o --omf_browse .\objects\755lha_timer_pt32l031.crf --depend .\objects\755lha_timer_pt32l031.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)
+I (.\Lib\FE_semaphore.h)(0x68A66C68)
+F (.\User\755LHA_Timer_PT32L031.h)(0x68C90C5C)()
+F (.\User\755LHA_Windows_PT32L031.c)(0x69CF4788)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_windows_pt32l031.o --omf_browse .\objects\755lha_windows_pt32l031.crf --depend .\objects\755lha_windows_pt32l031.d)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_semaphore.h)(0x68A66C68)
+F (.\User\755LHA_Windows_PT32L031.h)(0x69CF4131)()
+F (.\User\755LHA_Keyboard_PT32L031.c)(0x68D88AB4)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_keyboard_pt32l031.o --omf_browse .\objects\755lha_keyboard_pt32l031.crf --depend .\objects\755lha_keyboard_pt32l031.d)
+I (User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+F (.\User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)()
+F (.\User\755LHA_heat_PT32L031.c)(0x69B64AB8)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_heat_pt32l031.o --omf_browse .\objects\755lha_heat_pt32l031.crf --depend .\objects\755lha_heat_pt32l031.d)
+I (User\755LHA_Heat_PT32L031.h)(0x69242740)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_MATH.h)(0x68A66C68)
+I (User\ADC_PT32L031.h)(0x67B58264)
+I (User\755LHA_Batterylow_PT32L031.h)(0x6924290C)
+I (.\Lib\FE_semaphore.h)(0x68A66C68)
+F (.\User\755LHA_heat_PT32L031.h)(0x69242740)()
+F (.\User\755LHA_Batterylow_PT32L031.c)(0x692951CC)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_batterylow_pt32l031.o --omf_browse .\objects\755lha_batterylow_pt32l031.crf --depend .\objects\755lha_batterylow_pt32l031.d)
+I (User\755LHA_Batterylow_PT32L031.h)(0x6924290C)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_MATH.h)(0x68A66C68)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (User\ADC_PT32L031.h)(0x67B58264)
+I (.\Lib\FE_semaphore.h)(0x68A66C68)
+I (User\755LHA_Heat_PT32L031.h)(0x69242740)
+F (.\User\755LHA_Batterylow_PT32L031.h)(0x6924290C)()
+F (.\User\755LHA_RF_PT32L031.c)(0x68D53242)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_rf_pt32l031.o --omf_browse .\objects\755lha_rf_pt32l031.crf --depend .\objects\755lha_rf_pt32l031.d)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+F (.\User\755LHA_RF_PT32L031.h)(0x6888818E)()
+F (.\User\755LHA_Release_PT32L031.c)(0x69698CDC)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_release_pt32l031.o --omf_browse .\objects\755lha_release_pt32l031.crf --depend .\objects\755lha_release_pt32l031.d)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+F (.\User\755LHA_Release_PT32L031.h)(0x6854B948)()
+F (.\User\755LHA_Message_PT32L031.c)(0x68DA280C)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\755lha_message_pt32l031.o --omf_browse .\objects\755lha_message_pt32l031.crf --depend .\objects\755lha_message_pt32l031.d)
+I (User\755LHA_Message_PT32L031.h)(0x688743C4)
+I (User\755LHA_Windows_PT32L031.h)(0x69CF4131)
+I (User\pt32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\755LHA_DEF.h)(0x69CE58E1)
+I (User\755LHA_RF_PT32L031.h)(0x6888818E)
+I (.\Lib\FE_IO.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)
+I (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)
+I (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Release_PT32L031.h)(0x6854B948)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)
+I (User\755LHA_Timer_PT32L031.h)(0x68C90C5C)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x68A66C68)
+I (User\755LHA_System_PT32L031.h)(0x6899A1BA)
+I (.\Lib\FE_MATH.h)(0x68A66C68)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x68A66C68)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x68A66C68)
+I (User\755LHA_Keyboard_PT32L031.h)(0x68C7FDAA)
+F (.\User\755LHA_Message_PT32L031.h)(0x688743C4)()
+F (.\User\ADC_PT32L031.c)(0x68C812A8)(--c99 -c --cpu Cortex-M0 -g -O1 -Otime --apcs=interwork -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540"-o .\objects\adc_pt32l031.o --omf_browse .\objects\adc_pt32l031.crf --depend .\objects\adc_pt32l031.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (User\PT32x031.h)(0x6854B670)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\ADC_PT32L031.h)(0x67B58264)
+F (.\User\ADC_PT32L031.h)(0x67B58264)()
+F (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x68A66C68)()
+F (.\Lib\FE_755LHA_MAC.h)(0x68A66C68)()
+F (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x68A66C68)()
+F (.\Lib\FE_755LHA_UART_PT32L031.h)(0x68A66C68)()
+F (.\Lib\FE_IO.h)(0x68A66C68)()
+F (.\Lib\FE_MATH.h)(0x68A66C68)()
+F (.\Lib\FE_PHY_BC3602.h)(0x68A66C68)()
+F (.\Lib\FE_semaphore.h)(0x68A66C68)()
+F (.\Lib\FE_SPI_PT32L031.h)(0x68A66C68)()
+F (.\Lib\FE_TIMER_PT32L031.h)(0x68A66C68)()
+F (.\Lib\FE_755LHA_RevB_PT32L031_20251202.lib)(0x692E32CE)()
