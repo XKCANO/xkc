@@ -1,0 +1,169 @@
+Dependencies for Project 'KD715A', Target 'KD715A': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\User\startup_pt32x031.s)(0x67E614FA)(--cpu Cortex-M0 -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include--pd "__UVISION_VERSION SETA 540"--list .\listings\startup_pt32x031.lst --xref -o .\objects\startup_pt32x031.o --depend .\objects\startup_pt32x031.d)
+F (.\User\main.c)(0x6862399C)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\Lib\FE_MATH.h)(0x67E5FC1C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x67E5F2D7)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x67E5FD50)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (User\KD715A_System_PT32L031.h)(0x68512677)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x67A1843A)
+I (User\KD715A_Windows_PT32L031.h)(0x685E691A)
+I (User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)
+I (User\KD715A_heat_PT32L031.h)(0x68648190)
+I (.\Lib\FE_IO.h)(0x67E5F2A1)
+I (User\ADC_PT32L031.h)(0x68622705)
+I (User\KD715A_Batterylow_PT32L031.h)(0x68621D42)
+I (.\Lib\FE_semaphore.h)(0x67E5FC66)
+I (User\KD715A_Message_PT32L031.h)(0x685126B8)
+F (.\User\KD715A_DEF.h)(0x68623566)()
+F (.\User\KD715A_System_PT32L031.c)(0x6862365F)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_system_pt32l031.o --omf_browse .\objects\kd715a_system_pt32l031.crf --depend .\objects\kd715a_system_pt32l031.d)
+I (User\KD715A_System_PT32L031.h)(0x68512677)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_MATH.h)(0x67E5FC1C)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x67E5F2D7)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x67A1843A)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x67E5FD50)
+I (User\KD715A_Windows_PT32L031.h)(0x685E691A)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)
+F (.\User\KD715A_System_PT32L031.h)(0x68512677)()
+F (.\User\KD715A_Timer_PT32L031.c)(0x685E6639)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_timer_pt32l031.o --omf_browse .\objects\kd715a_timer_pt32l031.crf --depend .\objects\kd715a_timer_pt32l031.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (User\KD715A_DEF.h)(0x68623566)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)
+I (User\KD715A_Windows_PT32L031.h)(0x685E691A)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x67E5FD50)
+F (.\User\KD715A_Timer_PT32L031.h)(0x68512682)()
+F (.\User\KD715A_Keyboard_PT32L031.c)(0x6862215D)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_keyboard_pt32l031.o --omf_browse .\objects\kd715a_keyboard_pt32l031.crf --depend .\objects\kd715a_keyboard_pt32l031.d)
+I (User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+F (.\User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)()
+F (.\User\KD715A_Windows_PT32L031.c)(0x6861DBBB)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_windows_pt32l031.o --omf_browse .\objects\kd715a_windows_pt32l031.crf --depend .\objects\kd715a_windows_pt32l031.d)
+I (User\KD715A_Windows_PT32L031.h)(0x685E691A)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x67E5FD50)
+I (.\Lib\FE_semaphore.h)(0x67E5FC66)
+F (.\User\KD715A_Windows_PT32L031.h)(0x685E691A)()
+F (.\User\KD715A_Batterylow_PT32L031.c)(0x686225B1)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_batterylow_pt32l031.o --omf_browse .\objects\kd715a_batterylow_pt32l031.crf --depend .\objects\kd715a_batterylow_pt32l031.d)
+I (User\KD715A_Batterylow_PT32L031.h)(0x68621D42)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_MATH.h)(0x67E5FC1C)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (User\ADC_PT32L031.h)(0x68622705)
+I (.\Lib\FE_semaphore.h)(0x67E5FC66)
+F (.\User\KD715A_Batterylow_PT32L031.h)(0x68621D42)()
+F (.\User\KD715A_heat_PT32L031.c)(0x686A903A)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_heat_pt32l031.o --omf_browse .\objects\kd715a_heat_pt32l031.crf --depend .\objects\kd715a_heat_pt32l031.d)
+I (User\KD715A_Heat_PT32L031.h)(0x68648190)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (.\Lib\FE_IO.h)(0x67E5F2A1)
+I (.\Lib\FE_MATH.h)(0x67E5FC1C)
+I (User\ADC_PT32L031.h)(0x68622705)
+I (User\KD715A_Batterylow_PT32L031.h)(0x68621D42)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (.\Lib\FE_semaphore.h)(0x67E5FC66)
+I (.\Lib\FE_755LHA_UART_PT32L031.h)(0x67E5FD50)
+F (.\User\KD715A_heat_PT32L031.h)(0x68648190)()
+F (.\User\KD715A_Message_PT32L031.c)(0x68623B45)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\kd715a_message_pt32l031.o --omf_browse .\objects\kd715a_message_pt32l031.crf --depend .\objects\kd715a_message_pt32l031.d)
+I (User\KD715A_Message_PT32L031.h)(0x685126B8)
+I (User\KD715A_Windows_PT32L031.h)(0x685E691A)
+I (.\CMSIS\pt32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\KD715A_DEF.h)(0x68623566)
+I (User\KD715A_Timer_PT32L031.h)(0x68512682)
+I (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)
+I (.\Lib\FE_755LHA_Uart_PT32L031.h)(0x67E5FD50)
+I (User\KD715A_System_PT32L031.h)(0x68512677)
+I (.\Lib\FE_MATH.h)(0x67E5FC1C)
+I (.\Lib\FE_TIMER_PT32L031.h)(0x67E5F2D7)
+I (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x67A1843A)
+I (User\KD715A_Keyboard_PT32L031.h)(0x6861FFBB)
+F (.\User\KD715A_Message_PT32L031.h)(0x685126B8)()
+F (.\User\ADC_PT32L031.c)(0x6862279F)(--c99 --gnu -c --cpu Cortex-M0 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\Lib -I .\User-IC:\Keil_v5\Packs\PAI-IC\PT32X031_DFP\1.0.6\Device\Include-D__UVISION_VERSION="540" -DUSE_STDPERIPH_DRIVER -DPT32x031-o .\objects\adc_pt32l031.o --omf_browse .\objects\adc_pt32l031.crf --depend .\objects\adc_pt32l031.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9B348A)
+I (.\CMSIS\PT32x031.h)(0x67C8F2B4)
+I (.\CMSIS\core_cm0.h)(0x65D562EA)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9B3488)
+I (.\CMSIS\cmsis_version.h)(0x65D562EA)
+I (.\CMSIS\cmsis_compiler.h)(0x65D562EA)
+I (.\CMSIS\cmsis_armcc.h)(0x65D562EA)
+I (.\CMSIS\system_pt32x031.h)(0x65D562EA)
+I (User\ADC_PT32L031.h)(0x68622705)
+F (.\User\ADC_PT32L031.h)(0x68622705)()
+F (.\Lib\FE_755LHA_EEPROM_PT32L031.h)(0x67E628DF)()
+F (.\Lib\FE_755LHA_MAC.h)(0x67E5F4DE)()
+F (.\Lib\FE_755LHA_PT32L031_CFG.h)(0x67A1843A)()
+F (.\Lib\FE_755LHA_UART_PT32L031.h)(0x67E5FD50)()
+F (.\Lib\FE_IO.h)(0x67E5F2A1)()
+F (.\Lib\FE_MATH.h)(0x67E5FC1C)()
+F (.\Lib\FE_PHY_BC3602.h)(0x67E5F47F)()
+F (.\Lib\FE_semaphore.h)(0x67E5FC66)()
+F (.\Lib\FE_SPI_PT32L031.h)(0x67E5F363)()
+F (.\Lib\FE_TIMER_PT32L031.h)(0x67E5F2D7)()
+F (.\Lib\FE_755LHA_RevB_PT32L031_20250509 13dBm.lib)(0x681DDBE4)()

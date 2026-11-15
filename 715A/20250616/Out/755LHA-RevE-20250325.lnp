@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+".\out\startup_pt32x031.o"
+".\out\main.o"
+".\out\755lha_system_pt32l031.o"
+".\out\755lha_timer_pt32l031.o"
+".\out\755lha_windows_pt32l031.o"
+".\out\755lha_heat_pt32l031.o"
+".\out\755lha_keyboard_pt32l031.o"
+".\out\755lha_batterylow_pt32l031.o"
+".\out\755lha_message_pt32l031.o"
+".\out\adc_pt32l031.o"
+".\Lib\FE_755LHA_RevB_PT32L031_20250509 13dBm.lib"
+--library_type=microlib --strict --scatter ".\Out\755LHA-RevE-20250325.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\List\755LHA-RevE-20250325.map" -o .\Out\755LHA-RevE-20250325.axf

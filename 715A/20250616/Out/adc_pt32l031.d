@@ -1,0 +1,10 @@
+.\out\adc_pt32l031.o: User\ADC_PT32L031.c
+.\out\adc_pt32l031.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\out\adc_pt32l031.o: .\CMSIS\PT32x031.h
+.\out\adc_pt32l031.o: .\CMSIS\core_cm0.h
+.\out\adc_pt32l031.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\out\adc_pt32l031.o: .\CMSIS\cmsis_version.h
+.\out\adc_pt32l031.o: .\CMSIS\cmsis_compiler.h
+.\out\adc_pt32l031.o: .\CMSIS\cmsis_armcc.h
+.\out\adc_pt32l031.o: .\CMSIS\system_pt32x031.h
+.\out\adc_pt32l031.o: User\ADC_PT32L031.h
