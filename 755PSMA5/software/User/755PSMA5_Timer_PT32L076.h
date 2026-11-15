@@ -25,7 +25,6 @@ typedef struct
 extern TIMER_TypeDef timer5;
 
 /* --------------------------------------------------------------------------- */
-void set_timer1(void);
 void close_timer1(void);
 
 /* --------------------------------------------------------------------------- */
@@ -43,5 +42,6 @@ void open_swdg(void);
 void feed_swdg(void);
 void close_swdg(void);
 void close_wdog(void);
+
 /* --------------------------------------------------------------------------- */
 #endif

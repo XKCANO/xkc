@@ -207,6 +207,7 @@ void alarm_cfg(uint8_t mode)
 		  buzzer.counter = 0;
 			buzzer.step = 5;
 			buzzer.mode = _exe;
+      system_data.masking &= ~LOW_SOUND_FLAG_MSK;
 			break;
 		
 		//»¥Áª±¨¾¯£¬·äÃùÆ÷ T3Ê±Ðò

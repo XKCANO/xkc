@@ -47,6 +47,7 @@ void buzzer_sound(void);
 void update_timer1(void);
 void set_connect(unsigned char flag);
 
+/* --------------------------------------------------------------------------- */
 void smoke_callback(uint32_t state);
 void battery_callback(uint32_t state);
 void uart_callback(uint32_t p, uint32_t l);
