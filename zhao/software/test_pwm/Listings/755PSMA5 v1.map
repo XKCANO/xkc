@@ -1,0 +1,371 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    startup_pt32x076.o(RESET) refers to startup_pt32x076.o(STACK) for __initial_sp
+    startup_pt32x076.o(RESET) refers to 755psma5_keyboard_pt32l076.o(.text) for EXTIA_Handler
+    startup_pt32x076.o(RESET) refers to 755psma5_timer_pt32l076.o(.text) for TIM1_Handler
+    startup_pt32x076.o(RESET) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(.text) refers to 755psma5_system_pt32l076.o(.text) for clear_sram
+    main.o(.text) refers to 755psma5_timer_pt32l076.o(.text) for open_iwdg
+    main.o(.text) refers to 755psma5_keyboard_pt32l076.o(.text) for scankey3_process_run
+    main.o(.text) refers to 755psma5_windows_pt32l076.o(.text) for led_lighten
+    main.o(.text) refers to 755psma5_message_pt32l076.o(.text) for message_proc
+    main.o(.text) refers to 755psma5_keyboard_pt32l076.o(.data) for key4
+    main.o(.text) refers to main.o(.bss) for system_data
+    main.o(.text) refers to 755psma5_timer_pt32l076.o(.bss) for timer5
+    main.o(.text) refers to 755psma5_windows_pt32l076.o(.data) for led
+    755psma5_timer_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5_timer_pt32l076.o(.text) refers to 755psma5_timer_pt32l076.o(.bss) for timer5
+    755psma5_keyboard_pt32l076.o(.text) refers to 755psma5_windows_pt32l076.o(.text) for open_buzzer
+    755psma5_keyboard_pt32l076.o(.text) refers to 755psma5_timer_pt32l076.o(.bss) for timer5
+    755psma5_keyboard_pt32l076.o(.text) refers to 755psma5_keyboard_pt32l076.o(.data) for key4
+    755psma5_keyboard_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5_windows_pt32l076.o(.text) refers to 755psma5_timer_pt32l076.o(.text) for close_wdog
+    755psma5_windows_pt32l076.o(.text) refers to 755psma5_windows_pt32l076.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    755psma5_windows_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    755psma5_windows_pt32l076.o(.text) refers to 755psma5_windows_pt32l076.o(.data) for buzzer
+    755psma5_windows_pt32l076.o(.text) refers to 755psma5_timer_pt32l076.o(.bss) for timer5
+    755psma5_message_pt32l076.o(.text) refers to main.o(.bss) for system_data
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_pt32x076.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_pt32x076.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(.text) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(.text) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing startup_pt32x076.o(HEAP), (0 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing 755psma5_system_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5_system_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5_timer_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5_timer_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5_keyboard_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5_keyboard_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5_windows_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5_windows_pt32l076.o(.revsh_text), (4 bytes).
+    Removing 755psma5_message_pt32l076.o(.rev16_text), (4 bytes).
+    Removing 755psma5_message_pt32l076.o(.revsh_text), (4 bytes).
+
+13 unused section(s) (total 48 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      212  startup_pt32x076.o(RESET)
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    User\755PSMA5_Keyboard_PT32L076.c        0x00000000   Number         0  755psma5_keyboard_pt32l076.o ABSOLUTE
+    User\755PSMA5_Message_PT32L076.c         0x00000000   Number         0  755psma5_message_pt32l076.o ABSOLUTE
+    User\755PSMA5_System_PT32L076.c          0x00000000   Number         0  755psma5_system_pt32l076.o ABSOLUTE
+    User\755PSMA5_Timer_PT32L076.c           0x00000000   Number         0  755psma5_timer_pt32l076.o ABSOLUTE
+    User\755PSMA5_Windows_PT32L076.c         0x00000000   Number         0  755psma5_windows_pt32l076.o ABSOLUTE
+    User\\755PSMA5_Keyboard_PT32L076.c       0x00000000   Number         0  755psma5_keyboard_pt32l076.o ABSOLUTE
+    User\\755PSMA5_Message_PT32L076.c        0x00000000   Number         0  755psma5_message_pt32l076.o ABSOLUTE
+    User\\755PSMA5_System_PT32L076.c         0x00000000   Number         0  755psma5_system_pt32l076.o ABSOLUTE
+    User\\755PSMA5_Timer_PT32L076.c          0x00000000   Number         0  755psma5_timer_pt32l076.o ABSOLUTE
+    User\\755PSMA5_Windows_PT32L076.c        0x00000000   Number         0  755psma5_windows_pt32l076.o ABSOLUTE
+    User\\main.c                             0x00000000   Number         0  main.o ABSOLUTE
+    User\main.c                              0x00000000   Number         0  main.o ABSOLUTE
+    User\startup_PT32x076.s                  0x00000000   Number         0  startup_pt32x076.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000d4   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000d4   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000d8   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000dc   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000dc   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000dc   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000e4   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000e4   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000e4   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000e4   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000e8   Section        0  main.o(.text)
+    .text                                    0x00000234   Section        0  755psma5_system_pt32l076.o(.text)
+    .text                                    0x000005d0   Section        0  755psma5_timer_pt32l076.o(.text)
+    .text                                    0x0000083c   Section        0  755psma5_keyboard_pt32l076.o(.text)
+    .text                                    0x00000a40   Section        0  755psma5_windows_pt32l076.o(.text)
+    .text                                    0x00001218   Section        0  755psma5_message_pt32l076.o(.text)
+    .text                                    0x00001230   Section       36  init.o(.text)
+    i.__ARM_common_switch8                   0x00001254   Section        0  755psma5_windows_pt32l076.o(i.__ARM_common_switch8)
+    i.__scatterload_copy                     0x00001270   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0000127e   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00001280   Section       14  handlers.o(i.__scatterload_zeroinit)
+    .data                                    0x20000000   Section       20  755psma5_keyboard_pt32l076.o(.data)
+    .data                                    0x20000014   Section       12  755psma5_windows_pt32l076.o(.data)
+    .bss                                     0x20000020   Section       12  main.o(.bss)
+    .bss                                     0x2000002c   Section       76  755psma5_timer_pt32l076.o(.bss)
+    STACK                                    0x20000078   Section     4096  startup_pt32x076.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_pt32x076.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    Reset_Handler                            0x000000c1   Thumb Code     4  startup_pt32x076.o(RESET)
+    NMI_Handler                              0x000000c5   Thumb Code     2  startup_pt32x076.o(RESET)
+    HardFault_Handler                        0x000000c7   Thumb Code     2  startup_pt32x076.o(RESET)
+    SVC_Handler                              0x000000c9   Thumb Code     2  startup_pt32x076.o(RESET)
+    PendSV_Handler                           0x000000cb   Thumb Code     2  startup_pt32x076.o(RESET)
+    SysTick_Handler                          0x000000cd   Thumb Code     2  startup_pt32x076.o(RESET)
+    ADC_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    AES_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    ALU_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    CMP0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    CMP_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    DMA_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    EXTIC_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    EXTIF_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    I2C0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    I2C1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    IFMC_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPTIM_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPUART0_Handler                          0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    LPUART1_Handler                          0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    PVD_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    RTC_Handler                              0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    SPI0_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    SPI1_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM2_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM3_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM5_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM6_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM7_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    TIM8_Handler                             0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART0_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART1_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART2_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    UART3_Handler                            0x000000cf   Thumb Code     0  startup_pt32x076.o(RESET)
+    __main                                   0x000000d5   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000d5   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000d9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000dd   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000dd   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000dd   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000dd   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000e5   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000e5   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    main                                     0x000000e9   Thumb Code   292  main.o(.text)
+    clear_sram                               0x00000235   Thumb Code    38  755psma5_system_pt32l076.o(.text)
+    sys_clock_init                           0x0000025b   Thumb Code   116  755psma5_system_pt32l076.o(.text)
+    sys_gpio_init                            0x000002cf   Thumb Code   678  755psma5_system_pt32l076.o(.text)
+    mem_data_add                             0x00000575   Thumb Code    28  755psma5_system_pt32l076.o(.text)
+    goto_deepsleep                           0x00000591   Thumb Code     2  755psma5_system_pt32l076.o(.text)
+    close_timer1                             0x000005d1   Thumb Code   114  755psma5_timer_pt32l076.o(.text)
+    TIM1_Handler                             0x00000643   Thumb Code    84  755psma5_timer_pt32l076.o(.text)
+    TIM4_Handler                             0x00000697   Thumb Code    26  755psma5_timer_pt32l076.o(.text)
+    settimer5                                0x000006b1   Thumb Code    48  755psma5_timer_pt32l076.o(.text)
+    checktimer5                              0x000006e1   Thumb Code    52  755psma5_timer_pt32l076.o(.text)
+    closetimer5                              0x00000715   Thumb Code    22  755psma5_timer_pt32l076.o(.text)
+    open_iwdg                                0x0000072b   Thumb Code    36  755psma5_timer_pt32l076.o(.text)
+    feed_iwdg                                0x0000074f   Thumb Code    24  755psma5_timer_pt32l076.o(.text)
+    close_iwdg                               0x00000767   Thumb Code    26  755psma5_timer_pt32l076.o(.text)
+    open_swdg                                0x00000781   Thumb Code    40  755psma5_timer_pt32l076.o(.text)
+    feed_swdg                                0x000007a9   Thumb Code    14  755psma5_timer_pt32l076.o(.text)
+    close_swdg                               0x000007b7   Thumb Code    20  755psma5_timer_pt32l076.o(.text)
+    close_wdog                               0x000007cb   Thumb Code    56  755psma5_timer_pt32l076.o(.text)
+    EXTIA_Handler                            0x0000083d   Thumb Code    66  755psma5_keyboard_pt32l076.o(.text)
+    EXTIB_Handler                            0x0000087f   Thumb Code    78  755psma5_keyboard_pt32l076.o(.text)
+    scankey3_process_run                     0x000008cd   Thumb Code   200  755psma5_keyboard_pt32l076.o(.text)
+    key3_down_event                          0x00000995   Thumb Code    80  755psma5_keyboard_pt32l076.o(.text)
+    key3_08s_event                           0x000009e5   Thumb Code    34  755psma5_keyboard_pt32l076.o(.text)
+    key3_10s_event                           0x00000a07   Thumb Code    14  755psma5_keyboard_pt32l076.o(.text)
+    key3_up_event                            0x00000a15   Thumb Code    14  755psma5_keyboard_pt32l076.o(.text)
+    smoke_callback                           0x00000a41   Thumb Code    82  755psma5_windows_pt32l076.o(.text)
+    battery_callback                         0x00000a93   Thumb Code    48  755psma5_windows_pt32l076.o(.text)
+    uart_callback                            0x00000ac3   Thumb Code    70  755psma5_windows_pt32l076.o(.text)
+    check_short_test                         0x00000b09   Thumb Code    38  755psma5_windows_pt32l076.o(.text)
+    open_buzzer                              0x00000b2f   Thumb Code   144  755psma5_windows_pt32l076.o(.text)
+    close_buzzer                             0x00000bbf   Thumb Code    24  755psma5_windows_pt32l076.o(.text)
+    set_connect                              0x00000bd7   Thumb Code   274  755psma5_windows_pt32l076.o(.text)
+    remove_alarm                             0x00000ce9   Thumb Code    68  755psma5_windows_pt32l076.o(.text)
+    alarm_cfg                                0x00000d2d   Thumb Code   512  755psma5_windows_pt32l076.o(.text)
+    led_lighten                              0x00000f2d   Thumb Code   480  755psma5_windows_pt32l076.o(.text)
+    buzzer_sound                             0x0000110d   Thumb Code   138  755psma5_windows_pt32l076.o(.text)
+    update_timer1                            0x00001197   Thumb Code    98  755psma5_windows_pt32l076.o(.text)
+    key3_short_check                         0x00001219   Thumb Code     2  755psma5_message_pt32l076.o(.text)
+    key3_08s_check                           0x0000121b   Thumb Code     2  755psma5_message_pt32l076.o(.text)
+    message_proc                             0x0000121d   Thumb Code    14  755psma5_message_pt32l076.o(.text)
+    __scatterload                            0x00001231   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00001231   Thumb Code     0  init.o(.text)
+    __ARM_common_switch8                     0x00001255   Thumb Code    28  755psma5_windows_pt32l076.o(i.__ARM_common_switch8)
+    __scatterload_copy                       0x00001271   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0000127f   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00001281   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00001290   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000012b0   Number         0  anon$$obj.o(Region$$Table)
+    key2                                     0x20000000   Data           8  755psma5_keyboard_pt32l076.o(.data)
+    key3                                     0x20000008   Data           4  755psma5_keyboard_pt32l076.o(.data)
+    key4                                     0x2000000c   Data           4  755psma5_keyboard_pt32l076.o(.data)
+    key5                                     0x20000010   Data           4  755psma5_keyboard_pt32l076.o(.data)
+    led                                      0x20000014   Data           4  755psma5_windows_pt32l076.o(.data)
+    buzzer                                   0x20000018   Data           4  755psma5_windows_pt32l076.o(.data)
+    update                                   0x2000001c   Data           4  755psma5_windows_pt32l076.o(.data)
+    system_data                              0x20000020   Data          12  main.o(.bss)
+    timer5                                   0x2000002c   Data          76  755psma5_timer_pt32l076.o(.bss)
+    __initial_sp                             0x20001078   Data           0  startup_pt32x076.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000c1
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000012d0, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000012b0, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000d4   Code   RO            3  * RESET               startup_pt32x076.o
+    0x000000d4   0x000000d4   0x00000000   Code   RO          262  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000d4   0x000000d4   0x00000004   Code   RO          265    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000d8   0x000000d8   0x00000004   Code   RO          268    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO          270    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000dc   0x000000dc   0x00000000   Code   RO          272    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000dc   0x000000dc   0x00000008   Code   RO          273    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000e4   0x000000e4   0x00000000   Code   RO          275    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000e4   0x000000e4   0x00000000   Code   RO          277    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000e4   0x000000e4   0x00000004   Code   RO          266    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000e8   0x000000e8   0x0000014c   Code   RO           11    .text               main.o
+    0x00000234   0x00000234   0x0000039c   Code   RO          112    .text               755psma5_system_pt32l076.o
+    0x000005d0   0x000005d0   0x0000026c   Code   RO          139    .text               755psma5_timer_pt32l076.o
+    0x0000083c   0x0000083c   0x00000204   Code   RO          171    .text               755psma5_keyboard_pt32l076.o
+    0x00000a40   0x00000a40   0x000007d8   Code   RO          213    .text               755psma5_windows_pt32l076.o
+    0x00001218   0x00001218   0x00000018   Code   RO          244    .text               755psma5_message_pt32l076.o
+    0x00001230   0x00001230   0x00000024   Code   RO          279    .text               mc_p.l(init.o)
+    0x00001254   0x00001254   0x0000001c   Code   RO          231    i.__ARM_common_switch8  755psma5_windows_pt32l076.o
+    0x00001270   0x00001270   0x0000000e   Code   RO          283    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x0000127e   0x0000127e   0x00000002   Code   RO          284    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00001280   0x00001280   0x0000000e   Code   RO          285    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x0000128e   0x0000128e   0x00000002   PAD
+    0x00001290   0x00001290   0x00000020   Data   RO          281    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x000012b0, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x000012b0   0x00000014   Data   RW          172    .data               755psma5_keyboard_pt32l076.o
+    0x20000014   0x000012c4   0x0000000c   Data   RW          214    .data               755psma5_windows_pt32l076.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x000012d0, Size: 0x00001058, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000020        -       0x0000000c   Zero   RW           12    .bss                main.o
+    0x2000002c        -       0x0000004c   Zero   RW          140    .bss                755psma5_timer_pt32l076.o
+    0x20000078        -       0x00001000   Zero   RW            1    STACK               startup_pt32x076.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       516         30          0         20          0       2449   755psma5_keyboard_pt32l076.o
+        24          6          0          0          0        643   755psma5_message_pt32l076.o
+       924         62          0          0          0       3950   755psma5_system_pt32l076.o
+       620         58          0          0         76      10573   755psma5_timer_pt32l076.o
+      2036        116          0         12          0      11776   755psma5_windows_pt32l076.o
+       332         40          0          0         12      44961   main.o
+       212        196          0          0       4096        608   startup_pt32x076.o
+
+    ----------------------------------------------------------------------
+      4664        508         32         32       4184      74960   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+        86         16          0          0          0         68   mc_p.l
+
+    ----------------------------------------------------------------------
+        88         16          0          0          0         68   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      4752        524         32         32       4184      74652   Grand Totals
+      4752        524         32         32       4184      74652   ELF Image Totals
+      4752        524         32         32          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 4784 (   4.67kB)
+    Total RW  Size (RW Data + ZI Data)              4216 (   4.12kB)
+    Total ROM Size (Code + RO Data + RW Data)       4816 (   4.70kB)
+
+==============================================================================
+
