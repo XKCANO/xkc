@@ -14,7 +14,7 @@
 #define			_finish			0x80
 /* --------------------------------------------------------------------------- */
 //beta version
-#define   _BETA_VERSION   1
+#define   _BETA_VERSION   0
 
 /* --------------------------------------------------------------------------- */
 //SYSTEM STATUS
@@ -56,6 +56,7 @@
 
 #define     SHORT_TEST_FLAG_POS  12
 #define     SHORT_TEST_FLAG_MSK  (1UL << SHORT_TEST_FLAG_POS)
+
 
 /* --------------------------------------------------------------------------- */
 //SYSTEM SIGNAL
@@ -109,43 +110,45 @@
 #define     SYSTEM_INTERRUPT_FLAG_POS  2
 #define     SYSTEM_INTERRUPT_FLAG_MSK  (1UL << SYSTEM_INTERRUPT_FLAG_POS)
 
-#define     UART_SEND_FLAG_POS  3
-#define     UART_SEND_FLAG_MSK  (1UL << UART_SEND_FLAG_POS)
-
-#define     AC_CHECK_FLAG_POS  4
+#define     AC_CHECK_FLAG_POS  3
 #define     AC_CHECK_FLAG_MSK  (1UL << AC_CHECK_FLAG_POS)
 
-#define     EXT_CHECK_FLAG_POS  5
+#define     EXT_CHECK_FLAG_POS  4
 #define     EXT_CHECK_FLAG_MSK  (1UL << EXT_CHECK_FLAG_POS)
 
-#define     RIN_CHECK_FLAG_POS  6
+#define     RIN_CHECK_FLAG_POS  5
 #define     RIN_CHECK_FLAG_MSK  (1UL << RIN_CHECK_FLAG_POS)
 
-#define     DEBUG_FLAG_POS  7
+#define     DEBUG_FLAG_POS  6
 #define     DEBUG_FLAG_MSK  (1UL << DEBUG_FLAG_POS)
 
-#define     LATEST_ALARM_FLAG_POS  8
-#define     LATEST_ALARM_FLAG_MSK  (1UL << LATEST_ALARM_FLAG_POS)
-
-#define     TIMER1_UPDATE_FLAG_POS  10
+#define     TIMER1_UPDATE_FLAG_POS  7
 #define     TIMER1_UPDATE_FLAG_MSK  (1UL << TIMER1_UPDATE_FLAG_POS)
 
-#define     LOW_SOUND_FLAG_POS  11
+#define     LOW_SOUND_FLAG_POS  8
 #define     LOW_SOUND_FLAG_MSK  (1UL << LOW_SOUND_FLAG_POS)
 
-#define     IO_OUTPUT_FLAG_POS  12
-#define     IO_OUTPUT_FLAG_MSK  (1UL << IO_OUTPUT_FLAG_POS)
-
-#define     TEST_HOLD_FLAG_POS  13
+#define     TEST_HOLD_FLAG_POS  9
 #define     TEST_HOLD_FLAG_MSK  (1UL << TEST_HOLD_FLAG_POS)
 
-/* --------------------------------------------------------------------------- */
-//SYSTEM RESOURCE
-#define     LED_FLAG_POS  0
-#define     LED_FLAG_MSK  (1ul << LED_FLAG_POS)
+#define     KEY3_DOWN_FLAG_POS  10
+#define     KEY3_DOWN_FLAG_MSK  (1UL << KEY3_DOWN_FLAG_POS)
 
-#define     BUZZER_FLAG_POS  1
-#define     BUZZER_FLAG_MSK  (1UL << BUZZER_FLAG_POS)
+#define     KEY3_08S_FLAG_POS  11
+#define     KEY3_08S_FLAG_MSK  (1UL << KEY3_08S_FLAG_POS)
+
+#define     KEY3_10S_FLAG_POS  12
+#define     KEY3_10S_FLAG_MSK  (1UL << KEY3_10S_FLAG_POS)
+
+#define     KEY3_UP_FLAG_POS  13
+#define     KEY3_UP_FLAG_MSK  (1UL << KEY3_UP_FLAG_POS)
+
+#define     KY5_OUTPUT_FLAG_POS  14
+#define     KY5_OUTPUT_FLAG_MSK  (1UL << KY5_OUTPUT_FLAG_POS)
+
+#define     KEY2_OUT_FLAG_POS  15
+#define     KEY2_OUT_FLAG_MSK  (1UL << KEY2_OUT_FLAG_POS)
+
 
 /* --------------------------------------------------------------------------- */
 //RED  -> PA5
@@ -225,27 +228,19 @@
 #define     TIMER1_TIMER 		         timer5.t[17]
 
 /* --------------------------------------------------------------------------- */
-//睡眠
-#define     DEEPSLEEP              (led.mode + buzzer.mode + alarm.mode + update.mode)
-
-//红灯失效
-#define     LED_NULLIFY            (EXTERNAL_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + SHORT_TEST_FLAG_MSK)
-
-//互联输入失效
-#define     KEY2_NO_RESPONSE       (ALARM_FLAG_MSK + TEST_FLAG_MSK + SHORT_TEST_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK)
+#define     ALARM_MODE             (ALARM_FLAG_MSK + EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK)
 
 //按键长按失效
-#define     KEY3_NO_RESPONSE       (EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK)
+#define     KEY3_NO_RESPONSE       (EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK + SHORT_TEST_FLAG_MSK)
 
 //按键短按失效
-#define     KEY3_NO_RESPONSE1      (EXTERNAL_ALARM_FLAG_MSK + HUSH_FLAG_MSK + SNOOZE_MEMORY_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK)
+#define     KEY3_NO_RESPONSE1      (EXTERNAL_ALARM_FLAG_MSK + RELAYIN_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK + HUSH_FLAG_MSK + SNOOZE_MEMORY_FLAG_MSK)
 
-//按键短按失效
-#define     KEY5_NO_RESPONSE       (ALARM_FLAG_MSK + TEST_FLAG_MSK + SHORT_TEST_FLAG_MSK + EXTERNAL_ALARM_FLAG_MSK + EXTERNAL_ERROR_FLAG_MSK)
-
-//不进入休眠
+//挂起
 #define     DEVICE_PENDING_MODE    (SYSTEM_INITIALIZE_FLAG_MSK + AC_CHECK_FLAG_MSK + RIN_CHECK_FLAG_MSK + EXT_CHECK_FLAG_MSK + \
-                                    TEST_HOLD_FLAG_MSK + DEBUG_FLAG_MSK + MESSAGE_FLAG_MSK)
+                                    TEST_HOLD_FLAG_MSK + DEBUG_FLAG_MSK + MESSAGE_FLAG_MSK) 
+//睡眠
+#define     DEEPSLEEP              (led.mode + buzzer.mode)
 
 /* --------------------------------------------------------------------------- */
 typedef struct

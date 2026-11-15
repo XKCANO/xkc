@@ -25,7 +25,7 @@ enum
 	LOW_BAT_MODE,
 	SENSOR_FAULT_MODE,
 	SENSOR_POLLUTE_MODE,
-	FIND_ALARM_MODE,
+	HUSH_MODE,
 };
 
 /* --------------------------------------------------------------------------- */
@@ -34,22 +34,17 @@ typedef struct
 	unsigned char mode;
 	unsigned char step;
 	unsigned char counter;
-	unsigned char counter1;
-	
-	unsigned char offset;//用于中低亮度的补偿
-	unsigned char reserve;
-	unsigned short reserve1;
+	unsigned char offset;
 	
 }Alarm_typedef;
 
 extern Alarm_typedef led;
 extern Alarm_typedef buzzer;
-extern Alarm_typedef alarm;
 extern Alarm_typedef update;
 
 /* --------------------------------------------------------------------------- */
-unsigned char alarm_cfg(uint8_t mode);
-void alarm_del(void);
+void alarm_cfg(uint8_t mode);
+void remove_alarm(void);
 void led_lighten(void);
 void buzzer_sound(void);
 void update_timer1(void);
@@ -57,7 +52,6 @@ void smoke_callback(uint32_t state);
 void battery_callback(uint32_t state);
 void uart_callback(uint32_t p, uint32_t l);
 void set_connect(unsigned char flag);
-
 
 /* --------------------------------------------------------------------------- */
 #endif

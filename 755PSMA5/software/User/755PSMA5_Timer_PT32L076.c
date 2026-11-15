@@ -60,7 +60,7 @@ void TIM1_Handler(void)
 *  1: high
 * @retval None
 */
-void set_alarm(unsigned char flag)
+void set_timer1(void)
 {
 	//PA11 PA12
 	AFIOA->AFS[1] = (0x05 << 12) + (0x05 << 16);
@@ -68,16 +68,8 @@ void set_alarm(unsigned char flag)
 	// 16M / (15 + 1) = 1M
 	TIM1->PSC = 15;
 	
-	if(flag == 0)
-	{
-		TIM1->ARR = timer5.mr0 * 2;
-	  TIM1->OCR[3] = timer5.mr0;
-	}
-	else
-	{
-		TIM1->ARR = timer5.mr0;
-	  TIM1->OCR[3] = timer5.mr0 / 2;
-	}
+  TIM1->ARR = timer5.mr0;
+	TIM1->OCR[3] = timer5.mr0 / 2;
 
 	TIM1->OCMR = 0x001000;
 	
@@ -90,47 +82,11 @@ void set_alarm(unsigned char flag)
 }
 
 /**
-* @brief 设置声音大小
-* @param flag
-*  0: low
-*  1: high
-* @retval None
-*/
-void open_buzzer(unsigned char flag)
-{
-	TIM1->BKICR &= ~TIM_BKICR_SWE;
-	TIM1->BDTR &= ~(TIM_BDTR_BKSC + TIM_BDTR_BKE + TIM_BDTR_BKP);
-	TIM1->SR |= TIM_SR_BIF;
-	
-	if(flag == 0)
-	{
-		TIM1->OCMR |= TIM_OCMR_OC4E;
-	}
-	else
-	{
-		TIM1->OCMR |= TIM_OCMR_OC4E + TIM_OCMR_OC4NE;
-	}
-	
-	TIM1->CR1 |= TIM_CR1_EN;
-}
-
-/**
-* @brief 关闭声音
-* @param None
-* @retval None
-*/
-void close_buzzer(void)
-{
-	TIM1->BKICR |= TIM_BKICR_SWE;
-	TIM1->BDTR |= TIM_BDTR_BKE + TIM_BDTR_BKP + TIM_BDTR_BKSC;
-}
-
-/**
 * @brief 恢复默认设置
 * @param None
 * @retval None
 */
-void de_alarm(void)
+void close_timer1(void)
 {
 	NVIC_DisableIRQ(TIM1_IRQn);
 	
